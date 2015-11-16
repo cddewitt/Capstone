@@ -1,21 +1,23 @@
 package com.example.cdoit.characterstrengthbuilder;
 
 import android.content.Intent;
-import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+/**
+ * Created by cdoit on 11/16/2015.
+ */
+public class AnalysisActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle("Character Strength Builder");
-        setContentView(R.layout.activity_main);
+        setTitle("Analysis");
+        setContentView(R.layout.analysis);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -40,27 +42,8 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void btnGoalClick(View v){
-        Intent intent = new Intent(this,GoalsActivity.class);
+    public void btnProgressClick(View v){
+        Intent intent = new Intent(this,ProgressActivity.class);
         startActivity(intent);
-    }
-
-    public void btnTheoryClick(View v){
-        Intent implicit = new Intent(Intent.ACTION_VIEW, Uri.parse("http://rkwilley.com/duckworth-oettingen"));
-        startActivity(implicit);
-    }
-    public void btnAnalysisClick(View v){
-        Intent intent = new Intent(this,AnalysisActivity.class);
-        startActivity(intent);
-    }
-
-    public void btnLovelyThinkingClick(View v){
-        Intent implicit = new Intent(Intent.ACTION_VIEW, Uri.parse("http://rkwilley.com/apps"));
-        startActivity(implicit);
-    }
-
-    public void btnCharacterClick(View v){
-        Intent implicit = new Intent(Intent.ACTION_VIEW, Uri.parse("http://rkwilley.com/character"));
-        startActivity(implicit);
     }
 }
