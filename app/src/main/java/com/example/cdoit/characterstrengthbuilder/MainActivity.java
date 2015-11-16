@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,4 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void btnGoalClick(View v){}
+    public void btnTheoryClick(View v){}
+    public void btnAnalysisClick(View v){}
+    public void btnLovelyThinkingClick(View v){}
+    public void btnCharacterClick(View v){}
 }
