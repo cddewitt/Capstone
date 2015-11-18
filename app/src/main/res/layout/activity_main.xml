@@ -3,55 +3,61 @@
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:background="#2b90ff">
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Goals"
         android:id="@+id/btnGoals"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:onClick="btnGoalClick" />
+        android:onClick="btnGoalClick"
+        android:background="#ffffff" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Analysis"
         android:id="@+id/btnAnalysis"
         android:layout_below="@+id/btnGoals"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:onClick="btnAnalysisClick" />
+        android:onClick="btnAnalysisClick"
+        android:background="#ffffff" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Theory"
         android:id="@+id/btnTheory"
         android:layout_marginTop="50dp"
         android:layout_below="@+id/btnAnalysis"
         android:layout_centerHorizontal="true"
-        android:onClick="btnTheoryClick" />
+        android:onClick="btnTheoryClick"
+        android:background="#ffffff" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Lovely Thinking"
         android:id="@+id/btnLovelyThinking"
         android:layout_below="@+id/btnTheory"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:onClick="btnLovelyThinkingClick" />
+        android:onClick="btnLovelyThinkingClick"
+        android:background="#ffffff" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Character"
         android:id="@+id/btnCharacter"
         android:layout_below="@+id/btnLovelyThinking"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:onClick="btnCharacterClick" />
+        android:onClick="btnCharacterClick"
+        android:background="#ffffff" />
 </RelativeLayout>
