@@ -61,16 +61,4 @@
         android:onClick="btnCharacterClick"
         android:background="#ffffff" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:id="@+id/editText"
-        android:layout_alignBottom="@+id/btnTheory"
-        android:layout_alignLeft="@+id/btnTheory"
-        android:layout_alignStart="@+id/btnTheory"
-        android:layout_marginLeft="144dp"
-        android:layout_marginStart="144dp" />
 </RelativeLayout>
