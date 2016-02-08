@@ -1,33 +1,28 @@
 package com.example.cdoit.characterstrengthbuilder;
 
-import android.app.Application;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
 
 /**
- * Created by cdoit on 11/16/2015.
+ * Created by Cory on 2/8/2016.
  */
-public class GoalsActivity extends AppCompatActivity {
+public class WishActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle("Goals");
-        setContentView(R.layout.goals);
+        setTitle("Wish");
+        setContentView(R.layout.wish);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.goals, menu);
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -37,12 +32,7 @@ public class GoalsActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if(id==R.id.add_goal)
-        {
-            Intent intent = new Intent(this,WishActivity.class);
-            startActivity(intent);
-            return true;
-        }
+
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
@@ -50,10 +40,7 @@ public class GoalsActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-    public void btnHistoryClick(View v){
-        Intent intent = new Intent(this,HistoryActivity.class);
-        startActivity(intent);
-    }
-
 }
+
+
+
