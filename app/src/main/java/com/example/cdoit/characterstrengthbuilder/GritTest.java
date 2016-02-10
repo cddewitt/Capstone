@@ -43,6 +43,10 @@ public class GritTest {
 
     }
 
+    private GritTest retakeGritTest() {
+
+    }
+
     private void saveGritTestResults(GritTest gritTest) {
 
     }
