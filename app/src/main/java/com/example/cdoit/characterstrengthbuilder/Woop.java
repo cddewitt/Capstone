@@ -23,7 +23,20 @@ public class Woop {
     private JSONObject selectedWoopsInJson;
 
     public Woop() {
+        wish = "";
+        outcome = "";
+        obstacle = "";
+        plan = "";
 
+        woopInfo = new String[4];
+
+        startDateTime = new DateTime();
+        endDateTime = new DateTime();
+
+        dbConnection = new DatabaseContract();
+
+        currentWoopsInJson = new JSONObject();
+        selectedWoopsInJson = new JSONObject();
     }
 
     private Woop createNewWoop() {

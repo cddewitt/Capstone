@@ -23,7 +23,20 @@ public class GritTest {
     private JSONObject currentGritTestInfoInJson;
 
     public GritTest() {
+        selfControl = 0;
+        socialIntelligence = 0;
+        zest = 0;
+        gratitude = 0;
+        optimism = 0;
+        curiosity = 0;
 
+        gritTestInfo = new int[6];
+
+        totalGritScore = 0;
+
+        dbConnection = new DatabaseContract();
+
+        currentGritTestInfoInJson = new JSONObject();
     }
 
     private GritTest takeGritTest() {
