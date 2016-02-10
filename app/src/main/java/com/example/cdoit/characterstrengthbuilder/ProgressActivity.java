@@ -17,12 +17,12 @@ public class ProgressActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setTitle("Analysis");
-    setContentView(R.layout.progress);
-    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    populateListView();
-}
+        super.onCreate(savedInstanceState);
+        setTitle("Analysis");
+        setContentView(R.layout.progress);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        populateListView();
+    }
 
     private void populateListView() {
         ListView lv =(ListView)findViewById(R.id.lvProgress);
