@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnLovelyThinkingClick(View v){
-        Intent implicit = new Intent(Intent.ACTION_VIEW, Uri.parse("http://rkwilley.com/apps"));
+        Intent implicit = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.lovelythinking.com/apps/"));
         startActivity(implicit);
     }
 
