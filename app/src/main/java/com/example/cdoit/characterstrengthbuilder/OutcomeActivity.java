@@ -26,6 +26,8 @@ public class OutcomeActivity extends AppCompatActivity {
         if(extras!=null)
         {
             wish=extras.getString("Wish");
+            Toast toast = Toast.makeText(getApplicationContext(),"Wish: "+wish,Toast.LENGTH_LONG);
+            toast.show();
         }
     }
 

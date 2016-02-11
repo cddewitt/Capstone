@@ -30,8 +30,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Finsih my WOOP"
-        android:id="@+id/btnPlanToReview"
+        android:text="Review my WOOP"
+        android:id="@+id/btnPlan"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="btnPlanClick" />
 </RelativeLayout>

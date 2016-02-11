@@ -29,12 +29,14 @@ public class PlanActivity extends AppCompatActivity {
             wish=extras.getString("Wish");
             outcome = extras.getString("Outcome");
             obstacles=extras.getString("Obstacles");
+            Toast toast = Toast.makeText(getApplicationContext(),"Wish: "+wish,Toast.LENGTH_LONG);
+            toast.show();
         }
     }
 
     public void btnPlanClick(View v) {
         String plan = tbxPlan.getText().toString();
-        if (obstacles.equals("")) {
+        if (plan.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Please enter a plan to overcome the obstacles you may face.", Toast.LENGTH_LONG);
             toast.show();
         }
@@ -45,6 +47,7 @@ public class PlanActivity extends AppCompatActivity {
             intent.putExtra("Outcome",outcome);
             intent.putExtra("Obstacles",obstacles);
             intent.putExtra("Plan",plan);
+            startActivity(intent);
         }
     }
 }
