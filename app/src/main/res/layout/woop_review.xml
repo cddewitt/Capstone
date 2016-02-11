@@ -70,6 +70,20 @@
         android:textColor="#ffffff"
         android:textSize="28dp" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Your deadline is "
+        android:id="@+id/yourDeadlineIsTextView"
+        android:layout_below="@+id/yourPlanToCombatItIsTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="#ffffff"
+        android:textSize="28dp" />
+
     <Button
         android:layout_width="200dp"
         android:layout_height="wrap_content"
