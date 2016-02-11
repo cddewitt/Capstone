@@ -7,14 +7,15 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Continue To Outcome"
-        android:id="@+id/continueToOutcomeButton"
+        android:id="@+id/btnWish"
         android:layout_gravity="center_horizontal"
         android:background="#ffffff"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="10dp"
+        android:onClick="btnWishClick" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -24,7 +25,7 @@
         android:background="#ffffff"
         android:hint="Enter your wish here..."
         android:textColor="#c80000ff"
-        android:layout_above="@+id/continueToOutcomeButton"
+        android:layout_above="@+id/btnWish"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="20dp"

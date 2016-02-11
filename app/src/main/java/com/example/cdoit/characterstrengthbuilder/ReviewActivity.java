@@ -29,7 +29,7 @@ public class ReviewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Character Strength Builder");
-        setContentView(R.layout.activity_review);
+        setContentView(R.layout.woop_review);
         Bundle extras = getIntent().getExtras();
         if(extras!=null)
         {

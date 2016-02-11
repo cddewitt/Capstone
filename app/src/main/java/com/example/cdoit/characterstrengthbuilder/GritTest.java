@@ -18,7 +18,7 @@ public class GritTest {
 
     private int totalGritScore;
 
-    private DatabaseConnect dbConnection;
+    private DatabaseContract dbConnection;
 
     private JSONObject currentGritTestInfoInJson;
 
@@ -34,33 +34,33 @@ public class GritTest {
 
         totalGritScore = 0;
 
-        dbConnection = new DatabaseConnect();
+        dbConnection = new DatabaseContract();
 
         currentGritTestInfoInJson = new JSONObject();
     }
 
-    private GritTest takeGritTest() {
-
-    }
-
-    private GritTest retakeGritTest() {
-
-    }
-
-    private void saveGritTestResults(GritTest gritTest) {
-
-    }
-
-    private void updateGritTestResults(GritTest gritTest) {
-
-    }
-
-    private GritTest viewCurrentGritTestResults() {
-
-    }
-
-    private void learnAboutGritTest(int site) {
-
-    }
+//    private GritTest takeGritTest() {
+//
+//    }
+//
+//    private GritTest retakeGritTest() {
+//
+//    }
+//
+//    private void saveGritTestResults(GritTest gritTest) {
+//
+//    }
+//
+//    private void updateGritTestResults(GritTest gritTest) {
+//
+//    }
+//
+//    private GritTest viewCurrentGritTestResults() {
+//
+//    }
+//
+//    private void learnAboutGritTest(int site) {
+//
+//    }
 
 }

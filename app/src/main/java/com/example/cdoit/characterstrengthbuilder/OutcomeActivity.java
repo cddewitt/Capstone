@@ -20,14 +20,12 @@ public class OutcomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Character Strength Builder");
-        setContentView(R.layout.activity_outcome);
-        tbxOutcome=(TextView)findViewById(R.id.tbxOucome);
+        setContentView(R.layout.woop_outcome);
+        tbxOutcome=(TextView)findViewById(R.id.outcomeEditText);
         Bundle extras = getIntent().getExtras();
         if(extras!=null)
         {
             wish=extras.getString("Wish");
-            Toast toast = Toast.makeText(getApplicationContext(),"Wish: "+wish,Toast.LENGTH_LONG);
-            toast.show();
         }
     }
 

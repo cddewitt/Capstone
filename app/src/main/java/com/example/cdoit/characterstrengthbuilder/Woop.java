@@ -14,10 +14,10 @@ public class Woop {
 
     private String[] woopInfo;
 
-    private DateTime startDateTime;
-    private DateTime endDateTime;
+//    private DateTime startDateTime;
+//    private DateTime endDateTime;
 
-    private DatabaseConnect dbConnection;
+    private DatabaseContract dbConnection;
 
     private JSONObject currentWoopsInJson;
     private JSONObject selectedWoopsInJson;
@@ -30,37 +30,37 @@ public class Woop {
 
         woopInfo = new String[4];
 
-        startDateTime = new DateTime();
-        endDateTime = new DateTime();
+//        startDateTime = new DateTime();
+//        endDateTime = new DateTime();
 
-        dbConnection = new DatabaseConnect();
+        dbConnection = new DatabaseContract();
 
         currentWoopsInJson = new JSONObject();
         selectedWoopsInJson = new JSONObject();
     }
 
-    private Woop createNewWoop() {
-
-    }
-
-    private void saveWoop(Woop woop) {
-
-    }
-
-    private Woop[] viewCurrentWoops() {
-
-    }
-
-    private void shareWoop(int site) {
-
-    }
-
-    private void shareFacebook(Woop woop) {
-
-    }
-
-    private void shareTwitter(Woop woop) {
-
-    }
+//    private Woop createNewWoop() {
+//
+//    }
+//
+//    private void saveWoop(Woop woop) {
+//
+//    }
+//
+//    private Woop[] viewCurrentWoops() {
+//
+//    }
+//
+//    private void shareWoop(int site) {
+//
+//    }
+//
+//    private void shareFacebook(Woop woop) {
+//
+//    }
+//
+//    private void shareTwitter(Woop woop) {
+//
+//    }
 
 }

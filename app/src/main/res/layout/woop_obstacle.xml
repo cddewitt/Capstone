@@ -32,14 +32,15 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Continue To Plan"
-        android:id="@+id/continueToPlanButton"
+        android:id="@+id/btnObstacle"
         android:layout_gravity="center_horizontal"
         android:background="#ffffff"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="10dp"
+        android:onClick="btnObstaclesClick" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -49,7 +50,7 @@
         android:background="#ffffff"
         android:hint="Enter the main obstacle here..."
         android:textColor="#c80000ff"
-        android:layout_above="@+id/continueToPlanButton"
+        android:layout_above="@+id/btnObstacle"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="20dp"

@@ -21,16 +21,14 @@ public class PlanActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Character Strength Builder");
-        setContentView(R.layout.activity_plan);
-        tbxPlan=(TextView)findViewById(R.id.tbxPlan);
+        setContentView(R.layout.woop_plan);
+        tbxPlan=(TextView)findViewById(R.id.planEditText);
         Bundle extras = getIntent().getExtras();
         if(extras!=null)
         {
             wish=extras.getString("Wish");
             outcome = extras.getString("Outcome");
             obstacles=extras.getString("Obstacles");
-            Toast toast = Toast.makeText(getApplicationContext(),"Wish: "+wish,Toast.LENGTH_LONG);
-            toast.show();
         }
     }
 

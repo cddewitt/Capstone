@@ -22,7 +22,7 @@ public class WishActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Wish");
-        setContentView(R.layout.wish);
+        setContentView(R.layout.woop_wish);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
@@ -49,7 +49,7 @@ public class WishActivity extends AppCompatActivity{
     }
 
     public void btnWishClick(View v){
-        tbxWish=(TextView)findViewById(R.id.tbxWish);
+        tbxWish=(TextView)findViewById(R.id.wishEditText);
         String wish = tbxWish.getText().toString();
         if(wish.equals(""))
         {

@@ -21,15 +21,13 @@ public class ObstaclesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Character Strength Builder");
-        setContentView(R.layout.activity_obstacles);
-        tbxObstacles=(TextView)findViewById(R.id.tbxObstacles);
+        setContentView(R.layout.woop_obstacle);
+        tbxObstacles=(TextView)findViewById(R.id.obstacleEditText);
         Bundle extras = getIntent().getExtras();
         if(extras!=null)
         {
             wish=extras.getString("Wish");
             outcome = extras.getString("Outcome");
-            Toast toast = Toast.makeText(getApplicationContext(),"Wish: "+wish,Toast.LENGTH_LONG);
-            toast.show();
         }
     }
 

@@ -3,7 +3,7 @@ package com.example.cdoit.characterstrengthbuilder;
 /**
  * Created by cdoit on 2/4/2016.
  */
-public class DatabaseConnect {
+public class DatabaseContract {
 
     public static final String DB_NAME="GoalDataBase";
 
