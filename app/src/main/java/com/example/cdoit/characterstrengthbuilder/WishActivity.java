@@ -59,7 +59,7 @@ public class WishActivity extends AppCompatActivity{
         else
         {
             Intent intent = new Intent(this, OutcomeActivity.class);
-            intent.putExtra("Wish", tbxWish.getText());
+            intent.putExtra("Wish", tbxWish.getText().toString());
             startActivity(intent);
         }
     }

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.cdoit.characterstrengthbuilder.ObstaclesActivity">
+    tools:context="com.example.cdoit.characterstrengthbuilder.ObstaclesActivity"
+    android:onClick="btnObstaclesClick">
 
     <EditText
         android:layout_width="match_parent"
@@ -34,5 +35,5 @@
         android:id="@+id/btnObstaclesToPlan"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onClick="btnOutcomeClick" />
+        android:onClick="btnObstaclesClick" />
 </RelativeLayout>
