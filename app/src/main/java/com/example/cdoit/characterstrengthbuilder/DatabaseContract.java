@@ -13,7 +13,7 @@ public class DatabaseContract {
         public static final String COLUMN_DATECREATED="DateCreated";
         public static final String COLUMN_WISH="Wish";
         public static final String COLUMN_OUTCOME="Outcome";
-        public static final String COLUMN_OBSTACLES="Obstacles";
+        public static final String COLUMN_OBSTACLES="ObstaclesActivity";
         public static final String COLUMN_PLAN="Plan";
     }
 
@@ -24,7 +24,7 @@ public class DatabaseContract {
         public static final String COLUMN_DATECOMPLETED="DateCompleted";
         public static final String COLUMN_WISH="Wish";
         public static final String COLUMN_OUTCOME="Outcome";
-        public static final String COLUMN_OBSTACLES="Obstacles";
+        public static final String COLUMN_OBSTACLES="ObstaclesActivity";
         public static final String COLUMN_PLAN="Plan";
     }
 
