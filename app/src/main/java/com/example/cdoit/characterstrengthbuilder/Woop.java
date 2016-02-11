@@ -17,7 +17,7 @@ public class Woop {
     private DateTime startDateTime;
     private DateTime endDateTime;
 
-    private DatabaseContract dbConnection;
+    private DatabaseConnect dbConnection;
 
     private JSONObject currentWoopsInJson;
     private JSONObject selectedWoopsInJson;
@@ -33,7 +33,7 @@ public class Woop {
         startDateTime = new DateTime();
         endDateTime = new DateTime();
 
-        dbConnection = new DatabaseContract();
+        dbConnection = new DatabaseConnect();
 
         currentWoopsInJson = new JSONObject();
         selectedWoopsInJson = new JSONObject();

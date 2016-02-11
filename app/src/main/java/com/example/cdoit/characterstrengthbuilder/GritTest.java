@@ -18,7 +18,7 @@ public class GritTest {
 
     private int totalGritScore;
 
-    private DatabaseContract dbConnection;
+    private DatabaseConnect dbConnection;
 
     private JSONObject currentGritTestInfoInJson;
 
@@ -34,7 +34,7 @@ public class GritTest {
 
         totalGritScore = 0;
 
-        dbConnection = new DatabaseContract();
+        dbConnection = new DatabaseConnect();
 
         currentGritTestInfoInJson = new JSONObject();
     }
