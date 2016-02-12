@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#c8ff0000">
+    android:background="#c8ff0000"
+    android:orientation="vertical">
 
     <Button
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="Take Grit Test"
         android:id="@+id/takeGritTestButton"
-        android:layout_gravity="center_horizontal"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="175dp"
-        android:background="#ffffff" />
-
-    <Button
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Retake Grit Test"
-        android:id="@+id/retakeGritTestButton"
-        android:layout_gravity="center_horizontal"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="175dp"
+        android:background="#ffffff"
+        android:text="Take Grit Test" />
+
+    <Button
+        android:id="@+id/retakeGritTestButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/takeGritTestButton"
-        android:background="#ffffff" />
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:background="#ffffff"
+        android:text="Retake Grit Test" />
 
     <TextView
+        android:id="@+id/gritTestTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Grit Test"
-        android:id="@+id/gritTestTextView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textSize="48dp"
-        android:textColor="#ffffff" />
+        android:text="Grit Test"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ffffff"
+        android:textSize="48dp" />
 
 </RelativeLayout>

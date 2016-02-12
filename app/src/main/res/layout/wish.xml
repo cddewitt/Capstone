@@ -1,40 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:weightSum="1">
 
     <TextView
+        android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Make a wish that you want to accomplish!"
-        android:id="@+id/textView3"
         android:layout_weight="0.33"
-        android:textSize="40dp"
-        android:editable="false" />
+        android:editable="false"
+        android:text="Make a wish that you want to accomplish!"
+        android:textSize="40dp" />
 
     <Button
+        android:id="@+id/btnWishToOutcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Proceed to Outcome"
-        android:id="@+id/btnWishToOutcome"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0.21"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onClick="btnWishClick" />
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.21"
+        android:onClick="continueToOutcomeButtonClick"
+        android:text="Proceed to Outcome" />
 
     <EditText
+        android:id="@+id/tbxWish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tbxWish"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
+        android:background="#ff0000"
         android:editable="true"
         android:focusable="true"
-        android:minHeight="100dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:background="#ff0000"
-        android:hint="Enter your wish here...." />
+        android:hint="Enter your wish here...."
+        android:minHeight="100dp" />
 
 </RelativeLayout>

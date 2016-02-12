@@ -43,26 +43,27 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void btnGoalClick(View v){
-        Intent intent = new Intent(this,GoalsActivity.class);
+    public void btnGoalClick(View v) {
+        Intent intent = new Intent(this, GoalsActivity.class);
         startActivity(intent);
     }
 
-    public void btnTheoryClick(View v){
+    public void btnTheoryClick(View v) {
         Intent implicit = new Intent(Intent.ACTION_VIEW, Uri.parse("http://rkwilley.com/duckworth-oettingen"));
         startActivity(implicit);
     }
-    public void btnAnalysisClick(View v){
-        Intent intent = new Intent(this,AnalysisActivity.class);
+
+    public void btnAnalysisClick(View v) {
+        Intent intent = new Intent(this, AnalysisActivity.class);
         startActivity(intent);
     }
 
-    public void btnLovelyThinkingClick(View v){
+    public void btnLovelyThinkingClick(View v) {
         Intent implicit = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.lovelythinking.com/apps/"));
         startActivity(implicit);
     }
 
-    public void btnCharacterClick(View v){
+    public void btnCharacterClick(View v) {
         Intent implicit = new Intent(Intent.ACTION_VIEW, Uri.parse("http://rkwilley.com/character"));
         startActivity(implicit);
     }

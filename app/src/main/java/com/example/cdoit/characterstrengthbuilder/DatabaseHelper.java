@@ -8,12 +8,12 @@ import android.util.Log;
 /**
  * Created by cdoit on 2/4/2016.
  */
-public class DBHelper extends SQLiteOpenHelper {
+public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final int version=2;
+    private static final int version = 2;
 
-    public DBHelper(Context context){
-        super(context, DatabaseContract.DB_NAME,null,version);
+    public DatabaseHelper(Context context) {
+        super(context, DatabaseContract.DB_NAME, null, version);
     }
 
     @Override
@@ -39,7 +39,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         db.execSQL(SQL_CREATE_INCOMPLETEGOALS_TABLE);
         db.execSQL(SQL_CREATE_SPEED_AND_TOUCH_TABLE);
-        Log.v("Databse","Successfully Created Tables");
+        Log.v("Databse", "Successfully Created Tables");
     }
 
     @Override

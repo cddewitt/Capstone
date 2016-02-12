@@ -42,8 +42,8 @@ public class AnalysisActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void btnProgressClick(View v){
-        Intent intent = new Intent(this,ProgressActivity.class);
+    public void btnProgressClick(View v) {
+        Intent intent = new Intent(this, ProgressActivity.class);
         startActivity(intent);
     }
 }

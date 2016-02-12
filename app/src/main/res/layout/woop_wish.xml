@@ -1,86 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="#c80000ff">
 
     <Button
+        android:id="@+id/continueToOutcomeButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Continue To Outcome"
-        android:id="@+id/btnWish"
-        android:layout_gravity="center_horizontal"
-        android:background="#ffffff"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center_horizontal"
         android:layout_marginBottom="10dp"
-        android:onClick="btnWishClick" />
+        android:layout_marginRight="10dp"
+        android:background="#ffffff"
+        android:onClick="continueToOutcomeButtonClick"
+        android:text="Continue To Outcome" />
 
     <EditText
+        android:id="@+id/wishEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/wishEditText"
-        android:editable="true"
-        android:background="#ffffff"
-        android:hint="Enter your wish here..."
-        android:textColor="#c80000ff"
-        android:layout_above="@+id/btnWish"
+        android:layout_above="@+id/continueToOutcomeButton"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
+        android:layout_marginBottom="70dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="70dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:background="#ffffff"
+        android:editable="true"
+        android:hint="Enter your wish here..."
+        android:textColor="#c80000ff" />
 
     <TextView
+        android:id="@+id/whatIsYourWishTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="What is your wish?"
-        android:id="@+id/whatIsYourWishTextView"
         android:layout_above="@+id/wishEditText"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="20dp"
         android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="What is your wish?"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#ffffff"
         android:textSize="20dp" />
 
     <View
-    android:layout_width="match_parent"
-    android:layout_height="3dp"
-    android:layout_above="@+id/whatIsYourWishTextView"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentStart="true"
-    android:layout_marginBottom="20dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
-    android:background="#c8c8ff" />
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_above="@+id/whatIsYourWishTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#c8c8ff" />
 
     <TextView
+        android:id="@+id/wishDescriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Think of something you want to accomplish in the near future. What is the most prominent wish or desire that comes to your mind?"
-        android:id="@+id/wishDescriptionTextView"
         android:layout_below="@+id/wishTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Think of something you want to accomplish in the near future. What is the most prominent wish or desire that comes to your mind?"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#ffffff"
         android:textSize="28dp" />
 
     <TextView
+        android:id="@+id/wishTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Wish"
-        android:id="@+id/wishTextView"
-        android:textSize="48dp"
-        android:textColor="#ffffff"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="Wish"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ffffff"
+        android:textSize="48dp" />
 </RelativeLayout>

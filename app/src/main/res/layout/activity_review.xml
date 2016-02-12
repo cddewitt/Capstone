@@ -5,85 +5,85 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.cdoit.characterstrengthbuilder.ReviewActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.example.cdoit.characterstrengthbuilder.ReviewActivity">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Wish"
         android:id="@+id/lblWish"
-        android:textSize="30dp"
-        android:background="#19fbe1" />
-
-    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tbxFinalWish"
-        android:minHeight="100dp"
         android:background="#19fbe1"
-        android:editable="true" />
+        android:text="Wish"
+        android:textSize="30dp" />
+
+    <EditText
+        android:id="@+id/tbxFinalWish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#19fbe1"
+        android:editable="true"
+        android:minHeight="100dp" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Outcome"
         android:id="@+id/lblOutcome"
-        android:layout_gravity="center_horizontal"
-        android:textSize="30dp"
-        android:background="#f14343" />
-
-    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tbxFinalOutcome"
         android:layout_gravity="center_horizontal"
         android:background="#f14343"
-        android:minHeight="100dp"
-        android:editable="true" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Obstacles"
-        android:id="@+id/lblObstacles"
-        android:layout_gravity="center_horizontal"
-        android:background="#55e51c"
+        android:text="Outcome"
         android:textSize="30dp" />
 
     <EditText
+        android:id="@+id/tbxFinalOutcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tbxFinalObstacles"
         android:layout_gravity="center_horizontal"
-        android:background="#55e51c"
-        android:minHeight="100dp"
-        android:editable="true" />
+        android:background="#f14343"
+        android:editable="true"
+        android:minHeight="100dp" />
 
     <TextView
+        android:id="@+id/lblObstacles"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Plan"
+        android:layout_gravity="center_horizontal"
+        android:background="#55e51c"
+        android:text="Obstacles"
+        android:textSize="30dp" />
+
+    <EditText
+        android:id="@+id/tbxFinalObstacles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="#55e51c"
+        android:editable="true"
+        android:minHeight="100dp" />
+
+    <TextView
         android:id="@+id/lblPlan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:background="#9e3ad8"
+        android:text="Plan"
         android:textSize="30dp" />
 
     <EditText
+        android:id="@+id/tbxFinalPlan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tbxFinalPlan"
         android:layout_gravity="center_horizontal"
         android:background="#9e3ad8"
         android:minHeight="100dp" />
 
     <Button
+        android:id="@+id/btnReview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save My WOOP"
-        android:id="@+id/btnReview"
         android:layout_gravity="center_horizontal"
         android:minHeight="45dp"
-        android:onClick="btnReviewClick" />
+        android:onClick="btnReviewClick"
+        android:text="Save My WOOP" />
 
 </LinearLayout>

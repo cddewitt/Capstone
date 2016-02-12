@@ -1,75 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="#c80000ff">
 
     <TextView
+        android:id="@+id/obstacleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Obstacle"
-        android:id="@+id/obstacleTextView"
-        android:textSize="48dp"
-        android:textColor="#ffffff"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="Obstacle"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ffffff"
+        android:textSize="48dp" />
 
     <TextView
+        android:id="@+id/obstacleDescriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Think of something that might stand in the way of fulfilling your wish. What is the main obstacle that could hold you back from seeing your wish through?"
-        android:id="@+id/obstacleDescriptionTextView"
         android:layout_below="@+id/obstacleTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Think of something that might stand in the way of fulfilling your wish. What is the main obstacle that could hold you back from seeing your wish through?"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#ffffff"
         android:textSize="28dp" />
 
     <Button
+        android:id="@+id/continueToPlanButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Continue To Plan"
-        android:id="@+id/btnObstacle"
-        android:layout_gravity="center_horizontal"
-        android:background="#ffffff"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center_horizontal"
         android:layout_marginBottom="10dp"
-        android:onClick="btnObstaclesClick" />
+        android:layout_marginRight="10dp"
+        android:background="#ffffff"
+        android:onClick="continueToPlanButtonClick"
+        android:text="Continue To Plan" />
 
     <EditText
+        android:id="@+id/obstacleEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/obstacleEditText"
-        android:editable="true"
-        android:background="#ffffff"
-        android:hint="Enter the main obstacle here..."
-        android:textColor="#c80000ff"
-        android:layout_above="@+id/btnObstacle"
+        android:layout_above="@+id/continueToPlanButton"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
+        android:layout_marginBottom="70dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="70dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:background="#ffffff"
+        android:editable="true"
+        android:hint="Enter the main obstacle here..."
+        android:textColor="#c80000ff" />
 
     <TextView
+        android:id="@+id/whatIsTheMainObstacleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="What is the main obstacle?"
-        android:id="@+id/whatIsTheMainObstacleTextView"
         android:layout_above="@+id/obstacleEditText"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="20dp"
         android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="What is the main obstacle?"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#ffffff"
         android:textSize="20dp" />
 

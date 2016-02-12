@@ -1,87 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="#c80000ff">
 
     <TextView
+        android:id="@+id/deadlineTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Deadline"
-        android:id="@+id/deadlineTextView"
-        android:textSize="48dp"
-        android:textColor="#ffffff"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="Deadline"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ffffff"
+        android:textSize="48dp" />
 
     <TextView
+        android:id="@+id/deadlineDescriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Think of how much time it should take you to fulfill your wish with a motivated attitude. Set a date and time by which you plan to have fulfilled your wish."
-        android:id="@+id/deadlineDescriptionTextView"
         android:layout_below="@+id/deadlineTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Think of how much time it should take you to fulfill your wish with a motivated attitude. Set a date and time by which you plan to have fulfilled your wish."
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#ffffff"
         android:textSize="28dp" />
 
     <Button
+        android:id="@+id/reviewYourWoopButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Review Your WOOP"
-        android:id="@+id/reviewYourWoopButton"
-        android:layout_gravity="center_horizontal"
-        android:background="#ffffff"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp" />
+        android:background="#ffffff"
+        android:text="Review Your WOOP" />
 
     <TextView
+        android:id="@+id/setDeadlineTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Set a date and time for your deadline:"
-        android:id="@+id/setDeadlineTextView"
-        android:layout_below="@+id/separator"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_below="@+id/separator"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
+        android:text="Set a date and time for your deadline:"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#ffffff"
         android:textSize="20dp" />
 
     <View
+        android:id="@+id/separator"
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:id="@+id/separator"
-        android:layout_below="@+id/deadlineDescriptionTextView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="20dp"
+        android:layout_below="@+id/deadlineDescriptionTextView"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
         android:background="#c8c8ff" />
 
     <DatePicker
+        android:id="@+id/datePicker"
         android:layout_width="150dp"
         android:layout_height="90dp"
-        android:id="@+id/datePicker"
-        android:layout_below="@+id/setDeadlineTextView"
         android:layout_alignLeft="@+id/setDeadlineTextView"
         android:layout_alignStart="@+id/setDeadlineTextView"
+        android:layout_below="@+id/setDeadlineTextView"
         android:layout_marginTop="10dp" />
 
     <TimePicker
+        android:id="@+id/timePicker"
         android:layout_width="150dp"
         android:layout_height="90dp"
-        android:id="@+id/timePicker"
-        android:layout_below="@+id/setDeadlineTextView"
-        android:layout_alignRight="@+id/setDeadlineTextView"
         android:layout_alignEnd="@+id/setDeadlineTextView"
+        android:layout_alignRight="@+id/setDeadlineTextView"
+        android:layout_below="@+id/setDeadlineTextView"
         android:layout_marginTop="10dp" />
 </RelativeLayout>

@@ -66,7 +66,7 @@
                 android:value="com.example.cdoit.characterstrengthbuilder.WishActivity" />
         </activity>
         <activity
-            android:name=".ObstaclesActivity"
+            android:name=".ObstacleActivity"
             android:label="@string/title_activity_obstacles"
             android:parentActivityName=".OutcomeActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -77,11 +77,11 @@
         <activity
             android:name=".PlanActivity"
             android:label="@string/title_activity_plan"
-            android:parentActivityName=".ObstaclesActivity"
+            android:parentActivityName=".ObstacleActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ObstaclesActivity" />
+                android:value=".ObstacleActivity" />
         </activity>
         <activity
             android:name=".ReviewActivity"

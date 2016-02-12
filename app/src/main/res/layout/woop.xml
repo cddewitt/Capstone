@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#c80000ff">
+    android:background="#c80000ff"
+    android:orientation="vertical">
 
     <TextView
+        android:id="@+id/woopTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="WOOP"
-        android:id="@+id/woopTextView"
-        android:textSize="48dp"
-        android:textColor="#ffffff"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="WOOP"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ffffff"
+        android:textSize="48dp" />
 
     <Button
+        android:id="@+id/createNewWoopButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Create New WOOP"
-        android:id="@+id/createNewWoopButton"
+        android:layout_below="@+id/woopTextView"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:background="#ffffff"
-        android:layout_below="@+id/woopTextView"
-        android:layout_centerHorizontal="true" />
+        android:text="Create New WOOP" />
 
     <Button
+        android:id="@+id/viewCurrentWoopsButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="View Current WOOPs"
-        android:id="@+id/viewCurrentWoopsButton"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:layout_gravity="center_horizontal"
         android:background="#ffffff"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:text="View Current WOOPs" />
 
     <Button
+        android:id="@+id/shareAWoopButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Share a WOOP"
-        android:id="@+id/shareAWoopButton"
+        android:layout_below="@+id/viewCurrentWoopsButton"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="80dp"
         android:background="#ffffff"
-        android:layout_below="@+id/viewCurrentWoopsButton"
-        android:layout_centerHorizontal="true" />
+        android:text="Share a WOOP" />
 </RelativeLayout>

@@ -1,6 +1,5 @@
 package com.example.cdoit.characterstrengthbuilder;
 
-import android.app.Application;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -14,7 +13,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -54,7 +52,7 @@ public class GoalsActivity extends AppCompatActivity {
     }
 
     private void populateListView() {
-        DBHelper helper = new DBHelper(getApplicationContext());
+        DatabaseHelper helper = new DatabaseHelper(getApplicationContext());
         SQLiteDatabase db = helper.getWritableDatabase();
         Cursor cursor = db.query(DatabaseContract.IncompleteGoals.TABLENAME, null, null, null, null, null, null);
         ArrayList<String> wishes = new ArrayList<String>();
@@ -64,7 +62,7 @@ public class GoalsActivity extends AppCompatActivity {
                 wishes.add(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_WISH)));
             }
             ListAdapter la = new ArrayAdapter<String>(this, R.layout.listitme_goal, wishes);
-            ListView lv = (ListView)findViewById(R.id.listViewGoals);
+            ListView lv = (ListView) findViewById(R.id.listViewGoals);
             lv.setAdapter(la);
 
         }

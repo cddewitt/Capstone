@@ -25,7 +25,7 @@ public class ProgressActivity extends AppCompatActivity {
     }
 
     private void populateListView() {
-        ListView lv =(ListView)findViewById(R.id.lvProgress);
+        ListView lv = (ListView) findViewById(R.id.lvProgress);
         List<String> factors = new ArrayList<String>();
         factors.add("Grit");
         factors.add("Self-control");
@@ -34,7 +34,7 @@ public class ProgressActivity extends AppCompatActivity {
         factors.add("Gratitude");
         factors.add("Optimism");
         factors.add("Curiosity");
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,R.layout.progress_list_item,factors);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.progress_list_item, factors);
         lv.setAdapter(arrayAdapter);
     }
 

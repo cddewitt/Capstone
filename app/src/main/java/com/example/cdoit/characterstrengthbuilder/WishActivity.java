@@ -14,7 +14,7 @@ import android.widget.Toast;
 /**
  * Created by Cory on 2/8/2016.
  */
-public class WishActivity extends AppCompatActivity{
+public class WishActivity extends AppCompatActivity {
 
     private TextView tbxWish;
 
@@ -48,16 +48,13 @@ public class WishActivity extends AppCompatActivity{
         return super.onOptionsItemSelected(item);
     }
 
-    public void btnWishClick(View v){
-        tbxWish=(TextView)findViewById(R.id.wishEditText);
+    public void continueToOutcomeButtonClick(View v) {
+        tbxWish = (TextView) findViewById(R.id.wishEditText);
         String wish = tbxWish.getText().toString();
-        if(wish.equals(""))
-        {
-            Toast toast =Toast.makeText(getApplicationContext(),"Please enter a wish before continuing",Toast.LENGTH_LONG);
+        if (wish.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Please enter a wish before continuing", Toast.LENGTH_LONG);
             toast.show();
-        }
-        else
-        {
+        } else {
             Intent intent = new Intent(this, OutcomeActivity.class);
             intent.putExtra("Wish", tbxWish.getText().toString());
             startActivity(intent);

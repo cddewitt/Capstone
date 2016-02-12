@@ -1,75 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="#c80000ff">
 
     <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textAppearance="?android:attr/textAppearanceLarge"
-    android:text="Plan"
-    android:id="@+id/planTextView"
-    android:textSize="48dp"
-    android:textColor="#ffffff"
-    android:layout_alignParentTop="true"
-    android:layout_centerHorizontal="true" />
-
-    <TextView
+        android:id="@+id/planTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Think of something you can do to combat the obstacle standing in between you and fulfilling your wish. What can you do to overcome your obstacle?"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Plan"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ffffff"
+        android:textSize="48dp" />
+
+    <TextView
         android:id="@+id/planDescriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/planTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Think of something you can do to combat the obstacle standing in between you and fulfilling your wish. What can you do to overcome your obstacle?"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#ffffff"
         android:textSize="28dp" />
 
     <Button
+        android:id="@+id/setADeadlineButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Set A Deadline"
-        android:id="@+id/btnPlan"
-        android:layout_gravity="center_horizontal"
-        android:background="#ffffff"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center_horizontal"
         android:layout_marginBottom="10dp"
-        android:onClick="btnPlanClick" />
+        android:layout_marginRight="10dp"
+        android:background="#ffffff"
+        android:onClick="setADeadlineButtonClick"
+        android:text="Set A Deadline" />
 
     <EditText
+        android:id="@+id/planEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/planEditText"
-        android:editable="true"
-        android:background="#ffffff"
-        android:hint="Enter your plan here..."
-        android:textColor="#c80000ff"
-        android:layout_above="@+id/btnPlan"
+        android:layout_above="@+id/setADeadlineButton"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
+        android:layout_marginBottom="70dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="70dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:background="#ffffff"
+        android:editable="true"
+        android:hint="Enter your plan here..."
+        android:textColor="#c80000ff" />
 
     <TextView
+        android:id="@+id/whatIsYourPlanTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="What is your plan?"
-        android:id="@+id/whatIsYourPlanTextView"
         android:layout_above="@+id/planEditText"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="20dp"
         android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="What is your plan?"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#ffffff"
         android:textSize="20dp" />
 

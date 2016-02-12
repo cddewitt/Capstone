@@ -11,39 +11,36 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ObstaclesActivity extends AppCompatActivity {
+public class ObstacleActivity extends AppCompatActivity {
 
     private TextView tbxObstacles;
-    private String wish="";
-    private String outcome="";
+    private String wish = "";
+    private String outcome = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Character Strength Builder");
         setContentView(R.layout.woop_obstacle);
-        tbxObstacles=(TextView)findViewById(R.id.obstacleEditText);
+        tbxObstacles = (TextView) findViewById(R.id.obstacleEditText);
         Bundle extras = getIntent().getExtras();
-        if(extras!=null)
-        {
-            wish=extras.getString("Wish");
+        if (extras != null) {
+            wish = extras.getString("Wish");
             outcome = extras.getString("Outcome");
         }
     }
 
-    public void btnObstaclesClick(View v) {
+    public void continueToPlanButtonClick(View v) {
         Log.v("Obstacles", "in click");
         String obstacles = tbxObstacles.getText().toString();
         if (obstacles.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Please enter a possible obstacle before continuing", Toast.LENGTH_LONG);
             toast.show();
-        }
-        else
-        {
-            Intent intent = new Intent(this,PlanActivity.class);
-            intent.putExtra("Wish",wish);
-            intent.putExtra("Outcome",outcome);
-            intent.putExtra("Obstacles",obstacles);
+        } else {
+            Intent intent = new Intent(this, PlanActivity.class);
+            intent.putExtra("Wish", wish);
+            intent.putExtra("Outcome", outcome);
+            intent.putExtra("Obstacles", obstacles);
             startActivity(intent);
         }
     }
