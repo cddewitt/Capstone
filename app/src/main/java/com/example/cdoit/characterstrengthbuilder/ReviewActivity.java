@@ -26,15 +26,13 @@ public class ReviewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Character Strength Builder");
-        setContentView(R.layout.woop_review);
+        setContentView(R.layout.activity_review);
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             wish = extras.getString("Wish");
             outcome = extras.getString("Outcome");
             obstacles = extras.getString("Obstacles");
             plan = extras.getString("Plan");
-            Toast toast = Toast.makeText(getApplicationContext(), "Wish: " + wish, Toast.LENGTH_LONG);
-            toast.show();
         }
         tbxWish = (TextView) findViewById(R.id.tbxFinalWish);
         tbxOutcome = (TextView) findViewById(R.id.tbxFinalOutcome);
