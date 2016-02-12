@@ -63,4 +63,38 @@ public class Woop {
 //
 //    }
 
+    private void setWish(String wish) {
+        this.wish = wish;
+    }
+
+    private void setOutcome(String outcome) {
+        this.outcome = outcome;
+    }
+
+    private void setObstacle(String obstacle) {
+        this.obstacle = obstacle;
+    }
+
+    private void setPlan(String plan) {
+        this.plan = plan;
+    }
+
+    private String getWish() {
+        return wish;
+    }
+
+    private String getOutcome() {
+        return outcome;
+    }
+
+    private String getObstacle() {
+        return obstacle;
+    }
+
+    private String getPlan() {
+        return plan;
+    }
+
+
+
 }

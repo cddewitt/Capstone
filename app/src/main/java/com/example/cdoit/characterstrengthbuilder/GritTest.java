@@ -63,4 +63,52 @@ public class GritTest {
 //
 //    }
 
+    private void setSelfControl(int selfControl) {
+        this.selfControl = selfControl;
+    }
+
+    private void setSocialIntelligence(int socialIntelligence) {
+        this.socialIntelligence = socialIntelligence;
+    }
+
+    private void setZest(int zest) {
+        this.zest = zest;
+    }
+
+    private void setGratitude(int gratitude) {
+        this.gratitude = gratitude;
+    }
+
+    private void setOptimism(int optimism) {
+        this.optimism = optimism;
+    }
+
+    private void setCuriosity(int curiosity) {
+        this.curiosity = curiosity;
+    }
+
+    private int getSelfControl() {
+        return selfControl;
+    }
+
+    private int getSocialIntelligence() {
+        return socialIntelligence;
+    }
+
+    private int getZest() {
+        return zest;
+    }
+
+    private int getGratitude() {
+        return gratitude;
+    }
+
+    private int getOptimism() {
+        return optimism;
+    }
+
+    private int getCuriosity() {
+        return curiosity;
+    }
+
 }
