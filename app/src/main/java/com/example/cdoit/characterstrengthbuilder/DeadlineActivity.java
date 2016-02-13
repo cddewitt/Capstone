@@ -14,12 +14,12 @@ import android.widget.Toast;
 
 public class DeadlineActivity extends AppCompatActivity {
 
-    private DatePicker datePicker;
-    private TimePicker timePicker;
     private String wish = "";
     private String outcome = "";
     private String obstacle = "";
     private String plan = "";
+    private DatePicker datePicker;
+    private TimePicker timePicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +49,8 @@ public class DeadlineActivity extends AppCompatActivity {
             intent.putExtra("Outcome", outcome);
             intent.putExtra("Obstacle", obstacle);
             intent.putExtra("Plan", plan);
-            intent.putExtra("Deadline Date", deadlineDate);
-            intent.putExtra("Deadline Time", deadlineTime);
+            intent.putExtra("Deadline_Date", deadlineDate);
+            intent.putExtra("Deadline_Time", deadlineTime);
             startActivity(intent);
         }
     }

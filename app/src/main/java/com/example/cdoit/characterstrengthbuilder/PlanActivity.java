@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,6 +33,7 @@ public class PlanActivity extends AppCompatActivity {
     }
 
     public void setADeadlineButtonClick(View v) {
+        Log.v("Plan", "in click");
         String plan = tbxPlan.getText().toString();
         if (plan.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Please enter a plan to overcome the obstacles you may face.", Toast.LENGTH_LONG);

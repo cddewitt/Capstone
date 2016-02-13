@@ -103,6 +103,10 @@
         <activity
             android:name=".DeadlineActivity"
             android:label="@string/title_activity_deadline"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SaveActivity"
+            android:label="@string/title_activity_save"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

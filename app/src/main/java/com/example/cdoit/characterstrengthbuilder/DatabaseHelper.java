@@ -18,26 +18,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        final String SQL_CREATE_INCOMPLETEGOALS_TABLE = "CREATE TABLE " + DatabaseContract.IncompleteGoals.TABLENAME + " (" +
+        final String SQL_CREATE_INCOMPLETE_GOALS_TABLE = "CREATE TABLE " + DatabaseContract.IncompleteGoals.TABLENAME + " (" +
                 DatabaseContract.IncompleteGoals.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-                DatabaseContract.IncompleteGoals.COLUMN_DATECREATED + " LONG NOT NULL," +
+                DatabaseContract.IncompleteGoals.COLUMN_DATE_CREATED + " LONG NOT NULL," +
                 DatabaseContract.IncompleteGoals.COLUMN_WISH + " TEXT NOT NULL, " +
                 DatabaseContract.IncompleteGoals.COLUMN_OUTCOME + " TEXT NOT NULL, " +
-                DatabaseContract.IncompleteGoals.COLUMN_OBSTACLES + " TEXT NOT NULL, " +
-                DatabaseContract.IncompleteGoals.COLUMN_PLAN + " TEXT NOT NULL " +
+                DatabaseContract.IncompleteGoals.COLUMN_OBSTACLE + " TEXT NOT NULL, " +
+                DatabaseContract.IncompleteGoals.COLUMN_PLAN + " TEXT NOT NULL, " +
+                DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_DATE + " TEXT NOT NULL, " +
+                DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_TIME + " TEXT NOT NULL " +
                 " );";
 
         final String SQL_CREATE_SPEED_AND_TOUCH_TABLE = "CREATE TABLE " + DatabaseContract.CompleteGoals.TABLENAME + " (" +
                 DatabaseContract.CompleteGoals.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                DatabaseContract.CompleteGoals.COLUMN_DATECREATED + " LONG NOT NULL, " +
+                DatabaseContract.CompleteGoals.COLUMN_DATE_CREATED + " LONG NOT NULL, " +
+                DatabaseContract.CompleteGoals.COLUMN_DATE_COMPLETED + " LONG NOT NULL, " +
                 DatabaseContract.CompleteGoals.COLUMN_WISH + " TEXT NOT NULL, " +
                 DatabaseContract.CompleteGoals.COLUMN_OUTCOME + " TEXT NOT NULL, " +
-                DatabaseContract.CompleteGoals.COLUMN_OBSTACLES + " TEXT NOT NULL, " +
+                DatabaseContract.CompleteGoals.COLUMN_OBSTACLE + " TEXT NOT NULL, " +
                 DatabaseContract.CompleteGoals.COLUMN_PLAN + " TEXT NOT NULL, " +
-                DatabaseContract.CompleteGoals.COLUMN_DATECOMPLETED + " LONG NOT NULL " +
+                DatabaseContract.CompleteGoals.COLUMN_DEADLINE_DATE + " TEXT NOT NULL, " +
+                DatabaseContract.CompleteGoals.COLUMN_DEADLINE_TIME + " TEXT NOT NULL " +
                 " );";
 
-        db.execSQL(SQL_CREATE_INCOMPLETEGOALS_TABLE);
+        db.execSQL(SQL_CREATE_INCOMPLETE_GOALS_TABLE);
         db.execSQL(SQL_CREATE_SPEED_AND_TOUCH_TABLE);
         Log.v("Databse", "Successfully Created Tables");
     }
