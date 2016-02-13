@@ -6,45 +6,53 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
-public class PlanActivity extends AppCompatActivity {
+public class DeadlineActivity extends AppCompatActivity {
 
-    private TextView tbxPlan;
     private String wish = "";
     private String outcome = "";
-    private String obstacles = "";
+    private String obstacle = "";
+    private String plan = "";
+    private DatePicker datePicker;
+    private TimePicker timePicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Character Strength Builder");
-        setContentView(R.layout.woop_plan);
-        tbxPlan = (TextView) findViewById(R.id.planEditText);
+        setContentView(R.layout.woop_deadline);
+        datePicker = (DatePicker) findViewById(R.id.datePicker);
+        timePicker = (TimePicker) findViewById(R.id.timePicker);
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             wish = extras.getString("Wish");
             outcome = extras.getString("Outcome");
-            obstacles = extras.getString("Obstacles");
+            obstacle = extras.getString("Obstacle");
+            plan = extras.getString("Plan");
         }
     }
 
-    public void setADeadlineButtonClick(View v) {
-        Log.v("Plan", "in click");
-        String plan = tbxPlan.getText().toString();
-        if (plan.equals("")) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Please enter a plan to overcome the obstacles you may face.", Toast.LENGTH_LONG);
+    public void reviewYourWoopButtonClick(View v) {
+        String deadlineDate = datePicker.toString();
+        String deadlineTime = timePicker.toString();
+        if (deadlineDate.equals("") || deadlineTime.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Please select a deadline date and/or time.", Toast.LENGTH_LONG);
             toast.show();
         } else {
             Intent intent = new Intent(this, ReviewActivity.class);
             intent.putExtra("Wish", wish);
             intent.putExtra("Outcome", outcome);
-            intent.putExtra("Obstacles", obstacles);
+            intent.putExtra("Obstacle", obstacle);
             intent.putExtra("Plan", plan);
+            intent.putExtra("Deadline_Date", deadlineDate);
+            intent.putExtra("Deadline_Time", deadlineTime);
             startActivity(intent);
         }
     }
+
 }

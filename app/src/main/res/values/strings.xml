@@ -7,4 +7,6 @@
     <string name="title_activity_obstacles">Obstacles</string>
     <string name="title_activity_plan">PlanActivity</string>
     <string name="title_activity_review">ReviewActivity</string>
+    <string name="title_activity_deadline">DeadlineActivity</string>
+    <string name="title_activity_save">SaveActivity</string>
 </resources>
