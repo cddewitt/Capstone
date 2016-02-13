@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#c80000ff">
+    android:background="#fff4e6">
 
     <Button
         android:id="@+id/continueToOutcomeButton"
@@ -71,7 +71,7 @@
         android:layout_marginTop="20dp"
         android:text="Think of something you want to accomplish in the near future. What is the most prominent wish or desire that comes to your mind?"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:textSize="28dp" />
 
     <TextView
@@ -82,6 +82,6 @@
         android:layout_centerHorizontal="true"
         android:text="Wish"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#ffffff"
+        android:textColor="#3c2f2f"
         android:textSize="48dp" />
 </RelativeLayout>

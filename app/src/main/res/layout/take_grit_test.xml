@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#c8ff0000"
+    android:background="#fff4e6"
     android:orientation="vertical">
 
     <Button
@@ -34,7 +34,7 @@
         android:layout_centerHorizontal="true"
         android:text="Grit Test"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#ffffff"
+        android:textColor="#3c2f2f"
         android:textSize="48dp" />
 
 </RelativeLayout>

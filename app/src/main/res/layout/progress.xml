@@ -9,5 +9,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
-        android:background="#6497b1" />
+        android:background="#fff4e6" />
 </LinearLayout>

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#c80000ff">
+    android:background="#fff4e6">
 
     <TextView
         android:id="@+id/woopSavedTextView"
@@ -16,7 +16,7 @@
         android:gravity="center"
         android:text="WOOP Saved!"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#ffffff"
+        android:textColor="#3c2f2f"
         android:textSize="48dp" />
 
     <TextView
@@ -30,7 +30,7 @@
         android:gravity="center"
         android:text="Good luck on accomplishing your wish!"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:textSize="48dp" />
 
     <Button

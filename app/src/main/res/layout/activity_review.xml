@@ -12,7 +12,7 @@
         android:id="@+id/lblWish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#19fbe1"
+        android:background="#be9b7b"
         android:text="Wish"
         android:textSize="30dp" />
 
@@ -20,7 +20,7 @@
         android:id="@+id/tbxFinalWish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#19fbe1"
+        android:background="#fff4e6"
         android:editable="true"
         android:minHeight="100dp" />
 
@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:background="#f14343"
+        android:background="#be9b7b"
         android:text="Outcome"
         android:textSize="30dp" />
 
@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:background="#f14343"
+        android:background="#fff4e6"
         android:editable="true"
         android:minHeight="100dp" />
 
@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:background="#55e51c"
+        android:background="#be9b7b"
         android:text="Obstacles"
         android:textSize="30dp" />
 
@@ -56,7 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:background="#55e51c"
+        android:background="#fff4e6"
         android:editable="true"
         android:minHeight="100dp" />
 
@@ -65,7 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:background="#9e3ad8"
+        android:background="#be9b7b"
         android:text="Plan"
         android:textSize="30dp" />
 
@@ -74,7 +74,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:background="#9e3ad8"
+        android:background="#fff4e6"
         android:minHeight="100dp" />
 
     <Button

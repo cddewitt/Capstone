@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#c80000ff">
+    android:background="#fff4e6">
 
     <TextView
         android:id="@+id/planTextView"
@@ -12,7 +12,7 @@
         android:layout_centerHorizontal="true"
         android:text="Plan"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#ffffff"
+        android:textColor="#3c2f2f"
         android:textSize="48dp" />
 
     <TextView
@@ -26,7 +26,7 @@
         android:layout_marginTop="20dp"
         android:text="Think of something you can do to combat the obstacle standing in between you and fulfilling your wish. What can you do to overcome your obstacle?"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:textSize="28dp" />
 
     <Button

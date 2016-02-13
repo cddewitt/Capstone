@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#c80000ff">
+    android:background="#fff4e6">
 
     <TextView
         android:id="@+id/deadlineTextView"
@@ -12,7 +12,7 @@
         android:layout_centerHorizontal="true"
         android:text="Deadline"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#ffffff"
+        android:textColor="#3c2f2f"
         android:textSize="48dp" />
 
     <TextView
@@ -26,8 +26,8 @@
         android:layout_marginTop="20dp"
         android:text="Think of how much time it should take you to fulfill your wish with a motivated attitude. Set a date and time by which you plan to have fulfilled your wish."
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#ffffff"
-        android:textSize="28dp" />
+        android:textSize="28dp"
+        android:textColor="#000000" />
 
     <Button
         android:id="@+id/reviewYourWoopButton"

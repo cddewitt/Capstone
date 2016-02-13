@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#c80000ff">
+    android:background="#fff4e6">
 
     <TextView
         android:id="@+id/reviewTextView"
@@ -12,7 +12,7 @@
         android:layout_centerHorizontal="true"
         android:text="Review"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#ffffff"
+        android:textColor="#3c2f2f"
         android:textSize="48dp" />
 
     <TextView
@@ -26,7 +26,7 @@
         android:layout_marginTop="20dp"
         android:text="Your wish is "
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:textSize="28dp" />
 
     <TextView
@@ -40,7 +40,7 @@
         android:layout_marginTop="20dp"
         android:text="The best outcome is "
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:textSize="28dp" />
 
     <TextView
@@ -54,7 +54,7 @@
         android:layout_marginTop="20dp"
         android:text="The main obstacle is "
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:textSize="28dp" />
 
     <TextView
@@ -68,7 +68,7 @@
         android:layout_marginTop="20dp"
         android:text="Your plan to combat it is "
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:textSize="28dp" />
 
     <TextView
@@ -82,7 +82,7 @@
         android:layout_marginTop="20dp"
         android:text="Your deadline is "
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:textSize="28dp" />
 
     <Button

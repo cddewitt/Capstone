@@ -13,7 +13,7 @@
         android:layout_above="@+id/btnHistory"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:background="#419873" />
+        android:background="#fff4e6" />
 
     <Button
         android:id="@+id/btnHistory"

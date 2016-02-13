@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:background="#fff4e6">
 
     <TextView
         android:id="@+id/textView3"
@@ -12,7 +13,8 @@
         android:layout_weight="0.33"
         android:editable="false"
         android:text="Make a wish that you want to accomplish!"
-        android:textSize="40dp" />
+        android:textSize="40dp"
+        android:textColor="#3c2f2f" />
 
     <Button
         android:id="@+id/btnWishToOutcome"
@@ -32,7 +34,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:background="#ff0000"
+        android:background="#fff4e6"
         android:editable="true"
         android:focusable="true"
         android:hint="Enter your wish here...."

@@ -13,7 +13,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_gravity="center_horizontal"
-        android:background="#854442" />
+        android:background="#ffffff" />
 
     <TextView
         android:id="@+id/textView2"
@@ -24,5 +24,9 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="44dp"
         android:background="#fff4e6"
-        android:text="History of completed WOOPs will go here" />
+        android:text="History of completed WOOPs will go here"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="250dp"
+        android:layout_marginStart="250dp" />
 </RelativeLayout>
