@@ -7,7 +7,6 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
@@ -112,6 +111,14 @@
         <activity
             android:name=".LearnMore"
             android:label="@string/title_activity_learn_more"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TakeGritTestActivity"
+            android:label="@string/title_activity_take_grit_test"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".GritTestActivity"
+            android:label="@string/title_activity_grit_test"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
