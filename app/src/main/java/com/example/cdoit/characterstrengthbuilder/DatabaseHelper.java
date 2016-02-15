@@ -10,7 +10,7 @@ import android.util.Log;
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final int version = 3;
+    private static final int version = 4;
 
     public DatabaseHelper(Context context) {
         super(context, DatabaseContract.DB_NAME, null, version);

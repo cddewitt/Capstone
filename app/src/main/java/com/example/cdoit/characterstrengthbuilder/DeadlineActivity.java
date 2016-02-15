@@ -34,6 +34,8 @@ public class DeadlineActivity extends AppCompatActivity {
             outcome = extras.getString("Outcome");
             obstacle = extras.getString("Obstacle");
             plan = extras.getString("Plan");
+            Toast toast = Toast.makeText(getApplicationContext(), "Obstacles: "+obstacle, Toast.LENGTH_LONG);
+            toast.show();
         }
     }
 

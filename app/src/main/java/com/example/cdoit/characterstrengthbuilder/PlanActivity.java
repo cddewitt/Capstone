@@ -39,10 +39,10 @@ public class PlanActivity extends AppCompatActivity {
             Toast toast = Toast.makeText(getApplicationContext(), "Please enter a plan to overcome the obstacles you may face.", Toast.LENGTH_LONG);
             toast.show();
         } else {
-            Intent intent = new Intent(this, ReviewActivity.class);
+            Intent intent = new Intent(this, DeadlineActivity.class);
             intent.putExtra("Wish", wish);
             intent.putExtra("Outcome", outcome);
-            intent.putExtra("Obstacles", obstacles);
+            intent.putExtra("Obstacle", obstacles);
             intent.putExtra("Plan", plan);
             startActivity(intent);
         }
