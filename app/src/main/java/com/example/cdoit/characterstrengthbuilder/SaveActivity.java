@@ -11,6 +11,13 @@ import android.view.View;
 
 public class SaveActivity extends AppCompatActivity {
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setTitle("Character Strength Builder");
+        setContentView(R.layout.woop_save);
+    }
+
     public void returnToHomeButtonClick(View v) {
         Log.v("Save", "in click");
         Intent intent = new Intent(this, MainActivity.class);

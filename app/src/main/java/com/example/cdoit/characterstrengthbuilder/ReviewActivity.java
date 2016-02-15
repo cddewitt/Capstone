@@ -57,7 +57,7 @@ public class ReviewActivity extends AppCompatActivity {
         Log.v("Review", "in click");
         long row = insertIncompleteGoalData();
         if (row != -1) {
-            Intent intent = new Intent(this, GoalsActivity.class);
+            Intent intent = new Intent(this, SaveActivity.class);
             startActivity(intent);
             Toast toast = Toast.makeText(this, "WOOP successfully saved!", Toast.LENGTH_LONG);
             toast.show();
