@@ -9,4 +9,7 @@
     <string name="title_activity_review">ReviewActivity</string>
     <string name="title_activity_deadline">DeadlineActivity</string>
     <string name="title_activity_save">SaveActivity</string>
+    <string name="title_activity_learn_more">Learn More</string>
+    <string name="learn_more_explanation_text">Press a button below to find out more about the WOOP process.</string>
+    <string name="button_text">Visit LovelyThinking.com</string>
 </resources>
