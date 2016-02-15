@@ -107,6 +107,14 @@
         <activity
             android:name=".SaveActivity"
             android:label="@string/title_activity_save"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TakeGritTestActivity"
+            android:label="@string/title_activity_take_grit_test"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".GritTestActivity"
+            android:label="@string/title_activity_grit_test"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

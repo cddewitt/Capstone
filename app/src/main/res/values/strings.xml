@@ -9,4 +9,6 @@
     <string name="title_activity_review">ReviewActivity</string>
     <string name="title_activity_deadline">DeadlineActivity</string>
     <string name="title_activity_save">SaveActivity</string>
+    <string name="title_activity_take_grit_test">TakeGritTestActivity</string>
+    <string name="title_activity_grit_test">GritTestActivity</string>
 </resources>
