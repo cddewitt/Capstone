@@ -53,7 +53,7 @@
         android:layout_marginTop="20dp"
         android:text="Set a date and time for your deadline:"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:textSize="20dp" />
 
     <View

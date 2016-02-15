@@ -21,12 +21,23 @@
         android:text="Goals" />
 
     <Button
-        android:id="@+id/btnAnalysis"
+        android:id="@+id/gritTestButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnGoals"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
+        android:background="#854442"
+        android:onClick="gritTestButtonClick"
+        android:text="Grit Test" />
+
+    <Button
+        android:id="@+id/btnAnalysis"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gritTestButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:background="#854442"
         android:onClick="btnAnalysisClick"
         android:text="Analysis" />
@@ -37,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnAnalysis"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:background="#854442"
         android:onClick="btnTheoryClick"
         android:text="Theory" />
@@ -48,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnTheory"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:background="#854442"
         android:onClick="btnLovelyThinkingClick"
         android:text="Lovely Thinking" />
@@ -59,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnLovelyThinking"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:background="#854442"
         android:onClick="btnCharacterClick"
         android:text="Character" />

@@ -48,14 +48,19 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void btnTheoryClick(View v) {
-        Intent implicit = new Intent(Intent.ACTION_VIEW, Uri.parse("http://rkwilley.com/duckworth-oettingen"));
-        startActivity(implicit);
+    public void gritTestButtonClick(View v) {
+        Intent intent = new Intent(this, TakeGritTestActivity.class);
+        startActivity(intent);
     }
 
     public void btnAnalysisClick(View v) {
         Intent intent = new Intent(this, AnalysisActivity.class);
         startActivity(intent);
+    }
+
+    public void btnTheoryClick(View v) {
+        Intent implicit = new Intent(Intent.ACTION_VIEW, Uri.parse("http://rkwilley.com/duckworth-oettingen"));
+        startActivity(implicit);
     }
 
     public void btnLovelyThinkingClick(View v) {

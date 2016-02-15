@@ -13,6 +13,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="175dp"
         android:background="#ffffff"
+        android:onClick="takeGritTestButtonClick"
         android:text="Take Grit Test" />
 
     <Button
@@ -24,6 +25,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:background="#ffffff"
+        android:onClick="retakeGritTestButtonClick"
         android:text="Retake Grit Test" />
 
     <TextView

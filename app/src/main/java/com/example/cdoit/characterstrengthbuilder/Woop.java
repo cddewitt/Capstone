@@ -2,6 +2,8 @@ package com.example.cdoit.characterstrengthbuilder;
 
 import org.json.JSONObject;
 
+import java.util.Date;
+
 /**
  * Created by Alex on 2/9/2016.
  */
@@ -11,11 +13,10 @@ public class Woop {
     private String outcome;
     private String obstacle;
     private String plan;
+    private Date startDateTime;
+    private Date endDateTime;
 
     private String[] woopInfo;
-
-//    private DateTime startDateTime;
-//    private DateTime endDateTime;
 
     private DatabaseContract dbConnection;
 
@@ -27,11 +28,10 @@ public class Woop {
         outcome = "";
         obstacle = "";
         plan = "";
+        startDateTime = new Date();
+        endDateTime = new Date();
 
-        woopInfo = new String[4];
-
-//        startDateTime = new DateTime();
-//        endDateTime = new DateTime();
+        woopInfo = new String[6];
 
         dbConnection = new DatabaseContract();
 
@@ -94,7 +94,5 @@ public class Woop {
     private String getPlan() {
         return plan;
     }
-
-
 
 }

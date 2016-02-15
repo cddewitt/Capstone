@@ -29,7 +29,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_TIME + " TEXT NOT NULL " +
                 " );";
 
-        final String SQL_CREATE_SPEED_AND_TOUCH_TABLE = "CREATE TABLE " + DatabaseContract.CompleteGoals.TABLENAME + " (" +
+        final String SQL_CREATE_COMPLETE_GOALS_TABLE = "CREATE TABLE " + DatabaseContract.CompleteGoals.TABLENAME + " (" +
                 DatabaseContract.CompleteGoals.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 DatabaseContract.CompleteGoals.COLUMN_DATE_CREATED + " LONG NOT NULL, " +
                 DatabaseContract.CompleteGoals.COLUMN_DATE_COMPLETED + " LONG NOT NULL, " +
@@ -41,17 +41,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 DatabaseContract.CompleteGoals.COLUMN_DEADLINE_TIME + " TEXT NOT NULL " +
                 " );";
 
+        final String SQL_CREATE_GRIT_SCORES_TABLE = "CREATE TABLE " + DatabaseContract.GritScores.TABLENAME + " (" +
+                DatabaseContract.GritScores.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                DatabaseContract.GritScores.COLUMN_DATE_SCORED + " LONG NOT NULL, " +
+                DatabaseContract.GritScores.COLUMN_SELF_CONTROL + " INTEGER NOT NULL, " +
+                DatabaseContract.GritScores.COLUMN_SOCIAL_INTELLIGENCE + " INTEGER NOT NULL, " +
+                DatabaseContract.GritScores.COLUMN_ZEST + " INTEGER NOT NULL, " +
+                DatabaseContract.GritScores.COLUMN_GRATITUDE + " INTEGER NOT NULL, " +
+                DatabaseContract.GritScores.COLUMN_OPTIMISM + " INTEGER NOT NULL, " +
+                DatabaseContract.GritScores.COLUMN_CURIOSITY + " INTEGER NOT NULL, " +
+                DatabaseContract.GritScores.COLUMN_TOTAL_SCORE + " INTEGER NOT NULL " +
+                " );";
+
         db.execSQL(SQL_CREATE_INCOMPLETE_GOALS_TABLE);
-        db.execSQL(SQL_CREATE_SPEED_AND_TOUCH_TABLE);
-        Log.v("Databse", "Successfully Created Tables");
+        db.execSQL(SQL_CREATE_COMPLETE_GOALS_TABLE);
+        db.execSQL(SQL_CREATE_GRIT_SCORES_TABLE);
+        Log.v("Database", "Successfully Created Tables");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + DatabaseContract.CompleteGoals.TABLENAME);
         db.execSQL("DROP TABLE IF EXISTS " + DatabaseContract.IncompleteGoals.TABLENAME);
-        Log.v("Databse", "all tables dropped!!");
+        db.execSQL("DROP TABLE IF EXISTS " + DatabaseContract.GritScores.TABLENAME);
+        Log.v("Database", "All Tables Dropped");
         onCreate(db);
-
     }
 }

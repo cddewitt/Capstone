@@ -14,9 +14,9 @@ public class GritTest {
     private int optimism;
     private int curiosity;
 
-    private int[] gritTestInfo;
-
     private int totalGritScore;
+
+    private int[] gritTestInfo;
 
     private DatabaseContract dbConnection;
 
@@ -30,9 +30,9 @@ public class GritTest {
         optimism = 0;
         curiosity = 0;
 
-        gritTestInfo = new int[6];
-
         totalGritScore = 0;
+
+        gritTestInfo = new int[6];
 
         dbConnection = new DatabaseContract();
 
