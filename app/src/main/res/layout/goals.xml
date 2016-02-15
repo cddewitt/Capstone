@@ -24,12 +24,4 @@
         android:onClick="btnHistoryClick"
         android:text="History" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="134dp"
-        android:text="A list of current goals will appear here" />
 </RelativeLayout>

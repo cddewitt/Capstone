@@ -5,14 +5,18 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -55,15 +59,21 @@ public class GoalsActivity extends AppCompatActivity {
         DatabaseHelper helper = new DatabaseHelper(getApplicationContext());
         SQLiteDatabase db = helper.getWritableDatabase();
         Cursor cursor = db.query(DatabaseContract.IncompleteGoals.TABLENAME, null, null, null, null, null, null);
-        ArrayList<String> wishes = new ArrayList<String>();
         if (cursor != null)//check to see if we got any result back
         {
-            while (cursor.moveToNext()) {
-                wishes.add(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_WISH)));
-            }
-            ListAdapter la = new ArrayAdapter<String>(this, R.layout.listitme_goal, wishes);
+            String[] fields=new String[]{DatabaseContract.IncompleteGoals.COLUMN_ID,DatabaseContract.IncompleteGoals.COLUMN_WISH};
+            int[] textViewIDs= new int[]{R.id.tbxListItemID,R.id.tbxListItemWish};
+            SimpleCursorAdapter ca = new SimpleCursorAdapter(getApplicationContext(),R.layout.listitme_goal,cursor,fields,textViewIDs,0);
             ListView lv = (ListView) findViewById(R.id.listViewGoals);
-            lv.setAdapter(la);
+           lv.setAdapter(ca);
+           lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+               @Override
+               public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Intent intent = new Intent(getApplicationContext(),GoalDetailActivity.class);
+                  intent.putExtra("RowID",String.valueOf(id));
+                  startActivity(intent);
+                }
+            });
 
         }
     }
