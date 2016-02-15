@@ -27,7 +27,7 @@
         android:text="Your wish is "
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000"
-        android:textSize="28dp" />
+        android:textSize="24dp" />
 
     <TextView
         android:id="@+id/theBestOutcomeIsTextView"
@@ -41,7 +41,7 @@
         android:text="The best outcome is "
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000"
-        android:textSize="28dp" />
+        android:textSize="24dp" />
 
     <TextView
         android:id="@+id/theMainObstacleIsTextView"
@@ -55,7 +55,7 @@
         android:text="The main obstacle is "
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000"
-        android:textSize="28dp" />
+        android:textSize="24dp" />
 
     <TextView
         android:id="@+id/yourPlanToCombatItIsTextView"
@@ -69,7 +69,7 @@
         android:text="Your plan to combat it is "
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000"
-        android:textSize="28dp" />
+        android:textSize="24dp" />
 
     <TextView
         android:id="@+id/yourDeadlineIsTextView"
@@ -83,7 +83,7 @@
         android:text="Your deadline is "
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000"
-        android:textSize="28dp" />
+        android:textSize="24dp" />
 
     <Button
         android:id="@+id/saveYourWoopButton"
