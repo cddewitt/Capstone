@@ -18,30 +18,30 @@ public class DeadlineActivity extends AppCompatActivity {
     private String outcome = "";
     private String obstacle = "";
     private String plan = "";
-    private DatePicker datePicker;
-    private TimePicker timePicker;
+    private TextView dateEditText;
+    private TextView timeEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Character Strength Builder");
         setContentView(R.layout.woop_deadline);
-        datePicker = (DatePicker) findViewById(R.id.datePicker);
-        timePicker = (TimePicker) findViewById(R.id.timePicker);
+        dateEditText = (TextView) findViewById(R.id.dateEditText);
+        timeEditText = (TextView) findViewById(R.id.timeEditText);
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             wish = extras.getString("Wish");
             outcome = extras.getString("Outcome");
             obstacle = extras.getString("Obstacle");
             plan = extras.getString("Plan");
-            Toast toast = Toast.makeText(getApplicationContext(), "Obstacles: "+obstacle, Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(getApplicationContext(), "Obstacle: " + obstacle, Toast.LENGTH_LONG);
             toast.show();
         }
     }
 
     public void reviewYourWoopButtonClick(View v) {
-        String deadlineDate = datePicker.toString();
-        String deadlineTime = timePicker.toString();
+        String deadlineDate = dateEditText.getText().toString();
+        String deadlineTime = timeEditText.getText().toString();
         if (deadlineDate.equals("") || deadlineTime.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Please select a deadline date and/or time.", Toast.LENGTH_LONG);
             toast.show();
