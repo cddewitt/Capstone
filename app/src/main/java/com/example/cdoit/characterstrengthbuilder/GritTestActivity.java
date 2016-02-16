@@ -1,11 +1,15 @@
 package com.example.cdoit.characterstrengthbuilder;
 
+import android.content.ContentValues;
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -13,10 +17,19 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
 public class GritTestActivity extends AppCompatActivity {
+
+    private int selfControl;
+    private int socialIntelligence;
+    private int zest;
+    private int gratitude;
+    private int optimism;
+    private int curiosity;
+    private int totalScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -760,6 +773,7 @@ public class GritTestActivity extends AppCompatActivity {
 
         Button submitGritTestResponsesButton = new Button(this);
         submitGritTestResponsesButton.setText("Submit Responses");
+        submitGritTestResponsesButton.setOnClickListener((View.OnClickListener) this);
         submitGritTestResponsesButton.setId(View.generateViewId());
         RelativeLayout.LayoutParams submitGritTestResponsesButtonParams = new RelativeLayout.LayoutParams(200, RelativeLayout.LayoutParams.WRAP_CONTENT);
         submitGritTestResponsesButtonParams.addRule(RelativeLayout.BELOW, item12RadioGroup.getId());
@@ -767,6 +781,46 @@ public class GritTestActivity extends AppCompatActivity {
         relativeLayout.addView(submitGritTestResponsesButton, submitGritTestResponsesButtonParams);
 
         scrollView.addView(relativeLayout);
+    }
+
+    public void onClick(View v) {
+        Log.v("Submit Grit Test Responses", "in click");
+
+        selfControl = 0;
+        socialIntelligence = 0;
+        zest = 0;
+        gratitude = 0;
+        optimism = 0;
+        curiosity = 0;
+        totalScore = 0;
+
+        long row = insertGritScoreData();
+        if (row != -1) {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            Toast toast = Toast.makeText(this, "Grit Test responses successfully saved!", Toast.LENGTH_LONG);
+            toast.show();
+        } else {
+            Toast toast = Toast.makeText(this, "Unable to save Grit Test responses.", Toast.LENGTH_LONG);
+            toast.show();
+        }
+    }
+
+    private long insertGritScoreData() {
+        DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
+        SQLiteDatabase database = databaseHelper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(DatabaseContract.GritScores.COLUMN_DATE_SCORED, System.currentTimeMillis());
+        contentValues.put(DatabaseContract.GritScores.COLUMN_SELF_CONTROL, selfControl);
+        contentValues.put(DatabaseContract.GritScores.COLUMN_SOCIAL_INTELLIGENCE, socialIntelligence);
+        contentValues.put(DatabaseContract.GritScores.COLUMN_ZEST, zest);
+        contentValues.put(DatabaseContract.GritScores.COLUMN_GRATITUDE, gratitude);
+        contentValues.put(DatabaseContract.GritScores.COLUMN_OPTIMISM, optimism);
+        contentValues.put(DatabaseContract.GritScores.COLUMN_CURIOSITY, curiosity);
+        contentValues.put(DatabaseContract.GritScores.COLUMN_TOTAL_SCORE, totalScore);
+
+        return database.insert(DatabaseContract.GritScores.TABLENAME, null, contentValues);
     }
 
 }
