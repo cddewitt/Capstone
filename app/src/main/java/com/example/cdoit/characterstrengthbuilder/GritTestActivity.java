@@ -788,8 +788,11 @@ public class GritTestActivity extends AppCompatActivity implements View.OnClickL
         submitGritTestResponsesButton.setText("Submit Responses");
         submitGritTestResponsesButton.setOnClickListener(this);
         submitGritTestResponsesButton.setId(View.generateViewId());
-        RelativeLayout.LayoutParams submitGritTestResponsesButtonParams = new RelativeLayout.LayoutParams(200, RelativeLayout.LayoutParams.WRAP_CONTENT);
+        RelativeLayout.LayoutParams submitGritTestResponsesButtonParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, 200);
         submitGritTestResponsesButtonParams.addRule(RelativeLayout.BELOW, item12RadioGroup.getId());
+        submitGritTestResponsesButtonParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+        submitGritTestResponsesButtonParams.addRule(RelativeLayout.ALIGN_PARENT_END);
+        submitGritTestResponsesButtonParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
         item12RadioGroupParams.setMargins(0, 20, 10, 10);
         relativeLayout.addView(submitGritTestResponsesButton, submitGritTestResponsesButtonParams);
 
