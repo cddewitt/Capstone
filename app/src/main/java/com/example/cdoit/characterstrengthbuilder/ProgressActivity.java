@@ -27,13 +27,13 @@ public class ProgressActivity extends AppCompatActivity {
     private void populateListView() {
         ListView lv = (ListView) findViewById(R.id.lvProgress);
         List<String> factors = new ArrayList<String>();
-        factors.add("Grit");
-        factors.add("Self-control");
+        factors.add("Self-Control");
         factors.add("Social Intelligence");
         factors.add("Zest");
         factors.add("Gratitude");
         factors.add("Optimism");
         factors.add("Curiosity");
+        factors.add("Total Grit");
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.progress_list_item, factors);
         lv.setAdapter(arrayAdapter);
     }
