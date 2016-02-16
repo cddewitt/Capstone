@@ -65,14 +65,14 @@ public class GritTestActivity extends AppCompatActivity implements View.OnClickL
         relativeLayout.addView(gritTestTextView, gritTestTextViewParams);
 
         TextView item1TextView = new TextView(this);
-        item1TextView.setText("I have overcome setbacks to conquer an important challenge.");
+        item1TextView.setText("1. I have overcome setbacks to conquer an important challenge.");
         item1TextView.setTextAppearance(this, android.R.style.TextAppearance_Small);
         item1TextView.setTextColor(Color.parseColor("#3c2f2f"));
         item1TextView.setTextSize(20);
         item1TextView.setId(View.generateViewId());
         RelativeLayout.LayoutParams item1TextViewParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         item1TextViewParams.addRule(RelativeLayout.BELOW, gritTestTextView.getId());
-        item1TextViewParams.setMargins(10, 20, 10, 0);
+        item1TextViewParams.setMargins(10, 40, 10, 0);
         relativeLayout.addView(item1TextView, item1TextViewParams);
 
         item1RadioGroup = new RadioGroup(this);
@@ -125,14 +125,14 @@ public class GritTestActivity extends AppCompatActivity implements View.OnClickL
         relativeLayout.addView(item1RadioGroup, item1RadioGroupParams);
 
         TextView item2TextView = new TextView(this);
-        item2TextView.setText("New ideas and projects sometimes distract me from previous ones.");
+        item2TextView.setText("2. New ideas and projects sometimes distract me from previous ones.");
         item2TextView.setTextAppearance(this, android.R.style.TextAppearance_Small);
         item2TextView.setTextColor(Color.parseColor("#3c2f2f"));
         item2TextView.setTextSize(20);
         item2TextView.setId(View.generateViewId());
         RelativeLayout.LayoutParams item2TextViewParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         item2TextViewParams.addRule(RelativeLayout.BELOW, item1RadioGroup.getId());
-        item2TextViewParams.setMargins(10, 20, 10, 0);
+        item2TextViewParams.setMargins(10, 40, 10, 0);
         relativeLayout.addView(item2TextView, item2TextViewParams);
 
         item2RadioGroup = new RadioGroup(this);
@@ -185,14 +185,14 @@ public class GritTestActivity extends AppCompatActivity implements View.OnClickL
         relativeLayout.addView(item2RadioGroup, item2RadioGroupParams);
 
         TextView item3TextView = new TextView(this);
-        item3TextView.setText("My interests change from year to year.");
+        item3TextView.setText("3. My interests change from year to year.");
         item3TextView.setTextAppearance(this, android.R.style.TextAppearance_Small);
         item3TextView.setTextColor(Color.parseColor("#3c2f2f"));
         item3TextView.setTextSize(20);
         item3TextView.setId(View.generateViewId());
         RelativeLayout.LayoutParams item3TextViewParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         item3TextViewParams.addRule(RelativeLayout.BELOW, item2RadioGroup.getId());
-        item3TextViewParams.setMargins(10, 20, 10, 0);
+        item3TextViewParams.setMargins(10, 40, 10, 0);
         relativeLayout.addView(item3TextView, item3TextViewParams);
 
         item3RadioGroup = new RadioGroup(this);
@@ -245,14 +245,14 @@ public class GritTestActivity extends AppCompatActivity implements View.OnClickL
         relativeLayout.addView(item3RadioGroup, item3RadioGroupParams);
 
         TextView item4TextView = new TextView(this);
-        item4TextView.setText("Setbacks don't discourage me.");
+        item4TextView.setText("4. Setbacks don't discourage me.");
         item4TextView.setTextAppearance(this, android.R.style.TextAppearance_Small);
         item4TextView.setTextColor(Color.parseColor("#3c2f2f"));
         item4TextView.setTextSize(20);
         item4TextView.setId(View.generateViewId());
         RelativeLayout.LayoutParams item4TextViewParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         item4TextViewParams.addRule(RelativeLayout.BELOW, item3RadioGroup.getId());
-        item4TextViewParams.setMargins(10, 20, 10, 0);
+        item4TextViewParams.setMargins(10, 40, 10, 0);
         relativeLayout.addView(item4TextView, item4TextViewParams);
 
         item4RadioGroup = new RadioGroup(this);
@@ -305,14 +305,14 @@ public class GritTestActivity extends AppCompatActivity implements View.OnClickL
         relativeLayout.addView(item4RadioGroup, item4RadioGroupParams);
 
         TextView item5TextView = new TextView(this);
-        item5TextView.setText("I have been obsessed with a certain idea or project for a short time but later lost interest.");
+        item5TextView.setText("5. I have been obsessed with a certain idea or project for a short time but later lost interest.");
         item5TextView.setTextAppearance(this, android.R.style.TextAppearance_Small);
         item5TextView.setTextColor(Color.parseColor("#3c2f2f"));
         item5TextView.setTextSize(20);
         item5TextView.setId(View.generateViewId());
         RelativeLayout.LayoutParams item5TextViewParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         item5TextViewParams.addRule(RelativeLayout.BELOW, item4RadioGroup.getId());
-        item5TextViewParams.setMargins(10, 20, 10, 0);
+        item5TextViewParams.setMargins(10, 40, 10, 0);
         relativeLayout.addView(item5TextView, item5TextViewParams);
 
         item5RadioGroup = new RadioGroup(this);
@@ -365,14 +365,14 @@ public class GritTestActivity extends AppCompatActivity implements View.OnClickL
         relativeLayout.addView(item5RadioGroup, item5RadioGroupParams);
 
         TextView item6TextView = new TextView(this);
-        item6TextView.setText("I am a hard worker.");
+        item6TextView.setText("6. I am a hard worker.");
         item6TextView.setTextAppearance(this, android.R.style.TextAppearance_Small);
         item6TextView.setTextColor(Color.parseColor("#3c2f2f"));
         item6TextView.setTextSize(20);
         item6TextView.setId(View.generateViewId());
         RelativeLayout.LayoutParams item6TextViewParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         item6TextViewParams.addRule(RelativeLayout.BELOW, item5RadioGroup.getId());
-        item6TextViewParams.setMargins(10, 20, 10, 0);
+        item6TextViewParams.setMargins(10, 40, 10, 0);
         relativeLayout.addView(item6TextView, item6TextViewParams);
 
         item6RadioGroup = new RadioGroup(this);
@@ -425,14 +425,14 @@ public class GritTestActivity extends AppCompatActivity implements View.OnClickL
         relativeLayout.addView(item6RadioGroup, item6RadioGroupParams);
 
         TextView item7TextView = new TextView(this);
-        item7TextView.setText("I often set a goal but later choose to pursue a different one.");
+        item7TextView.setText("7. I often set a goal but later choose to pursue a different one.");
         item7TextView.setTextAppearance(this, android.R.style.TextAppearance_Small);
         item7TextView.setTextColor(Color.parseColor("#3c2f2f"));
         item7TextView.setTextSize(20);
         item7TextView.setId(View.generateViewId());
         RelativeLayout.LayoutParams item7TextViewParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         item7TextViewParams.addRule(RelativeLayout.BELOW, item6RadioGroup.getId());
-        item7TextViewParams.setMargins(10, 20, 10, 0);
+        item7TextViewParams.setMargins(10, 40, 10, 0);
         relativeLayout.addView(item7TextView, item7TextViewParams);
 
         item7RadioGroup = new RadioGroup(this);
@@ -485,14 +485,14 @@ public class GritTestActivity extends AppCompatActivity implements View.OnClickL
         relativeLayout.addView(item7RadioGroup, item7RadioGroupParams);
 
         TextView item8TextView = new TextView(this);
-        item8TextView.setText("I have difficulty maintaining my focus on projects that take more than a few months to complete.");
+        item8TextView.setText("8. I have difficulty maintaining my focus on projects that take more than a few months to complete.");
         item8TextView.setTextAppearance(this, android.R.style.TextAppearance_Small);
         item8TextView.setTextColor(Color.parseColor("#3c2f2f"));
         item8TextView.setTextSize(20);
         item8TextView.setId(View.generateViewId());
         RelativeLayout.LayoutParams item8TextViewParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         item8TextViewParams.addRule(RelativeLayout.BELOW, item7RadioGroup.getId());
-        item8TextViewParams.setMargins(10, 20, 10, 0);
+        item8TextViewParams.setMargins(10, 40, 10, 0);
         relativeLayout.addView(item8TextView, item8TextViewParams);
 
         item8RadioGroup = new RadioGroup(this);
@@ -545,14 +545,14 @@ public class GritTestActivity extends AppCompatActivity implements View.OnClickL
         relativeLayout.addView(item8RadioGroup, item8RadioGroupParams);
 
         TextView item9TextView = new TextView(this);
-        item9TextView.setText("I finish whatever I begin.");
+        item9TextView.setText("9. I finish whatever I begin.");
         item9TextView.setTextAppearance(this, android.R.style.TextAppearance_Small);
         item9TextView.setTextColor(Color.parseColor("#3c2f2f"));
         item9TextView.setTextSize(20);
         item9TextView.setId(View.generateViewId());
         RelativeLayout.LayoutParams item9TextViewParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         item9TextViewParams.addRule(RelativeLayout.BELOW, item8RadioGroup.getId());
-        item9TextViewParams.setMargins(10, 20, 10, 0);
+        item9TextViewParams.setMargins(10, 40, 10, 0);
         relativeLayout.addView(item9TextView, item9TextViewParams);
 
         item9RadioGroup = new RadioGroup(this);
@@ -605,14 +605,14 @@ public class GritTestActivity extends AppCompatActivity implements View.OnClickL
         relativeLayout.addView(item9RadioGroup, item9RadioGroupParams);
 
         TextView item10TextView = new TextView(this);
-        item10TextView.setText("I have achieved a goal that took years of work.");
+        item10TextView.setText("10. I have achieved a goal that took years of work.");
         item10TextView.setTextAppearance(this, android.R.style.TextAppearance_Small);
         item10TextView.setTextColor(Color.parseColor("#3c2f2f"));
         item10TextView.setTextSize(20);
         item10TextView.setId(View.generateViewId());
         RelativeLayout.LayoutParams item10TextViewParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         item10TextViewParams.addRule(RelativeLayout.BELOW, item9RadioGroup.getId());
-        item10TextViewParams.setMargins(10, 20, 10, 0);
+        item10TextViewParams.setMargins(10, 40, 10, 0);
         relativeLayout.addView(item10TextView, item10TextViewParams);
 
         item10RadioGroup = new RadioGroup(this);
@@ -665,14 +665,14 @@ public class GritTestActivity extends AppCompatActivity implements View.OnClickL
         relativeLayout.addView(item10RadioGroup, item10RadioGroupParams);
 
         TextView item11TextView = new TextView(this);
-        item11TextView.setText("I become interested in new pursuits every few months.");
+        item11TextView.setText("11. I become interested in new pursuits every few months.");
         item11TextView.setTextAppearance(this, android.R.style.TextAppearance_Small);
         item11TextView.setTextColor(Color.parseColor("#3c2f2f"));
         item11TextView.setTextSize(20);
         item11TextView.setId(View.generateViewId());
         RelativeLayout.LayoutParams item11TextViewParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         item11TextViewParams.addRule(RelativeLayout.BELOW, item10RadioGroup.getId());
-        item11TextViewParams.setMargins(10, 20, 10, 0);
+        item11TextViewParams.setMargins(10, 40, 10, 0);
         relativeLayout.addView(item11TextView, item11TextViewParams);
 
         item11RadioGroup = new RadioGroup(this);
@@ -725,14 +725,14 @@ public class GritTestActivity extends AppCompatActivity implements View.OnClickL
         relativeLayout.addView(item11RadioGroup, item11RadioGroupParams);
 
         TextView item12TextView = new TextView(this);
-        item12TextView.setText("I am diligent.");
+        item12TextView.setText("12. I am diligent.");
         item12TextView.setTextAppearance(this, android.R.style.TextAppearance_Small);
         item12TextView.setTextColor(Color.parseColor("#3c2f2f"));
         item12TextView.setTextSize(20);
         item12TextView.setId(View.generateViewId());
         RelativeLayout.LayoutParams item12TextViewParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         item12TextViewParams.addRule(RelativeLayout.BELOW, item11RadioGroup.getId());
-        item12TextViewParams.setMargins(10, 20, 10, 0);
+        item12TextViewParams.setMargins(10, 40, 10, 0);
         relativeLayout.addView(item12TextView, item12TextViewParams);
 
         item12RadioGroup = new RadioGroup(this);
@@ -786,14 +786,13 @@ public class GritTestActivity extends AppCompatActivity implements View.OnClickL
 
         Button submitGritTestResponsesButton = new Button(this);
         submitGritTestResponsesButton.setText("Submit Responses");
+        submitGritTestResponsesButton.setBackgroundColor(Color.WHITE);
         submitGritTestResponsesButton.setOnClickListener(this);
         submitGritTestResponsesButton.setId(View.generateViewId());
         RelativeLayout.LayoutParams submitGritTestResponsesButtonParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, 200);
         submitGritTestResponsesButtonParams.addRule(RelativeLayout.BELOW, item12RadioGroup.getId());
-        submitGritTestResponsesButtonParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-        submitGritTestResponsesButtonParams.addRule(RelativeLayout.ALIGN_PARENT_END);
         submitGritTestResponsesButtonParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-        item12RadioGroupParams.setMargins(0, 20, 10, 10);
+        submitGritTestResponsesButtonParams.setMargins(0, 40, 20, 20);
         relativeLayout.addView(submitGritTestResponsesButton, submitGritTestResponsesButtonParams);
 
         scrollView.addView(relativeLayout);

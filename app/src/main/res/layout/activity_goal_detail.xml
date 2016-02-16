@@ -10,117 +10,116 @@
     tools:context="com.example.cdoit.characterstrengthbuilder.GoalDetailActivity">
 
     <TextView
+        android:id="@+id/lblDetailWish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Wish:"
-        android:id="@+id/lblDeatailWish"
-        android:textSize="25dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/tbxDetailWish"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/lblDeatailWish"
-        android:textSize="25dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Outcome: "
-        android:id="@+id/lblDetailOutcome"
-        android:layout_below="@+id/lblDeatailWish"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="56dp"
-        android:textSize="25dp" />
+        android:layout_alignParentTop="true"
+        android:text="Wish: "
+        android:textSize="24dp" />
 
     <TextView
+        android:id="@+id/tbxDetailWish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/lblDetailWish"
         android:text="New Text"
+        android:textSize="24dp" />
+
+    <TextView
+        android:id="@+id/lblDetailOutcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/lblDetailWish"
+        android:layout_marginTop="50dp"
+        android:text="Outcome: "
+        android:textSize="24dp" />
+
+    <TextView
         android:id="@+id/tbxDetailOutcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignTop="@+id/lblDetailOutcome"
         android:layout_toRightOf="@+id/lblDetailOutcome"
-        android:textSize="25dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Obstacles: "
-        android:id="@+id/lblDetailObstacles"
-        android:layout_below="@+id/lblDetailOutcome"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="52dp"
-        android:textSize="25dp"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="New Text"
+        android:textSize="24dp" />
+
+    <TextView
+        android:id="@+id/lblDetailObstacles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/lblDetailOutcome"
+        android:layout_marginTop="50dp"
+        android:text="Obstacle: "
+        android:textSize="24dp" />
+
+    <TextView
         android:id="@+id/tbxDetailObstacles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignTop="@+id/lblDetailObstacles"
         android:layout_toRightOf="@+id/lblDetailObstacles"
-        android:textSize="25dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Plan: "
-        android:id="@+id/lblDetailPlan"
-        android:layout_below="@+id/lblDetailObstacles"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="58dp"
-        android:textSize="25dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="New Text"
+        android:textSize="24dp" />
+
+    <TextView
+        android:id="@+id/lblDetailPlan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/lblDetailObstacles"
+        android:layout_marginTop="50dp"
+        android:text="Plan: "
+        android:textSize="24dp" />
+
+    <TextView
         android:id="@+id/tbxDetailPlan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignTop="@+id/lblDetailPlan"
         android:layout_toRightOf="@+id/lblDetailPlan"
-        android:textSize="25dp" />
+        android:text="New Text"
+        android:textSize="24dp" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Completion Date:"
         android:id="@+id/lblDetailDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:layout_below="@+id/lblDetailPlan"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="54dp"
-        android:textSize="25dp" />
+        android:layout_marginTop="50dp"
+        android:text="Deadline Date: "
+        android:textSize="24dp" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
         android:id="@+id/tbxDetailDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/lblDetailDate"
         android:layout_toRightOf="@+id/lblDetailDate"
-        android:textSize="25dp"
-        android:layout_above="@+id/lblDetailDateCreated"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Date Created: "
-        android:id="@+id/lblDetailDateCreated"
-        android:textSize="25dp"
-        android:layout_below="@+id/lblDetailDate"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="30dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="New Text"
-        android:id="@+id/tbxDetailDateCreated"
-        android:layout_alignTop="@+id/lblDetailDateCreated"
-        android:layout_toRightOf="@+id/lblDetailDateCreated"
-        android:textSize="25dp" />
+        android:textSize="24dp" />
+
+    <TextView
+        android:id="@+id/lblDetailTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/lblDetailDate"
+        android:layout_marginTop="50dp"
+        android:text="Deadline Time: "
+        android:textSize="24dp" />
+
+    <TextView
+        android:id="@+id/tbxDetailTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/lblDetailTime"
+        android:layout_toRightOf="@+id/lblDetailTime"
+        android:text="New Text"
+        android:textSize="24dp" />
+
 </RelativeLayout>

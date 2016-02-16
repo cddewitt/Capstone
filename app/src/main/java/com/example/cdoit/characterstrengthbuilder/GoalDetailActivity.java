@@ -17,7 +17,7 @@ public class GoalDetailActivity extends AppCompatActivity {
     private TextView tbxObstacles;
     private TextView tbxPlan;
     private TextView tbxDate;
-    private TextView tbxDateCreated;
+    private TextView tbxTime;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,29 +27,25 @@ public class GoalDetailActivity extends AppCompatActivity {
         grabTextViews();
         String rowID = extras.getString("RowID");
         DatabaseHelper helper = new DatabaseHelper(getApplicationContext());
-        SQLiteDatabase db= helper.getWritableDatabase();
-        Cursor cursor = db.query(DatabaseContract.IncompleteGoals.TABLENAME,null,DatabaseContract.IncompleteGoals.COLUMN_ID+"="+rowID,null,null,null,null);
-        if(cursor.moveToFirst())
-        {
+        SQLiteDatabase db = helper.getWritableDatabase();
+        Cursor cursor = db.query(DatabaseContract.IncompleteGoals.TABLENAME, null, DatabaseContract.IncompleteGoals.COLUMN_ID + "=" + rowID, null, null, null, null);
+        if (cursor.moveToFirst()) {
             tbxWish.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_WISH)));
             tbxOutcome.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_OUTCOME)));
             tbxObstacles.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_OBSTACLE)));
             tbxPlan.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_PLAN)));
-            long dateCreated = cursor.getLong(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_DATE_CREATED));
-            Calendar cal = Calendar.getInstance();
-            cal.setTimeInMillis(dateCreated);
-            tbxDateCreated.setText(cal.get(Calendar.MONTH) + "/" + cal.get(Calendar.DAY_OF_MONTH));
             tbxDate.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_DATE)));
+            tbxTime.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_TIME)));
         }
 
     }
 
     private void grabTextViews() {
-        tbxWish=(TextView)findViewById(R.id.tbxDetailWish);
-        tbxDate=(TextView)findViewById(R.id.tbxDetailDate);
-        tbxObstacles=(TextView)findViewById(R.id.tbxDetailObstacles);
-        tbxPlan=(TextView)findViewById(R.id.tbxDetailPlan);
-        tbxOutcome=(TextView)findViewById(R.id.tbxDetailOutcome);
-        tbxDateCreated=(TextView)findViewById(R.id.tbxDetailDateCreated);
+        tbxWish = (TextView) findViewById(R.id.tbxDetailWish);
+        tbxOutcome = (TextView) findViewById(R.id.tbxDetailOutcome);
+        tbxObstacles = (TextView) findViewById(R.id.tbxDetailObstacles);
+        tbxPlan = (TextView) findViewById(R.id.tbxDetailPlan);
+        tbxDate = (TextView) findViewById(R.id.tbxDetailDate);
+        tbxTime = (TextView) findViewById(R.id.tbxDetailTime);
     }
 }
