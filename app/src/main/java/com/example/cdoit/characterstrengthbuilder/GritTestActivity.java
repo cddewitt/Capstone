@@ -21,7 +21,7 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
-public class GritTestActivity extends AppCompatActivity {
+public class GritTestActivity extends AppCompatActivity implements View.OnClickListener {
 
     private RadioGroup item1RadioGroup;
     private RadioGroup item2RadioGroup;
@@ -786,7 +786,7 @@ public class GritTestActivity extends AppCompatActivity {
 
         Button submitGritTestResponsesButton = new Button(this);
         submitGritTestResponsesButton.setText("Submit Responses");
-        submitGritTestResponsesButton.setOnClickListener((View.OnClickListener) this);
+        submitGritTestResponsesButton.setOnClickListener(this);
         submitGritTestResponsesButton.setId(View.generateViewId());
         RelativeLayout.LayoutParams submitGritTestResponsesButtonParams = new RelativeLayout.LayoutParams(200, RelativeLayout.LayoutParams.WRAP_CONTENT);
         submitGritTestResponsesButtonParams.addRule(RelativeLayout.BELOW, item12RadioGroup.getId());
@@ -796,8 +796,9 @@ public class GritTestActivity extends AppCompatActivity {
         scrollView.addView(relativeLayout);
     }
 
+    @Override
     public void onClick(View v) {
-        Log.v("Submit Grit Test Responses", "in click");
+        Log.v("Submit Grit Test", "in click");
 
         selfControl = 0;
         socialIntelligence = 0;
