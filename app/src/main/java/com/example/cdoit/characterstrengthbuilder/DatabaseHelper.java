@@ -44,13 +44,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         final String SQL_CREATE_GRIT_SCORES_TABLE = "CREATE TABLE " + DatabaseContract.GritScores.TABLENAME + " (" +
                 DatabaseContract.GritScores.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 DatabaseContract.GritScores.COLUMN_DATE_SCORED + " LONG NOT NULL, " +
-                DatabaseContract.GritScores.COLUMN_SELF_CONTROL + " INTEGER NOT NULL, " +
-                DatabaseContract.GritScores.COLUMN_SOCIAL_INTELLIGENCE + " INTEGER NOT NULL, " +
-                DatabaseContract.GritScores.COLUMN_ZEST + " INTEGER NOT NULL, " +
-                DatabaseContract.GritScores.COLUMN_GRATITUDE + " INTEGER NOT NULL, " +
-                DatabaseContract.GritScores.COLUMN_OPTIMISM + " INTEGER NOT NULL, " +
-                DatabaseContract.GritScores.COLUMN_CURIOSITY + " INTEGER NOT NULL, " +
-                DatabaseContract.GritScores.COLUMN_TOTAL_SCORE + " INTEGER NOT NULL " +
+                DatabaseContract.GritScores.COLUMN_SELF_CONTROL + " DOUBLE NOT NULL, " +
+                DatabaseContract.GritScores.COLUMN_SOCIAL_INTELLIGENCE + " DOUBLE NOT NULL, " +
+                DatabaseContract.GritScores.COLUMN_ZEST + " DOUBLE NOT NULL, " +
+                DatabaseContract.GritScores.COLUMN_GRATITUDE + " DOUBLE NOT NULL, " +
+                DatabaseContract.GritScores.COLUMN_OPTIMISM + " DOUBLE NOT NULL, " +
+                DatabaseContract.GritScores.COLUMN_CURIOSITY + " DOUBLE NOT NULL, " +
+                DatabaseContract.GritScores.COLUMN_TOTAL_SCORE + " DOUBLE NOT NULL " +
                 " );";
 
         db.execSQL(SQL_CREATE_INCOMPLETE_GOALS_TABLE);

@@ -7,16 +7,16 @@ import org.json.JSONObject;
  */
 public class GritTest {
 
-    private int selfControl;
-    private int socialIntelligence;
-    private int zest;
-    private int gratitude;
-    private int optimism;
-    private int curiosity;
+    private double selfControl;
+    private double socialIntelligence;
+    private double zest;
+    private double gratitude;
+    private double optimism;
+    private double curiosity;
 
-    private int totalGritScore;
+    private double totalGritScore;
 
-    private int[] gritTestInfo;
+    private double[] gritTestInfo;
 
     private DatabaseContract dbConnection;
 
@@ -32,7 +32,7 @@ public class GritTest {
 
         totalGritScore = 0;
 
-        gritTestInfo = new int[6];
+        gritTestInfo = new double[6];
 
         dbConnection = new DatabaseContract();
 
@@ -63,52 +63,60 @@ public class GritTest {
 //
 //    }
 
-    private void setSelfControl(int selfControl) {
+    private void setSelfControl(double selfControl) {
         this.selfControl = selfControl;
     }
 
-    private void setSocialIntelligence(int socialIntelligence) {
+    private void setSocialIntelligence(double socialIntelligence) {
         this.socialIntelligence = socialIntelligence;
     }
 
-    private void setZest(int zest) {
+    private void setZest(double zest) {
         this.zest = zest;
     }
 
-    private void setGratitude(int gratitude) {
+    private void setGratitude(double gratitude) {
         this.gratitude = gratitude;
     }
 
-    private void setOptimism(int optimism) {
+    private void setOptimism(double optimism) {
         this.optimism = optimism;
     }
 
-    private void setCuriosity(int curiosity) {
+    private void setCuriosity(double curiosity) {
         this.curiosity = curiosity;
     }
 
-    private int getSelfControl() {
+    private void setTotalGritScore(double totalGritScore) {
+        this.totalGritScore = totalGritScore;
+    }
+
+    private double getSelfControl() {
         return selfControl;
     }
 
-    private int getSocialIntelligence() {
+    private double getSocialIntelligence() {
         return socialIntelligence;
     }
 
-    private int getZest() {
+    private double getZest() {
         return zest;
     }
 
-    private int getGratitude() {
+    private double getGratitude() {
         return gratitude;
     }
 
-    private int getOptimism() {
+    private double getOptimism() {
         return optimism;
     }
 
-    private int getCuriosity() {
+    private double getCuriosity() {
         return curiosity;
+    }
+
+    private double getTotalGritScore() {
+        return totalGritScore;
     }
 
 }

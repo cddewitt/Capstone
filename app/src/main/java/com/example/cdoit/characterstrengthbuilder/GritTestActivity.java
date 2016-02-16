@@ -23,13 +23,26 @@ import org.w3c.dom.Text;
 
 public class GritTestActivity extends AppCompatActivity {
 
-    private int selfControl;
-    private int socialIntelligence;
-    private int zest;
-    private int gratitude;
-    private int optimism;
-    private int curiosity;
-    private int totalScore;
+    private RadioGroup item1RadioGroup;
+    private RadioGroup item2RadioGroup;
+    private RadioGroup item3RadioGroup;
+    private RadioGroup item4RadioGroup;
+    private RadioGroup item5RadioGroup;
+    private RadioGroup item6RadioGroup;
+    private RadioGroup item7RadioGroup;
+    private RadioGroup item8RadioGroup;
+    private RadioGroup item9RadioGroup;
+    private RadioGroup item10RadioGroup;
+    private RadioGroup item11RadioGroup;
+    private RadioGroup item12RadioGroup;
+
+    private double selfControl;
+    private double socialIntelligence;
+    private double zest;
+    private double gratitude;
+    private double optimism;
+    private double curiosity;
+    private double totalScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +75,7 @@ public class GritTestActivity extends AppCompatActivity {
         item1TextViewParams.setMargins(10, 20, 10, 0);
         relativeLayout.addView(item1TextView, item1TextViewParams);
 
-        RadioGroup item1RadioGroup = new RadioGroup(this);
+        item1RadioGroup = new RadioGroup(this);
         item1RadioGroup.setOrientation(RadioGroup.VERTICAL);
 
         RadioButton item1Answer1 = new RadioButton(this);
@@ -122,7 +135,7 @@ public class GritTestActivity extends AppCompatActivity {
         item2TextViewParams.setMargins(10, 20, 10, 0);
         relativeLayout.addView(item2TextView, item2TextViewParams);
 
-        RadioGroup item2RadioGroup = new RadioGroup(this);
+        item2RadioGroup = new RadioGroup(this);
         item2RadioGroup.setOrientation(RadioGroup.VERTICAL);
 
         RadioButton item2Answer1 = new RadioButton(this);
@@ -182,7 +195,7 @@ public class GritTestActivity extends AppCompatActivity {
         item3TextViewParams.setMargins(10, 20, 10, 0);
         relativeLayout.addView(item3TextView, item3TextViewParams);
 
-        RadioGroup item3RadioGroup = new RadioGroup(this);
+        item3RadioGroup = new RadioGroup(this);
         item3RadioGroup.setOrientation(RadioGroup.VERTICAL);
 
         RadioButton item3Answer1 = new RadioButton(this);
@@ -242,7 +255,7 @@ public class GritTestActivity extends AppCompatActivity {
         item4TextViewParams.setMargins(10, 20, 10, 0);
         relativeLayout.addView(item4TextView, item4TextViewParams);
 
-        RadioGroup item4RadioGroup = new RadioGroup(this);
+        item4RadioGroup = new RadioGroup(this);
         item4RadioGroup.setOrientation(RadioGroup.VERTICAL);
 
         RadioButton item4Answer1 = new RadioButton(this);
@@ -302,7 +315,7 @@ public class GritTestActivity extends AppCompatActivity {
         item5TextViewParams.setMargins(10, 20, 10, 0);
         relativeLayout.addView(item5TextView, item5TextViewParams);
 
-        RadioGroup item5RadioGroup = new RadioGroup(this);
+        item5RadioGroup = new RadioGroup(this);
         item5RadioGroup.setOrientation(RadioGroup.VERTICAL);
 
         RadioButton item5Answer1 = new RadioButton(this);
@@ -362,7 +375,7 @@ public class GritTestActivity extends AppCompatActivity {
         item6TextViewParams.setMargins(10, 20, 10, 0);
         relativeLayout.addView(item6TextView, item6TextViewParams);
 
-        RadioGroup item6RadioGroup = new RadioGroup(this);
+        item6RadioGroup = new RadioGroup(this);
         item6RadioGroup.setOrientation(RadioGroup.VERTICAL);
 
         RadioButton item6Answer1 = new RadioButton(this);
@@ -422,7 +435,7 @@ public class GritTestActivity extends AppCompatActivity {
         item7TextViewParams.setMargins(10, 20, 10, 0);
         relativeLayout.addView(item7TextView, item7TextViewParams);
 
-        RadioGroup item7RadioGroup = new RadioGroup(this);
+        item7RadioGroup = new RadioGroup(this);
         item7RadioGroup.setOrientation(RadioGroup.VERTICAL);
 
         RadioButton item7Answer1 = new RadioButton(this);
@@ -482,7 +495,7 @@ public class GritTestActivity extends AppCompatActivity {
         item8TextViewParams.setMargins(10, 20, 10, 0);
         relativeLayout.addView(item8TextView, item8TextViewParams);
 
-        RadioGroup item8RadioGroup = new RadioGroup(this);
+        item8RadioGroup = new RadioGroup(this);
         item8RadioGroup.setOrientation(RadioGroup.VERTICAL);
 
         RadioButton item8Answer1 = new RadioButton(this);
@@ -542,7 +555,7 @@ public class GritTestActivity extends AppCompatActivity {
         item9TextViewParams.setMargins(10, 20, 10, 0);
         relativeLayout.addView(item9TextView, item9TextViewParams);
 
-        RadioGroup item9RadioGroup = new RadioGroup(this);
+        item9RadioGroup = new RadioGroup(this);
         item9RadioGroup.setOrientation(RadioGroup.VERTICAL);
 
         RadioButton item9Answer1 = new RadioButton(this);
@@ -602,7 +615,7 @@ public class GritTestActivity extends AppCompatActivity {
         item10TextViewParams.setMargins(10, 20, 10, 0);
         relativeLayout.addView(item10TextView, item10TextViewParams);
 
-        RadioGroup item10RadioGroup = new RadioGroup(this);
+        item10RadioGroup = new RadioGroup(this);
         item10RadioGroup.setOrientation(RadioGroup.VERTICAL);
 
         RadioButton item10Answer1 = new RadioButton(this);
@@ -662,7 +675,7 @@ public class GritTestActivity extends AppCompatActivity {
         item11TextViewParams.setMargins(10, 20, 10, 0);
         relativeLayout.addView(item11TextView, item11TextViewParams);
 
-        RadioGroup item11RadioGroup = new RadioGroup(this);
+        item11RadioGroup = new RadioGroup(this);
         item11RadioGroup.setOrientation(RadioGroup.VERTICAL);
 
         RadioButton item11Answer1 = new RadioButton(this);
@@ -722,7 +735,7 @@ public class GritTestActivity extends AppCompatActivity {
         item12TextViewParams.setMargins(10, 20, 10, 0);
         relativeLayout.addView(item12TextView, item12TextViewParams);
 
-        RadioGroup item12RadioGroup = new RadioGroup(this);
+        item12RadioGroup = new RadioGroup(this);
         item12RadioGroup.setOrientation(RadioGroup.VERTICAL);
 
         RadioButton item12Answer1 = new RadioButton(this);
@@ -793,6 +806,123 @@ public class GritTestActivity extends AppCompatActivity {
         optimism = 0;
         curiosity = 0;
         totalScore = 0;
+
+        if (item1RadioGroup.getCheckedRadioButtonId() != -1) {
+            int item1CheckedId = item1RadioGroup.getCheckedRadioButtonId();
+            RadioButton checkedRadioButton = (RadioButton) item1RadioGroup.findViewById(item1CheckedId);
+            int checkedRadioButtonIndex = item1RadioGroup.indexOfChild(checkedRadioButton);
+            RadioButton selectedRadioButton = (RadioButton) item1RadioGroup.getChildAt(checkedRadioButtonIndex);
+            int correspondingValue = Integer.parseInt(selectedRadioButton.getTag().toString());
+            selfControl += correspondingValue;
+            totalScore += correspondingValue;
+        }
+        if (item2RadioGroup.getCheckedRadioButtonId() != -1) {
+            int item2CheckedId = item2RadioGroup.getCheckedRadioButtonId();
+            RadioButton checkedRadioButton = (RadioButton) item2RadioGroup.findViewById(item2CheckedId);
+            int checkedRadioButtonIndex = item2RadioGroup.indexOfChild(checkedRadioButton);
+            RadioButton selectedRadioButton = (RadioButton) item2RadioGroup.getChildAt(checkedRadioButtonIndex);
+            int correspondingValue = Integer.parseInt(selectedRadioButton.getTag().toString());
+            selfControl += correspondingValue;
+            totalScore += correspondingValue;
+        }
+        if (item3RadioGroup.getCheckedRadioButtonId() != -1) {
+            int item3CheckedId = item3RadioGroup.getCheckedRadioButtonId();
+            RadioButton checkedRadioButton = (RadioButton) item3RadioGroup.findViewById(item3CheckedId);
+            int checkedRadioButtonIndex = item3RadioGroup.indexOfChild(checkedRadioButton);
+            RadioButton selectedRadioButton = (RadioButton) item3RadioGroup.getChildAt(checkedRadioButtonIndex);
+            int correspondingValue = Integer.parseInt(selectedRadioButton.getTag().toString());
+            socialIntelligence += correspondingValue;
+            totalScore += correspondingValue;
+        }
+        if (item4RadioGroup.getCheckedRadioButtonId() != -1) {
+            int item4CheckedId = item4RadioGroup.getCheckedRadioButtonId();
+            RadioButton checkedRadioButton = (RadioButton) item4RadioGroup.findViewById(item4CheckedId);
+            int checkedRadioButtonIndex = item4RadioGroup.indexOfChild(checkedRadioButton);
+            RadioButton selectedRadioButton = (RadioButton) item4RadioGroup.getChildAt(checkedRadioButtonIndex);
+            int correspondingValue = Integer.parseInt(selectedRadioButton.getTag().toString());
+            socialIntelligence += correspondingValue;
+            totalScore += correspondingValue;
+        }
+        if (item5RadioGroup.getCheckedRadioButtonId() != -1) {
+            int item5CheckedId = item5RadioGroup.getCheckedRadioButtonId();
+            RadioButton checkedRadioButton = (RadioButton) item5RadioGroup.findViewById(item5CheckedId);
+            int checkedRadioButtonIndex = item5RadioGroup.indexOfChild(checkedRadioButton);
+            RadioButton selectedRadioButton = (RadioButton) item5RadioGroup.getChildAt(checkedRadioButtonIndex);
+            int correspondingValue = Integer.parseInt(selectedRadioButton.getTag().toString());
+            zest += correspondingValue;
+            totalScore += correspondingValue;
+        }
+        if (item6RadioGroup.getCheckedRadioButtonId() != -1) {
+            int item6CheckedId = item6RadioGroup.getCheckedRadioButtonId();
+            RadioButton checkedRadioButton = (RadioButton) item6RadioGroup.findViewById(item6CheckedId);
+            int checkedRadioButtonIndex = item6RadioGroup.indexOfChild(checkedRadioButton);
+            RadioButton selectedRadioButton = (RadioButton) item6RadioGroup.getChildAt(checkedRadioButtonIndex);
+            int correspondingValue = Integer.parseInt(selectedRadioButton.getTag().toString());
+            zest += correspondingValue;
+            totalScore += correspondingValue;
+        }
+        if (item7RadioGroup.getCheckedRadioButtonId() != -1) {
+            int item7CheckedId = item7RadioGroup.getCheckedRadioButtonId();
+            RadioButton checkedRadioButton = (RadioButton) item7RadioGroup.findViewById(item7CheckedId);
+            int checkedRadioButtonIndex = item7RadioGroup.indexOfChild(checkedRadioButton);
+            RadioButton selectedRadioButton = (RadioButton) item7RadioGroup.getChildAt(checkedRadioButtonIndex);
+            int correspondingValue = Integer.parseInt(selectedRadioButton.getTag().toString());
+            gratitude += correspondingValue;
+            totalScore += correspondingValue;
+        }
+        if (item8RadioGroup.getCheckedRadioButtonId() != -1) {
+            int item8CheckedId = item8RadioGroup.getCheckedRadioButtonId();
+            RadioButton checkedRadioButton = (RadioButton) item8RadioGroup.findViewById(item8CheckedId);
+            int checkedRadioButtonIndex = item8RadioGroup.indexOfChild(checkedRadioButton);
+            RadioButton selectedRadioButton = (RadioButton) item8RadioGroup.getChildAt(checkedRadioButtonIndex);
+            int correspondingValue = Integer.parseInt(selectedRadioButton.getTag().toString());
+            gratitude += correspondingValue;
+            totalScore += correspondingValue;
+        }
+        if (item9RadioGroup.getCheckedRadioButtonId() != -1) {
+            int item9CheckedId = item9RadioGroup.getCheckedRadioButtonId();
+            RadioButton checkedRadioButton = (RadioButton) item9RadioGroup.findViewById(item9CheckedId);
+            int checkedRadioButtonIndex = item9RadioGroup.indexOfChild(checkedRadioButton);
+            RadioButton selectedRadioButton = (RadioButton) item9RadioGroup.getChildAt(checkedRadioButtonIndex);
+            int correspondingValue = Integer.parseInt(selectedRadioButton.getTag().toString());
+            optimism += correspondingValue;
+            totalScore += correspondingValue;
+        }
+        if (item10RadioGroup.getCheckedRadioButtonId() != -1) {
+            int item10CheckedId = item10RadioGroup.getCheckedRadioButtonId();
+            RadioButton checkedRadioButton = (RadioButton) item10RadioGroup.findViewById(item10CheckedId);
+            int checkedRadioButtonIndex = item10RadioGroup.indexOfChild(checkedRadioButton);
+            RadioButton selectedRadioButton = (RadioButton) item10RadioGroup.getChildAt(checkedRadioButtonIndex);
+            int correspondingValue = Integer.parseInt(selectedRadioButton.getTag().toString());
+            optimism += correspondingValue;
+            totalScore += correspondingValue;
+        }
+        if (item11RadioGroup.getCheckedRadioButtonId() != -1) {
+            int item11CheckedId = item11RadioGroup.getCheckedRadioButtonId();
+            RadioButton checkedRadioButton = (RadioButton) item11RadioGroup.findViewById(item11CheckedId);
+            int checkedRadioButtonIndex = item11RadioGroup.indexOfChild(checkedRadioButton);
+            RadioButton selectedRadioButton = (RadioButton) item11RadioGroup.getChildAt(checkedRadioButtonIndex);
+            int correspondingValue = Integer.parseInt(selectedRadioButton.getTag().toString());
+            curiosity += correspondingValue;
+            totalScore += correspondingValue;
+        }
+        if (item12RadioGroup.getCheckedRadioButtonId() != -1) {
+            int item12CheckedId = item12RadioGroup.getCheckedRadioButtonId();
+            RadioButton checkedRadioButton = (RadioButton) item12RadioGroup.findViewById(item12CheckedId);
+            int checkedRadioButtonIndex = item12RadioGroup.indexOfChild(checkedRadioButton);
+            RadioButton selectedRadioButton = (RadioButton) item12RadioGroup.getChildAt(checkedRadioButtonIndex);
+            int correspondingValue = Integer.parseInt(selectedRadioButton.getTag().toString());
+            curiosity += correspondingValue;
+            totalScore += correspondingValue;
+        }
+
+        selfControl = selfControl / 2.0;
+        socialIntelligence = socialIntelligence / 2.0;
+        zest = zest / 2.0;
+        gratitude = gratitude / 2.0;
+        optimism = optimism / 2.0;
+        curiosity = curiosity / 2.0;
+        totalScore = totalScore / 12.0;
 
         long row = insertGritScoreData();
         if (row != -1) {
