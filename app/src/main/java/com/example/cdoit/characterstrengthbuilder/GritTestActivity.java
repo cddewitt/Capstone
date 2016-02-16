@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
@@ -756,6 +757,14 @@ public class GritTestActivity extends AppCompatActivity {
         item12RadioGroupParams.addRule(RelativeLayout.BELOW, item12TextView.getId());
         item12RadioGroupParams.setMargins(10, 10, 10, 0);
         relativeLayout.addView(item12RadioGroup, item12RadioGroupParams);
+
+        Button submitGritTestResponsesButton = new Button(this);
+        submitGritTestResponsesButton.setText("Submit Responses");
+        submitGritTestResponsesButton.setId(View.generateViewId());
+        RelativeLayout.LayoutParams submitGritTestResponsesButtonParams = new RelativeLayout.LayoutParams(200, RelativeLayout.LayoutParams.WRAP_CONTENT);
+        submitGritTestResponsesButtonParams.addRule(RelativeLayout.BELOW, item12RadioGroup.getId());
+        item12RadioGroupParams.setMargins(0, 20, 10, 10);
+        relativeLayout.addView(submitGritTestResponsesButton, submitGritTestResponsesButtonParams);
 
         scrollView.addView(relativeLayout);
     }
