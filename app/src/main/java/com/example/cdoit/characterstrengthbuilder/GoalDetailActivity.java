@@ -1,12 +1,18 @@
 package com.example.cdoit.characterstrengthbuilder;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.sql.RowId;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -18,6 +24,8 @@ public class GoalDetailActivity extends AppCompatActivity {
     private TextView tbxPlan;
     private TextView tbxDate;
     private TextView tbxTime;
+    private SQLiteDatabase db;
+    private int rowID;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +34,9 @@ public class GoalDetailActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         grabTextViews();
         String rowID = extras.getString("RowID");
+        this.rowID=Integer.parseInt(rowID);
         DatabaseHelper helper = new DatabaseHelper(getApplicationContext());
-        SQLiteDatabase db = helper.getWritableDatabase();
+        db = helper.getWritableDatabase();
         Cursor cursor = db.query(DatabaseContract.IncompleteGoals.TABLENAME, null, DatabaseContract.IncompleteGoals.COLUMN_ID + "=" + rowID, null, null, null, null);
         if (cursor.moveToFirst()) {
             tbxWish.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_WISH)));
@@ -47,5 +56,35 @@ public class GoalDetailActivity extends AppCompatActivity {
         tbxPlan = (TextView) findViewById(R.id.tbxDetailPlan);
         tbxDate = (TextView) findViewById(R.id.tbxDetailDate);
         tbxTime = (TextView) findViewById(R.id.tbxDetailTime);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_goals_detail, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.delete_goal) {
+            deleteGoal(this.rowID);
+            return true;
+        }
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void deleteGoal(int id) {
+        db.delete(DatabaseContract.IncompleteGoals.TABLENAME, DatabaseContract.IncompleteGoals.COLUMN_ID+"="+id,null);
+        Toast toast= Toast.makeText(getApplicationContext(),"Your WOOP was been deleted",Toast.LENGTH_SHORT);
+        toast.show();
     }
 }
