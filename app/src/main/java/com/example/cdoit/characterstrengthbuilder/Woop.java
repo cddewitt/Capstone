@@ -13,86 +13,100 @@ public class Woop {
     private String outcome;
     private String obstacle;
     private String plan;
-    private Date startDateTime;
-    private Date endDateTime;
+    private Date deadlineDate;
+    private Date deadlineTime;
 
     private String[] woopInfo;
-
-    private DatabaseContract dbConnection;
-
-    private JSONObject currentWoopsInJson;
-    private JSONObject selectedWoopsInJson;
 
     public Woop() {
         wish = "";
         outcome = "";
         obstacle = "";
         plan = "";
-        startDateTime = new Date();
-        endDateTime = new Date();
+        deadlineDate = new Date();
+        deadlineTime = new Date();
 
         woopInfo = new String[6];
-
-        dbConnection = new DatabaseContract();
-
-        currentWoopsInJson = new JSONObject();
-        selectedWoopsInJson = new JSONObject();
     }
 
-//    private Woop createNewWoop() {
+//    public Woop createNewWoop() {
 //
 //    }
 //
-//    private void saveWoop(Woop woop) {
+//    public void saveWoop(Woop woop) {
 //
 //    }
 //
-//    private Woop[] viewCurrentWoops() {
+//    public Woop[] viewCurrentWoops() {
 //
 //    }
 //
-//    private void shareWoop(int site) {
+//    public void shareWoop(int site) {
 //
 //    }
 //
-//    private void shareFacebook(Woop woop) {
+//    public void shareFacebook(Woop woop) {
 //
 //    }
 //
-//    private void shareTwitter(Woop woop) {
+//    public void shareTwitter(Woop woop) {
 //
 //    }
 
-    private void setWish(String wish) {
+    public void setWish(String wish) {
         this.wish = wish;
     }
 
-    private void setOutcome(String outcome) {
+    public void setOutcome(String outcome) {
         this.outcome = outcome;
     }
 
-    private void setObstacle(String obstacle) {
+    public void setObstacle(String obstacle) {
         this.obstacle = obstacle;
     }
 
-    private void setPlan(String plan) {
+    public void setPlan(String plan) {
         this.plan = plan;
     }
 
-    private String getWish() {
+    public void setDeadlineDate(Date deadlineDate) {
+        this.deadlineDate = deadlineDate;
+    }
+
+    public void setDeadlineTime(Date deadlineTime) {
+        this.deadlineTime = deadlineTime;
+    }
+
+    public void setWoopInfo(String[] woopInfo) {
+        this.woopInfo = woopInfo;
+    }
+
+    public String getWish() {
         return wish;
     }
 
-    private String getOutcome() {
+    public String getOutcome() {
         return outcome;
     }
 
-    private String getObstacle() {
+    public String getObstacle() {
         return obstacle;
     }
 
-    private String getPlan() {
+    public String getPlan() {
         return plan;
+    }
+
+    public Date getDeadlineDate() {
+        return deadlineDate;
+    }
+
+    public Date getDeadlineTime() {
+        return deadlineTime;
+    }
+
+    public String[] getWoopInfo() {
+        return woopInfo;
     }
 
 }
