@@ -122,4 +122,14 @@
         android:text="New Text"
         android:textSize="24dp" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mark as completed"
+        android:id="@+id/btnMarkAsCompleted"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:longClickable="false"
+        android:onClick="btnMarkAsCompletedClick" />
+
 </RelativeLayout>
