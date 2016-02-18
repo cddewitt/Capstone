@@ -13,6 +13,5 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_gravity="center_horizontal"
-        android:background="#ffffff" />
-
+        android:background="#fff4e6" />
 </RelativeLayout>

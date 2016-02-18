@@ -55,6 +55,7 @@
         android:layout_marginBottom="70dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:autoText="false"
         android:background="#ffffff"
         android:editable="true"
         android:hint="Enter your plan here..."
