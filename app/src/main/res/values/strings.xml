@@ -14,4 +14,24 @@
     <string name="button_text">Visit LovelyThinking.com</string>
     <string name="title_activity_take_grit_test">TakeGritTestActivity</string>
     <string name="title_activity_grit_test">GritTestActivity</string>
+
+    <string name="goal_notification_title_goal_name">Goal: %1$s</string>
+    <string name="goal_notifiction_time_left_text">
+        %1$s left.
+    </string>
+
+    <string name="action_share">Share</string>
+    <string name="action_reply">Reply</string>
+
+    <string name="deadline_passed_notification_title_template">Deadline passed: %1$s</string>
+
+    <!-- TODO: remove this placeholder text -->
+    <string name="deadline_passed_notification_placeholder_text_template">You said %1$s and lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Etiam non enim magna. Morbi dictum, velit
+        vel semper venenatis, magna odio volutpat velit, at ullamcorper nulla lacus sed turpis.
+        Pellentesque vitae metus elit, nec tincidunt tellus. Integer sed nisl sem, ullamcorper
+        ornare lacus. Duis ac mauris sed massa congue volutpat. Donec sed erat sit amet turpis
+        viverra rhoncus sit amet nec magna. Donec lacinia ligula at libero volutpat volutpat nec nec
+        tortor.
+    </string>
 </resources>

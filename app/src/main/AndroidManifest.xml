@@ -3,6 +3,7 @@
     package="com.example.cdoit.characterstrengthbuilder">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -122,7 +123,7 @@
             android:name=".GritTestActivity"
             android:label="@string/title_activity_grit_test"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".GoalDetailActivity"></activity>
+        <activity android:name=".GoalDetailActivity" />
     </application>
 
 </manifest>

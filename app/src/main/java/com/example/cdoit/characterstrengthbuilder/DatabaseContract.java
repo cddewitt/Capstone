@@ -1,5 +1,10 @@
 package com.example.cdoit.characterstrengthbuilder;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+
+import java.sql.Date;
+
 /**
  * Created by cdoit on 2/4/2016.
  */

@@ -1,9 +1,14 @@
 package com.example.cdoit.characterstrengthbuilder;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
+import org.joda.time.DateTime;
+
+import java.sql.Date;
 
 /**
  * Created by cdoit on 2/4/2016.
@@ -66,5 +71,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + DatabaseContract.GritScores.TABLENAME);
         Log.v("Database", "All Tables Dropped");
         onCreate(db);
+    }
+
+    public DateTime getDeadlineDate(String wish){
+        String query = "SELECT DEADLINE_DATE FROM " + DatabaseContract.IncompleteGoals.TABLENAME + "WHERE " + DatabaseContract.IncompleteGoals.COLUMN_WISH + " =\"" + wish+ "\"";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query,null);
+
+        if (cursor.moveToFirst()){
+            cursor.moveToFirst();
+        }
+
+       DateTime wishDate = DateTime.parse(cursor.getString(0));
+        db.close();
+        return wishDate;
+
     }
 }
