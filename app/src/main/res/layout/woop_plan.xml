@@ -39,7 +39,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="10dp"
         android:layout_marginRight="10dp"
-        android:background="#be9b7b"
+        android:background="#ffffff"
         android:onClick="setADeadlineButtonClick"
         android:text="Set A Deadline" />
 
@@ -55,11 +55,11 @@
         android:layout_marginBottom="70dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="#be9b7b"
+        android:autoText="false"
+        android:background="#ffffff"
         android:editable="true"
         android:hint="Enter your plan here..."
-        android:textColor="#c80000ff"
-        android:autoText="false" />
+        android:textColor="#c80000ff" />
 
     <TextView
         android:id="@+id/whatIsYourPlanTextView"

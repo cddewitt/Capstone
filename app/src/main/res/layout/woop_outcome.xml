@@ -39,7 +39,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="10dp"
         android:layout_marginRight="10dp"
-        android:background="#be9b7b"
+        android:background="#ffffff"
         android:onClick="continueToObstacleButtonClick"
         android:text="Continue To Obstacle" />
 
@@ -55,7 +55,7 @@
         android:layout_marginBottom="70dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="#be9b7b"
+        android:background="#ffffff"
         android:editable="true"
         android:hint="Enter the best outcome here..."
         android:textColor="#c80000ff" />
