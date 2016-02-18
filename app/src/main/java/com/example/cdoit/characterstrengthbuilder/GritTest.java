@@ -1,7 +1,5 @@
 package com.example.cdoit.characterstrengthbuilder;
 
-import org.json.JSONObject;
-
 /**
  * Created by Alex on 2/9/2016.
  */
@@ -18,10 +16,6 @@ public class GritTest {
 
     private double[] gritTestInfo;
 
-    private DatabaseContract dbConnection;
-
-    private JSONObject currentGritTestInfoInJson;
-
     public GritTest() {
         selfControl = 0;
         socialIntelligence = 0;
@@ -33,90 +27,94 @@ public class GritTest {
         totalGritScore = 0;
 
         gritTestInfo = new double[6];
-
-        dbConnection = new DatabaseContract();
-
-        currentGritTestInfoInJson = new JSONObject();
     }
 
-//    private GritTest takeGritTest() {
+//    public GritTest takeGritTest() {
 //
 //    }
 //
-//    private GritTest retakeGritTest() {
+//    public GritTest retakeGritTest() {
 //
 //    }
 //
-//    private void saveGritTestResults(GritTest gritTest) {
+//    public void saveGritTestResults(GritTest gritTest) {
 //
 //    }
 //
-//    private void updateGritTestResults(GritTest gritTest) {
+//    public void updateGritTestResults(GritTest gritTest) {
 //
 //    }
 //
-//    private GritTest viewCurrentGritTestResults() {
+//    public GritTest viewCurrentGritTestResults() {
 //
 //    }
 //
-//    private void learnAboutGritTest(int site) {
+//    public void learnAboutGritTest(int site) {
 //
 //    }
 
-    private void setSelfControl(double selfControl) {
+    public void setSelfControl(double selfControl) {
         this.selfControl = selfControl;
     }
 
-    private void setSocialIntelligence(double socialIntelligence) {
+    public void setSocialIntelligence(double socialIntelligence) {
         this.socialIntelligence = socialIntelligence;
     }
 
-    private void setZest(double zest) {
+    public void setZest(double zest) {
         this.zest = zest;
     }
 
-    private void setGratitude(double gratitude) {
+    public void setGratitude(double gratitude) {
         this.gratitude = gratitude;
     }
 
-    private void setOptimism(double optimism) {
+    public void setOptimism(double optimism) {
         this.optimism = optimism;
     }
 
-    private void setCuriosity(double curiosity) {
+    public void setCuriosity(double curiosity) {
         this.curiosity = curiosity;
     }
 
-    private void setTotalGritScore(double totalGritScore) {
+    public void setTotalGritScore(double totalGritScore) {
         this.totalGritScore = totalGritScore;
     }
 
-    private double getSelfControl() {
+    public void setGritTestInfo(double[] gritTestInfo) {
+        this.gritTestInfo = gritTestInfo;
+    }
+
+    public double getSelfControl() {
         return selfControl;
     }
 
-    private double getSocialIntelligence() {
+    public double getSocialIntelligence() {
         return socialIntelligence;
     }
 
-    private double getZest() {
+    public double getZest() {
         return zest;
     }
 
-    private double getGratitude() {
+    public double getGratitude() {
         return gratitude;
     }
 
-    private double getOptimism() {
+    public double getOptimism() {
         return optimism;
     }
 
-    private double getCuriosity() {
+    public double getCuriosity() {
         return curiosity;
     }
 
-    private double getTotalGritScore() {
+    public double getTotalGritScore() {
         return totalGritScore;
+    }
+
+    public double[] getGritTestInfo() {
+        return gritTestInfo;
     }
 
 }

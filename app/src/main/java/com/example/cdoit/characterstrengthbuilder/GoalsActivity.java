@@ -38,7 +38,7 @@ public class GoalsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle("Goals");
+        setTitle("WOOP");
         setContentView(R.layout.goals);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         populateListView();
@@ -46,6 +46,12 @@ public class GoalsActivity extends AppCompatActivity {
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+    }
+
+    @Override
+    protected void onResume() {
+        populateListView();
+        super.onResume();
     }
 
     @Override
