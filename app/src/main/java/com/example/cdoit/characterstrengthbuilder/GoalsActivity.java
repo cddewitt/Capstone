@@ -5,24 +5,18 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
-import android.widget.TextView;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
-
-import java.util.ArrayList;
 
 /**
  * Created by cdoit on 11/16/2015.
@@ -69,7 +63,7 @@ public class GoalsActivity extends AppCompatActivity {
         {
             String[] fields=new String[]{DatabaseContract.IncompleteGoals.COLUMN_ID,DatabaseContract.IncompleteGoals.COLUMN_WISH};
             int[] textViewIDs= new int[]{R.id.tbxListItemID,R.id.tbxListItemWish};
-            SimpleCursorAdapter ca = new SimpleCursorAdapter(getApplicationContext(),R.layout.listitme_goal,cursor,fields,textViewIDs,0);
+            SimpleCursorAdapter ca = new SimpleCursorAdapter(getApplicationContext(),R.layout.listitem_goal,cursor,fields,textViewIDs,0);
             ListView lv = (ListView) findViewById(R.id.listViewGoals);
            lv.setAdapter(ca);
            lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
