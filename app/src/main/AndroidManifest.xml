@@ -125,10 +125,16 @@
         <activity
             android:name=".GoalDetailActivity"
             android:label="GoalDetailActivity"
-            android:parentActivityName=".GoalsActivity"/>
+            android:parentActivityName=".GoalsActivity" />
+
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value=".GoalsActivity" />
+
+        <activity android:name=".HistoryWoopDetailActivity"
+            android:label="HistoryWoopDetailActivity"
+            android:parentActivityName=".HistoryActivity"
+            ></activity>
     </application>
 
 </manifest>
