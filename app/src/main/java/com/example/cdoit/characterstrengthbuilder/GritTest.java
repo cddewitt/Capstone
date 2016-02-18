@@ -1,7 +1,5 @@
 package com.example.cdoit.characterstrengthbuilder;
 
-import org.json.JSONObject;
-
 /**
  * Created by Alex on 2/9/2016.
  */

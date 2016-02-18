@@ -14,4 +14,5 @@
     <string name="button_text">Visit LovelyThinking.com</string>
     <string name="title_activity_take_grit_test">TakeGritTestActivity</string>
     <string name="title_activity_grit_test">GritTestActivity</string>
+    <string name="title_activity_woop">WoopActivity</string>
 </resources>

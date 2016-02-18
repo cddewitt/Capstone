@@ -1,20 +1,14 @@
 package com.example.cdoit.characterstrengthbuilder;
 
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.provider.ContactsContract;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.sql.RowId;
-import java.util.Calendar;
-import java.util.Date;
 
 public class GoalDetailActivity extends AppCompatActivity {
 
@@ -34,7 +28,7 @@ public class GoalDetailActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         grabTextViews();
         String rowID = extras.getString("RowID");
-        this.rowID=Integer.parseInt(rowID);
+        this.rowID = Integer.parseInt(rowID);
         DatabaseHelper helper = new DatabaseHelper(getApplicationContext());
         db = helper.getWritableDatabase();
         Cursor cursor = db.query(DatabaseContract.IncompleteGoals.TABLENAME, null, DatabaseContract.IncompleteGoals.COLUMN_ID + "=" + rowID, null, null, null, null);
@@ -83,8 +77,8 @@ public class GoalDetailActivity extends AppCompatActivity {
     }
 
     private void deleteGoal(int id) {
-        db.delete(DatabaseContract.IncompleteGoals.TABLENAME, DatabaseContract.IncompleteGoals.COLUMN_ID+"="+id,null);
-        Toast toast= Toast.makeText(getApplicationContext(),"Your WOOP was been deleted",Toast.LENGTH_SHORT);
+        db.delete(DatabaseContract.IncompleteGoals.TABLENAME, DatabaseContract.IncompleteGoals.COLUMN_ID + "=" + id, null);
+        Toast toast = Toast.makeText(getApplicationContext(), "Your WOOP was been deleted", Toast.LENGTH_SHORT);
         toast.show();
     }
 }

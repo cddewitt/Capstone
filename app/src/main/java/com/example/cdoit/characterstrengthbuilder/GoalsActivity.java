@@ -38,7 +38,7 @@ public class GoalsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle("Goals");
+        setTitle("WOOP");
         setContentView(R.layout.goals);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         populateListView();

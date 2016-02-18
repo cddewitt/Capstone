@@ -1,7 +1,5 @@
 package com.example.cdoit.characterstrengthbuilder;
 
-import org.json.JSONObject;
-
 import java.util.Date;
 
 /**

@@ -4,6 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:textAlignment="center"
-    android:textSize="24dp">
+    android:textSize="36dp">
 
 </TextView>

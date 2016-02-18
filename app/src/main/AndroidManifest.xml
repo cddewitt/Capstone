@@ -122,7 +122,11 @@
             android:name=".GritTestActivity"
             android:label="@string/title_activity_grit_test"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".GoalDetailActivity"></activity>
+        <activity android:name=".GoalDetailActivity" />
+        <activity
+            android:name=".WoopActivity"
+            android:label="@string/title_activity_woop"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
