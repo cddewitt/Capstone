@@ -26,7 +26,10 @@ public class TimeCalculatorTests {
 
     @Test
     public void testCalcutorReturnsCorrectAmountOfTime_1day(){
-
+        int tomorrow = date.getDayOfYear()+1;
+        int actual = calculator.getTimeInterval(tomorrow);
+        int expected = 1;
+        Assert.assertEquals(expected,actual);
     }
 
     @Test

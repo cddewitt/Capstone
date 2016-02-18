@@ -51,17 +51,17 @@ public class DeadlineNearingNotifaction {
         // TODO: Remove this if your notification has no relevant thumbnail.
         final Bitmap picture = BitmapFactory.decodeResource(res, R.drawable.example_picture);
         h = new DatabaseHelper(context);
-
+        TimeCalculator calculator = new TimeCalculator();
         final String ticker = exampleString;
-        final String goalName;
-        final String timeLeft;
+        final String goalName = "";
+        final int completionDate = calculator.getCompletionDateFrom(goalName,h);
+        final int timeLeft = calculator.getTimeInterval(completionDate);
 
-       ;
 
         final String title = res.getString(
                 R.string.goal_notification_title_goal_name, exampleString);
         final String text = res.getString(
-                R.string.goal_notifiction_time_left_text, exampleString);
+                R.string.goal_notifiction_time_left_text, String.valueOf(timeLeft));
 
         final NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
 

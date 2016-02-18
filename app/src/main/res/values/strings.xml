@@ -34,4 +34,7 @@
         viverra rhoncus sit amet nec magna. Donec lacinia ligula at libero volutpat volutpat nec nec
         tortor.
     </string>
+    <string name="title_activity_login_screen">"Login "</string>
+    <string name="login_button_text">Login</string>
+    <string name="register_button_text">Register</string>
 </resources>

@@ -74,7 +74,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public DateTime getDeadlineDate(String wish){
-        String query = "SELECT DEADLINE_DATE FROM " + DatabaseContract.IncompleteGoals.TABLENAME + "WHERE " + DatabaseContract.IncompleteGoals.COLUMN_WISH + " =\"" + wish+ "\"";
+        String query = "SELECT COLUMN_DEADLINE_DATE FROM " + DatabaseContract.IncompleteGoals.TABLENAME + "WHERE " + DatabaseContract.IncompleteGoals.COLUMN_WISH + " =\"" + wish+ "\"";
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query,null);
 
@@ -85,6 +85,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
        DateTime wishDate = DateTime.parse(cursor.getString(0));
         db.close();
         return wishDate;
+    }
 
+    public String getGoalName(String wish){
+        String query = "SELECT COLUMN_WISH FROM " + DatabaseContract.IncompleteGoals.TABLENAME + "WHERE " + DatabaseContract.IncompleteGoals.COLUMN_WISH + " =\"" + wish+ "\"";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query,null);
+
+        if (cursor.moveToFirst()){
+            cursor.moveToFirst();
+        }
+
+        String wishName = cursor.getString(0);
+        db.close();
+        return wishName;
     }
 }

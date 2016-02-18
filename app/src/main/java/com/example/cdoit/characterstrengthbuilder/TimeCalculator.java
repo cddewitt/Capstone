@@ -15,6 +15,7 @@ import java.util.Date;
  */
 public class TimeCalculator {
     private DateTime completionDate; //saved in the db after being made
+    private int completionInt;
     private int currentDate;
     private int timeBetweenDates;
     private Date date;
@@ -27,8 +28,13 @@ public class TimeCalculator {
 
     public int getCompletionDateFrom(String wish, DatabaseHelper db) {
         completionDate = db.getDeadlineDate(wish);
-        int completionInt = completionDate.getDayOfYear();
+        completionInt = completionDate.getDayOfYear();
         return completionInt;
+    }
+
+    public int getTimeInterval(int day) {
+        timeBetweenDates = day - currentDate;
+        return timeBetweenDates;
     }
 
 
