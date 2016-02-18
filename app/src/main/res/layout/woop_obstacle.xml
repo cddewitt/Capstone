@@ -39,7 +39,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="10dp"
         android:layout_marginRight="10dp"
-        android:background="#ffffff"
+        android:background="#854442"
         android:onClick="continueToPlanButtonClick"
         android:text="Continue To Plan" />
 
@@ -55,7 +55,7 @@
         android:layout_marginBottom="70dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="#ffffff"
+        android:background="#be9b7b"
         android:editable="true"
         android:hint="Enter the main obstacle here..."
         android:textColor="#c80000ff" />

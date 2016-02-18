@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.cdoit.characterstrengthbuilder.HistoryWoopDetailActivity">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:id="@+id/lblDetailHistoryWish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:text="Wish: "
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/tbxDetailHistoryWish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/lblDetailHistoryWish"
+                android:text="New Text"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/lblDetailHistoryOutcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/lblDetailHistoryWish"
+                android:layout_marginTop="50dp"
+                android:text="Outcome: "
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/tbxDetailHistoryOutcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/lblDetailHistoryOutcome"
+                android:layout_toRightOf="@+id/lblDetailHistoryOutcome"
+                android:text="New Text"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/lblDetailHistoryObstacles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/lblDetailHistoryOutcome"
+                android:layout_marginTop="50dp"
+                android:text="Obstacle: "
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/tbxDetailHistoryObstacles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/lblDetailHistoryObstacles"
+                android:layout_toRightOf="@+id/lblDetailHistoryObstacles"
+                android:text="New Text"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/lblDetailHistoryPlan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/lblDetailHistoryObstacles"
+                android:layout_marginTop="50dp"
+                android:text="Plan: "
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/tbxDetailHistoryPlan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/lblDetailHistoryPlan"
+                android:layout_toRightOf="@+id/lblDetailHistoryPlan"
+                android:text="New Text"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/lblDetailHistoryDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/lblDetailHistoryPlan"
+                android:layout_marginTop="50dp"
+                android:text="Deadline Date: "
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/tbxDetailHistoryDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/lblDetailHistoryDate"
+                android:layout_toRightOf="@+id/lblDetailHistoryDate"
+                android:text="New Text"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/lblDetailHistoryTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/lblDetailHistoryDate"
+                android:layout_marginTop="50dp"
+                android:text="Deadline Time: "
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/tbxDetailHistoryTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/lblDetailHistoryTime"
+                android:layout_toRightOf="@+id/lblDetailHistoryTime"
+                android:text="New Text"
+                android:textSize="24dp" />
+            <TextView
+                android:id="@+id/lblDetailHistoryTimeCreated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/lblDetailHistoryTime"
+                android:layout_marginTop="50dp"
+                android:text="Created On: "
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/tbxDetailHistoryTimeCreated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/lblDetailHistoryTimeCreated"
+                android:layout_toRightOf="@+id/lblDetailHistoryTimeCreated"
+                android:text="New Text"
+                android:textSize="24dp" />
+            <TextView
+                android:id="@+id/lblDetailHistoryFinished"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/lblDetailHistoryTimeCreated"
+                android:layout_marginTop="50dp"
+                android:text="Completed On: "
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/tbxDetailHistoryFinisihed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/lblDetailHistoryFinished"
+                android:layout_toRightOf="@+id/lblDetailHistoryFinished"
+                android:text="New Text"
+                android:textSize="24dp" />
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
+

@@ -34,8 +34,7 @@ public class GoalDetailActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Bundle extras = getIntent().getExtras();
         grabTextViews();
-        String rowID = extras.getString("RowID");
-        this.rowID = Integer.parseInt(rowID);
+        rowID = Integer.parseInt(extras.getString("RowID"));
         DatabaseHelper helper = new DatabaseHelper(getApplicationContext());
         db = helper.getWritableDatabase();
         Cursor cursor = db.query(DatabaseContract.IncompleteGoals.TABLENAME, null, DatabaseContract.IncompleteGoals.COLUMN_ID + "=" + rowID, null, null, null, null);
@@ -86,12 +85,14 @@ public class GoalDetailActivity extends AppCompatActivity {
     }
 
     private void popUpBox(){
-        new AlertDialog.Builder(getApplicationContext())
+        new AlertDialog.Builder(GoalDetailActivity.this)
                 .setTitle("Delete entry")
                 .setMessage("Are you sure you want to delete this WOOP?")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         deleteGoal(rowID);
+                        Intent intent = new Intent(GoalDetailActivity.this,GoalsActivity.class);
+                        startActivity(intent);
                     }
                 })
                 .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
@@ -130,6 +131,8 @@ public class GoalDetailActivity extends AppCompatActivity {
             deleteGoal(rowID);
             Toast toast = Toast.makeText(this.getApplicationContext(), "WOOP successfully moved to completed", Toast.LENGTH_LONG);
             toast.show();
+            Intent intent = new Intent(GoalDetailActivity.this,GoalsActivity.class);
+            startActivity(intent);
         }
     }
 }
