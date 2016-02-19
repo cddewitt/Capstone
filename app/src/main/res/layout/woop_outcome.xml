@@ -39,11 +39,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="10dp"
         android:layout_marginRight="10dp"
-<<<<<<< HEAD
         android:background="#854442"
-=======
-        android:background="#ffffff"
->>>>>>> 85cb322ee229b19826fa76391373278419024e2e
         android:onClick="continueToObstacleButtonClick"
         android:text="Continue To Obstacle" />
 

@@ -14,18 +14,4 @@
         android:layout_alignParentTop="true"
         android:layout_gravity="center_horizontal"
         android:background="#fff4e6" />
-<<<<<<< HEAD
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="300dp"
-        android:layout_marginLeft="250dp"
-        android:background="#be9b7b"
-        android:text="History of completed WOOPs will go here"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="58dp" />
-=======
->>>>>>> 85cb322ee229b19826fa76391373278419024e2e
 </RelativeLayout>
