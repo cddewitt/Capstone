@@ -2,8 +2,8 @@ package com.example.cdoit.characterstrengthbuilder;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -41,13 +41,13 @@ public class HistoryWoopDetailActivity extends AppCompatActivity {
             tbxPlan.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_PLAN)));
             tbxDateDeadline.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_DEADLINE_DATE)));
             tbxTimeDeadline.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_DEADLINE_TIME)));
-            long dateCreated=cursor.getLong(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_DATE_CREATED));
+            long dateCreated = cursor.getLong(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_DATE_CREATED));
             Calendar cal = Calendar.getInstance();
             cal.setTimeInMillis(dateCreated);
-            tbxCreatedOn.setText(cal.get(Calendar.MONTH)+1+"/"+cal.get(Calendar.DAY_OF_MONTH));
-            long dateCompleted=cursor.getLong(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_DATE_COMPLETED));
+            tbxCreatedOn.setText(cal.get(Calendar.MONTH) + 1 + "/" + cal.get(Calendar.DAY_OF_MONTH));
+            long dateCompleted = cursor.getLong(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_DATE_COMPLETED));
             cal.setTimeInMillis(dateCompleted);
-            tbxCompletedOn.setText(cal.get(Calendar.MONTH)+1+"/"+cal.get(Calendar.DAY_OF_MONTH));
+            tbxCompletedOn.setText(cal.get(Calendar.MONTH) + 1 + "/" + cal.get(Calendar.DAY_OF_MONTH));
             setTitle(tbxWish.getText().toString());
         }
     }
@@ -59,8 +59,8 @@ public class HistoryWoopDetailActivity extends AppCompatActivity {
         tbxPlan = (TextView) findViewById(R.id.tbxDetailHistoryPlan);
         tbxDateDeadline = (TextView) findViewById(R.id.tbxDetailHistoryDate);
         tbxTimeDeadline = (TextView) findViewById(R.id.tbxDetailHistoryTime);
-        tbxCompletedOn=(TextView)findViewById(R.id.tbxDetailHistoryFinisihed);
-        tbxCreatedOn=(TextView)findViewById(R.id.tbxDetailHistoryTimeCreated);
+        tbxCompletedOn = (TextView) findViewById(R.id.tbxDetailHistoryFinisihed);
+        tbxCreatedOn = (TextView) findViewById(R.id.tbxDetailHistoryTimeCreated);
     }
 
     @Override

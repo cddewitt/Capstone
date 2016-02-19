@@ -33,16 +33,16 @@ public class HistoryActivity extends AppCompatActivity {
         Cursor cursor = db.query(DatabaseContract.CompleteGoals.TABLENAME, null, null, null, null, null, null);
         if (cursor != null)//check to see if we got any result back
         {
-            String[] fields=new String[]{DatabaseContract.CompleteGoals.COLUMN_ID,DatabaseContract.CompleteGoals.COLUMN_WISH};
-            int[] textViewIDs= new int[]{R.id.tbxListItemHitstoryID,R.id.tbxListitemHistoryWish};
-            SimpleCursorAdapter ca = new SimpleCursorAdapter(getApplicationContext(),R.layout.listitem_history,cursor,fields,textViewIDs,0);
+            String[] fields = new String[]{DatabaseContract.CompleteGoals.COLUMN_ID, DatabaseContract.CompleteGoals.COLUMN_WISH};
+            int[] textViewIDs = new int[]{R.id.tbxListItemHitstoryID, R.id.tbxListitemHistoryWish};
+            SimpleCursorAdapter ca = new SimpleCursorAdapter(getApplicationContext(), R.layout.listitem_history, cursor, fields, textViewIDs, 0);
             ListView lv = (ListView) findViewById(R.id.listViewHistory);
             lv.setAdapter(ca);
             lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent intent = new Intent(getApplicationContext(),HistoryWoopDetailActivity.class);
-                    intent.putExtra("RowID",String.valueOf(id));
+                    Intent intent = new Intent(getApplicationContext(), HistoryWoopDetailActivity.class);
+                    intent.putExtra("RowID", String.valueOf(id));
                     startActivity(intent);
                 }
             });

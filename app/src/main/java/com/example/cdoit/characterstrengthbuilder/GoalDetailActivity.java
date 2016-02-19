@@ -45,7 +45,7 @@ public class GoalDetailActivity extends AppCompatActivity {
             tbxPlan.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_PLAN)));
             tbxDate.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_DATE)));
             tbxTime.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_TIME)));
-            dateCreated=cursor.getLong(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_DATE_CREATED));
+            dateCreated = cursor.getLong(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_DATE_CREATED));
             setTitle(tbxWish.getText().toString());
         }
 
@@ -84,14 +84,14 @@ public class GoalDetailActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void popUpBox(){
+    private void popUpBox() {
         new AlertDialog.Builder(GoalDetailActivity.this)
                 .setTitle("Delete entry")
                 .setMessage("Are you sure you want to delete this WOOP?")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         deleteGoal(rowID);
-                        Intent intent = new Intent(GoalDetailActivity.this,GoalsActivity.class);
+                        Intent intent = new Intent(GoalDetailActivity.this, GoalsActivity.class);
                         startActivity(intent);
                     }
                 })
@@ -113,25 +113,23 @@ public class GoalDetailActivity extends AppCompatActivity {
 
     public void btnMarkAsCompletedClick(View v) {
         ContentValues values = new ContentValues();
-        values.put(DatabaseContract.CompleteGoals.COLUMN_WISH,tbxWish.getText().toString());
-        values.put(DatabaseContract.CompleteGoals.COLUMN_OUTCOME,tbxOutcome.getText().toString());
-        values.put(DatabaseContract.CompleteGoals.COLUMN_OBSTACLE,tbxObstacles.getText().toString());
-        values.put(DatabaseContract.CompleteGoals.COLUMN_PLAN,tbxPlan.getText().toString());
-        values.put(DatabaseContract.CompleteGoals.COLUMN_DATE_COMPLETED,System.currentTimeMillis());
-        values.put(DatabaseContract.CompleteGoals.COLUMN_DATE_CREATED,dateCreated);
-        values.put(DatabaseContract.CompleteGoals.COLUMN_DEADLINE_TIME,tbxTime.getText().toString());
-        values.put(DatabaseContract.CompleteGoals.COLUMN_DEADLINE_DATE,tbxDate.getText().toString());
-        long id= db.insert(DatabaseContract.CompleteGoals.TABLENAME,null,values);
-        if(id==-1)
-        {
-            Toast toast =Toast.makeText(this.getApplicationContext(),"Failed to move WOOP to completed",Toast.LENGTH_LONG);
+        values.put(DatabaseContract.CompleteGoals.COLUMN_WISH, tbxWish.getText().toString());
+        values.put(DatabaseContract.CompleteGoals.COLUMN_OUTCOME, tbxOutcome.getText().toString());
+        values.put(DatabaseContract.CompleteGoals.COLUMN_OBSTACLE, tbxObstacles.getText().toString());
+        values.put(DatabaseContract.CompleteGoals.COLUMN_PLAN, tbxPlan.getText().toString());
+        values.put(DatabaseContract.CompleteGoals.COLUMN_DATE_COMPLETED, System.currentTimeMillis());
+        values.put(DatabaseContract.CompleteGoals.COLUMN_DATE_CREATED, dateCreated);
+        values.put(DatabaseContract.CompleteGoals.COLUMN_DEADLINE_TIME, tbxTime.getText().toString());
+        values.put(DatabaseContract.CompleteGoals.COLUMN_DEADLINE_DATE, tbxDate.getText().toString());
+        long id = db.insert(DatabaseContract.CompleteGoals.TABLENAME, null, values);
+        if (id == -1) {
+            Toast toast = Toast.makeText(this.getApplicationContext(), "Failed to move WOOP to completed", Toast.LENGTH_LONG);
             toast.show();
-        }
-        else {
+        } else {
             deleteGoal(rowID);
             Toast toast = Toast.makeText(this.getApplicationContext(), "WOOP successfully moved to completed", Toast.LENGTH_LONG);
             toast.show();
-            Intent intent = new Intent(GoalDetailActivity.this,GoalsActivity.class);
+            Intent intent = new Intent(GoalDetailActivity.this, GoalsActivity.class);
             startActivity(intent);
         }
     }

@@ -12,6 +12,7 @@
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
+
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
@@ -128,6 +129,7 @@
                 android:layout_toRightOf="@+id/lblDetailHistoryTime"
                 android:text="New Text"
                 android:textSize="24dp" />
+
             <TextView
                 android:id="@+id/lblDetailHistoryTimeCreated"
                 android:layout_width="wrap_content"
@@ -146,6 +148,7 @@
                 android:layout_toRightOf="@+id/lblDetailHistoryTimeCreated"
                 android:text="New Text"
                 android:textSize="24dp" />
+
             <TextView
                 android:id="@+id/lblDetailHistoryFinished"
                 android:layout_width="wrap_content"
@@ -157,7 +160,7 @@
                 android:textSize="24dp" />
 
             <TextView
-                android:id="@+id/tbxDetailHistoryFinisihed"
+                android:id="@+id/tbxDetailHistoryFinished"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/lblDetailHistoryFinished"

@@ -61,17 +61,17 @@ public class GoalsActivity extends AppCompatActivity {
         Cursor cursor = db.query(DatabaseContract.IncompleteGoals.TABLENAME, null, null, null, null, null, null);
         if (cursor != null)//check to see if we got any result back
         {
-            String[] fields=new String[]{DatabaseContract.IncompleteGoals.COLUMN_ID,DatabaseContract.IncompleteGoals.COLUMN_WISH};
-            int[] textViewIDs= new int[]{R.id.tbxListItemID,R.id.tbxListItemWish};
-            SimpleCursorAdapter ca = new SimpleCursorAdapter(getApplicationContext(),R.layout.listitem_goal,cursor,fields,textViewIDs,0);
+            String[] fields = new String[]{DatabaseContract.IncompleteGoals.COLUMN_ID, DatabaseContract.IncompleteGoals.COLUMN_WISH};
+            int[] textViewIDs = new int[]{R.id.tbxListItemID, R.id.tbxListItemWish};
+            SimpleCursorAdapter ca = new SimpleCursorAdapter(getApplicationContext(), R.layout.listitem_goal, cursor, fields, textViewIDs, 0);
             ListView lv = (ListView) findViewById(R.id.listViewGoals);
-           lv.setAdapter(ca);
-           lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-               @Override
-               public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent intent = new Intent(getApplicationContext(),GoalDetailActivity.class);
-                  intent.putExtra("RowID",String.valueOf(id));
-                  startActivity(intent);
+            lv.setAdapter(ca);
+            lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Intent intent = new Intent(getApplicationContext(), GoalDetailActivity.class);
+                    intent.putExtra("RowID", String.valueOf(id));
+                    startActivity(intent);
                 }
             });
 
