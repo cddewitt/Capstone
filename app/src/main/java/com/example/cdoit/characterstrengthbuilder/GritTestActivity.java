@@ -15,6 +15,14 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+
 
 public class GritTestActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -793,6 +801,67 @@ public class GritTestActivity extends AppCompatActivity implements View.OnClickL
         scrollView.addView(relativeLayout);
     }
 
+    private void showPopUp() {
+
+        AlertDialog.Builder helpBuilder = new AlertDialog.Builder(this);
+        helpBuilder.setTitle("Pop Up");
+        helpBuilder.setMessage("Please answer all the questions");
+        helpBuilder.setPositiveButton("Ok",
+                new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Do nothing but close the dialog
+                    }
+                });
+
+        // Remember, create doesn't show the dialog
+        AlertDialog helpDialog = helpBuilder.create();
+        helpDialog.show();
+    }
+
+    private boolean checkFilledButton()
+    {
+        if(item1RadioGroup.getCheckedRadioButtonId() == -1 ) {
+            return false;
+        }
+        else if(item2RadioGroup.getCheckedRadioButtonId() == -1) {
+            return false;
+        }
+        else if(item3RadioGroup.getCheckedRadioButtonId() == -1) {
+            return false;
+        }
+        else if(item4RadioGroup.getCheckedRadioButtonId() == -1) {
+            return false;
+        }
+        else if(item5RadioGroup.getCheckedRadioButtonId() == -1) {
+            return false;
+        }
+        else if(item6RadioGroup.getCheckedRadioButtonId() == -1) {
+            return false;
+        }
+        else if(item7RadioGroup.getCheckedRadioButtonId() == -1) {
+            return false;
+        }
+        else if(item8RadioGroup.getCheckedRadioButtonId() == -1) {
+            return false;
+        }
+        else if(item9RadioGroup.getCheckedRadioButtonId() == -1) {
+            return false;
+        }
+        else if(item10RadioGroup.getCheckedRadioButtonId() == -1) {
+            return false;
+        }
+        else if(item11RadioGroup.getCheckedRadioButtonId() == -1) {
+            return false;
+        }
+        else if(item12RadioGroup.getCheckedRadioButtonId() == -1) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
     @Override
     public void onClick(View v) {
         Log.v("Submit Grit Test", "in click");
@@ -804,6 +873,8 @@ public class GritTestActivity extends AppCompatActivity implements View.OnClickL
         optimism = 0;
         curiosity = 0;
         totalScore = 0;
+
+
 
         if (item1RadioGroup.getCheckedRadioButtonId() != -1) {
             int item1CheckedId = item1RadioGroup.getCheckedRadioButtonId();
@@ -921,16 +992,20 @@ public class GritTestActivity extends AppCompatActivity implements View.OnClickL
         optimism = optimism / 2.0;
         curiosity = curiosity / 2.0;
         totalScore = totalScore / 12.0;
-
-        long row = insertGritScoreData();
-        if (row != -1) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-            Toast toast = Toast.makeText(this, "Grit Test responses successfully saved!", Toast.LENGTH_LONG);
-            toast.show();
-        } else {
-            Toast toast = Toast.makeText(this, "Unable to save Grit Test responses.", Toast.LENGTH_LONG);
-            toast.show();
+        if(checkFilledButton() == true) {
+            long row = insertGritScoreData();
+            if (row != -1) {
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                Toast toast = Toast.makeText(this, "Grit Test responses successfully saved!", Toast.LENGTH_LONG);
+                toast.show();
+            } else {
+                Toast toast = Toast.makeText(this, "Unable to save Grit Test responses.", Toast.LENGTH_LONG);
+                toast.show();
+            }
+        }
+        else {
+            showPopUp();
         }
     }
 
