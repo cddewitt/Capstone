@@ -59,7 +59,7 @@ public class HistoryWoopDetailActivity extends AppCompatActivity {
         tbxPlan = (TextView) findViewById(R.id.tbxDetailHistoryPlan);
         tbxDateDeadline = (TextView) findViewById(R.id.tbxDetailHistoryDate);
         tbxTimeDeadline = (TextView) findViewById(R.id.tbxDetailHistoryTime);
-        tbxCompletedOn = (TextView) findViewById(R.id.tbxDetailHistoryFinisihed);
+        tbxCompletedOn = (TextView) findViewById(R.id.tbxDetailHistoryFinished);
         tbxCreatedOn = (TextView) findViewById(R.id.tbxDetailHistoryTimeCreated);
     }
 

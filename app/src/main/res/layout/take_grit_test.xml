@@ -12,7 +12,7 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="175dp"
-        android:background="#854442"
+        android:background="#ffffff"
         android:onClick="takeGritTestButtonClick"
         android:text="Take Grit Test" />
 
@@ -24,7 +24,7 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
-        android:background="#854442"
+        android:background="#ffffff"
         android:onClick="retakeGritTestButtonClick"
         android:text="Retake Grit Test" />
 
