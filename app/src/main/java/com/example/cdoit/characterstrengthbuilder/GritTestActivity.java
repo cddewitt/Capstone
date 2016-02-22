@@ -1,6 +1,8 @@
 package com.example.cdoit.characterstrengthbuilder;
 
+import android.app.AlertDialog;
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -15,13 +17,6 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 
 
 public class GritTestActivity extends AppCompatActivity implements View.OnClickListener {
@@ -819,45 +814,32 @@ public class GritTestActivity extends AppCompatActivity implements View.OnClickL
         helpDialog.show();
     }
 
-    private boolean checkFilledButton()
-    {
-        if(item1RadioGroup.getCheckedRadioButtonId() == -1 ) {
+    private boolean checkFilledButton() {
+        if (item1RadioGroup.getCheckedRadioButtonId() == -1) {
             return false;
-        }
-        else if(item2RadioGroup.getCheckedRadioButtonId() == -1) {
+        } else if (item2RadioGroup.getCheckedRadioButtonId() == -1) {
             return false;
-        }
-        else if(item3RadioGroup.getCheckedRadioButtonId() == -1) {
+        } else if (item3RadioGroup.getCheckedRadioButtonId() == -1) {
             return false;
-        }
-        else if(item4RadioGroup.getCheckedRadioButtonId() == -1) {
+        } else if (item4RadioGroup.getCheckedRadioButtonId() == -1) {
             return false;
-        }
-        else if(item5RadioGroup.getCheckedRadioButtonId() == -1) {
+        } else if (item5RadioGroup.getCheckedRadioButtonId() == -1) {
             return false;
-        }
-        else if(item6RadioGroup.getCheckedRadioButtonId() == -1) {
+        } else if (item6RadioGroup.getCheckedRadioButtonId() == -1) {
             return false;
-        }
-        else if(item7RadioGroup.getCheckedRadioButtonId() == -1) {
+        } else if (item7RadioGroup.getCheckedRadioButtonId() == -1) {
             return false;
-        }
-        else if(item8RadioGroup.getCheckedRadioButtonId() == -1) {
+        } else if (item8RadioGroup.getCheckedRadioButtonId() == -1) {
             return false;
-        }
-        else if(item9RadioGroup.getCheckedRadioButtonId() == -1) {
+        } else if (item9RadioGroup.getCheckedRadioButtonId() == -1) {
             return false;
-        }
-        else if(item10RadioGroup.getCheckedRadioButtonId() == -1) {
+        } else if (item10RadioGroup.getCheckedRadioButtonId() == -1) {
             return false;
-        }
-        else if(item11RadioGroup.getCheckedRadioButtonId() == -1) {
+        } else if (item11RadioGroup.getCheckedRadioButtonId() == -1) {
             return false;
-        }
-        else if(item12RadioGroup.getCheckedRadioButtonId() == -1) {
+        } else if (item12RadioGroup.getCheckedRadioButtonId() == -1) {
             return false;
-        }
-        else {
+        } else {
             return true;
         }
     }
@@ -873,7 +855,6 @@ public class GritTestActivity extends AppCompatActivity implements View.OnClickL
         optimism = 0;
         curiosity = 0;
         totalScore = 0;
-
 
 
         if (item1RadioGroup.getCheckedRadioButtonId() != -1) {
@@ -992,7 +973,7 @@ public class GritTestActivity extends AppCompatActivity implements View.OnClickL
         optimism = optimism / 2.0;
         curiosity = curiosity / 2.0;
         totalScore = totalScore / 12.0;
-        if(checkFilledButton() == true) {
+        if (checkFilledButton() == true) {
             long row = insertGritScoreData();
             if (row != -1) {
                 Intent intent = new Intent(this, MainActivity.class);
@@ -1003,8 +984,7 @@ public class GritTestActivity extends AppCompatActivity implements View.OnClickL
                 Toast toast = Toast.makeText(this, "Unable to save Grit Test responses.", Toast.LENGTH_LONG);
                 toast.show();
             }
-        }
-        else {
+        } else {
             showPopUp();
         }
     }

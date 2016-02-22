@@ -1,7 +1,6 @@
 package com.example.cdoit.characterstrengthbuilder;
 
 import android.app.AlertDialog;
-import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -45,12 +44,11 @@ public class TakeGritTestActivity extends AppCompatActivity {
     public void retakeGritTestButtonClick(View v) {
         DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
         SQLiteDatabase database = databaseHelper.getWritableDatabase();
-        Cursor cursor = database.query(DatabaseContract.GritScores.TABLENAME,null,null,null,null,null,null,null);
-        if(cursor.moveToFirst()) {
+        Cursor cursor = database.query(DatabaseContract.GritScores.TABLENAME, null, null, null, null, null, null, null);
+        if (cursor.moveToFirst()) {
             Intent intent = new Intent(this, GritTestActivity.class);
             startActivity(intent);
-        }
-        else {
+        } else {
             gritTestPopUp();
         }
     }
