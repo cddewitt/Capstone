@@ -804,7 +804,7 @@ public class GritTestActivity extends AppCompatActivity implements View.OnClickL
     private void showPopUp() {
 
         AlertDialog.Builder helpBuilder = new AlertDialog.Builder(this);
-        helpBuilder.setTitle("Pop Up");
+        helpBuilder.setTitle("Message");
         helpBuilder.setMessage("Please answer all the questions");
         helpBuilder.setPositiveButton("Ok",
                 new DialogInterface.OnClickListener() {
