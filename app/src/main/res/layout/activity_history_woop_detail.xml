@@ -14,7 +14,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
-    </ScrollView>
+
 
     <RelativeLayout
         android:layout_width="fill_parent"
@@ -176,5 +176,6 @@
             android:textSize="24dp" />
 
     </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>
 

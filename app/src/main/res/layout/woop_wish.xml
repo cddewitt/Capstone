@@ -33,7 +33,7 @@
         android:background="#be9b7b"
         android:editable="true"
         android:hint="Enter your wish here..."
-        android:textColor="#be9b7b" />
+        android:textColor="#000000" />
 
     <TextView
         android:id="@+id/whatIsYourWishTextView"
