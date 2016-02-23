@@ -2,8 +2,9 @@
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff4e6"
     android:orientation="vertical"
     android:textAlignment="center"
-    android:textSize="24dp">
+    android:textSize="36dp">
 
 </TextView>

@@ -16,9 +16,9 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:background="#854442"
+        android:background="#ffffff"
         android:onClick="btnGoalClick"
-        android:text="Goals" />
+        android:text="WOOP" />
 
     <Button
         android:id="@+id/gritTestButton"
@@ -27,7 +27,7 @@
         android:layout_below="@+id/btnGoals"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:background="#854442"
+        android:background="#ffffff"
         android:onClick="gritTestButtonClick"
         android:text="Grit Test" />
 
@@ -38,7 +38,7 @@
         android:layout_below="@+id/gritTestButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:background="#854442"
+        android:background="#ffffff"
         android:onClick="btnAnalysisClick"
         android:text="Analysis" />
 
@@ -49,7 +49,7 @@
         android:layout_below="@+id/btnAnalysis"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:background="#854442"
+        android:background="#ffffff"
         android:onClick="btnTheoryClick"
         android:text="Theory" />
 
@@ -60,7 +60,7 @@
         android:layout_below="@+id/btnTheory"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:background="#854442"
+        android:background="#ffffff"
         android:onClick="btnLovelyThinkingClick"
         android:text="Lovely Thinking" />
 
@@ -71,7 +71,7 @@
         android:layout_below="@+id/btnLovelyThinking"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:background="#854442"
+        android:background="#ffffff"
         android:onClick="btnCharacterClick"
         android:text="Character" />
 

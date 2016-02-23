@@ -15,7 +15,7 @@ import java.sql.Date;
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final int version = 6;
+    private static final int version = 7;
 
     public DatabaseHelper(Context context) {
         super(context, DatabaseContract.DB_NAME, null, version);

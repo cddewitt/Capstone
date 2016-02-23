@@ -76,8 +76,9 @@
         android:layout_above="@+id/reviewYourWoopButton"
         android:layout_alignLeft="@+id/setDeadlineTextView"
         android:layout_marginBottom="60dp"
+        android:background="#be9b7b"
         android:ems="10"
-        android:hint="Enter a date here..."
+        android:hint="Date: MM/DD/YYYY"
         android:inputType="date" />
 
     <EditText
@@ -88,8 +89,9 @@
         android:layout_alignRight="@+id/setDeadlineTextView"
         android:layout_marginBottom="60dp"
         android:layout_toRightOf="@+id/dateEditText"
+        android:background="#be9b7b"
         android:ems="10"
-        android:hint="Enter a time here..."
+        android:hint="Time: HH:MM"
         android:inputType="time" />
 
 </RelativeLayout>
