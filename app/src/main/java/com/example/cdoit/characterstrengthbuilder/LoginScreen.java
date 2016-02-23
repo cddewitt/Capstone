@@ -1,5 +1,6 @@
 package com.example.cdoit.characterstrengthbuilder;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -92,13 +93,13 @@ public class LoginScreen extends AppCompatActivity {
             } while (cursor.moveToNext());
             cursor.close();
         } else {
-            Toast.makeText(LoginScreen.this, "Username does not exist.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginScreen.this, "Username is incorrect.", Toast.LENGTH_SHORT).show();
         }
         if (isMatch) {
-            Toast.makeText(LoginScreen.this, "Great!", Toast.LENGTH_SHORT).show();
-            //go to next screen
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
         } else {
-            Toast.makeText(LoginScreen.this, "Password was incorrect.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginScreen.this, "Password is incorrect.", Toast.LENGTH_SHORT).show();
         }
 
     }
