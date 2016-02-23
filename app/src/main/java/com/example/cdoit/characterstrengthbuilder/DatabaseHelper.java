@@ -66,6 +66,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_INCOMPLETE_GOALS_TABLE);
         db.execSQL(SQL_CREATE_COMPLETE_GOALS_TABLE);
         db.execSQL(SQL_CREATE_GRIT_SCORES_TABLE);
+        db.execSQL(SQL_CREATE_USER_TABLE);
         Log.v("Database", "Successfully Created Tables");
     }
 
