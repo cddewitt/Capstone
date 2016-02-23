@@ -3,6 +3,7 @@ package com.example.cdoit.characterstrengthbuilder;
 import android.database.sqlite.SQLiteDatabase;
 
 import org.joda.time.DateTime;
+import org.joda.time.Days;
 import org.joda.time.LocalDate;
 
 import java.util.Date;
@@ -15,27 +16,44 @@ import java.util.Date;
  */
 public class TimeCalculator {
     private DateTime completionDate; //saved in the db after being made
-    private int completionInt;
-    private int currentDate;
-    private int timeBetweenDates;
-    private Date date;
+    private LocalDate currentDate;
+    private Days timeBetweenDates;
     private DateTime calendar = new DateTime();
 
-    public int getCurrentDate() {
-        currentDate = calendar.getDayOfYear();
+    public LocalDate getCurrentDate() {
+        currentDate = calendar.toLocalDate();
         return currentDate;
     }
 
-    public int getCompletionDateFrom(String wish, DatabaseHelper db) {
+    public LocalDate getCompletionDateFrom(String wish, DatabaseHelper db) {
         completionDate = db.getDeadlineDate(wish);
-        completionInt = completionDate.getDayOfYear();
-        return completionInt;
+        LocalDate deadline = completionDate.toLocalDate();
+        return deadline;
     }
 
-    public int getTimeInterval(int day) {
-        timeBetweenDates = day - currentDate;
-        return timeBetweenDates;
+    public int getTimeInterval(LocalDate day) {
+        timeBetweenDates = Days.daysBetween(getCurrentDate(), day);
+        return timeBetweenDates.getDays();
     }
 
 
+    public LocalDate getFiveDaysBefore(LocalDate completionDate) {
+        LocalDate fiveDaysBefore = null;
+        int timeInterval = getTimeInterval(completionDate);
+        if (timeInterval == 5) {
+            fiveDaysBefore = currentDate;
+        }
+        return fiveDaysBefore;
+    }
+
+    public LocalDate getDateFiveDaysFromNow() {
+        LocalDate fiveDaysFromNow = currentDate.plusDays(5);
+        return fiveDaysFromNow;
+    }
+
+    public LocalDate getNextDay() {
+        LocalDate today = getCurrentDate();
+        LocalDate tomorrow = today.plusDays(1);
+        return tomorrow;
+    }
 }

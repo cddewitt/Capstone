@@ -13,10 +13,13 @@ import android.net.Uri;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 
+import org.joda.time.DateTime;
+import org.joda.time.LocalDate;
+
 /**
  * Helper class for showing and canceling goal notifaction
  * notifications.
- * <p>
+ * <p/>
  * This class makes heavy use of the {@link NotificationCompat.Builder} helper
  * class to create notifications in a backward-compatible way.
  */
@@ -29,10 +32,10 @@ public class DeadlineNearingNotifaction {
     /**
      * Shows the notification, or updates a previously shown notification of
      * this type, with the given parameters.
-     * <p>
+     * <p/>
      * TODO: Customize this method's arguments to present relevant content in
      * the notification.
-     * <p>
+     * <p/>
      * TODO: Customize the contents of this method to tweak the behavior and
      * presentation of goal notifaction notifications. Make
      * sure to follow the
@@ -41,27 +44,27 @@ public class DeadlineNearingNotifaction {
      *
      * @see #cancel(Context)
      */
-   static  DatabaseHelper h;
+    static DatabaseHelper h;
 
     public static void notify(final Context context,
-            final String exampleString, final int number) {
+                              final String exampleString, final int number) {
         final Resources res = context.getResources();
 
         // This image is used as the notification's large icon (thumbnail).
         // TODO: Remove this if your notification has no relevant thumbnail.
         final Bitmap picture = BitmapFactory.decodeResource(res, R.drawable.example_picture);
         h = new DatabaseHelper(context);
-        TimeCalculator calculator = new TimeCalculator();
         final String ticker = exampleString;
-        final String goalName = "";
-        final int completionDate = calculator.getCompletionDateFrom(goalName,h);
-        final int timeLeft = calculator.getTimeInterval(completionDate);
 
+        TimeCalculator calculator = new TimeCalculator();
+        String goalName = h.getNearestGoal();
+        LocalDate completionDate = calculator.getCompletionDateFrom(goalName, h);
+        DateTime notificationDate = calculator.getFiveDaysBefore(completionDate).toDateTimeAtCurrentTime();
 
         final String title = res.getString(
                 R.string.goal_notification_title_goal_name, exampleString);
         final String text = res.getString(
-                R.string.goal_notifiction_time_left_text, String.valueOf(timeLeft));
+                R.string.goal_notifiction_time_left_text, String.valueOf(5));
 
         final NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
 
@@ -69,61 +72,60 @@ public class DeadlineNearingNotifaction {
                 // and vibration.
                 .setDefaults(Notification.DEFAULT_ALL)
 
-                // Set required fields, including the small icon, the
-                // notification title, and text.
+                        // Set required fields, including the small icon, the
+                        // notification title, and text.
                 .setSmallIcon(R.drawable.ic_stat_goal_notifaction)
                 .setContentTitle(title)
                 .setContentText(text)
 
-                // All fields below this line are optional.
+                        // All fields below this line are optional.
 
-                // Use a default priority (recognized on devices running Android
-                // 4.1 or later)
+                        // Use a default priority (recognized on devices running Android
+                        // 4.1 or later)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
 
-                // Provide a large icon, shown with the notification in the
-                // notification drawer on devices running Android 3.0 or later.
+                        // Provide a large icon, shown with the notification in the
+                        // notification drawer on devices running Android 3.0 or later.
                 .setLargeIcon(picture)
 
-                // Set ticker text (preview) information for this notification.
+                        // Set ticker text (preview) information for this notification.
                 .setTicker(ticker)
 
-                // Show a number. This is useful when stacking notifications of
-                // a single type.
+                        // Show a number. This is useful when stacking notifications of
+                        // a single type.
                 .setNumber(number)
 
-                // If this notification relates to a past or upcoming event, you
-                // should set the relevant time information using the setWhen
-                // method below. If this call is omitted, the notification's
-                // timestamp will by set to the time at which it was shown.
-                // TODO: Call setWhen if this notification relates to a past or
-                // upcoming event. The sole argument to this method should be
-                // the notification timestamp in milliseconds.
-                //.setWhen(...)
+                        // If this notification relates to a past or upcoming event, you
+                        // should set the relevant time information using the setWhen
+                        // method below. If this call is omitted, the notification's
+                        // timestamp will by set to the time at which it was shown.
+                        // TODO: Call setWhen if this notification relates to a past or
+                        // upcoming event. The sole argument to this method should be
+                        // the notification timestamp in milliseconds.
+                .setWhen(notificationDate.getMillis())
 
-                 //.setWhen(goal is coming near deadline);
 
-                // Set the pending intent to be initiated when the user touches
-                // the notification.
+                        // Set the pending intent to be initiated when the user touches
+                        // the notification.
                 .setContentIntent(
                         PendingIntent.getActivity(
                                 context,
                                 0,
-                                new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com")),
+                                new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com")),//should go to goalsActivity
                                 PendingIntent.FLAG_UPDATE_CURRENT))
 
-                // Show expanded text content on devices running Android 4.1 or
-                // later.
+                        // Show expanded text content on devices running Android 4.1 or
+                        // later.
                 .setStyle(new NotificationCompat.BigTextStyle()
                         .bigText(text)
                         .setBigContentTitle(title)
-                        .setSummaryText("You only have "+number+" left to complete your goal. You should plan accordingly."))
+                        .setSummaryText("You only have " + number + " left to complete your goal. You should plan accordingly."))
 
-                // Example additional actions for this notification. These will
-                // only show on devices running Android 4.1 or later, so you
-                // should ensure that the activity in this notification's
-                // content intent provides access to the same actions in
-                // another way.
+                        // Example additional actions for this notification. These will
+                        // only show on devices running Android 4.1 or later, so you
+                        // should ensure that the activity in this notification's
+                        // content intent provides access to the same actions in
+                        // another way.
                 .addAction(
                         R.drawable.ic_action_stat_share,
                         res.getString(R.string.action_share),
@@ -139,7 +141,7 @@ public class DeadlineNearingNotifaction {
                         res.getString(R.string.action_reply),
                         null)
 
-                // Automatically dismiss the notification when it is touched.
+                        // Automatically dismiss the notification when it is touched.
                 .setAutoCancel(true);
 
         notify(context, builder.build());

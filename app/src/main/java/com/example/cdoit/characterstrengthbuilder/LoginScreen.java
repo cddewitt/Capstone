@@ -80,6 +80,7 @@ public class LoginScreen extends AppCompatActivity {
 
     String dbPassword;
 
+    //needs to be refactored for cleanliness/readability
     private void login() {
         username = usernameField.getText().toString();
         password = passwordField.getText().toString();
@@ -101,7 +102,6 @@ public class LoginScreen extends AppCompatActivity {
         } else {
             Toast.makeText(LoginScreen.this, "Password is incorrect.", Toast.LENGTH_SHORT).show();
         }
-
     }
 
     private boolean checkPasswordsMatch(String dbPassword) {

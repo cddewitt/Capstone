@@ -79,31 +79,48 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public DateTime getDeadlineDate(String wish){
-        String query = "SELECT COLUMN_DEADLINE_DATE FROM " + DatabaseContract.IncompleteGoals.TABLENAME + "WHERE " + DatabaseContract.IncompleteGoals.COLUMN_WISH + " =\"" + wish+ "\"";
+    public DateTime getDeadlineDate(String wish) {
+        String query = "SELECT COLUMN_DEADLINE_DATE FROM " + DatabaseContract.IncompleteGoals.TABLENAME + "WHERE " + DatabaseContract.IncompleteGoals.COLUMN_WISH + " =\"" + wish + "\"";
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(query,null);
+        Cursor cursor = db.rawQuery(query, null);
 
-        if (cursor.moveToFirst()){
+        if (cursor.moveToFirst()) {
             cursor.moveToFirst();
         }
 
-       DateTime wishDate = DateTime.parse(cursor.getString(0));
+        DateTime wishDate = DateTime.parse(cursor.getString(0));
         db.close();
         return wishDate;
     }
 
-    public String getGoalName(String wish){
-        String query = "SELECT COLUMN_WISH FROM " + DatabaseContract.IncompleteGoals.TABLENAME + "WHERE " + DatabaseContract.IncompleteGoals.COLUMN_WISH + " =\"" + wish+ "\"";
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(query,null);
+    TimeCalculator calculator = new TimeCalculator();
 
-        if (cursor.moveToFirst()){
-            cursor.moveToFirst();
+    public String getNearestGoal() {
+        String query = "SELECT COLUMN_WISH FROM " + DatabaseContract.IncompleteGoals.TABLENAME + "WHERE DeadlineDate =\"" + calculator.getDateFiveDaysFromNow().toString() + "\"";
+        SQLiteDatabase db = this.getWritableDatabase();
+        String wishName = getGoal(query, db);
+        return wishName;
+    }
+
+    private String getGoal(String query, SQLiteDatabase db) {
+        Cursor cursor = db.rawQuery(query, null);
+        String wishName = "";
+
+        if (cursor.moveToFirst()) {
+            do {
+
+                wishName = cursor.getString(0);
+            } while (cursor.moveToNext());
         }
 
-        String wishName = cursor.getString(0);
         db.close();
+        return wishName;
+    }
+
+    public String getMissedGoal() {
+        String query = "SELECT COLUMN_WISH FROM " + DatabaseContract.IncompleteGoals.TABLENAME + "WHERE DeadlineDate =\"" + calculator.getNextDay().toString() + "\"";
+        SQLiteDatabase db = this.getWritableDatabase();
+        String wishName = getGoal(query, db);
         return wishName;
     }
 }

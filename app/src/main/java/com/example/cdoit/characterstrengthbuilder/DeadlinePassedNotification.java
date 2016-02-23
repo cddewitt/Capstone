@@ -13,6 +13,9 @@ import android.net.Uri;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 
+import org.joda.time.DateTime;
+import org.joda.time.LocalDate;
+
 /**
  * Helper class for showing and canceling deadline passed
  * notifications.
@@ -20,10 +23,12 @@ import android.support.v4.app.NotificationCompat;
  * This class makes heavy use of the {@link NotificationCompat.Builder} helper
  * class to create notifications in a backward-compatible way.
  */
+
 public class DeadlinePassedNotification {
     /**
      * The unique identifier for this type of notification.
      */
+    private static DatabaseHelper helper;
     private static final String NOTIFICATION_TAG = "DeadlinePassed";
 
     /**
@@ -49,8 +54,13 @@ public class DeadlinePassedNotification {
         // TODO: Remove this if your notification has no relevant thumbnail.
         final Bitmap picture = BitmapFactory.decodeResource(res, R.drawable.example_picture);
 
-
+        helper = new DatabaseHelper(context);
         final String ticker = exampleString;
+        TimeCalculator calculator = new TimeCalculator();
+        String goalName = helper.getMissedGoal();
+        LocalDate completionDate = calculator.getCompletionDateFrom(goalName, helper);
+        DateTime notificationDate = completionDate.plusDays(1).toDateTimeAtCurrentTime();
+
         final String title = res.getString(
                 R.string.deadline_passed_notification_title_template, exampleString);
         final String text = res.getString(
@@ -92,7 +102,7 @@ public class DeadlinePassedNotification {
                         // TODO: Call setWhen if this notification relates to a past or
                         // upcoming event. The sole argument to this method should be
                         // the notification timestamp in milliseconds.
-                        //.setWhen(...)
+                .setWhen(notificationDate.getMillis())
 
                         // Set the pending intent to be initiated when the user touches
                         // the notification.
