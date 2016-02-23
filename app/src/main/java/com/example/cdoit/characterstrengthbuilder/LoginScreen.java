@@ -15,9 +15,11 @@ import android.widget.Toast;
 import java.util.Random;
 
 public class LoginScreen extends AppCompatActivity {
-    private DatabaseHelper helper;
+    private SQLiteDatabase db;
     private String username;
     private String password;
+    private EditText passwordField;
+    private EditText usernameField;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +27,11 @@ public class LoginScreen extends AppCompatActivity {
         setContentView(R.layout.activity_login_screen);
         Button login = (Button) findViewById(R.id.loginButton);
         Button register = (Button) findViewById(R.id.registerButton);
-        EditText usernameField = (EditText) findViewById(R.id.usernameField);
-        EditText passwordField = (EditText) findViewById(R.id.passwordField);
-        username = usernameField.getText().toString();
-        password = passwordField.getText().toString();
+        usernameField = (EditText) findViewById(R.id.usernameField);
+        passwordField = (EditText) findViewById(R.id.passwordField);
+        DatabaseHelper helper = new DatabaseHelper(this);
+        db = helper.getWritableDatabase();
 
-        helper = new DatabaseHelper(this);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,9 +59,9 @@ public class LoginScreen extends AppCompatActivity {
     }
 
 
-    SQLiteDatabase db = helper.getWritableDatabase();
-
     private void register() {
+        username = usernameField.getText().toString();
+        password = passwordField.getText().toString();
         int idNumber = createIdNumber();
         String registerQuery = "INSERT INTO Users VALUES ('" + idNumber + "','" + username + "','" + password + "')";
         try {
@@ -76,13 +77,18 @@ public class LoginScreen extends AppCompatActivity {
         return ran.nextInt(100000);
     }
 
+    String dbPassword;
+
     private void login() {
+        username = usernameField.getText().toString();
+        password = passwordField.getText().toString();
         boolean isMatch = false;
         String loginQuery = "SELECT Password FROM Users WHERE Username = \"" + username + "\"";
         Cursor cursor = db.rawQuery(loginQuery, null);
         if (cursor.moveToFirst()) {
             do {
-                isMatch = checkPasswordsMatch(cursor.getString(2));
+                dbPassword = cursor.getString(0);
+                isMatch = checkPasswordsMatch(cursor.getString(0));
             } while (cursor.moveToNext());
             cursor.close();
         } else {

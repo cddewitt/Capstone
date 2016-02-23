@@ -123,7 +123,7 @@
             android:name=".GritTestActivity"
             android:label="@string/title_activity_grit_test"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".GoalDetailActivity" />
+
         <activity
             android:name=".LoginScreen"
             android:label="@string/title_activity_login_screen"

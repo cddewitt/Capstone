@@ -60,7 +60,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         final String SQL_CREATE_USER_TABLE = "CREATE TABLE " + DatabaseContract.Users.TABLENAME + " (" +
                 DatabaseContract.Users.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                DatabaseContract.Users.COLUMN_USERNAME + " TEXT NOT NULL " +
+                DatabaseContract.Users.COLUMN_USERNAME + " TEXT NOT NULL, " +
                 DatabaseContract.Users.COLUMN_PASSWORD + " TEXT NOT NULL " + ");";
 
         db.execSQL(SQL_CREATE_INCOMPLETE_GOALS_TABLE);
