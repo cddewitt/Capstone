@@ -25,11 +25,11 @@ import org.joda.time.LocalDate;
  */
 
 public class DeadlinePassedNotification {
+    private static final String NOTIFICATION_TAG = "DeadlinePassed";
     /**
      * The unique identifier for this type of notification.
      */
     private static DatabaseHelper helper;
-    private static final String NOTIFICATION_TAG = "DeadlinePassed";
 
     /**
      * Shows the notification, or updates a previously shown notification of

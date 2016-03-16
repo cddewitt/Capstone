@@ -116,18 +116,9 @@
             android:label="@string/title_activity_learn_more"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".TakeGritTestActivity"
-            android:label="@string/title_activity_take_grit_test"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".GritTestActivity"
             android:label="@string/title_activity_grit_test"
             android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity
-            android:name=".LoginScreen"
-            android:label="@string/title_activity_login_screen"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".GoalDetailActivity"
             android:label="GoalDetailActivity"
@@ -137,10 +128,14 @@
             android:name="android.support.PARENT_ACTIVITY"
             android:value=".GoalsActivity" />
 
-        <activity android:name=".HistoryWoopDetailActivity"
+        <activity
+            android:name=".HistoryWoopDetailActivity"
             android:label="HistoryWoopDetailActivity"
-            android:parentActivityName=".HistoryActivity"
-            ></activity>
+            android:parentActivityName=".HistoryActivity" />
+        <activity
+            android:name=".RateYourselfActivity"
+            android:label="@string/title_activity_rate_yourself"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 
 </manifest>
