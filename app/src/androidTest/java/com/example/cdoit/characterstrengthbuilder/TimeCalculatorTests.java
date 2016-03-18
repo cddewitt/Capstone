@@ -5,8 +5,6 @@ import junit.framework.Assert;
 import org.joda.time.DateTime;
 import org.junit.Test;
 
-import java.sql.Date;
-
 
 /**
  * Created by Jessica on 2/17/2016.
@@ -17,23 +15,21 @@ public class TimeCalculatorTests {
     DateTime date;
 
     @Test
-    public void testGetCurrentDate(){
-        int actual = calculator.getCurrentDate();
+    public void testGetCurrentDate() {
+        int actual = calculator.getCurrentDate().getDayOfYear();
         int expected = date.getDayOfYear();
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
     }
 
-
     @Test
-    public void testCalcutorReturnsCorrectAmountOfTime_1day(){
-        int tomorrow = date.getDayOfYear()+1;
-        int actual = calculator.getTimeInterval(tomorrow);
+    public void testCalculatorReturnsCorrectAmountOfTime_1day() {
+        int actual = calculator.getTimeInterval(calculator.getCurrentDate().plusDays(1));
         int expected = 1;
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void testCalculatorReturnsCorrectAmountOfTime_1week(){
+    public void testCalculatorReturnsCorrectAmountOfTime_1week() {
 
     }
 }

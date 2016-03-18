@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Character Strength Builder");
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main);
     }
 
     @Override
@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void gritTestButtonClick(View v) {
-        Intent intent = new Intent(this, TakeGritTestActivity.class);
+    public void rateYourselfButtonClick(View v) {
+        Intent intent = new Intent(this, RateYourselfActivity.class);
         startActivity(intent);
     }
 

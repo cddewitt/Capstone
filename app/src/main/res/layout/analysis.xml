@@ -5,22 +5,5 @@
     android:background="#fff4e6"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnRate"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:text="Rate Yourself" />
 
-    <Button
-        android:id="@+id/btnRpogress"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnRate"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:onClick="btnProgressClick"
-        android:text="Progress" />
 </RelativeLayout>

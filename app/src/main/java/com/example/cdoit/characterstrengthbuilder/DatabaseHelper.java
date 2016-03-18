@@ -8,14 +8,13 @@ import android.util.Log;
 
 import org.joda.time.DateTime;
 
-import java.sql.Date;
-
 /**
  * Created by cdoit on 2/4/2016.
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final int version = 7;
+    TimeCalculator calculator = new TimeCalculator();
 
     public DatabaseHelper(Context context) {
         super(context, DatabaseContract.DB_NAME, null, version);
@@ -92,8 +91,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return wishDate;
     }
-
-    TimeCalculator calculator = new TimeCalculator();
 
     public String getNearestGoal() {
         String query = "SELECT COLUMN_WISH FROM " + DatabaseContract.IncompleteGoals.TABLENAME + "WHERE DeadlineDate =\"" + calculator.getDateFiveDaysFromNow().toString() + "\"";

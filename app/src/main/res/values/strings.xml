@@ -37,4 +37,5 @@
     <string name="title_activity_login_screen">"Login "</string>
     <string name="login_button_text">Login</string>
     <string name="register_button_text">Register</string>
+    <string name="title_activity_rate_yourself">RateYourselfActivity</string>
 </resources>
