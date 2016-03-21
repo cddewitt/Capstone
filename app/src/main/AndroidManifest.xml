@@ -114,7 +114,8 @@
         <activity
             android:name=".LearnMore"
             android:label="@string/title_activity_learn_more"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:parentActivityName=".MainActivity"
+             />
         <activity
             android:name=".GritTestActivity"
             android:label="@string/title_activity_grit_test"
@@ -135,7 +136,7 @@
         <activity
             android:name=".RateYourselfActivity"
             android:label="@string/title_activity_rate_yourself"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 
 </manifest>
