@@ -57,7 +57,7 @@
                 android:layout_alignTop="@+id/gritTextView"
                 android:layout_marginRight="45dp"
                 android:layout_marginTop="35dp"
-                android:text="1"
+                android:text="1.0"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="40dp" />
 
@@ -92,7 +92,7 @@
                 android:layout_alignTop="@+id/selfControlTextView"
                 android:layout_marginRight="45dp"
                 android:layout_marginTop="35dp"
-                android:text="1"
+                android:text="1.0"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="40dp" />
 
@@ -127,7 +127,7 @@
                 android:layout_alignTop="@+id/communicationSkillsTextView"
                 android:layout_marginRight="45dp"
                 android:layout_marginTop="35dp"
-                android:text="1"
+                android:text="1.0"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="40dp" />
 
@@ -162,7 +162,7 @@
                 android:layout_alignTop="@+id/zestTextView"
                 android:layout_marginRight="45dp"
                 android:layout_marginTop="35dp"
-                android:text="1"
+                android:text="1.0"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="40dp" />
 
@@ -197,7 +197,7 @@
                 android:layout_alignTop="@+id/gratitudeTextView"
                 android:layout_marginRight="45dp"
                 android:layout_marginTop="35dp"
-                android:text="1"
+                android:text="1.0"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="40dp" />
 
@@ -232,7 +232,7 @@
                 android:layout_alignTop="@+id/optimismTextView"
                 android:layout_marginRight="45dp"
                 android:layout_marginTop="35dp"
-                android:text="1"
+                android:text="1.0"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="40dp" />
 
@@ -267,7 +267,7 @@
                 android:layout_alignTop="@+id/curiosityTextView"
                 android:layout_marginRight="45dp"
                 android:layout_marginTop="35dp"
-                android:text="1"
+                android:text="1.0"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="40dp" />
         </RelativeLayout>
