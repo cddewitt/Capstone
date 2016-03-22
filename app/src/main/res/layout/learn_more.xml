@@ -6,10 +6,10 @@
     android:background="#fff4e6">
 
     <TextView
+        android:id="@+id/tbxAbout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="about about about about about about about about about about about about about about about about about about about about about about about aboutabout about about about"
-        android:id="@+id/tbxAbout" />
+        android:text="about about about about about about about about about about about about about about about about about about about about about about about aboutabout about about about" />
 
     <Button
         android:id="@+id/btnTheory"
@@ -43,7 +43,6 @@
         android:background="#ffffff"
         android:onClick="btnCharacterClick"
         android:text="Character" />
-
 
 
 </RelativeLayout>

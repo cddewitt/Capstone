@@ -1,7 +1,6 @@
 package com.example.cdoit.characterstrengthbuilder;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -54,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void btnAboutClick(View v){
-        Intent intent = new Intent(this,LearnMore.class);
+    public void btnAboutClick(View v) {
+        Intent intent = new Intent(this, LearnMore.class);
         startActivity(intent);
     }
 }
