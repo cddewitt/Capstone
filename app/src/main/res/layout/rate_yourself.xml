@@ -45,7 +45,9 @@
                 android:layout_alignStart="@+id/gritTextView"
                 android:layout_below="@+id/gritTextView"
                 android:layout_marginRight="100dp"
-                android:layout_marginTop="25dp" />
+                android:layout_marginTop="25dp"
+                android:progress="0"
+                android:max="4" />
 
             <TextView
                 android:id="@+id/gritScoreTextView"
@@ -55,7 +57,7 @@
                 android:layout_alignTop="@+id/gritTextView"
                 android:layout_marginRight="45dp"
                 android:layout_marginTop="35dp"
-                android:text=""
+                android:text="0"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="40dp" />
 
@@ -78,7 +80,9 @@
                 android:layout_alignStart="@+id/selfControlTextView"
                 android:layout_below="@+id/selfControlTextView"
                 android:layout_marginRight="100dp"
-                android:layout_marginTop="25dp" />
+                android:layout_marginTop="25dp"
+                android:progress="0"
+                android:max="4" />
 
             <TextView
                 android:id="@+id/selfControlScoreTextView"
@@ -88,7 +92,7 @@
                 android:layout_alignTop="@+id/selfControlTextView"
                 android:layout_marginRight="45dp"
                 android:layout_marginTop="35dp"
-                android:text=""
+                android:text="0"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="40dp" />
 
@@ -111,7 +115,9 @@
                 android:layout_alignStart="@+id/communicationSkillsTextView"
                 android:layout_below="@+id/communicationSkillsTextView"
                 android:layout_marginRight="100dp"
-                android:layout_marginTop="25dp" />
+                android:layout_marginTop="25dp"
+                android:progress="0"
+                android:max="4" />
 
             <TextView
                 android:id="@+id/communicationSkillsScoreTextView"
@@ -121,7 +127,7 @@
                 android:layout_alignTop="@+id/communicationSkillsTextView"
                 android:layout_marginRight="45dp"
                 android:layout_marginTop="35dp"
-                android:text=""
+                android:text="0"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="40dp" />
 
@@ -144,7 +150,9 @@
                 android:layout_alignStart="@+id/zestTextView"
                 android:layout_below="@+id/zestTextView"
                 android:layout_marginRight="100dp"
-                android:layout_marginTop="25dp" />
+                android:layout_marginTop="25dp"
+                android:progress="0"
+                android:max="4" />
 
             <TextView
                 android:id="@+id/zestScoreTextView"
@@ -154,7 +162,7 @@
                 android:layout_alignTop="@+id/zestTextView"
                 android:layout_marginRight="45dp"
                 android:layout_marginTop="35dp"
-                android:text=""
+                android:text="0"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="40dp" />
 
@@ -177,7 +185,9 @@
                 android:layout_alignStart="@+id/gratitudeTextView"
                 android:layout_below="@+id/gratitudeTextView"
                 android:layout_marginRight="100dp"
-                android:layout_marginTop="25dp" />
+                android:layout_marginTop="25dp"
+                android:progress="0"
+                android:max="4" />
 
             <TextView
                 android:id="@+id/gratitudeScoreTextView"
@@ -187,7 +197,7 @@
                 android:layout_alignTop="@+id/gratitudeTextView"
                 android:layout_marginRight="45dp"
                 android:layout_marginTop="35dp"
-                android:text=""
+                android:text="0"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="40dp" />
 
@@ -210,7 +220,9 @@
                 android:layout_alignStart="@+id/optimismTextView"
                 android:layout_below="@+id/optimismTextView"
                 android:layout_marginRight="100dp"
-                android:layout_marginTop="25dp" />
+                android:layout_marginTop="25dp"
+                android:progress="0"
+                android:max="4" />
 
             <TextView
                 android:id="@+id/optimismScoreTextView"
@@ -220,7 +232,7 @@
                 android:layout_alignTop="@+id/optimismTextView"
                 android:layout_marginRight="45dp"
                 android:layout_marginTop="35dp"
-                android:text=""
+                android:text="0"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="40dp" />
 
@@ -243,7 +255,9 @@
                 android:layout_alignStart="@+id/curiosityTextView"
                 android:layout_below="@+id/curiosityTextView"
                 android:layout_marginRight="100dp"
-                android:layout_marginTop="25dp" />
+                android:layout_marginTop="25dp"
+                android:progress="0"
+                android:max="4" />
 
             <TextView
                 android:id="@+id/curiosityScoreTextView"
@@ -253,7 +267,7 @@
                 android:layout_alignTop="@+id/curiosityTextView"
                 android:layout_marginRight="45dp"
                 android:layout_marginTop="35dp"
-                android:text=""
+                android:text="0"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="40dp" />
         </RelativeLayout>
