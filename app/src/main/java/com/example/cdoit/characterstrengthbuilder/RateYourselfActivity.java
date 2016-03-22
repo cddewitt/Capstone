@@ -156,7 +156,12 @@ public class RateYourselfActivity extends AppCompatActivity {
     }
 
     public void submitSelfEvaluationButtonClick(View v) {
-        // TODO: 3/22/2016
+        DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
+        SQLiteDatabase database = databaseHelper.getWritableDatabase();
+        Cursor cursor = database.query(DatabaseContract.GritScores.TABLENAME, null, null, null, null, null, null, null);
+        if (cursor != null) {
+            // TODO: 3/22/2016
+        }
     }
 
 }
