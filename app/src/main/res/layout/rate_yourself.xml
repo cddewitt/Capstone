@@ -46,8 +46,8 @@
                 android:layout_below="@+id/gritTextView"
                 android:layout_marginRight="100dp"
                 android:layout_marginTop="25dp"
-                android:progress="0"
-                android:max="40" />
+                android:max="40"
+                android:progress="0" />
 
             <TextView
                 android:id="@+id/gritScoreTextView"
@@ -81,8 +81,8 @@
                 android:layout_below="@+id/selfControlTextView"
                 android:layout_marginRight="100dp"
                 android:layout_marginTop="25dp"
-                android:progress="0"
-                android:max="40" />
+                android:max="40"
+                android:progress="0" />
 
             <TextView
                 android:id="@+id/selfControlScoreTextView"
@@ -116,8 +116,8 @@
                 android:layout_below="@+id/communicationSkillsTextView"
                 android:layout_marginRight="100dp"
                 android:layout_marginTop="25dp"
-                android:progress="0"
-                android:max="40" />
+                android:max="40"
+                android:progress="0" />
 
             <TextView
                 android:id="@+id/communicationSkillsScoreTextView"
@@ -151,8 +151,8 @@
                 android:layout_below="@+id/zestTextView"
                 android:layout_marginRight="100dp"
                 android:layout_marginTop="25dp"
-                android:progress="0"
-                android:max="40" />
+                android:max="40"
+                android:progress="0" />
 
             <TextView
                 android:id="@+id/zestScoreTextView"
@@ -186,8 +186,8 @@
                 android:layout_below="@+id/gratitudeTextView"
                 android:layout_marginRight="100dp"
                 android:layout_marginTop="25dp"
-                android:progress="0"
-                android:max="40" />
+                android:max="40"
+                android:progress="0" />
 
             <TextView
                 android:id="@+id/gratitudeScoreTextView"
@@ -221,8 +221,8 @@
                 android:layout_below="@+id/optimismTextView"
                 android:layout_marginRight="100dp"
                 android:layout_marginTop="25dp"
-                android:progress="0"
-                android:max="40" />
+                android:max="40"
+                android:progress="0" />
 
             <TextView
                 android:id="@+id/optimismScoreTextView"
@@ -256,8 +256,8 @@
                 android:layout_below="@+id/curiosityTextView"
                 android:layout_marginRight="100dp"
                 android:layout_marginTop="25dp"
-                android:progress="0"
-                android:max="40" />
+                android:max="40"
+                android:progress="0" />
 
             <TextView
                 android:id="@+id/curiosityScoreTextView"
@@ -270,6 +270,17 @@
                 android:text="1.0"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="40dp" />
+
+            <Button
+                android:id="@+id/submitSelfEvaluationButton"
+                android:layout_width="200dp"
+                android:layout_height="35dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:background="#ffffff"
+                android:onClick="submitSelfEvaluationButtonClick"
+                android:text="Submit Self-Evaluation" />
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

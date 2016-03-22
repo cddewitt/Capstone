@@ -135,11 +135,21 @@ public class RateYourselfActivity extends AppCompatActivity {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {}
         });
+
+        populateScores();
+    }
+
+    public void populateScores() {
+
     }
 
     public void takeGritTestButtonClick(View v) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://sasupenn.qualtrics.com/jfe/form/SV_06f6QSOS2pZW9qR"));
         startActivity(intent);
+    }
+
+    public void submitSelfEvaluationButtonClick(View v) {
+        // TODO: 3/22/2016
     }
 
 }
