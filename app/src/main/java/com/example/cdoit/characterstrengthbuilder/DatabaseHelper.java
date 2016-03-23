@@ -49,12 +49,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 DatabaseContract.GritScores.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 DatabaseContract.GritScores.COLUMN_DATE_SCORED + " LONG NOT NULL, " +
                 DatabaseContract.GritScores.COLUMN_SELF_CONTROL + " DOUBLE NOT NULL, " +
-                DatabaseContract.GritScores.COLUMN_SOCIAL_INTELLIGENCE + " DOUBLE NOT NULL, " +
+                DatabaseContract.GritScores.COLUMN_COMMUNICATION_SKILLS + " DOUBLE NOT NULL, " +
                 DatabaseContract.GritScores.COLUMN_ZEST + " DOUBLE NOT NULL, " +
                 DatabaseContract.GritScores.COLUMN_GRATITUDE + " DOUBLE NOT NULL, " +
                 DatabaseContract.GritScores.COLUMN_OPTIMISM + " DOUBLE NOT NULL, " +
                 DatabaseContract.GritScores.COLUMN_CURIOSITY + " DOUBLE NOT NULL, " +
-                DatabaseContract.GritScores.COLUMN_TOTAL_SCORE + " DOUBLE NOT NULL " +
+                DatabaseContract.GritScores.COLUMN_GRIT + " DOUBLE NOT NULL " +
                 " );";
 
         final String SQL_CREATE_USER_TABLE = "CREATE TABLE " + DatabaseContract.Users.TABLENAME + " (" +
@@ -105,7 +105,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
             do {
-
                 wishName = cursor.getString(0);
             } while (cursor.moveToNext());
         }

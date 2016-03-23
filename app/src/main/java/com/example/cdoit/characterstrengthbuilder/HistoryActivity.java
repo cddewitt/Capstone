@@ -24,7 +24,6 @@ public class HistoryActivity extends AppCompatActivity {
         setContentView(R.layout.history);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         populateListView();
-
     }
 
     private void populateListView() {
