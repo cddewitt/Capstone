@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff4e6">
-
     <TextView
         android:id="@+id/reviewTextView"
         android:layout_width="wrap_content"
@@ -15,13 +14,28 @@
         android:textColor="#3c2f2f"
         android:textSize="48dp" />
 
+
+    <TextView
+        android:id="@+id/tbxReviewCharacteristic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reviewTextView"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:text="Selected Characteristic: "
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000"
+        android:textSize="24dp" />
+
+
     <TextView
         android:id="@+id/yourWishIsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/reviewTextView"
+        android:layout_below="@+id/tbxReviewCharacteristic"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="20dp"

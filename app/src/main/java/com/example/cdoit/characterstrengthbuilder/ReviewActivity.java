@@ -17,7 +17,9 @@ public class ReviewActivity extends AppCompatActivity {
     private TextView obstacleTextView;
     private TextView planTextView;
     private TextView deadlineTextView;
+    private TextView characteristicView;
 
+    private String characteristic;
     private String wish;
     private String outcome;
     private String obstacle;
@@ -32,6 +34,7 @@ public class ReviewActivity extends AppCompatActivity {
         setContentView(R.layout.woop_review);
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
+            characteristic=extras.getString("Characteristic");
             wish = extras.getString("Wish");
             outcome = extras.getString("Outcome");
             obstacle = extras.getString("Obstacle");
@@ -45,16 +48,17 @@ public class ReviewActivity extends AppCompatActivity {
         obstacleTextView = (TextView) findViewById(R.id.theMainObstacleIsTextView);
         planTextView = (TextView) findViewById(R.id.yourPlanToCombatItIsTextView);
         deadlineTextView = (TextView) findViewById(R.id.yourDeadlineIsTextView);
+        characteristicView=(TextView) findViewById(R.id.tbxReviewCharacteristic);
 
         wishTextView.append(wish);
         outcomeTextView.append(outcome);
         obstacleTextView.append(obstacle);
         planTextView.append(plan);
         deadlineTextView.append(deadlineDate + " at " + deadlineTime);
+        characteristicView.append(characteristic);
     }
 
     public void saveYourWoopButtonClick(View v) {
-        Log.v("Review", "in click");
         long row = insertIncompleteGoalData();
         if (row != -1) {
             Intent intent = new Intent(this, SaveActivity.class);

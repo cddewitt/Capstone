@@ -11,6 +11,7 @@ import android.widget.Toast;
 public class PlanActivity extends AppCompatActivity {
 
     private TextView tbxPlan;
+    private String characteristic="";
     private String wish = "";
     private String outcome = "";
     private String obstacles = "";
@@ -23,6 +24,7 @@ public class PlanActivity extends AppCompatActivity {
         tbxPlan = (TextView) findViewById(R.id.planEditText);
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
+            characteristic=extras.getString("Characteristic");
             wish = extras.getString("Wish");
             outcome = extras.getString("Outcome");
             obstacles = extras.getString("Obstacles");
@@ -37,6 +39,7 @@ public class PlanActivity extends AppCompatActivity {
             toast.show();
         } else {
             Intent intent = new Intent(this, DeadlineActivity.class);
+            intent.putExtra("Characteristic",characteristic);
             intent.putExtra("Wish", wish);
             intent.putExtra("Outcome", outcome);
             intent.putExtra("Obstacle", obstacles);

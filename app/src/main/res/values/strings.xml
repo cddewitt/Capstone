@@ -38,4 +38,13 @@
     <string name="login_button_text">Login</string>
     <string name="register_button_text">Register</string>
     <string name="title_activity_rate_yourself">RateYourselfActivity</string>
+    <string-array name="characteristics_array">
+        <item>Girt</item>
+        <item>Self-Control</item>
+        <item>Communication-Skills</item>
+        <item>Zest</item>
+        <item>Gratitude</item>
+        <item>Optimism</item>
+        <item>Curiosity</item>
+    </string-array>
 </resources>

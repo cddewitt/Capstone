@@ -54,7 +54,7 @@
         <activity
             android:name=".WishActivity"
             android:label="@string/app_name"
-            android:parentActivityName=".GoalsActivity">
+            android:parentActivityName=".CharacteristicSelectionActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".GoalsActivity" />
@@ -114,8 +114,7 @@
         <activity
             android:name=".LearnMore"
             android:label="@string/title_activity_learn_more"
-            android:parentActivityName=".MainActivity"
-             />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".GritTestActivity"
             android:label="@string/title_activity_grit_test"
@@ -136,7 +135,9 @@
         <activity
             android:name=".RateYourselfActivity"
             android:label="@string/title_activity_rate_yourself"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".CharacteristicSelectionActivity"
+            android:parentActivityName=".GoalsActivity"/>
     </application>
 
 </manifest>
