@@ -284,7 +284,7 @@ public class RateYourselfActivity extends AppCompatActivity {
     }
 
     public void takeGritTestButtonClick(View v) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://sasupenn.qualtrics.com/jfe/form/SV_06f6QSOS2pZW9qR"));
+        Intent intent = new Intent(this, GritTestActivity.class);
         startActivity(intent);
     }
 
