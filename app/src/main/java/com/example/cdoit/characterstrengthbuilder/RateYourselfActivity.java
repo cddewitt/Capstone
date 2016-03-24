@@ -1,5 +1,6 @@
 package com.example.cdoit.characterstrengthbuilder;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -153,7 +154,7 @@ public class RateYourselfActivity extends AppCompatActivity {
         populateScores();
     }
 
-    public void populateScores() {
+    private void populateScores() {
         DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
         SQLiteDatabase database = databaseHelper.getWritableDatabase();
         Cursor cursor = database.query(DatabaseContract.GritScores.TABLENAME, null, null, null, null, null, null);
@@ -249,18 +250,46 @@ public class RateYourselfActivity extends AppCompatActivity {
         }
     }
 
+    private long submitScores() {
+        TextView gritScoreTextView = (TextView) this.findViewById(R.id.gritScoreTextView);
+        TextView selfControlScoreTextView = (TextView) this.findViewById(R.id.selfControlScoreTextView);
+        TextView communicationSkillsScoreTextView = (TextView) this.findViewById(R.id.communicationSkillsScoreTextView);
+        TextView zestScoreTextView = (TextView) this.findViewById(R.id.zestScoreTextView);
+        TextView gratitudeScoreTextView = (TextView) this.findViewById(R.id.gratitudeScoreTextView);
+        TextView optimismScoreTextView = (TextView) this.findViewById(R.id.optimismScoreTextView);
+        TextView curiosityScoreTextView = (TextView) this.findViewById(R.id.curiosityScoreTextView);
+
+        String gritScore = gritScoreTextView.getText().toString();
+        String selfControlScore = selfControlScoreTextView.getText().toString();
+        String communicationSkillsScore = communicationSkillsScoreTextView.getText().toString();
+        String zestScore = zestScoreTextView.getText().toString();
+        String gratitudeScore = gratitudeScoreTextView.getText().toString();
+        String optimismScore = optimismScoreTextView.getText().toString();
+        String curiosityScore = curiosityScoreTextView.getText().toString();
+
+        DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
+        SQLiteDatabase database = databaseHelper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(DatabaseContract.GritScores.COLUMN_GRIT, gritScore);
+        contentValues.put(DatabaseContract.GritScores.COLUMN_SELF_CONTROL, selfControlScore);
+        contentValues.put(DatabaseContract.GritScores.COLUMN_COMMUNICATION_SKILLS, communicationSkillsScore);
+        contentValues.put(DatabaseContract.GritScores.COLUMN_ZEST, zestScore);
+        contentValues.put(DatabaseContract.GritScores.COLUMN_GRATITUDE, gratitudeScore);
+        contentValues.put(DatabaseContract.GritScores.COLUMN_OPTIMISM, optimismScore);
+        contentValues.put(DatabaseContract.GritScores.COLUMN_CURIOSITY, curiosityScore);
+        contentValues.put(DatabaseContract.GritScores.COLUMN_DATE_SCORED, System.currentTimeMillis());
+
+        return database.insert(DatabaseContract.GritScores.TABLENAME, null, contentValues);
+    }
+
     public void takeGritTestButtonClick(View v) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://sasupenn.qualtrics.com/jfe/form/SV_06f6QSOS2pZW9qR"));
         startActivity(intent);
     }
 
     public void submitSelfEvaluationButtonClick(View v) {
-        DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
-        SQLiteDatabase database = databaseHelper.getWritableDatabase();
-        Cursor cursor = database.query(DatabaseContract.GritScores.TABLENAME, null, null, null, null, null, null);
-        if (cursor != null) {
-            // TODO: 3/22/2016
-        }
+        submitScores();
     }
 
 }

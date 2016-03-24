@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,7 +33,7 @@ public class ReviewActivity extends AppCompatActivity {
         setContentView(R.layout.woop_review);
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            characteristic=extras.getString("Characteristic");
+            characteristic = extras.getString("Characteristic");
             wish = extras.getString("Wish");
             outcome = extras.getString("Outcome");
             obstacle = extras.getString("Obstacle");
@@ -48,7 +47,7 @@ public class ReviewActivity extends AppCompatActivity {
         obstacleTextView = (TextView) findViewById(R.id.theMainObstacleIsTextView);
         planTextView = (TextView) findViewById(R.id.yourPlanToCombatItIsTextView);
         deadlineTextView = (TextView) findViewById(R.id.yourDeadlineIsTextView);
-        characteristicView=(TextView) findViewById(R.id.tbxReviewCharacteristic);
+        characteristicView = (TextView) findViewById(R.id.tbxReviewCharacteristic);
 
         wishTextView.append(wish);
         outcomeTextView.append(outcome);

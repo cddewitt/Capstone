@@ -15,7 +15,7 @@ import android.widget.Toast;
 public class WishActivity extends AppCompatActivity {
 
     private TextView tbxWish;
-    private String characteristic="";
+    private String characteristic = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +24,8 @@ public class WishActivity extends AppCompatActivity {
         setContentView(R.layout.woop_wish);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Bundle bundle = getIntent().getExtras();
-        if(bundle!=null){
-            characteristic=bundle.getString("Characteristic");
+        if (bundle != null) {
+            characteristic = bundle.getString("Characteristic");
         }
     }
 
@@ -59,7 +59,7 @@ public class WishActivity extends AppCompatActivity {
             toast.show();
         } else {
             Intent intent = new Intent(this, OutcomeActivity.class);
-            intent.putExtra("Characteristic",characteristic);
+            intent.putExtra("Characteristic", characteristic);
             intent.putExtra("Wish", tbxWish.getText().toString());
             startActivity(intent);
         }

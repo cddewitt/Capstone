@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 public class DeadlineActivity extends AppCompatActivity {
 
-    private String characteristic="";
+    private String characteristic = "";
     private String wish = "";
     private String outcome = "";
     private String obstacle = "";
@@ -26,7 +26,7 @@ public class DeadlineActivity extends AppCompatActivity {
         timeEditText = (TextView) findViewById(R.id.timeEditText);
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            characteristic=extras.getString("Characteristic");
+            characteristic = extras.getString("Characteristic");
             wish = extras.getString("Wish");
             outcome = extras.getString("Outcome");
             obstacle = extras.getString("Obstacle");
@@ -42,7 +42,7 @@ public class DeadlineActivity extends AppCompatActivity {
             toast.show();
         } else {
             Intent intent = new Intent(this, ReviewActivity.class);
-            intent.putExtra("Characteristic",characteristic);
+            intent.putExtra("Characteristic", characteristic);
             intent.putExtra("Wish", wish);
             intent.putExtra("Outcome", outcome);
             intent.putExtra("Obstacle", obstacle);
