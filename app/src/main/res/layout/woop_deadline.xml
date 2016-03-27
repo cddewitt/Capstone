@@ -31,7 +31,7 @@
 
     <Button
         android:id="@+id/reviewYourWoopButton"
-        android:layout_width="200dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
@@ -52,10 +52,11 @@
         android:layout_below="@+id/separator"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:text="Set a date and time for your deadline:"
+        android:text="Set your DeadLine below!"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#000000"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:clickable="false" />
 
     <View
         android:id="@+id/separator"
@@ -69,29 +70,27 @@
         android:layout_marginTop="20dp"
         android:background="#c8c8ff" />
 
-    <EditText
-        android:id="@+id/dateEditText"
-        android:layout_width="170dp"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Date: "
+        android:id="@+id/tbxDate"
+        android:layout_marginBottom="50dp"
         android:layout_above="@+id/reviewYourWoopButton"
-        android:layout_alignLeft="@+id/setDeadlineTextView"
-        android:layout_marginBottom="60dp"
-        android:background="#be9b7b"
-        android:ems="10"
-        android:hint="Date: MM/DD/YYYY"
-        android:inputType="date" />
+        android:layout_alignStart="@+id/setDeadlineTextView"
+        android:textSize="40dp" />
 
-    <EditText
-        android:id="@+id/timeEditText"
-        android:layout_width="170dp"
+    <Button
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/reviewYourWoopButton"
-        android:layout_alignRight="@+id/setDeadlineTextView"
-        android:layout_marginBottom="60dp"
-        android:layout_toRightOf="@+id/dateEditText"
-        android:background="#be9b7b"
-        android:ems="10"
-        android:hint="Time: HH:MM"
-        android:inputType="time" />
+        android:text="Set Date"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/btnSetDate"
+        android:background="#ffffff"
+        android:layout_below="@+id/tbxDate"
+        android:layout_alignStart="@+id/tbxDate"
+        android:onClick="setDateButtonClick" />
 
 </RelativeLayout>

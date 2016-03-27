@@ -39,7 +39,6 @@ public class ReviewActivity extends AppCompatActivity {
             obstacle = extras.getString("Obstacle");
             plan = extras.getString("Plan");
             deadlineDate = extras.getString("Deadline_Date");
-            deadlineTime = extras.getString("Deadline_Time");
         }
 
         wishTextView = (TextView) findViewById(R.id.yourWishIsTextView);
@@ -53,7 +52,7 @@ public class ReviewActivity extends AppCompatActivity {
         outcomeTextView.append(outcome);
         obstacleTextView.append(obstacle);
         planTextView.append(plan);
-        deadlineTextView.append(deadlineDate + " at " + deadlineTime);
+        deadlineTextView.append(deadlineDate);
         characteristicView.append(characteristic);
     }
 

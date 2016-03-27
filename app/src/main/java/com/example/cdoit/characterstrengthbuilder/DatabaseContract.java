@@ -1,11 +1,9 @@
 package com.example.cdoit.characterstrengthbuilder;
 
-/**
- * Created by cdoit on 2/4/2016.
- */
 public class DatabaseContract {
 
     public static final String DB_NAME = "GoalDataBase";
+    public static final String NO_DATE="NO_DATE";
 
     public static final class IncompleteGoals {
         public static final String TABLENAME = "IncompleteGoals";
