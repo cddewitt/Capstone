@@ -10,6 +10,19 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/Theme.AppCompat.Light">
+
+        <receiver android:name=".FiveDaysAlarmReceiver">
+
+        </receiver>
+
+        <receiver android:name=".DeadlinePassedAlarmReceiver">
+
+        </receiver>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
@@ -19,6 +32,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="2ce3af2826de831745d07dfced742416ac228df0" />
+
         <activity
             android:name=".GoalsActivity"
             android:label="@string/app_name"
@@ -123,11 +141,6 @@
             android:name=".GritTestActivity"
             android:label="@string/title_activity_grit_test"
             android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity
-            android:name=".LoginScreen"
-            android:label="@string/title_activity_login_screen"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".GoalDetailActivity"
             android:label="GoalDetailActivity"
@@ -137,10 +150,15 @@
             android:name="android.support.PARENT_ACTIVITY"
             android:value=".GoalsActivity" />
 
-        <activity android:name=".HistoryWoopDetailActivity"
+        <activity
+            android:name=".HistoryWoopDetailActivity"
             android:label="HistoryWoopDetailActivity"
-            android:parentActivityName=".HistoryActivity"
-            ></activity>
+            android:parentActivityName=".HistoryActivity" />
+        <activity
+            android:name=".FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/title_activity_facebook"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
 </manifest>

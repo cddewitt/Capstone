@@ -6,6 +6,14 @@
         android:id="@+id/delete_goal"
         android:icon="@android:drawable/ic_menu_delete"
         android:orderInCategory="100"
-        android:title="Delete Goal"
-        app:showAsAction="always" />
+        android:title="@string/Delete_Goal"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/share_goal"
+        android:title="@string/Share"
+        android:icon="@android:drawable/ic_menu_share"
+        android:actionProviderClass="android.widget.ShareActionProvider"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="100" />
+
 </menu>

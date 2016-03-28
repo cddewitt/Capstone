@@ -53,7 +53,5 @@ public class DatabaseContract {
     public static final class Users {
         public static final String TABLENAME = "Users";
         public static final String COLUMN_ID = "_id";
-        public static final String COLUMN_USERNAME = "Username";
-        public static final String COLUMN_PASSWORD = "Password";
     }
 }
