@@ -150,7 +150,7 @@ public class RateYourselfActivity extends AppCompatActivity {
             }
         });
 
-        populateScores();
+        // populateScores();
     }
 
     private void populateScores() {

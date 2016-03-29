@@ -39,9 +39,9 @@
     <string name="register_button_text">Register</string>
     <string name="title_activity_rate_yourself">RateYourselfActivity</string>
     <string-array name="characteristics_array">
-        <item>Girt</item>
+        <item>Grit</item>
         <item>Self-Control</item>
-        <item>Communication-Skills</item>
+        <item>Communication Skills</item>
         <item>Zest</item>
         <item>Gratitude</item>
         <item>Optimism</item>
