@@ -15,8 +15,8 @@ public class CharacteristicSelectionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Characteristic");
-        setContentView(R.layout.activity_chacteristic_selection);
-        spinner = (Spinner) findViewById(R.id.spinnerCharactersitics);
+        setContentView(R.layout.activity_characteristic_selection);
+        spinner = (Spinner) findViewById(R.id.spinnerCharacteristics);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.characteristics_array, R.layout.support_simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
