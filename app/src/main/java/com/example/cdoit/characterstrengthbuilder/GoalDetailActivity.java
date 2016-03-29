@@ -50,6 +50,7 @@ public class GoalDetailActivity extends AppCompatActivity {
     private ShareLinkContent content;
     private ShareDialog shareDialog;
     private Card appCard;
+    private String wishName;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +68,7 @@ public class GoalDetailActivity extends AppCompatActivity {
         db = helper.getWritableDatabase();
         Cursor cursor = db.query(DatabaseContract.IncompleteGoals.TABLENAME, null, DatabaseContract.IncompleteGoals.COLUMN_ID + "=" + rowID, null, null, null, null);
         if (cursor.moveToFirst()) {
-            String wishName = cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_WISH));
+            wishName = cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_WISH));
             tbxWish.setText(wishName);
             tbxOutcome.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_OUTCOME)));
             tbxObstacles.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_OBSTACLE)));
@@ -112,6 +113,7 @@ public class GoalDetailActivity extends AppCompatActivity {
         if (id == R.id.share_goal) {
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
             shareIntent.setType("text/plain");
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "I am going " + wishName + " thanks to the Character Strength Builder!");
             startActivity(Intent.createChooser(shareIntent, "Share"));
             return true;
         }
