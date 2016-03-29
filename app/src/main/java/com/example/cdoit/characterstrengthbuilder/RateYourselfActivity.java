@@ -15,6 +15,7 @@ public class RateYourselfActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Rate Yourself");
         setContentView(R.layout.rate_yourself);
 
         final SeekBar gritSeekBar = (SeekBar) this.findViewById(R.id.gritSeekBar);

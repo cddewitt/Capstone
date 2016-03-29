@@ -2,7 +2,31 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff4e6">
+    android:background="#fff4e6"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
 
+    <TextView
+        android:id="@+id/gritScoreSavingExplanationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Click the button below to continue to the Grit Test.\n\nWhen you're finished taking the Grit Test, return to the app and hit your phone's back button and set your Grit score accordingly."
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30dp" />
 
+    <Button
+        android:id="@+id/continueToGritTestButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gritScoreSavingExplanationTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:background="#ffffff"
+        android:onClick="continueToGritTestButtonClick"
+        android:text="Continue To Grit Test" />
 </RelativeLayout>
