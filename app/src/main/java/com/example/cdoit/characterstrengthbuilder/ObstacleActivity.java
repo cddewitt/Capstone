@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,7 +52,7 @@ public class ObstacleActivity extends AppCompatActivity {
         Drawable draw = et.getBackground();
         ViewGroup.LayoutParams lay = et.getLayoutParams();
         lay.height = ViewGroup.LayoutParams.WRAP_CONTENT;
-        final LinearLayout linearLayout = (LinearLayout) findViewById(R.id.containerObstacle);
+        final RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
         EditText tv = new EditText(this);
         tv.setHint("Enter an obstacle here...");
         tv.setBackground(draw);
@@ -60,18 +60,18 @@ public class ObstacleActivity extends AppCompatActivity {
         tv.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                linearLayout.removeView(v);
+                relativeLayout.removeView(v);
                 return true;
             }
         });
-        linearLayout.addView(tv);
+        relativeLayout.addView(tv);
     }
 
     public String getObstacles() {
         String answer = "";
-        LinearLayout ll = (LinearLayout) findViewById(R.id.containerObstacle);
-        for (int i = 0; i < ll.getChildCount(); i++) {
-            View view = ll.getChildAt(i);
+        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
+        for (int i = 0; i < relativeLayout.getChildCount(); i++) {
+            View view = relativeLayout.getChildAt(i);
             if (view instanceof EditText) {
                 TextView obstacle = (TextView) view;
                 if (!obstacle.getText().toString().equals("")) {
