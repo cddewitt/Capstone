@@ -55,11 +55,18 @@ public class ObstacleActivity extends AppCompatActivity {
         Drawable draw = et.getBackground();
         ViewGroup.LayoutParams lay = et.getLayoutParams();
         lay.height=ViewGroup.LayoutParams.WRAP_CONTENT;
-        LinearLayout linearLayout=(LinearLayout)findViewById(R.id.containerObstacle);
+        final LinearLayout linearLayout=(LinearLayout)findViewById(R.id.containerObstacle);
         EditText tv = new EditText(this);
         tv.setHint("Enter an obstacle here...");
         tv.setBackground(draw);
         tv.setLayoutParams(lay);
+        tv.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                linearLayout.removeView(v);
+                return true;
+            }
+        });
         linearLayout.addView(tv);
     }
 
