@@ -54,7 +54,7 @@ public class ObstacleActivity extends AppCompatActivity {
         lay.height = ViewGroup.LayoutParams.WRAP_CONTENT;
         final RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
         EditText tv = new EditText(this);
-        tv.setHint("Enter an obstacle here...");
+        tv.setHint("Enter one obstacle here...");
         tv.setBackground(draw);
         tv.setLayoutParams(lay);
         tv.setOnLongClickListener(new View.OnLongClickListener() {

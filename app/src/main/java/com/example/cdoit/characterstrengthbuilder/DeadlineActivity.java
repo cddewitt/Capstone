@@ -31,7 +31,7 @@ public class DeadlineActivity extends Activity {
         final Calendar cal = Calendar.getInstance();
         tbxDate = (TextView) findViewById(R.id.tbxDate);
         today = (cal.get(Calendar.MONTH) + 1) + "/" + cal.get(Calendar.DAY_OF_MONTH) + "/" + cal.get(Calendar.YEAR);
-        tbxDate.setText("DATE: " + today);
+        tbxDate.setText(tbxDate.getText() + today);
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             characteristic = extras.getString("Characteristic");
@@ -48,7 +48,7 @@ public class DeadlineActivity extends Activity {
     }
 
     public void reviewYourWoopButtonClick(View v) {
-        String deadlineDate = tbxDate.getText().toString().replace("Date: ", "");
+        String deadlineDate = tbxDate.getText().toString().replace("DATE: ", "");
 
         Intent intent = new Intent(this, ReviewActivity.class);
         intent.putExtra("Characteristic", characteristic);
@@ -84,7 +84,7 @@ public class DeadlineActivity extends Activity {
         @Override
         public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 
-            tbxDate.setText("Date: " + (monthOfYear + 1) + "/" + dayOfMonth + "/" + year);
+            tbxDate.setText("Selected Date: " + (monthOfYear + 1) + "/" + dayOfMonth + "/" + year);
         }
     }
 
