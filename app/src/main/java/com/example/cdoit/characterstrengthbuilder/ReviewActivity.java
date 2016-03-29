@@ -10,7 +10,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,7 +30,9 @@ public class ReviewActivity extends AppCompatActivity {
     private TextView obstacleTextView;
     private TextView planTextView;
     private TextView deadlineTextView;
+    private TextView characteristicView;
 
+    private String characteristic;
     private String wish;
     private String outcome;
     private String obstacle;
@@ -51,12 +52,12 @@ public class ReviewActivity extends AppCompatActivity {
         setContentView(R.layout.woop_review);
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
+            characteristic = extras.getString("Characteristic");
             wish = extras.getString("Wish");
             outcome = extras.getString("Outcome");
             obstacle = extras.getString("Obstacle");
             plan = extras.getString("Plan");
             deadlineDate = extras.getString("Deadline_Date");
-            deadlineTime = extras.getString("Deadline_Time");
         }
 
         wishTextView = (TextView) findViewById(R.id.yourWishIsTextView);
@@ -64,16 +65,17 @@ public class ReviewActivity extends AppCompatActivity {
         obstacleTextView = (TextView) findViewById(R.id.theMainObstacleIsTextView);
         planTextView = (TextView) findViewById(R.id.yourPlanToCombatItIsTextView);
         deadlineTextView = (TextView) findViewById(R.id.yourDeadlineIsTextView);
+        characteristicView = (TextView) findViewById(R.id.tbxReviewCharacteristic);
 
         wishTextView.append(wish);
         outcomeTextView.append(outcome);
         obstacleTextView.append(obstacle);
         planTextView.append(plan);
-        deadlineTextView.append(deadlineDate + " at " + deadlineTime);
+        deadlineTextView.append(deadlineDate);
+        characteristicView.append(characteristic);
     }
 
     public void saveYourWoopButtonClick(View v) {
-        Log.v("Review", "in click");
         long row = insertIncompleteGoalData();
         if (row != -1) {
             setNotificationAlarms();

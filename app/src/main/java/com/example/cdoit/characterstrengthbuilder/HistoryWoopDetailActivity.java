@@ -26,7 +26,7 @@ public class HistoryWoopDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_history_woop_detail);
+        setContentView(R.layout.history_woop_detail);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Bundle extras = getIntent().getExtras();
         grabTextViews();

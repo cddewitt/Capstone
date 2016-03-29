@@ -12,7 +12,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -59,7 +58,7 @@ public class GoalDetailActivity extends AppCompatActivity {
         Fabric.with(this, new Twitter(authConfig));
         FacebookSdk.sdkInitialize(getApplicationContext());
         CallbackManager callbackManager = CallbackManager.Factory.create();
-        setContentView(R.layout.activity_goal_detail);
+        setContentView(R.layout.goal_detail);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Bundle extras = getIntent().getExtras();
         grabTextViews();
@@ -80,7 +79,6 @@ public class GoalDetailActivity extends AppCompatActivity {
         }
         cursor.close();
     }
-
 
     private void grabTextViews() {
         tbxWish = (TextView) findViewById(R.id.tbxDetailWish);
@@ -107,6 +105,7 @@ public class GoalDetailActivity extends AppCompatActivity {
             popUpBox();
             return true;
         }
+        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }

@@ -1,16 +1,9 @@
 package com.example.cdoit.characterstrengthbuilder;
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-
-import java.sql.Date;
-
-/**
- * Created by cdoit on 2/4/2016.
- */
 public class DatabaseContract {
 
     public static final String DB_NAME = "GoalDataBase";
+    public static final String NO_DATE = "NO_DATE";
 
     public static final class IncompleteGoals {
         public static final String TABLENAME = "IncompleteGoals";
@@ -42,12 +35,12 @@ public class DatabaseContract {
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_DATE_SCORED = "DateScored";
         public static final String COLUMN_SELF_CONTROL = "SelfControl";
-        public static final String COLUMN_SOCIAL_INTELLIGENCE = "SocialIntelligence";
+        public static final String COLUMN_COMMUNICATION_SKILLS = "CommunicationSkills";
         public static final String COLUMN_ZEST = "Zest";
         public static final String COLUMN_GRATITUDE = "Gratitude";
         public static final String COLUMN_OPTIMISM = "Optimism";
         public static final String COLUMN_CURIOSITY = "Curiosity";
-        public static final String COLUMN_TOTAL_SCORE = "TotalScore";
+        public static final String COLUMN_GRIT = "Grit";
     }
 
     public static final class Users {

@@ -5,28 +5,29 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 
 public class LearnMore extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_learn_more);
-        Button linkButton = (Button) findViewById(R.id.linkButton);
-        linkButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showWebPage();
-            }
-        });
+        setTitle("About");
+        setContentView(R.layout.learn_more);
     }
 
-    void showWebPage() {
-        String urlString = "http://www.lovelythinking.com/";
-        Intent webIntent = new Intent(Intent.ACTION_VIEW);
-        webIntent.setData(Uri.parse(urlString));
-        startActivity(webIntent);
+    public void btnTheoryClick(View v) {
+        Intent implicit = new Intent(Intent.ACTION_VIEW, Uri.parse("http://rkwilley.com/duckworth-oettingen"));
+        startActivity(implicit);
+    }
+
+    public void btnLovelyThinkingClick(View v) {
+        Intent implicit = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.lovelythinking.com/apps/"));
+        startActivity(implicit);
+    }
+
+    public void btnCharacterClick(View v) {
+        Intent implicit = new Intent(Intent.ACTION_VIEW, Uri.parse("http://rkwilley.com/character"));
+        startActivity(implicit);
     }
 
 }

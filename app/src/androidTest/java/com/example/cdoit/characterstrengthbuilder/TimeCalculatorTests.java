@@ -27,11 +27,11 @@ public class TimeCalculatorTests {
         LocalDate tomorrow = calculator.getCurrentDate().plusDays(1);
         int actual = calculator.getTimeInterval(tomorrow);
         int expected = 1;
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void testCalculatorReturnsCorrectAmountOfTime_1week(){
+    public void testCalculatorReturnsCorrectAmountOfTime_1week() {
 
     }
 }

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff4e6">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#fff4e6">
+
+            <TextView
+                android:id="@+id/gritTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Grit"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <Button
+                android:id="@+id/takeGritTestButton"
+                android:layout_width="120dp"
+                android:layout_height="35dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/gritTextView"
+                android:background="#ffffff"
+                android:onClick="takeGritTestButtonClick"
+                android:text="Take Grit Test" />
+
+            <SeekBar
+                android:id="@+id/gritSeekBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignStart="@+id/gritTextView"
+                android:layout_below="@+id/gritTextView"
+                android:layout_marginRight="100dp"
+                android:layout_marginTop="25dp"
+                android:max="40"
+                android:progress="0" />
+
+            <TextView
+                android:id="@+id/gritScoreTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/gritTextView"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="35dp"
+                android:text="1.0"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="40dp" />
+
+            <TextView
+                android:id="@+id/selfControlTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="120dp"
+                android:text="Self-Control"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <SeekBar
+                android:id="@+id/selfControlSeekBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignStart="@+id/selfControlTextView"
+                android:layout_below="@+id/selfControlTextView"
+                android:layout_marginRight="100dp"
+                android:layout_marginTop="25dp"
+                android:max="40"
+                android:progress="0" />
+
+            <TextView
+                android:id="@+id/selfControlScoreTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/selfControlTextView"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="35dp"
+                android:text="1.0"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="40dp" />
+
+            <TextView
+                android:id="@+id/communicationSkillsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="220dp"
+                android:text="Communication Skills"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <SeekBar
+                android:id="@+id/communicationSkillsSeekBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignStart="@+id/communicationSkillsTextView"
+                android:layout_below="@+id/communicationSkillsTextView"
+                android:layout_marginRight="100dp"
+                android:layout_marginTop="25dp"
+                android:max="40"
+                android:progress="0" />
+
+            <TextView
+                android:id="@+id/communicationSkillsScoreTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/communicationSkillsTextView"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="35dp"
+                android:text="1.0"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="40dp" />
+
+            <TextView
+                android:id="@+id/zestTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="320dp"
+                android:text="Zest"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <SeekBar
+                android:id="@+id/zestSeekBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignStart="@+id/zestTextView"
+                android:layout_below="@+id/zestTextView"
+                android:layout_marginRight="100dp"
+                android:layout_marginTop="25dp"
+                android:max="40"
+                android:progress="0" />
+
+            <TextView
+                android:id="@+id/zestScoreTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/zestTextView"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="35dp"
+                android:text="1.0"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="40dp" />
+
+            <TextView
+                android:id="@+id/gratitudeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="420dp"
+                android:text="Gratitude"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <SeekBar
+                android:id="@+id/gratitudeSeekBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignStart="@+id/gratitudeTextView"
+                android:layout_below="@+id/gratitudeTextView"
+                android:layout_marginRight="100dp"
+                android:layout_marginTop="25dp"
+                android:max="40"
+                android:progress="0" />
+
+            <TextView
+                android:id="@+id/gratitudeScoreTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/gratitudeTextView"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="35dp"
+                android:text="1.0"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="40dp" />
+
+            <TextView
+                android:id="@+id/optimismTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="520dp"
+                android:text="Optimism"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <SeekBar
+                android:id="@+id/optimismSeekBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignStart="@+id/optimismTextView"
+                android:layout_below="@+id/optimismTextView"
+                android:layout_marginRight="100dp"
+                android:layout_marginTop="25dp"
+                android:max="40"
+                android:progress="0" />
+
+            <TextView
+                android:id="@+id/optimismScoreTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/optimismTextView"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="35dp"
+                android:text="1.0"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="40dp" />
+
+            <TextView
+                android:id="@+id/curiosityTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="620dp"
+                android:text="Curiosity"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <SeekBar
+                android:id="@+id/curiositySeekBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignStart="@+id/curiosityTextView"
+                android:layout_below="@+id/curiosityTextView"
+                android:layout_marginRight="100dp"
+                android:layout_marginTop="25dp"
+                android:max="40"
+                android:progress="0" />
+
+            <TextView
+                android:id="@+id/curiosityScoreTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/curiosityTextView"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="35dp"
+                android:text="1.0"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="40dp" />
+
+            <Button
+                android:id="@+id/submitSelfEvaluationButton"
+                android:layout_width="200dp"
+                android:layout_height="35dp"
+                android:layout_below="@+id/curiositySeekBar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="25dp"
+                android:background="#ffffff"
+                android:onClick="submitSelfEvaluationButtonClick"
+                android:text="Submit Self-Evaluation" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

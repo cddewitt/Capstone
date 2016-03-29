@@ -15,13 +15,27 @@
         android:textColor="#3c2f2f"
         android:textSize="48dp" />
 
+
+    <TextView
+        android:id="@+id/tbxReviewCharacteristic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reviewTextView"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:text="The characteristic of focus for this WOOP is "
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000"
+        android:textSize="24dp" />
+
     <TextView
         android:id="@+id/yourWishIsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/reviewTextView"
+        android:layout_below="@+id/tbxReviewCharacteristic"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="20dp"
@@ -85,7 +99,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="20dp"
-        android:text="Your deadline is "
+        android:text="The date of your deadline is"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000"
         android:textSize="24dp" />

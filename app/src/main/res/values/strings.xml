@@ -52,4 +52,14 @@
         ac mauris sed massa congue volutpat. Donec sed erat sit amet turpis viverra rhoncus sit amet
         nec magna. Donec lacinia ligula at libero volutpat volutpat nec nec tortor.
     </string>
+    <string name="title_activity_rate_yourself">RateYourselfActivity</string>
+    <string-array name="characteristics_array">
+        <item>Grit</item>
+        <item>Self-Control</item>
+        <item>Communication Skills</item>
+        <item>Zest</item>
+        <item>Gratitude</item>
+        <item>Optimism</item>
+        <item>Curiosity</item>
+    </string-array>
 </resources>

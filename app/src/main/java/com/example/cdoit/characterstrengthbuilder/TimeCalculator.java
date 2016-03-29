@@ -1,17 +1,13 @@
 package com.example.cdoit.characterstrengthbuilder;
 
-import android.database.sqlite.SQLiteDatabase;
-
 import org.joda.time.DateTime;
 import org.joda.time.Days;
 import org.joda.time.LocalDate;
 
-import java.util.Date;
-
 
 /**
  * Created by Jessica on 2/17/2016.
- *
+ * <p/>
  * Calculates time until/since set goal date then holds the data to be used in the notification
  */
 public class TimeCalculator {

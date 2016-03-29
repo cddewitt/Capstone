@@ -85,7 +85,7 @@ public class GoalsActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.add_goal) {
-            Intent intent = new Intent(this, WishActivity.class);
+            Intent intent = new Intent(this, CharacteristicSelectionActivity.class);
             startActivity(intent);
             return true;
         }

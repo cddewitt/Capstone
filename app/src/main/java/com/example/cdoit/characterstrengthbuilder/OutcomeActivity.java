@@ -10,7 +10,8 @@ import android.widget.Toast;
 public class OutcomeActivity extends AppCompatActivity {
 
     private TextView tbxOutcome;
-    private String wish;
+    private String wish = "";
+    private String characteristic = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,7 @@ public class OutcomeActivity extends AppCompatActivity {
         tbxOutcome = (TextView) findViewById(R.id.outcomeEditText);
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
+            characteristic = extras.getString("Characteristic");
             wish = extras.getString("Wish");
         }
     }
@@ -31,6 +33,7 @@ public class OutcomeActivity extends AppCompatActivity {
             toast.show();
         } else {
             Intent intent = new Intent(this, ObstacleActivity.class);
+            intent.putExtra("Characteristic", characteristic);
             intent.putExtra("Wish", wish);
             intent.putExtra("Outcome", outcome);
             startActivity(intent);
