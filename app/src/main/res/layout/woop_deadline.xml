@@ -52,11 +52,11 @@
         android:layout_below="@+id/separator"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
+        android:clickable="false"
         android:text="Set your DeadLine below!"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#000000"
-        android:textSize="20dp"
-        android:clickable="false" />
+        android:textSize="20dp" />
 
     <View
         android:id="@+id/separator"
@@ -71,26 +71,26 @@
         android:background="#c8c8ff" />
 
     <TextView
+        android:id="@+id/tbxDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Date: "
-        android:id="@+id/tbxDate"
-        android:layout_marginBottom="50dp"
         android:layout_above="@+id/reviewYourWoopButton"
         android:layout_alignStart="@+id/setDeadlineTextView"
+        android:layout_marginBottom="50dp"
+        android:text="Date: "
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="40dp" />
 
     <Button
+        android:id="@+id/btnSetDate"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="Set Date"
+        android:layout_alignStart="@+id/tbxDate"
+        android:layout_below="@+id/tbxDate"
         android:layout_marginBottom="10dp"
         android:layout_marginRight="10dp"
-        android:id="@+id/btnSetDate"
         android:background="#ffffff"
-        android:layout_below="@+id/tbxDate"
-        android:layout_alignStart="@+id/tbxDate"
-        android:onClick="setDateButtonClick" />
+        android:onClick="setDateButtonClick"
+        android:text="Set Date" />
 
 </RelativeLayout>
