@@ -33,11 +33,9 @@ public class ObstacleActivity extends AppCompatActivity {
     public void continueToPlanButtonClick(View v) {
         String obstacles = getObstacles();
         if (obstacles.equals("")) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Please enter a possible obstacle before continuing", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(getApplicationContext(),"You must enter atleast 1 obstacle to continue!",Toast.LENGTH_LONG);
             toast.show();
         } else {
-            Toast toast = Toast.makeText(getApplicationContext(), obstacles, Toast.LENGTH_LONG);
-            toast.show();
             Intent intent = new Intent(this, PlanActivity.class);
             intent.putExtra("Characteristic", characteristic);
             intent.putExtra("Wish", wish);
