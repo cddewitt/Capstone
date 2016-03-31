@@ -24,34 +24,40 @@
         android:id="@+id/rateYourselfButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnGoals"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="75dp"
         android:background="#ffffff"
         android:onClick="rateYourselfButtonClick"
-        android:text="Rate Yourself" />
+        android:text="Rate Yourself"
+        android:layout_below="@+id/btnGoals"
+        android:layout_alignStart="@+id/btnGoals" />
 
     <Button
         android:id="@+id/btnAnalysis"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/rateYourselfButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="75dp"
         android:background="#ffffff"
         android:onClick="btnAnalysisClick"
-        android:text="Self-Analysis" />
+        android:text="Self-Analysis"
+        android:layout_below="@+id/rateYourselfButton"
+        android:layout_alignStart="@+id/rateYourselfButton" />
 
     <Button
         android:id="@+id/btnAbout"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnAnalysis"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="75dp"
         android:background="#ffffff"
         android:onClick="btnAboutClick"
-        android:text="About" />
+        android:text="About"
+        android:layout_below="@+id/btnAnalysis"
+        android:layout_centerHorizontal="true" />
 
+    <Button
+        android:id="@+id/btnGraph"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:onClick="btnGraph"
+        android:text="Graph"
+        android:layout_below="@+id/btnAbout"
+        android:layout_alignStart="@+id/btnAbout" />
 
 </RelativeLayout>
