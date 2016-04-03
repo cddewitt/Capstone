@@ -9,6 +9,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.cdoit.characterstrengthbuilder.GoalDetailActivity">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/btnMarkAsCompleted">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
 
     <TextView
         android:id="@+id/lblDetailWish"
@@ -48,40 +56,21 @@
         android:textSize="24dp" />
 
     <TextView
-        android:id="@+id/lblDetailObstacles"
+        android:id="@+id/lblDetailObstaclesAndPlans"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/lblDetailOutcome"
         android:layout_marginTop="50dp"
-        android:text="Obstacle: "
+        android:text="Obstacle:Plan "
         android:textSize="24dp" />
 
     <TextView
-        android:id="@+id/tbxDetailObstacles"
+        android:id="@+id/tbxDetailObstaclesAndPlan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/lblDetailObstacles"
-        android:layout_toRightOf="@+id/lblDetailObstacles"
-        android:text="New Text"
-        android:textSize="24dp" />
-
-    <TextView
-        android:id="@+id/lblDetailPlan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblDetailObstaclesAndPlans"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/lblDetailObstacles"
-        android:layout_marginTop="50dp"
-        android:text="Plan: "
-        android:textSize="24dp" />
-
-    <TextView
-        android:id="@+id/tbxDetailPlan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/lblDetailPlan"
-        android:layout_toRightOf="@+id/lblDetailPlan"
         android:text="New Text"
         android:textSize="24dp" />
 
@@ -90,8 +79,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/lblDetailPlan"
-        android:layout_marginTop="50dp"
+        android:layout_below="@+id/tbxDetailObstaclesAndPlan"
+        android:layout_marginTop="20dp"
         android:text="Deadline Date: "
         android:textSize="24dp" />
 
@@ -104,25 +93,9 @@
         android:text="New Text"
         android:textSize="24dp" />
 
-    <TextView
-        android:id="@+id/lblDetailTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/lblDetailDate"
-        android:layout_marginTop="50dp"
-        android:text="Deadline Time: "
-        android:textSize="24dp" />
 
-    <TextView
-        android:id="@+id/tbxDetailTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/lblDetailTime"
-        android:layout_toRightOf="@+id/lblDetailTime"
-        android:text="New Text"
-        android:textSize="24dp" />
-
+    </RelativeLayout>
+</ScrollView>
     <Button
         android:id="@+id/btnMarkAsCompleted"
         android:layout_width="wrap_content"

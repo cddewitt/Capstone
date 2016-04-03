@@ -14,7 +14,6 @@ public class DatabaseContract {
         public static final String COLUMN_OBSTACLE = "Obstacles";
         public static final String COLUMN_PLAN = "Plan";
         public static final String COLUMN_DEADLINE_DATE = "DeadlineDate";
-        public static final String COLUMN_DEADLINE_TIME = "DeadlineTime";
     }
 
     public static final class CompleteGoals {
@@ -27,7 +26,6 @@ public class DatabaseContract {
         public static final String COLUMN_OBSTACLE = "Obstacles";
         public static final String COLUMN_PLAN = "Plan";
         public static final String COLUMN_DEADLINE_DATE = "DeadlineDate";
-        public static final String COLUMN_DEADLINE_TIME = "DeadlineTime";
     }
 
     public static final class GritScores {

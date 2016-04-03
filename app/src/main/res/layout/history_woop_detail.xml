@@ -60,40 +60,21 @@
                 android:textSize="24dp" />
 
             <TextView
-                android:id="@+id/lblDetailHistoryObstacles"
+                android:id="@+id/lblDetailHistoryObstaclesAndPlans"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_below="@+id/lblDetailHistoryOutcome"
                 android:layout_marginTop="50dp"
-                android:text="Obstacle: "
+                android:text="Obstacle:Plan "
                 android:textSize="24dp" />
 
             <TextView
-                android:id="@+id/tbxDetailHistoryObstacles"
+                android:id="@+id/tbxDetailHistoryObstaclesAndPlans"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/lblDetailHistoryObstacles"
-                android:layout_toRightOf="@+id/lblDetailHistoryObstacles"
-                android:text="New Text"
-                android:textSize="24dp" />
-
-            <TextView
-                android:id="@+id/lblDetailHistoryPlan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblDetailHistoryObstaclesAndPlans"
                 android:layout_alignParentLeft="true"
-                android:layout_below="@+id/lblDetailHistoryObstacles"
-                android:layout_marginTop="50dp"
-                android:text="Plan: "
-                android:textSize="24dp" />
-
-            <TextView
-                android:id="@+id/tbxDetailHistoryPlan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/lblDetailHistoryPlan"
-                android:layout_toRightOf="@+id/lblDetailHistoryPlan"
                 android:text="New Text"
                 android:textSize="24dp" />
 
@@ -102,8 +83,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:layout_below="@+id/lblDetailHistoryPlan"
-                android:layout_marginTop="50dp"
+                android:layout_below="@+id/tbxDetailHistoryObstaclesAndPlans"
+                android:layout_marginTop="20dp"
                 android:text="Deadline Date: "
                 android:textSize="24dp" />
 
@@ -116,31 +97,13 @@
                 android:text="New Text"
                 android:textSize="24dp" />
 
-            <TextView
-                android:id="@+id/lblDetailHistoryTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@+id/lblDetailHistoryDate"
-                android:layout_marginTop="50dp"
-                android:text="Deadline Time: "
-                android:textSize="24dp" />
-
-            <TextView
-                android:id="@+id/tbxDetailHistoryTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/lblDetailHistoryTime"
-                android:layout_toRightOf="@+id/lblDetailHistoryTime"
-                android:text="New Text"
-                android:textSize="24dp" />
 
             <TextView
                 android:id="@+id/lblDetailHistoryTimeCreated"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:layout_below="@+id/lblDetailHistoryTime"
+                android:layout_below="@+id/lblDetailHistoryDate"
                 android:layout_marginTop="50dp"
                 android:text="Created On: "
                 android:textSize="24dp" />

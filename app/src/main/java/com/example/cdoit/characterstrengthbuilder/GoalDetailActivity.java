@@ -16,19 +16,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
-import com.facebook.share.Sharer;
 import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.widget.ShareDialog;
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
-import com.twitter.sdk.android.core.TwitterCore;
-import com.twitter.sdk.android.core.TwitterSession;
 import com.twitter.sdk.android.tweetcomposer.Card;
-import com.twitter.sdk.android.tweetcomposer.ComposerActivity;
-import com.twitter.sdk.android.tweetcomposer.TweetComposer;
+
+import java.util.Arrays;
+import java.util.List;
 
 import io.fabric.sdk.android.Fabric;
 
@@ -38,12 +34,12 @@ public class GoalDetailActivity extends AppCompatActivity {
     // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
     private static final String TWITTER_KEY = "ica1nwRH9wGLrCWkhHG2Lfen8";
     private static final String TWITTER_SECRET = "ktK85XZzR7fYK57380FO94euosu8zsc4uxOljqRnLprd2ZhTaa";
+    private String obstaclesAsString;
+    private String plansAsString;
     private TextView tbxWish;
     private TextView tbxOutcome;
-    private TextView tbxObstacles;
-    private TextView tbxPlan;
+    private TextView tbxObstaclesAndPlan;
     private TextView tbxDate;
-    private TextView tbxTime;
     private SQLiteDatabase db;
     private int rowID;
     private long dateCreated;
@@ -51,6 +47,8 @@ public class GoalDetailActivity extends AppCompatActivity {
     private ShareDialog shareDialog;
     private Card appCard;
     private String wishName;
+    private List<String> obstacles;
+    private List<String> plans;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,12 +69,21 @@ public class GoalDetailActivity extends AppCompatActivity {
             wishName = cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_WISH));
             tbxWish.setText(wishName);
             tbxOutcome.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_OUTCOME)));
-            tbxObstacles.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_OBSTACLE)));
-            tbxPlan.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_PLAN)));
-            tbxDate.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_DATE)));
-            tbxTime.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_TIME)));
+            obstaclesAsString=cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_OBSTACLE));
+            plansAsString=cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_PLAN));
+            plans= Arrays.asList(plansAsString.split("~"));
+            obstacles =Arrays.asList(obstaclesAsString.split("~"));
+            tbxObstaclesAndPlan.setText("\n");
+           for(int i =0;i< obstacles.size();i++)
+           {
+               tbxObstaclesAndPlan.append(obstacles.get(i)+" : "+plans.get(i)+"\n\n");
+           }
+            if(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_DATE)).equals(DatabaseContract.NO_DATE))
+                tbxDate.setText(" No deadline date");
+            else
+                 tbxDate.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_DATE)));
             dateCreated = cursor.getLong(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_DATE_CREATED));
-            setTitle(tbxWish.getText().toString());
+
         }
         cursor.close();
     }
@@ -84,10 +91,8 @@ public class GoalDetailActivity extends AppCompatActivity {
     private void grabTextViews() {
         tbxWish = (TextView) findViewById(R.id.tbxDetailWish);
         tbxOutcome = (TextView) findViewById(R.id.tbxDetailOutcome);
-        tbxObstacles = (TextView) findViewById(R.id.tbxDetailObstacles);
-        tbxPlan = (TextView) findViewById(R.id.tbxDetailPlan);
+        tbxObstaclesAndPlan = (TextView) findViewById(R.id.tbxDetailObstaclesAndPlan);
         tbxDate = (TextView) findViewById(R.id.tbxDetailDate);
-        tbxTime = (TextView) findViewById(R.id.tbxDetailTime);
     }
 
     @Override
@@ -143,19 +148,16 @@ public class GoalDetailActivity extends AppCompatActivity {
 
     private void deleteGoal(int id) {
         db.delete(DatabaseContract.IncompleteGoals.TABLENAME, DatabaseContract.IncompleteGoals.COLUMN_ID + "=" + id, null);
-        Toast toast = Toast.makeText(getApplicationContext(), "Your WOOP was been deleted", Toast.LENGTH_SHORT);
-        toast.show();
     }
 
     public void btnMarkAsCompletedClick(View v) {
         ContentValues values = new ContentValues();
         values.put(DatabaseContract.CompleteGoals.COLUMN_WISH, tbxWish.getText().toString());
         values.put(DatabaseContract.CompleteGoals.COLUMN_OUTCOME, tbxOutcome.getText().toString());
-        values.put(DatabaseContract.CompleteGoals.COLUMN_OBSTACLE, tbxObstacles.getText().toString());
-        values.put(DatabaseContract.CompleteGoals.COLUMN_PLAN, tbxPlan.getText().toString());
+        values.put(DatabaseContract.CompleteGoals.COLUMN_OBSTACLE, obstaclesAsString);
+        values.put(DatabaseContract.CompleteGoals.COLUMN_PLAN, plansAsString);
         values.put(DatabaseContract.CompleteGoals.COLUMN_DATE_COMPLETED, System.currentTimeMillis());
         values.put(DatabaseContract.CompleteGoals.COLUMN_DATE_CREATED, dateCreated);
-        values.put(DatabaseContract.CompleteGoals.COLUMN_DEADLINE_TIME, tbxTime.getText().toString());
         values.put(DatabaseContract.CompleteGoals.COLUMN_DEADLINE_DATE, tbxDate.getText().toString());
         long id = db.insert(DatabaseContract.CompleteGoals.TABLENAME, null, values);
         if (id == -1) {

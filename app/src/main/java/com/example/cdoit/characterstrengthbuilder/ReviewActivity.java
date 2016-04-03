@@ -8,27 +8,27 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.SystemClock;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
+import android.text.style.TtsSpan;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
-import org.joda.time.LocalTime;
-import org.joda.time.Period;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.TimeZone;
 
 public class ReviewActivity extends AppCompatActivity {
 
     private TextView wishTextView;
     private TextView outcomeTextView;
-    private TextView obstacleTextView;
-    private TextView planTextView;
+    private TextView obstaclePlanTextView;
     private TextView deadlineTextView;
     private TextView characteristicView;
 
@@ -38,12 +38,8 @@ public class ReviewActivity extends AppCompatActivity {
     private String obstacle;
     private String plan;
     private String deadlineDate;
-    private String deadlineTime;
-    private int hour;
-    private int minute;
-    private int year;
-    private int month;
-    private int day;
+    private List<String> obstacles;
+    private List<String> plans;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,20 +54,27 @@ public class ReviewActivity extends AppCompatActivity {
             obstacle = extras.getString("Obstacle");
             plan = extras.getString("Plan");
             deadlineDate = extras.getString("Deadline_Date");
+            obstacles = Arrays.asList(obstacle.split("~"));
+            plans = Arrays.asList(plan.split("~"));
         }
 
         wishTextView = (TextView) findViewById(R.id.yourWishIsTextView);
         outcomeTextView = (TextView) findViewById(R.id.theBestOutcomeIsTextView);
-        obstacleTextView = (TextView) findViewById(R.id.theMainObstacleIsTextView);
-        planTextView = (TextView) findViewById(R.id.yourPlanToCombatItIsTextView);
+        obstaclePlanTextView = (TextView) findViewById(R.id.theMainObstacleIsTextView);
         deadlineTextView = (TextView) findViewById(R.id.yourDeadlineIsTextView);
         characteristicView = (TextView) findViewById(R.id.tbxReviewCharacteristic);
 
         wishTextView.append(wish);
         outcomeTextView.append(outcome);
-        obstacleTextView.append(obstacle);
-        planTextView.append(plan);
-        deadlineTextView.append(deadlineDate);
+        for(int i=0;i<obstacles.size();i++)
+        {
+            obstaclePlanTextView.append("Your plan to combat "+obstacles.get(i)+" is to "+plans.get(i)+"!\n\n");
+
+        }
+        if(deadlineDate.equals(DatabaseContract.NO_DATE))
+            deadlineTextView.setText("");
+        else
+        deadlineTextView.append(" " + deadlineDate);
         characteristicView.append(characteristic);
     }
 
@@ -95,7 +98,7 @@ public class ReviewActivity extends AppCompatActivity {
     }
 
     private DateTimeFormatter formatter = DateTimeFormat.forPattern("MM/dd/yyyy");
-    private DateTimeFormatter timeFormatter = DateTimeFormat.forPattern("HH:MM");
+
 
 
     private void setDeadlinePassedNotification() {
@@ -119,21 +122,23 @@ public class ReviewActivity extends AppCompatActivity {
 
 
     private void setFiveDaysLeftNotification() {
-        DateTime dateFiveDaysBefore = formatter.parseDateTime(deadlineDate)
-                .withTimeAtStartOfDay()
-                .withZone(DateTimeZone.forTimeZone(TimeZone.getDefault()))
-                .minusDays(5);
-        Long notificationTime = dateFiveDaysBefore.getMillis();
-        Intent alarmIntent = new Intent(this, DeadlinePassedAlarmReceiver.class /*needs to be a reciever*/);
-        alarmIntent.putExtra("wish", wish);
-        String ofDate = dateFiveDaysBefore.toString(formatter);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        if(!deadlineDate.equals(DatabaseContract.NO_DATE)) {
+            DateTime dateFiveDaysBefore = formatter.parseDateTime(deadlineDate)
+                    .withTimeAtStartOfDay()
+                    .withZone(DateTimeZone.forTimeZone(TimeZone.getDefault()))
+                    .minusDays(5);
+            Long notificationTime = dateFiveDaysBefore.getMillis();
+            Intent alarmIntent = new Intent(this, DeadlinePassedAlarmReceiver.class /*needs to be a reciever*/);
+            alarmIntent.putExtra("wish", wish);
+            String ofDate = dateFiveDaysBefore.toString(formatter);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+            AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            manager.setAndAllowWhileIdle(AlarmManager.ELAPSED_REALTIME, notificationTime, pendingIntent);
-        } else {
-            manager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, notificationTime, pendingIntent);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                manager.setAndAllowWhileIdle(AlarmManager.ELAPSED_REALTIME, notificationTime, pendingIntent);
+            } else {
+                manager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, notificationTime, pendingIntent);
+            }
         }
     }
 
@@ -147,7 +152,6 @@ public class ReviewActivity extends AppCompatActivity {
         values.put(DatabaseContract.IncompleteGoals.COLUMN_OBSTACLE, obstacle);
         values.put(DatabaseContract.IncompleteGoals.COLUMN_PLAN, plan);
         values.put(DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_DATE, deadlineDate);
-        values.put(DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_TIME, deadlineTime);
         values.put(DatabaseContract.IncompleteGoals.COLUMN_DATE_CREATED, System.currentTimeMillis());
 
         return db.insert(DatabaseContract.IncompleteGoals.TABLENAME, null, values);

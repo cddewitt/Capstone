@@ -8,18 +8,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.List;
 
 public class HistoryWoopDetailActivity extends AppCompatActivity {
 
     private TextView tbxWish;
     private TextView tbxOutcome;
-    private TextView tbxObstacles;
-    private TextView tbxPlan;
+    private TextView tbxObstaclesAndPlans;
     private TextView tbxDateDeadline;
-    private TextView tbxTimeDeadline;
     private TextView tbxCreatedOn;
     private TextView tbxCompletedOn;
+    private List<String> obstacles;
+    private List<String> plans;
     private SQLiteDatabase db;
     private int rowID;
 
@@ -37,10 +39,19 @@ public class HistoryWoopDetailActivity extends AppCompatActivity {
         if (cursor.moveToFirst()) {
             tbxWish.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_WISH)));
             tbxOutcome.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_OUTCOME)));
-            tbxObstacles.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_OBSTACLE)));
-            tbxPlan.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_PLAN)));
-            tbxDateDeadline.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_DEADLINE_DATE)));
-            tbxTimeDeadline.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_DEADLINE_TIME)));
+            String obstaclesAsString=cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_OBSTACLE));
+            String plansAsString=cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_PLAN));
+            plans= Arrays.asList(plansAsString.split("~"));
+            obstacles =Arrays.asList(obstaclesAsString.split("~"));
+            tbxObstaclesAndPlans.setText("\n");
+            for(int i =0;i<obstacles.size();i++)
+            {
+                tbxObstaclesAndPlans.append(obstacles.get(i)+" : "+plans.get(i)+"\n\n");
+            }
+            if(cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_DEADLINE_DATE)).equals(DatabaseContract.NO_DATE))
+                tbxDateDeadline.setText(" No deadline date");
+            else
+                tbxDateDeadline.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_DEADLINE_DATE)));
             long dateCreated = cursor.getLong(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_DATE_CREATED));
             Calendar cal = Calendar.getInstance();
             cal.setTimeInMillis(dateCreated);
@@ -55,10 +66,8 @@ public class HistoryWoopDetailActivity extends AppCompatActivity {
     private void grabTextViews() {
         tbxWish = (TextView) findViewById(R.id.tbxDetailHistoryWish);
         tbxOutcome = (TextView) findViewById(R.id.tbxDetailHistoryOutcome);
-        tbxObstacles = (TextView) findViewById(R.id.tbxDetailHistoryObstacles);
-        tbxPlan = (TextView) findViewById(R.id.tbxDetailHistoryPlan);
+        tbxObstaclesAndPlans = (TextView) findViewById(R.id.tbxDetailHistoryObstaclesAndPlans);
         tbxDateDeadline = (TextView) findViewById(R.id.tbxDetailHistoryDate);
-        tbxTimeDeadline = (TextView) findViewById(R.id.tbxDetailHistoryTime);
         tbxCompletedOn = (TextView) findViewById(R.id.tbxDetailHistoryFinished);
         tbxCreatedOn = (TextView) findViewById(R.id.tbxDetailHistoryTimeCreated);
     }

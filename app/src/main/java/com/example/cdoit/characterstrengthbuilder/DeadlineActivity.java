@@ -48,7 +48,7 @@ public class DeadlineActivity extends Activity {
     }
 
     public void reviewYourWoopButtonClick(View v) {
-        String deadlineDate = tbxDate.getText().toString().replace("DATE: ", "");
+        String deadlineDate = tbxDate.getText().toString().replace("Selected Date: ", "");
 
         Intent intent = new Intent(this, ReviewActivity.class);
         intent.putExtra("Characteristic", characteristic);
@@ -58,8 +58,6 @@ public class DeadlineActivity extends Activity {
         intent.putExtra("Plan", plan);
         if (!deadlineDate.equals(today)) {
             intent.putExtra("Deadline_Date", deadlineDate);
-            Toast toast = Toast.makeText(this, "Is Not Today", Toast.LENGTH_LONG);
-            toast.show();
         } else {
             intent.putExtra("Deadline_Date", DatabaseContract.NO_DATE);
         }

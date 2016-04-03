@@ -13,7 +13,7 @@ import org.joda.time.DateTime;
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final int version = 7;
+    private static final int version = 9;
     TimeCalculator calculator = new TimeCalculator();
 
     public DatabaseHelper(Context context) {
@@ -29,8 +29,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 DatabaseContract.IncompleteGoals.COLUMN_OUTCOME + " TEXT NOT NULL, " +
                 DatabaseContract.IncompleteGoals.COLUMN_OBSTACLE + " TEXT NOT NULL, " +
                 DatabaseContract.IncompleteGoals.COLUMN_PLAN + " TEXT NOT NULL, " +
-                DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_DATE + " TEXT NOT NULL, " +
-                DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_TIME + " TEXT NOT NULL " +
+                DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_DATE + " TEXT NOT NULL " +
                 " );";
 
         final String SQL_CREATE_COMPLETE_GOALS_TABLE = "CREATE TABLE " + DatabaseContract.CompleteGoals.TABLENAME + " (" +
@@ -41,8 +40,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 DatabaseContract.CompleteGoals.COLUMN_OUTCOME + " TEXT NOT NULL, " +
                 DatabaseContract.CompleteGoals.COLUMN_OBSTACLE + " TEXT NOT NULL, " +
                 DatabaseContract.CompleteGoals.COLUMN_PLAN + " TEXT NOT NULL, " +
-                DatabaseContract.CompleteGoals.COLUMN_DEADLINE_DATE + " TEXT NOT NULL, " +
-                DatabaseContract.CompleteGoals.COLUMN_DEADLINE_TIME + " TEXT NOT NULL " +
+                DatabaseContract.CompleteGoals.COLUMN_DEADLINE_DATE + " TEXT NOT NULL " +
                 " );";
 
         final String SQL_CREATE_GRIT_SCORES_TABLE = "CREATE TABLE " + DatabaseContract.GritScores.TABLENAME + " (" +
@@ -63,7 +61,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_INCOMPLETE_GOALS_TABLE);
         db.execSQL(SQL_CREATE_COMPLETE_GOALS_TABLE);
         db.execSQL(SQL_CREATE_GRIT_SCORES_TABLE);
-        db.execSQL(SQL_CREATE_USER_TABLE);
+       // db.execSQL(SQL_CREATE_USER_TABLE);
         Log.v("Database", "Successfully Created Tables");
     }
 
