@@ -12,15 +12,27 @@ import android.database.Cursor;
 
 
 public class LineGraph extends AppCompatActivity {
+    private SQLiteDatabase db;
+
+    double communicationScore;
+    double curoiosityScore;
+    double grattitudeScore;
+    double gritScore;
+    double optimismScore;
+    double selfControlScore;
+    double zestScore;
+    long dateScored;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("GRAPH");
         setContentView(R.layout.graph);
+        //getDatabaseValues();
 
         GraphView line = (GraphView) this.findViewById(R.id.graph);
         LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
-                new DataPoint(0, 1),
+                new DataPoint(communicationScore, dateScored),
                 new DataPoint(1, 5),
                 new DataPoint(2, 3),
                 new DataPoint(3, 2),
@@ -31,10 +43,17 @@ public class LineGraph extends AppCompatActivity {
 
     private void getDatabaseValues() {
         DatabaseHelper helper = new DatabaseHelper(getApplicationContext());
-        SQLiteDatabase db = helper.getReadableDatabase();
-        Cursor cursor = db.query(DatabaseContract.CompleteGoals.TABLENAME, null, null, null, null, null, null);
-        if(cursor != null) {
-
+        db = helper.getReadableDatabase();
+        Cursor cursor = db.query(DatabaseContract.GritScores.TABLENAME, null, null, null, null, null, null);
+        if(cursor.moveToFirst()) {
+            communicationScore = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_COMMUNICATION_SKILLS));
+            curoiosityScore = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_CURIOSITY));
+            grattitudeScore = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_GRATITUDE));
+            gritScore = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_GRIT));
+            optimismScore = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_OPTIMISM));
+            selfControlScore = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_SELF_CONTROL));
+            zestScore = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_ZEST));
+            dateScored = cursor.getLong(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_DATE_SCORED));
         }
     }
 }
