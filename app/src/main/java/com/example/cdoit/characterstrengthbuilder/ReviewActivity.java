@@ -41,6 +41,7 @@ public class ReviewActivity extends AppCompatActivity {
     private List<String> obstacles;
     private List<String> plans;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,7 +75,7 @@ public class ReviewActivity extends AppCompatActivity {
         if(deadlineDate.equals(DatabaseContract.NO_DATE))
             deadlineTextView.setText("");
         else
-        deadlineTextView.append(" " + deadlineDate);
+            deadlineTextView.append(" " + deadlineDate);
         characteristicView.append(characteristic);
     }
 
@@ -93,8 +94,8 @@ public class ReviewActivity extends AppCompatActivity {
     }
 
     private void setNotificationAlarms() {
-        setFiveDaysLeftNotification();
         setDeadlinePassedNotification();
+        setFiveDaysLeftNotification();
     }
 
     private DateTimeFormatter formatter = DateTimeFormat.forPattern("MM/dd/yyyy");
@@ -107,37 +108,36 @@ public class ReviewActivity extends AppCompatActivity {
                 .withZone(DateTimeZone.forTimeZone(TimeZone.getDefault()))
                 .plusDays(1)
                 .getMillis();
-        Intent alarmIntent = new Intent(this, DeadlinePassedAlarmReceiver.class /*needs to be a receiver*/);
+        Intent alarmIntent = new Intent(this, DeadlinePassedAlarmReceiver.class);
         alarmIntent.putExtra("wish", wish);
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            manager.setAndAllowWhileIdle(AlarmManager.ELAPSED_REALTIME, notificationTime, pendingIntent);
+            manager.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, notificationTime, pendingIntent);
         } else {
-            manager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, notificationTime, pendingIntent);
+            manager.set(AlarmManager.RTC_WAKEUP, notificationTime, pendingIntent);
         }
     }
 
 
     private void setFiveDaysLeftNotification() {
-        if(!deadlineDate.equals(DatabaseContract.NO_DATE)) {
+        if (!deadlineDate.equals(DatabaseContract.NO_DATE)) {
             DateTime dateFiveDaysBefore = formatter.parseDateTime(deadlineDate)
                     .withTimeAtStartOfDay()
                     .withZone(DateTimeZone.forTimeZone(TimeZone.getDefault()))
                     .minusDays(5);
             Long notificationTime = dateFiveDaysBefore.getMillis();
-            Intent alarmIntent = new Intent(this, DeadlinePassedAlarmReceiver.class /*needs to be a reciever*/);
+            Intent alarmIntent = new Intent(this, FiveDaysAlarmReceiver.class);
             alarmIntent.putExtra("wish", wish);
-            String ofDate = dateFiveDaysBefore.toString(formatter);
             PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
             AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                manager.setAndAllowWhileIdle(AlarmManager.ELAPSED_REALTIME, notificationTime, pendingIntent);
+                manager.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, notificationTime, pendingIntent);
             } else {
-                manager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, notificationTime, pendingIntent);
+                manager.set(AlarmManager.RTC_WAKEUP, notificationTime, pendingIntent);
             }
         }
     }
@@ -157,3 +157,4 @@ public class ReviewActivity extends AppCompatActivity {
         return db.insert(DatabaseContract.IncompleteGoals.TABLENAME, null, values);
     }
 }
+
