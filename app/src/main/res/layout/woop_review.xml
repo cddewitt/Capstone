@@ -3,7 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff4e6">
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/saveYourWoopButton"
+        android:layout_alignParentStart="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
     <TextView
         android:id="@+id/reviewTextView"
         android:layout_width="wrap_content"
@@ -69,22 +76,6 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="20dp"
-        android:text="The main obstacle is "
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#000000"
-        android:textSize="24dp" />
-
-    <TextView
-        android:id="@+id/yourPlanToCombatItIsTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/theMainObstacleIsTextView"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp"
-        android:text="Your plan to combat it is "
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000"
         android:textSize="24dp" />
@@ -95,14 +86,18 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/yourPlanToCombatItIsTextView"
+        android:layout_below="@+id/theMainObstacleIsTextView"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:text="The date of your deadline is"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000"
         android:textSize="24dp" />
+
+
+        </RelativeLayout>
+    </ScrollView>
 
     <Button
         android:id="@+id/saveYourWoopButton"
