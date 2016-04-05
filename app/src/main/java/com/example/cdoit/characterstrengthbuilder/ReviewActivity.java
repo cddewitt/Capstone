@@ -8,9 +8,7 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
-import android.text.style.TtsSpan;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -94,13 +92,13 @@ public class ReviewActivity extends AppCompatActivity {
     }
 
     private void setNotificationAlarms() {
-        setDeadlinePassedNotification();
-        setFiveDaysLeftNotification();
+        if (!deadlineDate.equals(DatabaseContract.NO_DATE)) {
+            setDeadlinePassedNotification();
+            setFiveDaysLeftNotification();
+        }
     }
 
     private DateTimeFormatter formatter = DateTimeFormat.forPattern("MM/dd/yyyy");
-
-
 
     private void setDeadlinePassedNotification() {
         Long notificationTime = formatter.parseDateTime(deadlineDate)
@@ -123,7 +121,6 @@ public class ReviewActivity extends AppCompatActivity {
 
 
     private void setFiveDaysLeftNotification() {
-        if (!deadlineDate.equals(DatabaseContract.NO_DATE)) {
             DateTime dateFiveDaysBefore = formatter.parseDateTime(deadlineDate)
                     .withTimeAtStartOfDay()
                     .withZone(DateTimeZone.forTimeZone(TimeZone.getDefault()))
@@ -140,7 +137,6 @@ public class ReviewActivity extends AppCompatActivity {
                 manager.set(AlarmManager.RTC_WAKEUP, notificationTime, pendingIntent);
             }
         }
-    }
 
     private long insertIncompleteGoalData() {
         DatabaseHelper helper = new DatabaseHelper(getApplicationContext());
