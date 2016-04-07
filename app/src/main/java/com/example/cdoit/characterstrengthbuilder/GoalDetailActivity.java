@@ -74,14 +74,14 @@ public class GoalDetailActivity extends AppCompatActivity {
             plans= Arrays.asList(plansAsString.split("~"));
             obstacles =Arrays.asList(obstaclesAsString.split("~"));
             tbxObstaclesAndPlan.setText("\n");
-           for(int i =0;i< obstacles.size();i++)
-           {
-               tbxObstaclesAndPlan.append(obstacles.get(i)+" : "+plans.get(i)+"\n\n");
-           }
+            for(int i =0;i< obstacles.size();i++)
+            {
+                tbxObstaclesAndPlan.append(obstacles.get(i)+" : "+plans.get(i)+"\n\n");
+            }
             if(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_DATE)).equals(DatabaseContract.NO_DATE))
                 tbxDate.setText(" No deadline date");
             else
-                 tbxDate.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_DATE)));
+                tbxDate.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_DATE)));
             dateCreated = cursor.getLong(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_DATE_CREATED));
 
         }
