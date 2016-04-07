@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class RateYourselfActivity extends AppCompatActivity {
 
@@ -151,14 +152,14 @@ public class RateYourselfActivity extends AppCompatActivity {
             }
         });
 
-        // populateScores();
+        populateScores();
     }
 
     private void populateScores() {
         DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
         SQLiteDatabase database = databaseHelper.getWritableDatabase();
         Cursor cursor = database.query(DatabaseContract.GritScores.TABLENAME, null, null, null, null, null, null);
-        if (cursor != null) {
+        if (cursor.moveToLast()) {
             Double[] scores = new Double[]{Double.parseDouble(DatabaseContract.GritScores.COLUMN_GRIT),
                     Double.parseDouble(DatabaseContract.GritScores.COLUMN_SELF_CONTROL),
                     Double.parseDouble(DatabaseContract.GritScores.COLUMN_COMMUNICATION_SKILLS),
@@ -289,7 +290,11 @@ public class RateYourselfActivity extends AppCompatActivity {
     }
 
     public void submitSelfEvaluationButtonClick(View v) {
-        submitScores();
+        long rows = submitScores();
+        if (rows != -1) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Successful insert!", Toast.LENGTH_LONG);
+            toast.show();
+        }
     }
 
 }
