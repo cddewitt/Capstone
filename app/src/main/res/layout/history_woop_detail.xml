@@ -23,57 +23,57 @@
             android:background="#fff4e6">
 
             <TextView
-                android:id="@+id/lblDetailHistoryWish"
+                android:id="@+id/lblDetailHistoryGoal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:text="Wish: "
+                android:text="Goal: "
                 android:textSize="24dp" />
 
             <TextView
-                android:id="@+id/tbxDetailHistoryWish"
+                android:id="@+id/tbxDetailHistoryGoal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/lblDetailHistoryWish"
+                android:layout_toRightOf="@+id/lblDetailHistoryGoal"
                 android:text="New Text"
                 android:textSize="24dp" />
 
             <TextView
-                android:id="@+id/lblDetailHistoryOutcome"
+                android:id="@+id/lblDetailHistoryResult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:layout_below="@+id/lblDetailHistoryWish"
+                android:layout_below="@+id/lblDetailHistoryGoal"
                 android:layout_marginTop="50dp"
-                android:text="Outcome: "
+                android:text="Result: "
                 android:textSize="24dp" />
 
             <TextView
-                android:id="@+id/tbxDetailHistoryOutcome"
+                android:id="@+id/tbxDetailHistoryResult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/lblDetailHistoryOutcome"
-                android:layout_toRightOf="@+id/lblDetailHistoryOutcome"
+                android:layout_alignTop="@+id/lblDetailHistoryResult"
+                android:layout_toRightOf="@+id/lblDetailHistoryResult"
                 android:text="New Text"
                 android:textSize="24dp" />
 
             <TextView
-                android:id="@+id/lblDetailHistoryObstaclesAndPlans"
+                android:id="@+id/lblDetailHistoryInteferencesAndPlans"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:layout_below="@+id/lblDetailHistoryOutcome"
+                android:layout_below="@+id/lblDetailHistoryResult"
                 android:layout_marginTop="50dp"
-                android:text="Obstacle:Plan "
+                android:text="Inteference:Plan "
                 android:textSize="24dp" />
 
             <TextView
-                android:id="@+id/tbxDetailHistoryObstaclesAndPlans"
+                android:id="@+id/tbxDetailHistoryInteferencesAndPlans"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/lblDetailHistoryObstaclesAndPlans"
+                android:layout_below="@+id/lblDetailHistoryInteferencesAndPlans"
                 android:layout_alignParentLeft="true"
                 android:text="New Text"
                 android:textSize="24dp" />
@@ -83,7 +83,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:layout_below="@+id/tbxDetailHistoryObstaclesAndPlans"
+                android:layout_below="@+id/tbxDetailHistoryInteferencesAndPlans"
                 android:layout_marginTop="20dp"
                 android:text="Deadline Date: "
                 android:textSize="24dp" />

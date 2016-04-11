@@ -21,7 +21,7 @@ public class InteferenceActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Character Strength Builder");
-        setContentView(R.layout.woop_inteference);
+        setContentView(R.layout.woop_interference);
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             characteristic = extras.getString("Characteristic");

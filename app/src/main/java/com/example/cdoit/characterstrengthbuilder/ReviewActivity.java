@@ -143,9 +143,9 @@ public class ReviewActivity extends AppCompatActivity {
         SQLiteDatabase db = helper.getReadableDatabase();
         ContentValues values = new ContentValues();
 
-        values.put(DatabaseContract.IncompleteGoals.COLUMN_WISH, goal);
-        values.put(DatabaseContract.IncompleteGoals.COLUMN_OUTCOME, result);
-        values.put(DatabaseContract.IncompleteGoals.COLUMN_OBSTACLE, inteference);
+        values.put(DatabaseContract.IncompleteGoals.COLUMN_GOAL, goal);
+        values.put(DatabaseContract.IncompleteGoals.COLUMN_RESULT, result);
+        values.put(DatabaseContract.IncompleteGoals.COLUMN_INTERFERENCE, inteference);
         values.put(DatabaseContract.IncompleteGoals.COLUMN_PLAN, plan);
         values.put(DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_DATE, deadlineDate);
         values.put(DatabaseContract.IncompleteGoals.COLUMN_DATE_CREATED, System.currentTimeMillis());

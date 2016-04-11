@@ -14,13 +14,13 @@ import java.util.List;
 
 public class HistoryWoopDetailActivity extends AppCompatActivity {
 
-    private TextView tbxWish;
-    private TextView tbxOutcome;
-    private TextView tbxObstaclesAndPlans;
+    private TextView tbxGoal;
+    private TextView tbxResult;
+    private TextView tbxInteferencesAndPlans;
     private TextView tbxDateDeadline;
     private TextView tbxCreatedOn;
     private TextView tbxCompletedOn;
-    private List<String> obstacles;
+    private List<String> Inteferences;
     private List<String> plans;
     private SQLiteDatabase db;
     private int rowID;
@@ -37,16 +37,16 @@ public class HistoryWoopDetailActivity extends AppCompatActivity {
         db = helper.getWritableDatabase();
         Cursor cursor = db.query(DatabaseContract.CompleteGoals.TABLENAME, null, DatabaseContract.CompleteGoals.COLUMN_ID + "=" + rowID, null, null, null, null);
         if (cursor.moveToFirst()) {
-            tbxWish.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_WISH)));
-            tbxOutcome.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_OUTCOME)));
-            String obstaclesAsString=cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_OBSTACLE));
+            tbxGoal.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_GOAL)));
+            tbxResult.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_RESULT)));
+            String inteferencesAsString=cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_INTERFERENCES));
             String plansAsString=cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_PLAN));
             plans= Arrays.asList(plansAsString.split("~"));
-            obstacles =Arrays.asList(obstaclesAsString.split("~"));
-            tbxObstaclesAndPlans.setText("\n");
-            for(int i =0;i<obstacles.size();i++)
+            Inteferences =Arrays.asList(inteferencesAsString.split("~"));
+            tbxInteferencesAndPlans.setText("\n");
+            for(int i =0;i< Inteferences.size();i++)
             {
-                tbxObstaclesAndPlans.append(obstacles.get(i)+" : "+plans.get(i)+"\n\n");
+                tbxInteferencesAndPlans.append(Inteferences.get(i) + " : " + plans.get(i) + "\n\n");
             }
             if(cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_DEADLINE_DATE)).equals(DatabaseContract.NO_DATE))
                 tbxDateDeadline.setText(" No deadline date");
@@ -59,14 +59,15 @@ public class HistoryWoopDetailActivity extends AppCompatActivity {
             long dateCompleted = cursor.getLong(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_DATE_COMPLETED));
             cal.setTimeInMillis(dateCompleted);
             tbxCompletedOn.setText(cal.get(Calendar.MONTH) + 1 + "/" + cal.get(Calendar.DAY_OF_MONTH));
-            setTitle(tbxWish.getText().toString());
+            setTitle(tbxGoal.getText().toString());
         }
+        cursor.close();
     }
 
     private void grabTextViews() {
-        tbxWish = (TextView) findViewById(R.id.tbxDetailHistoryWish);
-        tbxOutcome = (TextView) findViewById(R.id.tbxDetailHistoryOutcome);
-        tbxObstaclesAndPlans = (TextView) findViewById(R.id.tbxDetailHistoryObstaclesAndPlans);
+        tbxGoal = (TextView) findViewById(R.id.tbxDetailHistoryGoal);
+        tbxResult = (TextView) findViewById(R.id.tbxDetailHistoryResult);
+        tbxInteferencesAndPlans = (TextView) findViewById(R.id.tbxDetailHistoryInteferencesAndPlans);
         tbxDateDeadline = (TextView) findViewById(R.id.tbxDetailHistoryDate);
         tbxCompletedOn = (TextView) findViewById(R.id.tbxDetailHistoryFinished);
         tbxCreatedOn = (TextView) findViewById(R.id.tbxDetailHistoryTimeCreated);

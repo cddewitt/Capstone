@@ -19,57 +19,57 @@
 
 
     <TextView
-        android:id="@+id/lblDetailWish"
+        android:id="@+id/lblDetailGoal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="Wish: "
+        android:text="Goal: "
         android:textSize="24dp" />
 
     <TextView
-        android:id="@+id/tbxDetailWish"
+        android:id="@+id/tbxDetailGoal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/lblDetailWish"
+        android:layout_toRightOf="@+id/lblDetailGoal"
         android:text="New Text"
         android:textSize="24dp" />
 
     <TextView
-        android:id="@+id/lblDetailOutcome"
+        android:id="@+id/lblDetailResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/lblDetailWish"
+        android:layout_below="@+id/lblDetailGoal"
         android:layout_marginTop="50dp"
-        android:text="Outcome: "
+        android:text="Result: "
         android:textSize="24dp" />
 
     <TextView
-        android:id="@+id/tbxDetailOutcome"
+        android:id="@+id/tbxDetailResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/lblDetailOutcome"
-        android:layout_toRightOf="@+id/lblDetailOutcome"
+        android:layout_alignTop="@+id/lblDetailResult"
+        android:layout_toRightOf="@+id/lblDetailResult"
         android:text="New Text"
         android:textSize="24dp" />
 
     <TextView
-        android:id="@+id/lblDetailObstaclesAndPlans"
+        android:id="@+id/lblDetailInterferencesAndPlans"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/lblDetailOutcome"
+        android:layout_below="@+id/lblDetailResult"
         android:layout_marginTop="50dp"
-        android:text="Obstacle:Plan "
+        android:text="Interference:Plan "
         android:textSize="24dp" />
 
     <TextView
-        android:id="@+id/tbxDetailObstaclesAndPlan"
+        android:id="@+id/tbxDetailInterferencesAndPlan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/lblDetailObstaclesAndPlans"
+        android:layout_below="@+id/lblDetailInterferencesAndPlans"
         android:layout_alignParentLeft="true"
         android:text="New Text"
         android:textSize="24dp" />
@@ -79,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/tbxDetailObstaclesAndPlan"
+        android:layout_below="@+id/tbxDetailInterferencesAndPlan"
         android:layout_marginTop="20dp"
         android:text="Deadline Date: "
         android:textSize="24dp" />
