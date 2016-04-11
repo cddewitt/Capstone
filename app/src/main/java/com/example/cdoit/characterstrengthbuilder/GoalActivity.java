@@ -12,16 +12,16 @@ import android.widget.Toast;
 /**
  * Created by Cory on 2/8/2016.
  */
-public class WishActivity extends AppCompatActivity {
+public class GoalActivity extends AppCompatActivity {
 
-    private TextView tbxWish;
+    private TextView tbxGoal;
     private String characteristic = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle("Wish");
-        setContentView(R.layout.woop_wish);
+        setTitle("Goal");
+        setContentView(R.layout.woop_goal);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
@@ -52,15 +52,15 @@ public class WishActivity extends AppCompatActivity {
     }
 
     public void continueToOutcomeButtonClick(View v) {
-        tbxWish = (TextView) findViewById(R.id.wishEditText);
-        String wish = tbxWish.getText().toString();
-        if (wish.equals("")) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Please enter a wish before continuing", Toast.LENGTH_LONG);
+        tbxGoal = (TextView) findViewById(R.id.goalEditText);
+        String goal = tbxGoal.getText().toString();
+        if (goal.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Please enter a goal before continuing", Toast.LENGTH_LONG);
             toast.show();
         } else {
-            Intent intent = new Intent(this, OutcomeActivity.class);
+            Intent intent = new Intent(this, ResultActivity.class);
             intent.putExtra("Characteristic", characteristic);
-            intent.putExtra("Wish", tbxWish.getText().toString());
+            intent.putExtra("Goal", tbxGoal.getText().toString());
             startActivity(intent);
         }
     }

@@ -6,18 +6,18 @@
     android:background="#fff4e6">
 
     <TextView
-        android:id="@+id/obstacleTextView"
+        android:id="@+id/interferenceTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="Obstacles"
+        android:text="Interferences"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#3c2f2f"
         android:textSize="48dp" />
 
     <TextView
-        android:id="@+id/obstacleDescriptionTextView"
+        android:id="@+id/interferenceDescriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/view"
@@ -25,11 +25,11 @@
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp"
-        android:text="Think of one or more things that might stand in the way of fulfilling your wish. What is/are the obstacle(s) that could hold you back from seeing your wish through?"
+        android:text="Think of one or more things that might stand in the way of fulfilling your goal. What is/are the interference(s) that could hold you back from seeing your goal through?"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000"
-        android:textSize="28dp" />
+        android:textSize="28dp"
+        android:layout_below="@+id/interferenceTextView" />
 
     <Button
         android:id="@+id/continueToPlanButton"
@@ -46,7 +46,7 @@
         android:text="Continue To Plan" />
 
     <Button
-        android:id="@+id/addObstacle"
+        android:id="@+id/addInterference"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -56,11 +56,11 @@
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"
         android:background="#ffffff"
-        android:onClick="addObstacleButtonClick"
-        android:text="Add Obstacle" />
+        android:onClick="addInterferenceButtonClick"
+        android:text="Add INTERFERENCE" />
 
     <EditText
-        android:id="@+id/obstacleEditText"
+        android:id="@+id/interferenceEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/continueToPlanButton"
@@ -73,19 +73,19 @@
         android:layout_marginRight="20dp"
         android:background="#be9b7b"
         android:editable="true"
-        android:hint="Enter one obstacle here..."
+        android:hint="Enter your interference here..."
         android:textColor="#000000" />
 
     <TextView
-        android:id="@+id/whatIsTheMainObstacleTextView"
+        android:id="@+id/whatIsTheMainInterferenceTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/obstacleEditText"
+        android:layout_above="@+id/interferenceEditText"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="20dp"
-        android:text="What is one obstacle?\n(Click ADD OBSTACLE to add another)"
+        android:text="What is one inteference?\n(Click ADD INTERFERENCE to add another)"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#000000"
         android:textSize="20dp" />
@@ -94,7 +94,7 @@
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:layout_above="@+id/whatIsTheMainObstacleTextView"
+        android:layout_above="@+id/whatIsTheMainInterferenceTextView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="20dp"

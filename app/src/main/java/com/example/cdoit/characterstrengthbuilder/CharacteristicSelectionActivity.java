@@ -23,7 +23,7 @@ public class CharacteristicSelectionActivity extends AppCompatActivity {
     }
 
     public void btnCharacteristicToWishClick(View v) {
-        Intent intent = new Intent(this, WishActivity.class);
+        Intent intent = new Intent(this, GoalActivity.class);
         intent.putExtra("Characteristic", spinner.getSelectedItem().toString());
         startActivity(intent);
     }

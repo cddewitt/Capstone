@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -17,10 +16,10 @@ public class DeadlineActivity extends Activity {
 
     private static TextView tbxDate;
     private String characteristic = "";
-    private String wish = "";
-    private String outcome = "";
-    private String obstacle = "";
-    private String plan = "";
+    private String goal = "";
+    private String result = "";
+    private String interferences = "";
+    private String plans = "";
     private String today;
 
     @Override
@@ -35,10 +34,10 @@ public class DeadlineActivity extends Activity {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             characteristic = extras.getString("Characteristic");
-            wish = extras.getString("Wish");
-            outcome = extras.getString("Outcome");
-            obstacle = extras.getString("Obstacle");
-            plan = extras.getString("Plan");
+            goal = extras.getString("Goal");
+            result = extras.getString("Result");
+            interferences = extras.getString("Interferences");
+            plans = extras.getString("Plan");
         }
     }
 
@@ -52,10 +51,10 @@ public class DeadlineActivity extends Activity {
 
         Intent intent = new Intent(this, ReviewActivity.class);
         intent.putExtra("Characteristic", characteristic);
-        intent.putExtra("Wish", wish);
-        intent.putExtra("Outcome", outcome);
-        intent.putExtra("Obstacle", obstacle);
-        intent.putExtra("Plan", plan);
+        intent.putExtra("Goal", goal);
+        intent.putExtra("Result", result);
+        intent.putExtra("Interferences", interferences);
+        intent.putExtra("Plan", plans);
         if (!deadlineDate.equals(today)) {
             intent.putExtra("Deadline_Date", deadlineDate);
         } else {

@@ -36,5 +36,5 @@
         android:layout_alignParentRight="true"
         android:background="#ffffff"
         android:onClick="btnCharacteristicToWishClick"
-        android:text="Continue To Wish" />
+        android:text="Continue To Goal" />
 </RelativeLayout>
