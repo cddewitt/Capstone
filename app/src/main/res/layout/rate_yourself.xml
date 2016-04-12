@@ -31,7 +31,7 @@
                 android:layout_height="35dp"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:layout_toRightOf="@+id/gritTextView"
                 android:background="#ffffff"
                 android:onClick="takeGritTestButtonClick"
@@ -282,6 +282,76 @@
                 android:background="#ffffff"
                 android:onClick="submitSelfEvaluationButtonClick"
                 android:text="Submit Self-Evaluation" />
+
+            <TextView
+                android:id="@+id/gritDescriptionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/gritSeekBar"
+                android:layout_alignStart="@+id/gritTextView"
+                android:layout_below="@+id/gritTextView"
+                android:text="perseverance and passion for long-term goals"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/selfControlDescriptionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/selfControlSeekBar"
+                android:layout_alignStart="@+id/selfControlTextView"
+                android:layout_below="@+id/selfControlTextView"
+                android:text="ability to control emotions, behaviors, desires"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/communicationSkillsDescriptionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/communicationSkillsSeekBar"
+                android:layout_alignStart="@+id/communicationSkillsTextView"
+                android:layout_below="@+id/communicationSkillsTextView"
+                android:text="ability to get along well with others"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/zestDescriptionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/zestSeekBar"
+                android:layout_alignStart="@+id/zestTextView"
+                android:layout_below="@+id/zestTextView"
+                android:text="feeling of enjoyment and enthusiasm"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/gratitudeDescriptionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/gratitudeSeekBar"
+                android:layout_alignStart="@+id/gratitudeTextView"
+                android:layout_below="@+id/gratitudeTextView"
+                android:text="feeling of appreciation and thanks"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/optimismDescriptionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/optimismSeekBar"
+                android:layout_alignStart="@+id/optimismTextView"
+                android:layout_below="@+id/optimismTextView"
+                android:text="feeling that good things will happen in the future"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/curiosityDescriptionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/curiositySeekBar"
+                android:layout_alignStart="@+id/curiosityTextView"
+                android:layout_below="@+id/curiosityTextView"
+                android:text="desire to learn or know more"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

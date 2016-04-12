@@ -24,19 +24,19 @@ import java.util.TimeZone;
 
 public class ReviewActivity extends AppCompatActivity {
 
-    private TextView wishTextView;
-    private TextView outcomeTextView;
-    private TextView obstaclePlanTextView;
+    private TextView goalTextView;
+    private TextView resultTextView;
+    private TextView inteferencePlanTextView;
     private TextView deadlineTextView;
     private TextView characteristicView;
 
     private String characteristic;
-    private String wish;
-    private String outcome;
-    private String obstacle;
+    private String goal;
+    private String result;
+    private String inteference;
     private String plan;
     private String deadlineDate;
-    private List<String> obstacles;
+    private List<String> inteferences;
     private List<String> plans;
 
 
@@ -48,26 +48,26 @@ public class ReviewActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             characteristic = extras.getString("Characteristic");
-            wish = extras.getString("Wish");
-            outcome = extras.getString("Outcome");
-            obstacle = extras.getString("Obstacle");
+            goal = extras.getString("Goal");
+            result = extras.getString("Result");
+            inteference = extras.getString("Interferences");
             plan = extras.getString("Plan");
             deadlineDate = extras.getString("Deadline_Date");
-            obstacles = Arrays.asList(obstacle.split("~"));
+            inteferences = Arrays.asList(inteference.split("~"));
             plans = Arrays.asList(plan.split("~"));
         }
 
-        wishTextView = (TextView) findViewById(R.id.yourWishIsTextView);
-        outcomeTextView = (TextView) findViewById(R.id.theBestOutcomeIsTextView);
-        obstaclePlanTextView = (TextView) findViewById(R.id.theMainObstacleIsTextView);
+        goalTextView = (TextView) findViewById(R.id.yourGoaIsTextView);
+        resultTextView = (TextView) findViewById(R.id.theBestResultTextView);
+        inteferencePlanTextView = (TextView) findViewById(R.id.theMainInteferencesTextView);
         deadlineTextView = (TextView) findViewById(R.id.yourDeadlineIsTextView);
         characteristicView = (TextView) findViewById(R.id.tbxReviewCharacteristic);
 
-        wishTextView.append(wish);
-        outcomeTextView.append(outcome);
-        for(int i=0;i<obstacles.size();i++)
+        goalTextView.append(goal);
+        resultTextView.append(result);
+        for(int i=0;i< inteferences.size();i++)
         {
-            obstaclePlanTextView.append("Your plan to combat "+obstacles.get(i)+" is to "+plans.get(i)+"!\n\n");
+            inteferencePlanTextView.append("Your plan to combat " + inteferences.get(i) + " is to " + plans.get(i) + "!\n\n");
 
         }
         if(deadlineDate.equals(DatabaseContract.NO_DATE))
@@ -83,10 +83,10 @@ public class ReviewActivity extends AppCompatActivity {
             setNotificationAlarms();
             Intent intent = new Intent(this, SaveActivity.class);
             startActivity(intent);
-            Toast toast = Toast.makeText(this, "WOOP successfully saved!", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(this, "GRIP successfully saved!", Toast.LENGTH_LONG);
             toast.show();
         } else {
-            Toast toast = Toast.makeText(this, "Had trouble saving your WOOP. Please try again.", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(this, "Had trouble saving your GRIP. Please try again.", Toast.LENGTH_LONG);
             toast.show();
         }
     }
@@ -107,7 +107,7 @@ public class ReviewActivity extends AppCompatActivity {
                 .plusDays(1)
                 .getMillis();
         Intent alarmIntent = new Intent(this, DeadlinePassedAlarmReceiver.class);
-        alarmIntent.putExtra("wish", wish);
+        alarmIntent.putExtra("goal", goal);
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
@@ -127,7 +127,7 @@ public class ReviewActivity extends AppCompatActivity {
                     .minusDays(5);
             Long notificationTime = dateFiveDaysBefore.getMillis();
             Intent alarmIntent = new Intent(this, FiveDaysAlarmReceiver.class);
-            alarmIntent.putExtra("wish", wish);
+            alarmIntent.putExtra("goal", goal);
             PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
             AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
@@ -143,9 +143,9 @@ public class ReviewActivity extends AppCompatActivity {
         SQLiteDatabase db = helper.getReadableDatabase();
         ContentValues values = new ContentValues();
 
-        values.put(DatabaseContract.IncompleteGoals.COLUMN_WISH, wish);
-        values.put(DatabaseContract.IncompleteGoals.COLUMN_OUTCOME, outcome);
-        values.put(DatabaseContract.IncompleteGoals.COLUMN_OBSTACLE, obstacle);
+        values.put(DatabaseContract.IncompleteGoals.COLUMN_GOAL, goal);
+        values.put(DatabaseContract.IncompleteGoals.COLUMN_RESULT, result);
+        values.put(DatabaseContract.IncompleteGoals.COLUMN_INTERFERENCE, inteference);
         values.put(DatabaseContract.IncompleteGoals.COLUMN_PLAN, plan);
         values.put(DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_DATE, deadlineDate);
         values.put(DatabaseContract.IncompleteGoals.COLUMN_DATE_CREATED, System.currentTimeMillis());

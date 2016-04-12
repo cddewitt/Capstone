@@ -7,35 +7,35 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class OutcomeActivity extends AppCompatActivity {
+public class ResultActivity extends AppCompatActivity {
 
-    private TextView tbxOutcome;
-    private String wish = "";
+    private TextView tbxResult;
+    private String goal = "";
     private String characteristic = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Character Strength Builder");
-        setContentView(R.layout.woop_outcome);
-        tbxOutcome = (TextView) findViewById(R.id.outcomeEditText);
+        setContentView(R.layout.woop_result);
+        tbxResult = (TextView) findViewById(R.id.resultEditText);
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             characteristic = extras.getString("Characteristic");
-            wish = extras.getString("Wish");
+            goal = extras.getString("Goal");
         }
     }
 
     public void continueToObstacleButtonClick(View v) {
-        String outcome = tbxOutcome.getText().toString();
-        if (outcome.equals("")) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Please enter a possible outcome before continuing", Toast.LENGTH_LONG);
+        String result = tbxResult.getText().toString();
+        if (result.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Please enter a possible result before continuing", Toast.LENGTH_LONG);
             toast.show();
         } else {
-            Intent intent = new Intent(this, ObstacleActivity.class);
+            Intent intent = new Intent(this, InteferenceActivity.class);
             intent.putExtra("Characteristic", characteristic);
-            intent.putExtra("Wish", wish);
-            intent.putExtra("Outcome", outcome);
+            intent.putExtra("Goal", goal);
+            intent.putExtra("Result", result);
             startActivity(intent);
         }
     }

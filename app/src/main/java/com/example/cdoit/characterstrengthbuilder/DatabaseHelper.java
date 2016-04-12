@@ -13,7 +13,7 @@ import org.joda.time.DateTime;
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final int version = 9;
+    private static final int version = 10;
     TimeCalculator calculator = new TimeCalculator();
 
     public DatabaseHelper(Context context) {
@@ -25,9 +25,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         final String SQL_CREATE_INCOMPLETE_GOALS_TABLE = "CREATE TABLE " + DatabaseContract.IncompleteGoals.TABLENAME + " (" +
                 DatabaseContract.IncompleteGoals.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 DatabaseContract.IncompleteGoals.COLUMN_DATE_CREATED + " LONG NOT NULL," +
-                DatabaseContract.IncompleteGoals.COLUMN_WISH + " TEXT NOT NULL, " +
-                DatabaseContract.IncompleteGoals.COLUMN_OUTCOME + " TEXT NOT NULL, " +
-                DatabaseContract.IncompleteGoals.COLUMN_OBSTACLE + " TEXT NOT NULL, " +
+                DatabaseContract.IncompleteGoals.COLUMN_GOAL + " TEXT NOT NULL, " +
+                DatabaseContract.IncompleteGoals.COLUMN_RESULT + " TEXT NOT NULL, " +
+                DatabaseContract.IncompleteGoals.COLUMN_INTERFERENCE + " TEXT NOT NULL, " +
                 DatabaseContract.IncompleteGoals.COLUMN_PLAN + " TEXT NOT NULL, " +
                 DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_DATE + " TEXT NOT NULL " +
                 " );";
@@ -36,9 +36,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 DatabaseContract.CompleteGoals.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 DatabaseContract.CompleteGoals.COLUMN_DATE_CREATED + " LONG NOT NULL, " +
                 DatabaseContract.CompleteGoals.COLUMN_DATE_COMPLETED + " LONG NOT NULL, " +
-                DatabaseContract.CompleteGoals.COLUMN_WISH + " TEXT NOT NULL, " +
-                DatabaseContract.CompleteGoals.COLUMN_OUTCOME + " TEXT NOT NULL, " +
-                DatabaseContract.CompleteGoals.COLUMN_OBSTACLE + " TEXT NOT NULL, " +
+                DatabaseContract.CompleteGoals.COLUMN_GOAL + " TEXT NOT NULL, " +
+                DatabaseContract.CompleteGoals.COLUMN_RESULT + " TEXT NOT NULL, " +
+                DatabaseContract.CompleteGoals.COLUMN_INTERFERENCES + " TEXT NOT NULL, " +
                 DatabaseContract.CompleteGoals.COLUMN_PLAN + " TEXT NOT NULL, " +
                 DatabaseContract.CompleteGoals.COLUMN_DEADLINE_DATE + " TEXT NOT NULL " +
                 " );";
@@ -75,7 +75,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public DateTime getDeadlineDate(String wish) {
-        String query = "SELECT COLUMN_DEADLINE_DATE FROM " + DatabaseContract.IncompleteGoals.TABLENAME + "WHERE " + DatabaseContract.IncompleteGoals.COLUMN_WISH + " =\"" + wish + "\"";
+        String query = "SELECT COLUMN_DEADLINE_DATE FROM " + DatabaseContract.IncompleteGoals.TABLENAME + "WHERE " + DatabaseContract.IncompleteGoals.COLUMN_GOAL + " =\"" + wish + "\"";
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
 
@@ -89,7 +89,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public String getNearestGoal() {
-        String query = "SELECT COLUMN_WISH FROM " + DatabaseContract.IncompleteGoals.TABLENAME + "WHERE DeadlineDate =\"" + calculator.getDateFiveDaysFromNow().toString() + "\"";
+        String query = "SELECT COLUMN_GOAL FROM " + DatabaseContract.IncompleteGoals.TABLENAME + "WHERE DeadlineDate =\"" + calculator.getDateFiveDaysFromNow().toString() + "\"";
         SQLiteDatabase db = this.getWritableDatabase();
         String wishName = getGoal(query, db);
         return wishName;
@@ -110,7 +110,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public String getMissedGoal() {
-        String query = "SELECT COLUMN_WISH FROM " + DatabaseContract.IncompleteGoals.TABLENAME + "WHERE DeadlineDate =\"" + calculator.getNextDay().toString() + "\"";
+        String query = "SELECT COLUMN_GOAL FROM " + DatabaseContract.IncompleteGoals.TABLENAME + "WHERE DeadlineDate =\"" + calculator.getNextDay().toString() + "\"";
         SQLiteDatabase db = this.getWritableDatabase();
         String wishName = getGoal(query, db);
         return wishName;

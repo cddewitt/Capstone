@@ -24,7 +24,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
-        android:text="Think of something you can do to combat the obstacle standing in between you and fulfilling your wish. What can you do to overcome your obstacle?"
+        android:text="Think of something you can do to combat the interference standing in between you and fulfilling your goal. What can you do to overcome your interference?"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000"
         android:textSize="28dp" />

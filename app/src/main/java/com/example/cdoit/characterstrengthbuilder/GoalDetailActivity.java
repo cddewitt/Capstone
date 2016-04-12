@@ -34,11 +34,11 @@ public class GoalDetailActivity extends AppCompatActivity {
     // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
     private static final String TWITTER_KEY = "ica1nwRH9wGLrCWkhHG2Lfen8";
     private static final String TWITTER_SECRET = "ktK85XZzR7fYK57380FO94euosu8zsc4uxOljqRnLprd2ZhTaa";
-    private String obstaclesAsString;
+    private String interferencesAsString;
     private String plansAsString;
-    private TextView tbxWish;
-    private TextView tbxOutcome;
-    private TextView tbxObstaclesAndPlan;
+    private TextView tbxGoal;
+    private TextView tbxResult;
+    private TextView tbxInterferencesAndPlan;
     private TextView tbxDate;
     private SQLiteDatabase db;
     private int rowID;
@@ -46,8 +46,8 @@ public class GoalDetailActivity extends AppCompatActivity {
     private ShareLinkContent content;
     private ShareDialog shareDialog;
     private Card appCard;
-    private String wishName;
-    private List<String> obstacles;
+    private String goalName;
+    private List<String> interferences;
     private List<String> plans;
 
 
@@ -66,17 +66,17 @@ public class GoalDetailActivity extends AppCompatActivity {
         db = helper.getWritableDatabase();
         Cursor cursor = db.query(DatabaseContract.IncompleteGoals.TABLENAME, null, DatabaseContract.IncompleteGoals.COLUMN_ID + "=" + rowID, null, null, null, null);
         if (cursor.moveToFirst()) {
-            wishName = cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_WISH));
-            tbxWish.setText(wishName);
-            tbxOutcome.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_OUTCOME)));
-            obstaclesAsString=cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_OBSTACLE));
+            goalName = cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_GOAL));
+            tbxGoal.setText(goalName);
+            tbxResult.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_RESULT)));
+            interferencesAsString =cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_INTERFERENCE));
             plansAsString=cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_PLAN));
             plans= Arrays.asList(plansAsString.split("~"));
-            obstacles =Arrays.asList(obstaclesAsString.split("~"));
-            tbxObstaclesAndPlan.setText("\n");
-            for(int i =0;i< obstacles.size();i++)
+            interferences =Arrays.asList(interferencesAsString.split("~"));
+            tbxInterferencesAndPlan.setText("\n");
+            for(int i =0;i< interferences.size();i++)
             {
-                tbxObstaclesAndPlan.append(obstacles.get(i)+" : "+plans.get(i)+"\n\n");
+                tbxInterferencesAndPlan.append(interferences.get(i) + " : " + plans.get(i) + "\n\n");
             }
             if(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_DATE)).equals(DatabaseContract.NO_DATE))
                 tbxDate.setText(" No deadline date");
@@ -89,9 +89,9 @@ public class GoalDetailActivity extends AppCompatActivity {
     }
 
     private void grabTextViews() {
-        tbxWish = (TextView) findViewById(R.id.tbxDetailWish);
-        tbxOutcome = (TextView) findViewById(R.id.tbxDetailOutcome);
-        tbxObstaclesAndPlan = (TextView) findViewById(R.id.tbxDetailObstaclesAndPlan);
+        tbxGoal = (TextView) findViewById(R.id.tbxDetailGoal);
+        tbxResult = (TextView) findViewById(R.id.tbxDetailResult);
+        tbxInterferencesAndPlan = (TextView) findViewById(R.id.tbxDetailInterferencesAndPlan);
         tbxDate = (TextView) findViewById(R.id.tbxDetailDate);
     }
 
@@ -118,7 +118,7 @@ public class GoalDetailActivity extends AppCompatActivity {
         if (id == R.id.share_goal) {
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
             shareIntent.setType("text/plain");
-            shareIntent.putExtra(Intent.EXTRA_TEXT, "I am going " + wishName + " thanks to the Character Strength Builder!");
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "I am going " + goalName + " thanks to the Character Strength Builder!");
             startActivity(Intent.createChooser(shareIntent, "Share"));
             return true;
         }
@@ -152,9 +152,9 @@ public class GoalDetailActivity extends AppCompatActivity {
 
     public void btnMarkAsCompletedClick(View v) {
         ContentValues values = new ContentValues();
-        values.put(DatabaseContract.CompleteGoals.COLUMN_WISH, tbxWish.getText().toString());
-        values.put(DatabaseContract.CompleteGoals.COLUMN_OUTCOME, tbxOutcome.getText().toString());
-        values.put(DatabaseContract.CompleteGoals.COLUMN_OBSTACLE, obstaclesAsString);
+        values.put(DatabaseContract.CompleteGoals.COLUMN_GOAL, tbxGoal.getText().toString());
+        values.put(DatabaseContract.CompleteGoals.COLUMN_RESULT, tbxResult.getText().toString());
+        values.put(DatabaseContract.CompleteGoals.COLUMN_INTERFERENCES, interferencesAsString);
         values.put(DatabaseContract.CompleteGoals.COLUMN_PLAN, plansAsString);
         values.put(DatabaseContract.CompleteGoals.COLUMN_DATE_COMPLETED, System.currentTimeMillis());
         values.put(DatabaseContract.CompleteGoals.COLUMN_DATE_CREATED, dateCreated);

@@ -37,7 +37,7 @@
         android:textSize="24dp" />
 
     <TextView
-        android:id="@+id/yourWishIsTextView"
+        android:id="@+id/yourGoaIsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -46,33 +46,33 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="20dp"
-        android:text="Your wish is "
+        android:text="Your goal is "
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000"
         android:textSize="24dp" />
 
     <TextView
-        android:id="@+id/theBestOutcomeIsTextView"
+        android:id="@+id/theBestResultTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/yourWishIsTextView"
+        android:layout_below="@+id/yourGoaIsTextView"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="20dp"
-        android:text="The best outcome is "
+        android:text="The best result is "
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000"
         android:textSize="24dp" />
 
     <TextView
-        android:id="@+id/theMainObstacleIsTextView"
+        android:id="@+id/theMainInteferencesTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/theBestOutcomeIsTextView"
+        android:layout_below="@+id/theBestResultTextView"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="20dp"
@@ -86,7 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/theMainObstacleIsTextView"
+        android:layout_below="@+id/theMainInteferencesTextView"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="5dp"

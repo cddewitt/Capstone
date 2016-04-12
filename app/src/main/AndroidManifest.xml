@@ -86,7 +86,7 @@
                 android:value=".AnalysisActivity" />
         </activity>
         <activity
-            android:name=".WishActivity"
+            android:name=".GoalActivity"
             android:label="@string/app_name"
             android:parentActivityName=".CharacteristicSelectionActivity">
             <meta-data
@@ -94,31 +94,31 @@
                 android:value=".GoalsActivity" />
         </activity>
         <activity
-            android:name=".OutcomeActivity"
+            android:name=".ResultActivity"
             android:label="@string/title_activity_outcome"
-            android:parentActivityName=".WishActivity"
+            android:parentActivityName=".GoalActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.cdoit.characterstrengthbuilder.WishActivity" />
+                android:value=".GoalActivity" />
         </activity>
         <activity
-            android:name=".ObstacleActivity"
+            android:name=".InteferenceActivity"
             android:label="@string/title_activity_obstacles"
-            android:parentActivityName=".OutcomeActivity"
+            android:parentActivityName=".ResultActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.cdoit.characterstrengthbuilder.OutcomeActivity" />
+                android:value=".ResultActivity" />
         </activity>
         <activity
             android:name=".PlanActivity"
             android:label="@string/title_activity_plan"
-            android:parentActivityName=".ObstacleActivity"
+            android:parentActivityName=".InteferenceActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ObstacleActivity" />
+                android:value=".InteferenceActivity" />
         </activity>
         <activity
             android:name=".ReviewActivity"
