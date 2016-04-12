@@ -19,9 +19,20 @@
         android:id="@+id/btnHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:onClick="btnHistoryClick"
-        android:text="History" />
+        android:text="History"
+        android:layout_marginEnd="62dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/btnMakeGraph" />
+
+    <Button
+        android:id="@+id/btnMakeGraph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="btnGraphClick"
+        android:text="Graph"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="73dp" />
 
 </RelativeLayout>

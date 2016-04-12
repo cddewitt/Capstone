@@ -102,6 +102,11 @@ public class GoalsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void btnGraphClick(View v) {
+        Intent intent = new Intent(this, HistoryActivityGraph.class);
+        startActivity(intent);
+    }
+
     @Override
     public void onStart() {
         super.onStart();

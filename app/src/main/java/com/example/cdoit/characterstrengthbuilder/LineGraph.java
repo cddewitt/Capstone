@@ -12,48 +12,51 @@ import android.database.Cursor;
 
 
 public class LineGraph extends AppCompatActivity {
-    private SQLiteDatabase db;
-
-    double communicationScore;
-    double curoiosityScore;
-    double grattitudeScore;
-    double gritScore;
-    double optimismScore;
-    double selfControlScore;
-    double zestScore;
-    long dateScored;
+    private DataPoint[] populateDataPoints() {
+        Double[] scores = getDatabaseValues();
+        int count = 10;
+        DataPoint[] values;
+        if(count != 0)
+        {
+            values = new DataPoint[count];
+            for(int i = 0; i < count; i++) {
+                DataPoint v = new DataPoint(i, count);
+                values[i] = v;
+            }
+        }
+        else {
+            values = new DataPoint[1];
+            DataPoint v = new DataPoint(0, 1);
+            values[0] = v;
+        }
+        return values;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("GRAPH");
         setContentView(R.layout.graph);
-        //getDatabaseValues();
 
         GraphView line = (GraphView) this.findViewById(R.id.graph);
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
-                new DataPoint(communicationScore, dateScored),
-                new DataPoint(1, 5),
-                new DataPoint(2, 3),
-                new DataPoint(3, 2),
-                new DataPoint(4, 6)
-        });
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(populateDataPoints());
         line.addSeries(series);
     }
 
-    private void getDatabaseValues() {
+    private Double[] getDatabaseValues() {
+        Double[] scores = {};
         DatabaseHelper helper = new DatabaseHelper(getApplicationContext());
-        db = helper.getReadableDatabase();
+        SQLiteDatabase db = helper.getWritableDatabase();
         Cursor cursor = db.query(DatabaseContract.GritScores.TABLENAME, null, null, null, null, null, null);
-        if(cursor.moveToFirst()) {
-            communicationScore = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_COMMUNICATION_SKILLS));
-            curoiosityScore = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_CURIOSITY));
-            grattitudeScore = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_GRATITUDE));
-            gritScore = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_GRIT));
-            optimismScore = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_OPTIMISM));
-            selfControlScore = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_SELF_CONTROL));
-            zestScore = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_ZEST));
-            dateScored = cursor.getLong(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_DATE_SCORED));
+        if(cursor.moveToLast()) {
+            scores = new Double[]{Double.parseDouble(DatabaseContract.GritScores.COLUMN_GRIT),
+                    Double.parseDouble(DatabaseContract.GritScores.COLUMN_SELF_CONTROL),
+                    Double.parseDouble(DatabaseContract.GritScores.COLUMN_COMMUNICATION_SKILLS),
+                    Double.parseDouble(DatabaseContract.GritScores.COLUMN_ZEST),
+                    Double.parseDouble(DatabaseContract.GritScores.COLUMN_GRATITUDE),
+                    Double.parseDouble(DatabaseContract.GritScores.COLUMN_OPTIMISM),
+                    Double.parseDouble(DatabaseContract.GritScores.COLUMN_CURIOSITY)};
         }
+        return scores;
     }
 }
