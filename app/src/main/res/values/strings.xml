@@ -53,6 +53,8 @@
         nec magna. Donec lacinia ligula at libero volutpat volutpat nec nec tortor.
     </string>
     <string name="title_activity_rate_yourself">RateYourselfActivity</string>
+    <string name="lovelyThinking">Lovely Thinking</string>
+    <string name="donate">Donate</string>
     <string-array name="characteristics_array">
         <item>Grit</item>
         <item>Self-Control</item>
@@ -62,4 +64,5 @@
         <item>Optimism</item>
         <item>Curiosity</item>
     </string-array>
+    <string name="title_activity_lovely_thinking">Lovely Thinking</string>
 </resources>
