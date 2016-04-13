@@ -13,9 +13,9 @@
     tools:showIn="@layout/activity_lovely_thinking">
 
     <TextView
+        android:id = "@+id/lovelyTextView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:autoLink="web"
         android:text="@string/lovelyThinkingText"
         />
 
