@@ -160,13 +160,15 @@ public class RateYourselfActivity extends AppCompatActivity {
         SQLiteDatabase database = databaseHelper.getWritableDatabase();
         Cursor cursor = database.query(DatabaseContract.GritScores.TABLENAME, null, null, null, null, null, null);
         if (cursor.moveToLast()) {
-            Double[] scores = new Double[]{Double.parseDouble(DatabaseContract.GritScores.COLUMN_GRIT),
-                    Double.parseDouble(DatabaseContract.GritScores.COLUMN_SELF_CONTROL),
-                    Double.parseDouble(DatabaseContract.GritScores.COLUMN_COMMUNICATION_SKILLS),
-                    Double.parseDouble(DatabaseContract.GritScores.COLUMN_ZEST),
-                    Double.parseDouble(DatabaseContract.GritScores.COLUMN_GRATITUDE),
-                    Double.parseDouble(DatabaseContract.GritScores.COLUMN_OPTIMISM),
-                    Double.parseDouble(DatabaseContract.GritScores.COLUMN_CURIOSITY)};
+            Double[] scores = new Double[]{
+                    cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_GRIT)),
+                    cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_SELF_CONTROL)),
+                    cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_COMMUNICATION_SKILLS)),
+                    cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_ZEST)),
+                    cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_GRATITUDE)),
+                    cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_OPTIMISM)),
+                    cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_CURIOSITY))
+            };
             int[] scoreSeekBarIds = new int[]{R.id.gritSeekBar,
                     R.id.selfControlSeekBar,
                     R.id.communicationSkillsSeekBar,

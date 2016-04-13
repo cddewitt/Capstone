@@ -57,9 +57,4 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, LearnMore.class);
         startActivity(intent);
     }
-
-    public void btnGraph(View v) {
-        Intent intent = new Intent(this, LineGraph.class);
-        startActivity(intent);
-    }
 }

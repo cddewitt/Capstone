@@ -42,8 +42,39 @@ public class AnalysisActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void btnProgressClick(View v) {
-        Intent intent = new Intent(this, ProgressActivity.class);
+    public void btnGritClick(View v) {
+        Intent intent = new Intent(this, LineGraph.class);
         startActivity(intent);
     }
+
+    public void btnSelfAnalysisClick(View v) {
+        Intent intent = new Intent(this, LineGraph.class);
+        startActivity(intent);
+    }
+
+    public void btnCommunicationSkillsClick(View v) {
+        Intent intent = new Intent(this, LineGraph.class);
+        startActivity(intent);
+    }
+
+    public void btnZestClick(View v) {
+        Intent intent = new Intent(this, LineGraph.class);
+        startActivity(intent);
+    }
+
+    public void btnGratitudeClick(View v) {
+        Intent intent = new Intent(this, LineGraph.class);
+        startActivity(intent);
+    }
+
+    public void btnOptimismClick(View v) {
+        Intent intent = new Intent(this, LineGraph.class);
+        startActivity(intent);
+    }
+
+    public void btnCuriosityClick(View v) {
+        Intent intent = new Intent(this, LineGraph.class);
+        startActivity(intent);
+    }
+
 }

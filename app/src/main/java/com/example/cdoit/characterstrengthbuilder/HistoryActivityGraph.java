@@ -31,9 +31,9 @@ public class HistoryActivityGraph extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.history_graph);
         completedGRIP = (TextView)findViewById(R.id.numComplete);
-        completedGRIP.setText("Number of completed GRIPs: "+10);
+        completedGRIP.setText("Number of completed GRIPs: "+getCompletedGoals());
         incompleteGRIP = (TextView)findViewById(R.id.numIncomplete);
-        incompleteGRIP.setText("Number of completed GRIPs: "+10);
+        incompleteGRIP.setText("Number of incompleted GRIPs: "+getIncompleteGoals());
         setTitle("GRAPH");
 
         GraphView line = (GraphView) this.findViewById(R.id.historyGraph);
@@ -45,11 +45,11 @@ public class HistoryActivityGraph extends AppCompatActivity {
         line.addSeries(series2);
     }
 
-    private int getGoals() {
+    private int getCompletedGoals() {
         int completedGoals = 0;
         DatabaseHelper helper = new DatabaseHelper(getApplicationContext());
         SQLiteDatabase db = helper.getReadableDatabase();
-        Cursor cursor = db.query(DatabaseContract.IncompleteGoals.TABLENAME, null, null, null, null, null, null);
+        Cursor cursor = db.query(DatabaseContract.CompleteGoals.TABLENAME, null, null, null, null, null, null);
         try {
             if (cursor != null)//check to see if we got any result back
             {
@@ -61,5 +61,23 @@ public class HistoryActivityGraph extends AppCompatActivity {
             cursor.close();
         }
         return completedGoals;
+    }
+
+    private int getIncompleteGoals() {
+        int incompleteGoals = 0;
+        DatabaseHelper helper = new DatabaseHelper(getApplicationContext());
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor cursor = db.query(DatabaseContract.IncompleteGoals.TABLENAME, null, null, null, null, null, null);
+        try {
+            if (cursor != null)//check to see if we got any result back
+            {
+                while (cursor.moveToNext()) {
+                    incompleteGoals++;
+                }
+            }
+        } finally {
+            cursor.close();
+        }
+        return incompleteGoals;
     }
 }
