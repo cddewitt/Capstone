@@ -65,7 +65,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnLovelyThinkingClick(View view) {
-
+        Intent intent = new Intent(this, LovelyThinkingActivity.class);
+        startActivity(intent);
     }
 
     public void btnDonateClick(View view) {
