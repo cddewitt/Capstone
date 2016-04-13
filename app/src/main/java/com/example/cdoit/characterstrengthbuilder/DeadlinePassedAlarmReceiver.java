@@ -14,7 +14,7 @@ public class DeadlinePassedAlarmReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        String wish = intent.getStringExtra("wish");
+        String goal = intent.getStringExtra("goal");
         Intent mainIntent = new Intent(context, MainActivity.class);
         PendingIntent pIntent = PendingIntent.getActivity(context, 0, mainIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
@@ -22,9 +22,9 @@ public class DeadlinePassedAlarmReceiver extends BroadcastReceiver {
 
         Notification notification = new NotificationCompat.Builder(context)
                 .setContentTitle("Character Strength Builder")
-                .setContentText("The deadline for your wish: " + wish + " was yesterday.")
-                .setTicker("The deadline for your wish: " + wish + " was yesterday.")
-                .setContentInfo("The deadline for your wish: " + wish + " was yesterday.")
+                .setContentText("The deadline for your goal: " + goal + " was yesterday.")
+                .setTicker("The deadline for your goal: " + goal + " was yesterday.")
+                .setContentInfo("The deadline for your goal: " + goal + " was yesterday.")
                 .setColor(Color.WHITE)
                 .setLights(Color.CYAN, 3000, 1000)
                 .setVibrate(pattern)
