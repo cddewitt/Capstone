@@ -46,7 +46,7 @@
         android:layout_height="wrap_content"
         android:background="#ffffff"
         android:onClick="btnAboutClick"
-        android:text="About"
+        android:text="Theory"
         android:layout_below="@+id/btnAnalysis"
         android:layout_centerHorizontal="true" />
 
