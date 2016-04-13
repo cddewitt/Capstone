@@ -12,4 +12,11 @@
     tools:context="com.example.cdoit.characterstrengthbuilder.LovelyThinkingActivity"
     tools:showIn="@layout/activity_lovely_thinking">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:autoLink="web"
+        android:text="@string/lovelyThinkingText"
+        />
+
 </RelativeLayout>
