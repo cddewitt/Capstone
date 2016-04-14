@@ -297,6 +297,9 @@ public class RateYourselfActivity extends AppCompatActivity {
             Toast toast = Toast.makeText(getApplicationContext(), "Successful insert!", Toast.LENGTH_LONG);
             toast.show();
         }
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
 }
