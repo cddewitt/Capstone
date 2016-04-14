@@ -157,7 +157,7 @@
             android:value=".GoalsActivity" />
 
         <activity
-            android:name=".HistoryWoopDetailActivity"
+            android:name=".HistoryGripDetailActivity"
             android:label="HistoryWoopDetailActivity"
             android:parentActivityName=".HistoryActivity" />
         <activity

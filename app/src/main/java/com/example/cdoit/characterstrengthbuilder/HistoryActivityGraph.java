@@ -4,11 +4,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
+
 import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.series.BarGraphSeries;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
-import com.jjoe64.graphview.series.BarGraphSeries;
-import android.widget.TextView;
 
 /**
  * Created by tylergreen on 4/7/16.
@@ -20,8 +21,8 @@ public class HistoryActivityGraph extends AppCompatActivity {
     private DataPoint[] generateDataPoints() {
         int count = 10;
         DataPoint[] values = new DataPoint[count];
-        for(int i = 0; i < count; i++) {
-            DataPoint v = new DataPoint(i, i*i);
+        for (int i = 0; i < count; i++) {
+            DataPoint v = new DataPoint(i, i * i);
             values[i] = v;
         }
         return values;
@@ -30,10 +31,10 @@ public class HistoryActivityGraph extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.history_graph);
-        completedGRIP = (TextView)findViewById(R.id.numComplete);
-        completedGRIP.setText("Number of completed GRIPs: "+getCompletedGoals());
-        incompleteGRIP = (TextView)findViewById(R.id.numIncomplete);
-        incompleteGRIP.setText("Number of incompleted GRIPs: "+getIncompleteGoals());
+        completedGRIP = (TextView) findViewById(R.id.numComplete);
+        completedGRIP.setText("Number of completed GRIPs: " + getCompletedGoals());
+        incompleteGRIP = (TextView) findViewById(R.id.numIncomplete);
+        incompleteGRIP.setText("Number of incompleted GRIPs: " + getIncompleteGoals());
         setTitle("GRAPH");
 
         GraphView line = (GraphView) this.findViewById(R.id.historyGraph);

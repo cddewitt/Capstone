@@ -69,16 +69,15 @@ public class GoalDetailActivity extends AppCompatActivity {
             goalName = cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_GOAL));
             tbxGoal.setText(goalName);
             tbxResult.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_RESULT)));
-            interferencesAsString =cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_INTERFERENCE));
-            plansAsString=cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_PLAN));
-            plans= Arrays.asList(plansAsString.split("~"));
-            interferences =Arrays.asList(interferencesAsString.split("~"));
+            interferencesAsString = cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_INTERFERENCE));
+            plansAsString = cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_PLAN));
+            plans = Arrays.asList(plansAsString.split("~"));
+            interferences = Arrays.asList(interferencesAsString.split("~"));
             tbxInterferencesAndPlan.setText("\n");
-            for(int i =0;i< interferences.size();i++)
-            {
+            for (int i = 0; i < interferences.size(); i++) {
                 tbxInterferencesAndPlan.append(interferences.get(i) + " : " + plans.get(i) + "\n\n");
             }
-            if(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_DATE)).equals(DatabaseContract.NO_DATE))
+            if (cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_DATE)).equals(DatabaseContract.NO_DATE))
                 tbxDate.setText(" No deadline date");
             else
                 tbxDate.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_DATE)));
@@ -128,7 +127,7 @@ public class GoalDetailActivity extends AppCompatActivity {
     private void popUpBox() {
         new AlertDialog.Builder(GoalDetailActivity.this)
                 .setTitle("Delete entry")
-                .setMessage("Are you sure you want to delete this WOOP?")
+                .setMessage("Are you sure you want to delete this GRIP?")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         deleteGoal(rowID);
@@ -161,11 +160,11 @@ public class GoalDetailActivity extends AppCompatActivity {
         values.put(DatabaseContract.CompleteGoals.COLUMN_DEADLINE_DATE, tbxDate.getText().toString());
         long id = db.insert(DatabaseContract.CompleteGoals.TABLENAME, null, values);
         if (id == -1) {
-            Toast toast = Toast.makeText(this.getApplicationContext(), "Failed to move WOOP to completed", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(this.getApplicationContext(), "Failed to move GRIP to completed", Toast.LENGTH_LONG);
             toast.show();
         } else {
             deleteGoal(rowID);
-            Toast toast = Toast.makeText(this.getApplicationContext(), "WOOP successfully moved to completed", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(this.getApplicationContext(), "GRIP successfully moved to completed", Toast.LENGTH_LONG);
             toast.show();
             Intent intent = new Intent(GoalDetailActivity.this, GoalsActivity.class);
             startActivity(intent);

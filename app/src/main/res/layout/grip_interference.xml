@@ -21,6 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/view"
+        android:layout_below="@+id/interferenceTextView"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="20dp"
@@ -28,8 +29,7 @@
         android:text="Think of one or more things that might stand in the way of fulfilling your goal. What is/are the interference(s) that could hold you back from seeing your goal through?"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000"
-        android:textSize="28dp"
-        android:layout_below="@+id/interferenceTextView" />
+        android:textSize="28dp" />
 
     <Button
         android:id="@+id/continueToPlanButton"

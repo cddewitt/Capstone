@@ -16,7 +16,7 @@ public class FiveDaysAlarmReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         String goal = intent.getStringExtra("goal");
         Intent mainIntent = new Intent(context, MainActivity.class);
-        PendingIntent pIntent = PendingIntent.getActivity(context,0,mainIntent,PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pIntent = PendingIntent.getActivity(context, 0, mainIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         long[] pattern = {(long) 500, (long) 500, (long) 500, (long) 500};
 

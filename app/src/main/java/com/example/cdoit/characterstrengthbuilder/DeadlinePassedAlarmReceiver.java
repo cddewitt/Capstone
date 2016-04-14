@@ -18,7 +18,7 @@ public class DeadlinePassedAlarmReceiver extends BroadcastReceiver {
         Intent mainIntent = new Intent(context, MainActivity.class);
         PendingIntent pIntent = PendingIntent.getActivity(context, 0, mainIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        long[] pattern = {(long) 500, (long) 500,(long) 500,(long) 500};
+        long[] pattern = {(long) 500, (long) 500, (long) 500, (long) 500};
 
         Notification notification = new NotificationCompat.Builder(context)
                 .setContentTitle("Character Strength Builder")

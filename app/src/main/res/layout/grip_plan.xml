@@ -87,15 +87,15 @@
         android:background="#c8c8ff" />
 
     <Button
+        android:id="@+id/SetPlanButton"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="Set Plan"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="10dp"
         android:layout_marginRight="10dp"
         android:background="#ffffff"
-        android:id="@+id/SetPlanButton"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:onClick="nextPlanClick" />
+        android:onClick="nextPlanClick"
+        android:text="Set Plan" />
 </RelativeLayout>

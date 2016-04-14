@@ -19,20 +19,20 @@
         android:id="@+id/btnHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="btnHistoryClick"
-        android:text="History"
-        android:layout_marginEnd="62dp"
         android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/btnMakeGraph" />
+        android:layout_marginEnd="62dp"
+        android:layout_toStartOf="@+id/btnMakeGraph"
+        android:onClick="btnHistoryClick"
+        android:text="History" />
 
     <Button
         android:id="@+id/btnMakeGraph"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="btnGraphClick"
-        android:text="Graph"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="73dp" />
+        android:layout_marginEnd="73dp"
+        android:onClick="btnGraphClick"
+        android:text="Graph" />
 
 </RelativeLayout>

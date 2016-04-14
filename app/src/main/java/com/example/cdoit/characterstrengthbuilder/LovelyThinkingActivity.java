@@ -14,7 +14,7 @@ public class LovelyThinkingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lovely_thinking);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        TextView view = (TextView)findViewById(R.id.lovelyTextView);
+        TextView view = (TextView) findViewById(R.id.lovelyTextView);
         if (view != null) {
             view.setMovementMethod(LinkMovementMethod.getInstance());
         }

@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
-public class HistoryWoopDetailActivity extends AppCompatActivity {
+public class HistoryGripDetailActivity extends AppCompatActivity {
 
     private TextView tbxGoal;
     private TextView tbxResult;
@@ -28,7 +28,7 @@ public class HistoryWoopDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.history_woop_detail);
+        setContentView(R.layout.history_grip_detail);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Bundle extras = getIntent().getExtras();
         grabTextViews();
@@ -39,16 +39,15 @@ public class HistoryWoopDetailActivity extends AppCompatActivity {
         if (cursor.moveToFirst()) {
             tbxGoal.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_GOAL)));
             tbxResult.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_RESULT)));
-            String inteferencesAsString=cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_INTERFERENCES));
-            String plansAsString=cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_PLAN));
-            plans= Arrays.asList(plansAsString.split("~"));
-            Inteferences =Arrays.asList(inteferencesAsString.split("~"));
+            String inteferencesAsString = cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_INTERFERENCES));
+            String plansAsString = cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_PLAN));
+            plans = Arrays.asList(plansAsString.split("~"));
+            Inteferences = Arrays.asList(inteferencesAsString.split("~"));
             tbxInteferencesAndPlans.setText("\n");
-            for(int i =0;i< Inteferences.size();i++)
-            {
+            for (int i = 0; i < Inteferences.size(); i++) {
                 tbxInteferencesAndPlans.append(Inteferences.get(i) + " : " + plans.get(i) + "\n\n");
             }
-            if(cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_DEADLINE_DATE)).equals(DatabaseContract.NO_DATE))
+            if (cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_DEADLINE_DATE)).equals(DatabaseContract.NO_DATE))
                 tbxDateDeadline.setText(" No deadline date");
             else
                 tbxDateDeadline.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_DEADLINE_DATE)));

@@ -10,72 +10,71 @@
         android:id="@+id/btnGrit"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:background="#ffffff"
         android:onClick="btnGritClick"
-        android:text="Grit"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:text="Grit" />
 
     <Button
         android:id="@+id/btnSelfAnalysis"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btnGrit"
+        android:layout_below="@+id/btnGrit"
         android:background="#ffffff"
         android:onClick="btnSelfAnalysisClick"
-        android:text="Self-Analysis"
-        android:layout_below="@+id/btnGrit"
-        android:layout_alignStart="@+id/btnGrit" />
+        android:text="Self-Analysis" />
 
     <Button
         android:id="@+id/btnCommunicationSkills"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btnSelfAnalysis"
+        android:layout_below="@+id/btnSelfAnalysis"
         android:background="#ffffff"
         android:onClick="btnCommunicationSkillsClick"
-        android:text="Communication Skills"
-        android:layout_below="@+id/btnSelfAnalysis"
-        android:layout_alignStart="@+id/btnSelfAnalysis" />
+        android:text="Communication Skills" />
 
     <Button
         android:id="@+id/btnZest"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btnCommunicationSkills"
+        android:layout_below="@+id/btnCommunicationSkills"
         android:background="#ffffff"
         android:onClick="btnZestClick"
-        android:text="Zest"
-        android:layout_below="@+id/btnCommunicationSkills"
-        android:layout_alignStart="@+id/btnCommunicationSkills"/>
+        android:text="Zest" />
 
     <Button
         android:id="@+id/btnGratitude"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btnZest"
+        android:layout_below="@+id/btnZest"
         android:background="#ffffff"
         android:onClick="btnGratitudeClick"
-        android:text="Gratitude"
-        android:layout_below="@+id/btnZest"
-        android:layout_alignStart="@+id/btnZest" />
+        android:text="Gratitude" />
 
     <Button
         android:id="@+id/btnOptimism"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btnGratitude"
+        android:layout_below="@+id/btnGratitude"
         android:background="#ffffff"
         android:onClick="btnOptimismClick"
-        android:text="Optimism"
-        android:layout_below="@+id/btnGratitude"
-        android:layout_alignStart="@+id/btnGratitude"/>
+        android:text="Optimism" />
 
     <Button
         android:id="@+id/btnCuriosity"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btnOptimism"
+        android:layout_below="@+id/btnOptimism"
         android:background="#ffffff"
         android:onClick="btnCuriosityClick"
-        android:text="Curiosity"
-        android:layout_below="@+id/btnOptimism"
-        android:layout_alignStart="@+id/btnOptimism" />
-
+        android:text="Curiosity" />
 
 
 </RelativeLayout>
