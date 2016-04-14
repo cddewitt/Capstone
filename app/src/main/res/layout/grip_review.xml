@@ -25,27 +25,26 @@
                 android:textColor="#3c2f2f"
                 android:textSize="48dp" />
 
-
             <TextView
-                android:id="@+id/tbxReviewCharacteristic"
+                android:id="@+id/characteristicTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/reviewTextView"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="20dp"
-                android:text="The characteristic of focus for this GRIP is "
+                android:text="The character strength you are focusing on for this GRIP is "
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#000000"
                 android:textSize="24dp" />
 
             <TextView
-                android:id="@+id/yourGoaIsTextView"
+                android:id="@+id/goalTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/tbxReviewCharacteristic"
+                android:layout_below="@+id/characteristicTextView"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="20dp"
@@ -55,49 +54,64 @@
                 android:textSize="24dp" />
 
             <TextView
-                android:id="@+id/theBestResultTextView"
+                android:id="@+id/resultTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/yourGoaIsTextView"
+                android:layout_below="@+id/goalTextView"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="20dp"
-                android:text="The best result is "
+                android:text="The result is "
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#000000"
                 android:textSize="24dp" />
 
             <TextView
-                android:id="@+id/theMainInteferencesTextView"
+                android:id="@+id/interferencesTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/theBestResultTextView"
+                android:layout_below="@+id/resultTextView"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="20dp"
+                android:text="The interference is "
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#000000"
                 android:textSize="24dp" />
 
             <TextView
-                android:id="@+id/yourDeadlineIsTextView"
+                android:id="@+id/plansTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/theMainInteferencesTextView"
+                android:layout_below="@+id/interferencesTextView"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginTop="5dp"
-                android:text="The date of your deadline is"
+                android:layout_marginTop="20dp"
+                android:text="Your plan is "
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#000000"
                 android:textSize="24dp" />
 
+            <TextView
+                android:id="@+id/deadlineTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/plansTextView"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:text="The deadline for this GRIP is "
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#000000"
+                android:textSize="24dp" />
 
         </RelativeLayout>
     </ScrollView>

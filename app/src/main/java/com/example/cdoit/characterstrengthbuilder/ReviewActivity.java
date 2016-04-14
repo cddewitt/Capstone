@@ -57,11 +57,11 @@ public class ReviewActivity extends AppCompatActivity {
             plans = Arrays.asList(plan.split("~"));
         }
 
-        goalTextView = (TextView) findViewById(R.id.yourGoaIsTextView);
-        resultTextView = (TextView) findViewById(R.id.theBestResultTextView);
-        inteferencePlanTextView = (TextView) findViewById(R.id.theMainInteferencesTextView);
-        deadlineTextView = (TextView) findViewById(R.id.yourDeadlineIsTextView);
-        characteristicView = (TextView) findViewById(R.id.tbxReviewCharacteristic);
+        goalTextView = (TextView) findViewById(R.id.goalTextView);
+        resultTextView = (TextView) findViewById(R.id.resultTextView);
+        inteferencePlanTextView = (TextView) findViewById(R.id.interferencesTextView);
+        deadlineTextView = (TextView) findViewById(R.id.deadlineTextView);
+        characteristicView = (TextView) findViewById(R.id.characteristicTextView);
 
         goalTextView.append(goal);
         resultTextView.append(result);
