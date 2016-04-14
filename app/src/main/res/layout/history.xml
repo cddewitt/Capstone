@@ -16,7 +16,7 @@
         android:background="#fff4e6" />
 
     <Button
-        android:id="@+id/btnWOOPGraph"
+        android:id="@+id/btnGRIPGraph"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

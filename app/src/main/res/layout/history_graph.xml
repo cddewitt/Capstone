@@ -24,7 +24,7 @@
         android:layout_width="179dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.17"
-        android:text="Completed Woops" />
+        android:text="Complete GRIPs" />
 
     <ImageView
         android:id="@+id/completeGRIP"
@@ -37,7 +37,7 @@
         android:layout_width="166dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.14"
-        android:text="Incomplete Woops" />
+        android:text="Incomplete GRIPs" />
 
     <ImageView
         android:id="@+id/incompleteGRIP"
