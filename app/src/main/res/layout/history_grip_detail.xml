@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.cdoit.characterstrengthbuilder.HistoryWoopDetailActivity">
+    tools:context=".HistoryGripDetailActivity">
 
     <ScrollView
         android:layout_width="fill_parent"
@@ -73,8 +73,8 @@
                 android:id="@+id/tbxDetailHistoryInteferencesAndPlans"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/lblDetailHistoryInteferencesAndPlans"
                 android:layout_alignParentLeft="true"
+                android:layout_below="@+id/lblDetailHistoryInteferencesAndPlans"
                 android:text="New Text"
                 android:textSize="24dp" />
 

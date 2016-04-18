@@ -5,26 +5,35 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class CharacteristicSelectionActivity extends AppCompatActivity {
 
-    Spinner spinner;
+    RadioGroup rg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Characteristic");
         setContentView(R.layout.activity_characteristic_selection);
-        spinner = (Spinner) findViewById(R.id.spinnerCharacteristics);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.characteristics_array, R.layout.support_simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-
+        rg = (RadioGroup)findViewById(R.id.radioCharacteristic);
     }
 
     public void btnCharacteristicToWishClick(View v) {
         Intent intent = new Intent(this, GoalActivity.class);
-        intent.putExtra("Characteristic", spinner.getSelectedItem().toString());
-        startActivity(intent);
-    }
+        int id = rg.getCheckedRadioButtonId();
+        if(id==-1)
+        {
+            Toast toast = Toast.makeText(getApplicationContext(),"You must select a character strength before continuing.",Toast.LENGTH_LONG );
+            toast.show();
+        }
+        else {
+            RadioButton rb = (RadioButton) findViewById(id);
+            intent.putExtra("Characteristic", rb.getText());
+            startActivity(intent);
+        }
+        }
 }

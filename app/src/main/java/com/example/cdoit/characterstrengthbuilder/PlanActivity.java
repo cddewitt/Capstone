@@ -20,14 +20,14 @@ public class PlanActivity extends AppCompatActivity {
     private String Interferences = "";
     private List<String> interference;
     private boolean canContinue;
-    private int count=0;
-    private String plans ="";
+    private int count = 0;
+    private String plans = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Character Strength Builder");
-        setContentView(R.layout.woop_plan);
+        setContentView(R.layout.grip_plan);
         tbxPlan = (TextView) findViewById(R.id.planEditText);
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -37,14 +37,13 @@ public class PlanActivity extends AppCompatActivity {
             Interferences = extras.getString("Interferences");
             interference = Arrays.asList(Interferences.split("~"));
         }
-        currentplan= (TextView)findViewById(R.id.whatIsYourPlanTextView);
+        currentplan = (TextView) findViewById(R.id.whatIsYourPlanTextView);
         currentplan.setText("What is your plan to deal with: " + interference.get(count));
 
     }
 
     public void setADeadlineButtonClick(View v) {
-        if(count== interference.size())
-        {
+        if (count == interference.size()) {
             Intent intent = new Intent(this, DeadlineActivity.class);
             intent.putExtra("Characteristic", characteristic);
             intent.putExtra("Goal", goal);
@@ -52,33 +51,27 @@ public class PlanActivity extends AppCompatActivity {
             intent.putExtra("Interferences", Interferences);
             intent.putExtra("Plan", plans);
             startActivity(intent);
-        }
-        else{
-            Toast toast = Toast.makeText(getApplicationContext(),"Please finish making plans for each interference before moving on!",Toast.LENGTH_LONG);
+        } else {
+            Toast toast = Toast.makeText(getApplicationContext(), "Please finish making plans for each interference before moving on!", Toast.LENGTH_LONG);
             toast.show();
         }
     }
 
-    public void nextPlanClick(View v){
-        if(count== interference.size())
-        {
-            Toast toast =Toast.makeText(getApplicationContext(),"You have a plan for each Interference. Move on top the review",Toast.LENGTH_LONG);
+    public void nextPlanClick(View v) {
+        if (count == interference.size()) {
+            Toast toast = Toast.makeText(getApplicationContext(), "You have a plan for each Interference. Move on top the review", Toast.LENGTH_LONG);
             toast.show();
-        }
-        else if(tbxPlan.getText().toString().equals(""))
-        {
-            Toast toast =Toast.makeText(getApplicationContext(),"Please enter a plan for the displayed Interference",Toast.LENGTH_LONG);
+        } else if (tbxPlan.getText().toString().equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Please enter a plan for the displayed Interference", Toast.LENGTH_LONG);
             toast.show();
-        }
-        else{
-            plans+=tbxPlan.getText().toString()+"~";
+        } else {
+            plans += tbxPlan.getText().toString() + "~";
             count++;
-            if(count== interference.size()) {
-                currentplan.setText("You have set all your plans!! Click SET A DEADLINE to continue!");
+            if (count == interference.size()) {
+                currentplan.setText("You have figured out a solution for all of your interferences. Congratulations! Continue to set deadline!");
                 plans = plans.substring(0, plans.length() - 1);
-            }
-            else
-                currentplan.setText("What is your plan to deal with: "+ interference.get(count));
+            } else
+                currentplan.setText("What is your plan to deal with: " + interference.get(count));
             tbxPlan.setText("");
         }
 

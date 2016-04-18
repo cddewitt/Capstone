@@ -12,7 +12,7 @@ public class SaveActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Character Strength Builder");
-        setContentView(R.layout.woop_save);
+        setContentView(R.layout.grip_save);
     }
 
     public void returnToHomeButtonClick(View v) {

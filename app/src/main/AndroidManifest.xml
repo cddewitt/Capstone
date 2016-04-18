@@ -90,8 +90,7 @@
         <activity
             android:name=".ResultActivity"
             android:label="@string/title_activity_outcome"
-            android:parentActivityName=".GoalActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:parentActivityName=".GoalActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".GoalActivity" />
@@ -99,8 +98,7 @@
         <activity
             android:name=".InteferenceActivity"
             android:label="@string/title_activity_obstacles"
-            android:parentActivityName=".ResultActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:parentActivityName=".ResultActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ResultActivity" />
@@ -109,7 +107,7 @@
             android:name=".PlanActivity"
             android:label="@string/title_activity_plan"
             android:parentActivityName=".InteferenceActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".InteferenceActivity" />
@@ -117,11 +115,11 @@
         <activity
             android:name=".ReviewActivity"
             android:label="@string/title_activity_review"
-            android:parentActivityName=".PlanActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:parentActivityName=".DeadlineActivity"
+            >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.cdoit.characterstrengthbuilder.PlanActivity" />
+                android:value="com.example.cdoit.characterstrengthbuilder.DeadlineActivity" />
         </activity>
         <!--
              ATTENTION: This was auto-generated to add Google Play services to your project for
@@ -134,7 +132,7 @@
         <activity
             android:name=".DeadlineActivity"
             android:label="@string/title_activity_deadline"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:parentActivityName=".PlanActivity" />
         <activity
             android:name=".SaveActivity"
             android:label="@string/title_activity_save"
@@ -157,7 +155,7 @@
             android:value=".GoalsActivity" />
 
         <activity
-            android:name=".HistoryWoopDetailActivity"
+            android:name=".HistoryGripDetailActivity"
             android:label="HistoryWoopDetailActivity"
             android:parentActivityName=".HistoryActivity" />
         <activity

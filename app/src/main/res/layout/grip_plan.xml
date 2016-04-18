@@ -19,11 +19,12 @@
         android:id="@+id/planDescriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/planTextView"
+        android:layout_above="@+id/whatIsYourPlanTextView"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
         android:text="Think of something you can do to combat the interference standing in between you and fulfilling your goal. What can you do to overcome your interference?"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000"
@@ -87,15 +88,15 @@
         android:background="#c8c8ff" />
 
     <Button
+        android:id="@+id/SetPlanButton"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="Set Plan"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="10dp"
         android:layout_marginRight="10dp"
         android:background="#ffffff"
-        android:id="@+id/SetPlanButton"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:onClick="nextPlanClick" />
+        android:onClick="nextPlanClick"
+        android:text="Next Interference" />
 </RelativeLayout>

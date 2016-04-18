@@ -10,22 +10,13 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.cdoit.characterstrengthbuilder.CharacteristicSelectionActivity">
 
-    <Spinner
-        android:id="@+id/spinnerCharacteristics"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tbxCharacteristic"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:background="@android:drawable/btn_dropdown" />
-
     <TextView
         android:id="@+id/tbxCharacteristic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="Use the spinner below to select a characteristic on which you would like to focus."
+        android:text="Select the Character Strength you would like to work on for this GRIP!"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
@@ -37,4 +28,63 @@
         android:background="#ffffff"
         android:onClick="btnCharacteristicToWishClick"
         android:text="Continue To Goal" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tbxCharacteristic"
+        android:layout_above="@+id/btnCharacteristicSelectionToWish"
+        android:layout_marginTop="50dp"
+        android:id="@+id/radioCharacteristic">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Grit"
+            android:id="@+id/radioButton"
+            android:textSize="20dp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Self-Control"
+            android:id="@+id/radioButton2"
+            android:textSize="20dp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Communication Skills"
+            android:id="@+id/radioButton3"
+            android:textSize="20dp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zest"
+            android:id="@+id/radioButton4"
+            android:textSize="20dp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gratitude"
+            android:id="@+id/radioButton5"
+            android:textSize="20dp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Optimism"
+            android:id="@+id/radioButton6"
+            android:textSize="20dp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Curiosity"
+            android:id="@+id/radioButton7"
+            android:textSize="20dp" />
+    </RadioGroup>
 </RelativeLayout>

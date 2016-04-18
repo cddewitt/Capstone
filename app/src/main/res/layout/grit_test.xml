@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:text="Click the button below to continue to the Grit Test.\n\nWhen you're finished taking the Grit Test, return to the app and hit your phone's back button and set your Grit score accordingly."
+        android:text="Click the button below to continue to Angela Duckworth's Grit Test.\n\nWhen you're finished taking the test, return to the app and press your phone's back button and set your Grit score accordingly."
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="30dp" />
 

@@ -17,7 +17,7 @@ public class ResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Character Strength Builder");
-        setContentView(R.layout.woop_result);
+        setContentView(R.layout.grip_result);
         tbxResult = (TextView) findViewById(R.id.resultEditText);
         Bundle extras = getIntent().getExtras();
         if (extras != null) {

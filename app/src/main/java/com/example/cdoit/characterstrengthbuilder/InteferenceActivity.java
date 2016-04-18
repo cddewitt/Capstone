@@ -21,7 +21,7 @@ public class InteferenceActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Character Strength Builder");
-        setContentView(R.layout.woop_interference);
+        setContentView(R.layout.grip_interference);
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             characteristic = extras.getString("Characteristic");
@@ -33,7 +33,7 @@ public class InteferenceActivity extends AppCompatActivity {
     public void continueToPlanButtonClick(View v) {
         String Interferences = getInterferences();
         if (Interferences.equals("")) {
-            Toast toast = Toast.makeText(getApplicationContext(),"You must enter atleast 1 interference to continue!",Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(getApplicationContext(), "You must enter atleast 1 interference to continue!", Toast.LENGTH_LONG);
             toast.show();
         } else {
             Intent intent = new Intent(this, PlanActivity.class);

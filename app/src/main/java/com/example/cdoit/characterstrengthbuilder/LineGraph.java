@@ -1,15 +1,13 @@
 package com.example.cdoit.characterstrengthbuilder;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.LinearLayout;
 
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.Cursor;
-import android.widget.Toast;
 
 
 public class LineGraph extends AppCompatActivity {
@@ -18,7 +16,7 @@ public class LineGraph extends AppCompatActivity {
         int count = numValues();
         DataPoint[] values;
         values = new DataPoint[count];
-        for(int i = 0; i < count; i++) {
+        for (int i = 0; i < count; i++) {
             DataPoint v = new DataPoint(i, scores[i]);
             values[i] = v;
         }
@@ -42,8 +40,7 @@ public class LineGraph extends AppCompatActivity {
         SQLiteDatabase db = helper.getReadableDatabase();
         Cursor cursor = db.query(DatabaseContract.GritScores.TABLENAME, null, null, null, null, null, null);
         try {
-            if (cursor != null)
-            {
+            if (cursor != null) {
                 while (cursor.moveToNext()) {
                     numItemsInDB++;
                 }
@@ -60,8 +57,8 @@ public class LineGraph extends AppCompatActivity {
         DatabaseHelper helper = new DatabaseHelper(getApplicationContext());
         SQLiteDatabase db = helper.getWritableDatabase();
         Cursor cursor = db.query(DatabaseContract.GritScores.TABLENAME, null, null, null, null, null, null);
-        if(cursor.moveToLast()) {
-            while(cursor.isAfterLast() == false) {
+        if (cursor.moveToLast()) {
+            while (cursor.isAfterLast() == false) {
                 scores = new Double[]{
                         cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_GRIT)),
                         /*cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_SELF_CONTROL)),

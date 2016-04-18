@@ -68,8 +68,8 @@ public class RateYourselfActivity extends AppCompatActivity {
         selfControlSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                double progressAsDouble = (progress / 10.0) + 1.0;
-                selfControlScoreTextView.setText(String.valueOf(progressAsDouble));
+                int progressAsInt = progress + 1;
+                selfControlScoreTextView.setText(String.valueOf(progressAsInt));
             }
 
             @Override
@@ -87,8 +87,8 @@ public class RateYourselfActivity extends AppCompatActivity {
         communicationSkillsSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                double progressAsDouble = (progress / 10.0) + 1.0;
-                communicationSkillsScoreTextView.setText(String.valueOf(progressAsDouble));
+                int progressAsInt = progress + 1;
+                communicationSkillsScoreTextView.setText(String.valueOf(progressAsInt));
             }
 
             @Override
@@ -106,8 +106,8 @@ public class RateYourselfActivity extends AppCompatActivity {
         zestSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                double progressAsDouble = (progress / 10.0) + 1.0;
-                zestScoreTextView.setText(String.valueOf(progressAsDouble));
+                int progressAsInt = progress + 1;
+                zestScoreTextView.setText(String.valueOf(progressAsInt));
             }
 
             @Override
@@ -125,8 +125,8 @@ public class RateYourselfActivity extends AppCompatActivity {
         gratitudeSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                double progressAsDouble = (progress / 10.0) + 1.0;
-                gratitudeScoreTextView.setText(String.valueOf(progressAsDouble));
+                int progressAsInt = progress + 1;
+                gratitudeScoreTextView.setText(String.valueOf(progressAsInt));
             }
 
             @Override
@@ -144,8 +144,8 @@ public class RateYourselfActivity extends AppCompatActivity {
         optimismSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                double progressAsDouble = (progress / 10.0) + 1.0;
-                optimismScoreTextView.setText(String.valueOf(progressAsDouble));
+                int progressAsInt = progress + 1;
+                optimismScoreTextView.setText(String.valueOf(progressAsInt));
             }
 
             @Override
@@ -163,8 +163,8 @@ public class RateYourselfActivity extends AppCompatActivity {
         curiositySeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                double progressAsDouble = (progress / 10.0) + 1.0;
-                curiosityScoreTextView.setText(String.valueOf(progressAsDouble));
+                int progressAsInt = progress + 1;
+                curiosityScoreTextView.setText(String.valueOf(progressAsInt));
             }
 
             @Override
@@ -222,7 +222,7 @@ public class RateYourselfActivity extends AppCompatActivity {
                     SeekBar selfControlSeekBar = (SeekBar) this.findViewById(scoreSeekBarIds[i]);
                     TextView selfControlScoreTextView = (TextView) this.findViewById(scoreTextViewIds[i]);
 
-                    double seekBarSelfControlScore = (scores[i] * 10) - 10;
+                    double seekBarSelfControlScore = scores[i] - 1;
                     int seekBarSelfControlScoreAsInt = (int) seekBarSelfControlScore;
                     selfControlSeekBar.setProgress(seekBarSelfControlScoreAsInt);
 
@@ -231,7 +231,7 @@ public class RateYourselfActivity extends AppCompatActivity {
                     SeekBar communicationSkillsSeekBar = (SeekBar) this.findViewById(scoreSeekBarIds[i]);
                     TextView communicationSkillsScoreTextView = (TextView) this.findViewById(scoreTextViewIds[i]);
 
-                    double seekBarCommunicationSkillsScore = (scores[i] * 10) - 10;
+                    double seekBarCommunicationSkillsScore = scores[i] - 1;
                     int seekBarCommunicationSkillsScoreAsInt = (int) seekBarCommunicationSkillsScore;
                     communicationSkillsSeekBar.setProgress(seekBarCommunicationSkillsScoreAsInt);
 
@@ -240,7 +240,7 @@ public class RateYourselfActivity extends AppCompatActivity {
                     SeekBar zestSeekBar = (SeekBar) this.findViewById(scoreSeekBarIds[i]);
                     TextView zestScoreTextView = (TextView) this.findViewById(scoreTextViewIds[i]);
 
-                    double seekBarZestScore = (scores[i] * 10) - 10;
+                    double seekBarZestScore = scores[i] - 1;
                     int seekBarZestScoreAsInt = (int) seekBarZestScore;
                     zestSeekBar.setProgress(seekBarZestScoreAsInt);
 
@@ -249,7 +249,7 @@ public class RateYourselfActivity extends AppCompatActivity {
                     SeekBar gratitudeSeekBar = (SeekBar) this.findViewById(scoreSeekBarIds[i]);
                     TextView gratitudeScoreTextView = (TextView) this.findViewById(scoreTextViewIds[i]);
 
-                    double seekBarGratitudeScore = (scores[i] * 10) - 10;
+                    double seekBarGratitudeScore = scores[i] - 1;
                     int seekBarGratitudeScoreAsInt = (int) seekBarGratitudeScore;
                     gratitudeSeekBar.setProgress(seekBarGratitudeScoreAsInt);
 
@@ -258,7 +258,7 @@ public class RateYourselfActivity extends AppCompatActivity {
                     SeekBar optimismSeekBar = (SeekBar) this.findViewById(scoreSeekBarIds[i]);
                     TextView optimismScoreTextView = (TextView) this.findViewById(scoreTextViewIds[i]);
 
-                    double seekBarOptimismScore = (scores[i] * 10) - 10;
+                    double seekBarOptimismScore = scores[i] - 1;
                     int seekBarOptimismScoreAsInt = (int) seekBarOptimismScore;
                     optimismSeekBar.setProgress(seekBarOptimismScoreAsInt);
 
@@ -267,7 +267,7 @@ public class RateYourselfActivity extends AppCompatActivity {
                     SeekBar curiositySeekBar = (SeekBar) this.findViewById(scoreSeekBarIds[i]);
                     TextView curiosityScoreTextView = (TextView) this.findViewById(scoreTextViewIds[i]);
 
-                    double seekBarCuriosityScore = (scores[i] * 10) - 10;
+                    double seekBarCuriosityScore = scores[i] - 1;
                     int seekBarCuriosityScoreAsInt = (int) seekBarCuriosityScore;
                     curiositySeekBar.setProgress(seekBarCuriosityScoreAsInt);
 
@@ -321,6 +321,9 @@ public class RateYourselfActivity extends AppCompatActivity {
             Toast toast = Toast.makeText(getApplicationContext(), "Successful insert!", Toast.LENGTH_LONG);
             toast.show();
         }
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
 }

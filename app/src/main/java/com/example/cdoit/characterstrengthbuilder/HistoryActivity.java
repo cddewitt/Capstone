@@ -40,7 +40,7 @@ public class HistoryActivity extends AppCompatActivity {
             lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent intent = new Intent(getApplicationContext(), HistoryWoopDetailActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), HistoryGripDetailActivity.class);
                     intent.putExtra("RowID", String.valueOf(id));
                     startActivity(intent);
                 }

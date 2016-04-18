@@ -38,13 +38,13 @@ public class ReviewActivity extends AppCompatActivity {
     private String deadlineDate;
     private List<String> inteferences;
     private List<String> plans;
-
+    private DateTimeFormatter formatter = DateTimeFormat.forPattern("MM/dd/yyyy");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Character Strength Builder");
-        setContentView(R.layout.woop_review);
+        setContentView(R.layout.grip_review);
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             characteristic = extras.getString("Characteristic");
@@ -57,27 +57,26 @@ public class ReviewActivity extends AppCompatActivity {
             plans = Arrays.asList(plan.split("~"));
         }
 
-        goalTextView = (TextView) findViewById(R.id.yourGoaIsTextView);
-        resultTextView = (TextView) findViewById(R.id.theBestResultTextView);
-        inteferencePlanTextView = (TextView) findViewById(R.id.theMainInteferencesTextView);
-        deadlineTextView = (TextView) findViewById(R.id.yourDeadlineIsTextView);
-        characteristicView = (TextView) findViewById(R.id.tbxReviewCharacteristic);
+        goalTextView = (TextView) findViewById(R.id.goalTextView);
+        resultTextView = (TextView) findViewById(R.id.resultTextView);
+        inteferencePlanTextView = (TextView) findViewById(R.id.interferencesTextView);
+        deadlineTextView = (TextView) findViewById(R.id.deadlineTextView);
+        characteristicView = (TextView) findViewById(R.id.characteristicTextView);
 
-        goalTextView.append(goal);
-        resultTextView.append(result);
-        for(int i=0;i< inteferences.size();i++)
-        {
-            inteferencePlanTextView.append("Your plan to combat " + inteferences.get(i) + " is to " + plans.get(i) + "!\n\n");
+        goalTextView.append("\""+goal+"\""+".");
+        resultTextView.append("\""+result+"\""+".");
+        for (int i = 0; i < inteferences.size(); i++) {
+            inteferencePlanTextView.append("Your plan to combat " +"\""+ inteferences.get(i) +"\""+ " is to " +"\""+ plans.get(i) +"\""+ "!\n\n");
 
         }
-        if(deadlineDate.equals(DatabaseContract.NO_DATE))
+        if (deadlineDate.equals(DatabaseContract.NO_DATE))
             deadlineTextView.setText("");
         else
-            deadlineTextView.append(" " + deadlineDate);
-        characteristicView.append(characteristic);
+            deadlineTextView.append(" " + deadlineDate+".");
+        characteristicView.append(characteristic+".");
     }
 
-    public void saveYourWoopButtonClick(View v) {
+    public void saveYourGripButtonClick(View v) {
         long row = insertIncompleteGoalData();
         if (row != -1) {
             setNotificationAlarms();
@@ -97,8 +96,6 @@ public class ReviewActivity extends AppCompatActivity {
             setFiveDaysLeftNotification();
         }
     }
-
-    private DateTimeFormatter formatter = DateTimeFormat.forPattern("MM/dd/yyyy");
 
     private void setDeadlinePassedNotification() {
         Long notificationTime = formatter.parseDateTime(deadlineDate)
@@ -121,22 +118,22 @@ public class ReviewActivity extends AppCompatActivity {
 
 
     private void setFiveDaysLeftNotification() {
-            DateTime dateFiveDaysBefore = formatter.parseDateTime(deadlineDate)
-                    .withTimeAtStartOfDay()
-                    .withZone(DateTimeZone.forTimeZone(TimeZone.getDefault()))
-                    .minusDays(5);
-            Long notificationTime = dateFiveDaysBefore.getMillis();
-            Intent alarmIntent = new Intent(this, FiveDaysAlarmReceiver.class);
-            alarmIntent.putExtra("goal", goal);
-            PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-            AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        DateTime dateFiveDaysBefore = formatter.parseDateTime(deadlineDate)
+                .withTimeAtStartOfDay()
+                .withZone(DateTimeZone.forTimeZone(TimeZone.getDefault()))
+                .minusDays(5);
+        Long notificationTime = dateFiveDaysBefore.getMillis();
+        Intent alarmIntent = new Intent(this, FiveDaysAlarmReceiver.class);
+        alarmIntent.putExtra("goal", goal);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                manager.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, notificationTime, pendingIntent);
-            } else {
-                manager.set(AlarmManager.RTC_WAKEUP, notificationTime, pendingIntent);
-            }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            manager.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, notificationTime, pendingIntent);
+        } else {
+            manager.set(AlarmManager.RTC_WAKEUP, notificationTime, pendingIntent);
         }
+    }
 
     private long insertIncompleteGoalData() {
         DatabaseHelper helper = new DatabaseHelper(getApplicationContext());

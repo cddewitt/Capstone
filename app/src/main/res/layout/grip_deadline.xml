@@ -30,7 +30,7 @@
         android:textSize="28dp" />
 
     <Button
-        android:id="@+id/reviewYourWoopButton"
+        android:id="@+id/reviewYourGripButton"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -40,8 +40,8 @@
         android:layout_marginBottom="10dp"
         android:layout_marginRight="10dp"
         android:background="#ffffff"
-        android:onClick="reviewYourWoopButtonClick"
-        android:text="Review Your WOOP" />
+        android:onClick="reviewYourGripButtonClick"
+        android:text="Review Your GRIP" />
 
     <TextView
         android:id="@+id/setDeadlineTextView"
@@ -74,7 +74,7 @@
         android:id="@+id/tbxDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/reviewYourWoopButton"
+        android:layout_above="@+id/reviewYourGripButton"
         android:layout_alignStart="@+id/setDeadlineTextView"
         android:layout_marginBottom="40dp"
         android:text="Selected Date: "

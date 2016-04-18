@@ -26,7 +26,7 @@ public class DeadlineActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Character Strength Builder");
-        setContentView(R.layout.woop_deadline);
+        setContentView(R.layout.grip_deadline);
         final Calendar cal = Calendar.getInstance();
         tbxDate = (TextView) findViewById(R.id.tbxDate);
         today = (cal.get(Calendar.MONTH) + 1) + "/" + cal.get(Calendar.DAY_OF_MONTH) + "/" + cal.get(Calendar.YEAR);
@@ -46,7 +46,7 @@ public class DeadlineActivity extends Activity {
         newFragment.show(getFragmentManager(), "datePicker");
     }
 
-    public void reviewYourWoopButtonClick(View v) {
+    public void reviewYourGripButtonClick(View v) {
         String deadlineDate = tbxDate.getText().toString().replace("Selected Date: ", "");
 
         Intent intent = new Intent(this, ReviewActivity.class);
