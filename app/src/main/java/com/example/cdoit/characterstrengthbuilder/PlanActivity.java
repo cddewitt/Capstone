@@ -68,7 +68,7 @@ public class PlanActivity extends AppCompatActivity {
             plans += tbxPlan.getText().toString() + "~";
             count++;
             if (count == interference.size()) {
-                currentplan.setText("You have set all your plans!! Click SET A DEADLINE to continue!");
+                currentplan.setText("You have figured out a solution for all of your interferences. Congratulations! Continue to set deadline!");
                 plans = plans.substring(0, plans.length() - 1);
             } else
                 currentplan.setText("What is your plan to deal with: " + interference.get(count));

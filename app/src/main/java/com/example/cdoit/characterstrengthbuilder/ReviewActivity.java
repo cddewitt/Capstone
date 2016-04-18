@@ -63,17 +63,17 @@ public class ReviewActivity extends AppCompatActivity {
         deadlineTextView = (TextView) findViewById(R.id.deadlineTextView);
         characteristicView = (TextView) findViewById(R.id.characteristicTextView);
 
-        goalTextView.append(goal);
-        resultTextView.append(result);
+        goalTextView.append("\""+goal+"\""+".");
+        resultTextView.append("\""+result+"\""+".");
         for (int i = 0; i < inteferences.size(); i++) {
-            inteferencePlanTextView.append("Your plan to combat " + inteferences.get(i) + " is to " + plans.get(i) + "!\n\n");
+            inteferencePlanTextView.append("Your plan to combat " +"\""+ inteferences.get(i) +"\""+ " is to " +"\""+ plans.get(i) +"\""+ "!\n\n");
 
         }
         if (deadlineDate.equals(DatabaseContract.NO_DATE))
             deadlineTextView.setText("");
         else
-            deadlineTextView.append(" " + deadlineDate);
-        characteristicView.append(characteristic);
+            deadlineTextView.append(" " + deadlineDate+".");
+        characteristicView.append(characteristic+".");
     }
 
     public void saveYourGripButtonClick(View v) {
