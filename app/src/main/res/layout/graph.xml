@@ -13,7 +13,7 @@
         android:id="@+id/linetext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LineGraph"
+        android:text="Your Progress"
         android:textSize="16dp"/>
 
     <com.jjoe64.graphview.GraphView

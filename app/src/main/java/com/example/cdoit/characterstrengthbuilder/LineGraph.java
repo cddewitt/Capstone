@@ -64,12 +64,12 @@ public class LineGraph extends AppCompatActivity {
             while(cursor.isAfterLast() == false) {
                 scores = new Double[]{
                         cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_GRIT)),
-                        cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_SELF_CONTROL)),
+                        /*cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_SELF_CONTROL)),
                         cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_COMMUNICATION_SKILLS)),
                         cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_ZEST)),
                         cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_GRATITUDE)),
                         cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_OPTIMISM)),
-                        cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_CURIOSITY))
+                        cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_CURIOSITY))*/
                 };
                 cursor.moveToNext();
             }
