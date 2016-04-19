@@ -11,6 +11,8 @@ import android.view.View;
  * Created by cdoit on 11/16/2015.
  */
 public class AnalysisActivity extends AppCompatActivity {
+    private String characterString = "";
+    private String[] analysisList = {"grit", "selfAnalysis", "communicationSkills", "zest", "gratitude", "optimism", "curiosity"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,39 +44,32 @@ public class AnalysisActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
     public void btnGritClick(View v) {
         Intent intent = new Intent(this, LineGraph.class);
+        switch(v.getId()) {
+            case (R.id.btnGrit):
+                intent.putExtra("Analysis", analysisList[0]);
+                break;
+            case (R.id.btnSelfAnalysis):
+                intent.putExtra("Analysis", analysisList[1]);
+                break;
+            case (R.id.btnCommunicationSkills):
+                intent.putExtra("Analysis", analysisList[2]);
+                break;
+            case (R.id.btnZest):
+                intent.putExtra("Analysis", analysisList[3]);
+                break;
+            case (R.id.btnGratitude):
+                intent.putExtra("Analysis", analysisList[4]);
+                break;
+            case (R.id.btnOptimism):
+                intent.putExtra("Analysis", analysisList[5]);
+                break;
+            case (R.id.btnCuriosity):
+                intent.putExtra("Analysis", analysisList[6]);
+                break;
+        }
         startActivity(intent);
     }
-
-    public void btnSelfAnalysisClick(View v) {
-        Intent intent = new Intent(this, LineGraph.class);
-        startActivity(intent);
-    }
-
-    public void btnCommunicationSkillsClick(View v) {
-        Intent intent = new Intent(this, LineGraph.class);
-        startActivity(intent);
-    }
-
-    public void btnZestClick(View v) {
-        Intent intent = new Intent(this, LineGraph.class);
-        startActivity(intent);
-    }
-
-    public void btnGratitudeClick(View v) {
-        Intent intent = new Intent(this, LineGraph.class);
-        startActivity(intent);
-    }
-
-    public void btnOptimismClick(View v) {
-        Intent intent = new Intent(this, LineGraph.class);
-        startActivity(intent);
-    }
-
-    public void btnCuriosityClick(View v) {
-        Intent intent = new Intent(this, LineGraph.class);
-        startActivity(intent);
-    }
-
 }

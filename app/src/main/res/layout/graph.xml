@@ -12,13 +12,9 @@
         android:id="@+id/linetext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
-        android:text="Your Progress"
+        android:text="Graph Name"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="16dp"/>
-=======
-        android:text="LineGraph"
-        android:textSize="16dp" />
->>>>>>> 2b6592d37a379ac129397c3e81483dad79f60a96
 
     <com.jjoe64.graphview.GraphView
         android:id="@+id/graph"

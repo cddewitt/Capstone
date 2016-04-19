@@ -6,75 +6,156 @@
     android:orientation="vertical"
     android:paddingTop="@dimen/activity_vertical_margin">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/btnGrit"
+        android:background="@android:color/darker_gray"/>
+
     <Button
         android:id="@+id/btnGrit"
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:background="#ffffff"
+        android:text="Grit"
+        android:textSize="35sp"
         android:onClick="btnGritClick"
-        android:text="Grit" />
+        android:clickable="true"
+        android:padding="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:background="#fff4e6" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/btnGrit"
+        android:background="@android:color/darker_gray"/>
 
     <Button
         android:id="@+id/btnSelfAnalysis"
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/btnGrit"
+        android:text="Self-Analysis"
+        android:textSize="35sp"
+        android:onClick="btnGritClick"
         android:layout_below="@+id/btnGrit"
-        android:background="#ffffff"
-        android:onClick="btnSelfAnalysisClick"
-        android:text="Self-Analysis" />
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:padding="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:background="#fff4e6"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/btnSelfAnalysis"
+        android:background="@android:color/darker_gray"/>
 
     <Button
         android:id="@+id/btnCommunicationSkills"
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/btnSelfAnalysis"
+        android:text="Communication Skills"
+        android:textSize="35sp"
+        android:onClick="btnGritClick"
         android:layout_below="@+id/btnSelfAnalysis"
-        android:background="#ffffff"
-        android:onClick="btnCommunicationSkillsClick"
-        android:text="Communication Skills" />
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:padding="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:background="#fff4e6"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/btnCommunicationSkills"
+        android:background="@android:color/darker_gray"/>
 
     <Button
         android:id="@+id/btnZest"
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/btnCommunicationSkills"
+        android:text="Zest"
+        android:textSize="35sp"
+        android:onClick="btnGritClick"
         android:layout_below="@+id/btnCommunicationSkills"
-        android:background="#ffffff"
-        android:onClick="btnZestClick"
-        android:text="Zest" />
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:padding="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:background="#fff4e6"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/btnZest"
+        android:background="@android:color/darker_gray"/>
 
     <Button
         android:id="@+id/btnGratitude"
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/btnZest"
+        android:text="Grattitude"
+        android:textSize="35sp"
+        android:onClick="btnGritClick"
         android:layout_below="@+id/btnZest"
-        android:background="#ffffff"
-        android:onClick="btnGratitudeClick"
-        android:text="Gratitude" />
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:padding="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:background="#fff4e6"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/btnGratitude"
+        android:background="@android:color/darker_gray"/>
 
     <Button
         android:id="@+id/btnOptimism"
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/btnGratitude"
+        android:text="Optimism"
+        android:textSize="35sp"
+        android:onClick="btnGritClick"
         android:layout_below="@+id/btnGratitude"
-        android:background="#ffffff"
-        android:onClick="btnOptimismClick"
-        android:text="Optimism" />
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:padding="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:background="#fff4e6"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/btnOptimism"
+        android:background="@android:color/darker_gray"/>
 
     <Button
         android:id="@+id/btnCuriosity"
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/btnOptimism"
+        android:text="Curiosity"
+        android:textSize="35sp"
+        android:onClick="btnGritClick"
         android:layout_below="@+id/btnOptimism"
-        android:background="#ffffff"
-        android:onClick="btnCuriosityClick"
-        android:text="Curiosity" />
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:padding="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:background="#fff4e6"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/btnCuriosity"
+        android:background="@android:color/darker_gray"/>
 
 
 </RelativeLayout>

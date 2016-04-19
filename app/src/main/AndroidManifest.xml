@@ -58,10 +58,10 @@
         <activity
             android:name=".LineGraph"
             android:label="@string/app_name"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".AnalysisActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".AnalysisActivity" />
         </activity>
         <activity
             android:name=".HistoryActivityGraph"

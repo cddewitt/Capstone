@@ -8,9 +8,33 @@ import android.support.v7.app.AppCompatActivity;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
+import android.content.Intent;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class LineGraph extends AppCompatActivity {
+    private String graphString = "";
+    private TextView graphName;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setTitle("GRAPH");
+        setContentView(R.layout.graph);
+        Bundle i = getIntent().getExtras();
+        graphString = i.getString("Analysis");
+
+        graphName = (TextView) findViewById(R.id.linetext);
+        graphName.setText(graphString.toUpperCase());
+
+        GraphView line = (GraphView) this.findViewById(R.id.graph);
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(populateDataPoints());
+        line.addSeries(series);
+
+
+    }
+
     private DataPoint[] populateDataPoints() {
         Double[] scores = getDatabaseValues();
         int count = numValues();
@@ -21,17 +45,6 @@ public class LineGraph extends AppCompatActivity {
             values[i] = v;
         }
         return values;
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setTitle("GRAPH");
-        setContentView(R.layout.graph);
-
-        GraphView line = (GraphView) this.findViewById(R.id.graph);
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(populateDataPoints());
-        line.addSeries(series);
     }
 
     private int numValues() {
@@ -53,25 +66,85 @@ public class LineGraph extends AppCompatActivity {
     }
 
     private Double[] getDatabaseValues() {
+
+        if(graphString.equals("grit")){
+            Toast toast = Toast.makeText(getApplicationContext(),"worked",Toast.LENGTH_LONG);
+            toast.show();
+        }
+        else {
+            Toast toast = Toast.makeText(getApplicationContext(),graphString,Toast.LENGTH_LONG);
+            toast.show();
+        }
+
+
         Double[] scores = new Double[numValues()];
         DatabaseHelper helper = new DatabaseHelper(getApplicationContext());
         SQLiteDatabase db = helper.getWritableDatabase();
         Cursor cursor = db.query(DatabaseContract.GritScores.TABLENAME, null, null, null, null, null, null);
-        if (cursor.moveToLast()) {
-            while (cursor.isAfterLast() == false) {
-                scores = new Double[]{
-                        cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_GRIT)),
-                        /*cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_SELF_CONTROL)),
-                        cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_COMMUNICATION_SKILLS)),
-                        cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_ZEST)),
-                        cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_GRATITUDE)),
-                        cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_OPTIMISM)),
-                        cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_CURIOSITY))*/
-                };
-                cursor.moveToNext();
+        if (cursor != null) {
+            int i = 0;
+            if(graphString.trim().equals("grit")) {
+                while (cursor.moveToNext()) {
+                    scores[i] = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_GRIT));
+                    i++;
+                }
+
+            }
+            if(graphString.trim().equals("selfAnalysis")) {
+                while (cursor.moveToNext()) {
+                    scores[i] = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_SELF_CONTROL));
+                    i++;
+                }
+
             }
 
+            if(graphString.trim().equals("communicationSkills")) {
+                while (cursor.moveToNext()) {
+                    scores[i] = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_COMMUNICATION_SKILLS));
+                    i++;
+                }
+
+            }
+            if(graphString.trim().equals("zest")) {
+                while (cursor.moveToNext()) {
+                    scores[i] = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_ZEST));
+                    i++;
+                }
+
+            }
+            if(graphString.trim().equals("gratitude")) {
+                while (cursor.moveToNext()) {
+                    scores[i] = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_GRATITUDE));
+                    i++;
+                }
+
+            }
+            if(graphString.trim().equals("optimism")) {
+                while (cursor.moveToNext()) {
+                    scores[i] = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_OPTIMISM));
+                    i++;
+                }
+
+            }
+            if(graphString.trim().equals("curiosity")) {
+                while (cursor.moveToNext()) {
+                    scores[i] = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_CURIOSITY));
+                    i++;
+                }
+
+            }
+            else {
+                while (cursor.moveToNext()) {
+                    scores[i] = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_SELF_CONTROL));
+                    i++;
+                }
+            }
         }
+        else
+        {
+            scores = new Double[0];
+        }
+        db.close();
         return scores;
     }
 }
