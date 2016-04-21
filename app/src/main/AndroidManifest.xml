@@ -179,7 +179,7 @@
         <activity
             android:name=".LovelyThinkingActivity"
             android:label="@string/title_activity_lovely_thinking"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:parentActivityName=".MainActivity"></activity>
     </application>
 
 </manifest>

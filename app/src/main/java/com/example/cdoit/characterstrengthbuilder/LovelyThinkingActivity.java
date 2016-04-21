@@ -12,9 +12,7 @@ public class LovelyThinkingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lovely_thinking);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        TextView view = (TextView) findViewById(R.id.lovelyTextView);
+        TextView view = (TextView) findViewById(R.id.tbxLovely);
         if (view != null) {
             view.setMovementMethod(LinkMovementMethod.getInstance());
         }

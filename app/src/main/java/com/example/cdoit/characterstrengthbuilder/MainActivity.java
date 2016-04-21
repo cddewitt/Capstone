@@ -43,18 +43,23 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void rateYourselfButtonClick(View v) {
+
+    public void btnAnalysisClick(View v) {
         Intent intent = new Intent(this, RateYourselfActivity.class);
         startActivity(intent);
     }
 
-    public void btnAnalysisClick(View v) {
-        Intent intent = new Intent(this, AnalysisActivity.class);
-        startActivity(intent);
+    public void btnTheoryClick(View v) {
+       // Intent intent = new Intent(this, RateYourselfActivity.class);
+       // startActivity(intent);
     }
 
-    public void btnAboutClick(View v) {
-        Intent intent = new Intent(this, LearnMore.class);
+    public void btnLovelyThinkingClick(View v) {
+        Intent intent = new Intent(this, LovelyThinkingActivity.class);
         startActivity(intent);
+    }
+    public void btnDonateClick(View v) {
+        //    Intent intent = new Intent(this, LearnMore.class);
+        //    startActivity(intent);
     }
 }

@@ -40,5 +40,5 @@
         <item>Curiosity</item>
     </string-array>
     <string name="title_activity_lovely_thinking">Lovely Thinking</string>
-    <string name="lovelyThinkingText"> This app was created by Robert Willey with Jessica Stanford, Cory Dewitt, Alex Roark, and Tyler Green at Ball State University. \n\n <h3>Check out our other apps at <a href = "http://lovelythinking.com/apps"> Lovely Thinking. </a></h3></string>
+    <string name="lovelyThinkingText"> This app was created by Robert Willey with Jessica Stanford, Cory Dewitt, Alex Roark, and Tyler Green at Ball State University. \n\n <h3>Check out our other apps at <a href = "http://www.lovelythinking.com/apps/"> Lovely Thinking. </a></h3></string>
 </resources>

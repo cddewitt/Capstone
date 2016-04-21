@@ -21,36 +21,47 @@
         android:text="GOALS" />
 
     <Button
-        android:id="@+id/rateYourselfButton"
+        android:id="@+id/btnAnalysis"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/btnGoals"
         android:layout_below="@+id/btnGoals"
         android:layout_marginTop="60dp"
         android:background="#ffffff"
-        android:onClick="rateYourselfButtonClick"
-        android:text="Rate Yourself" />
+        android:onClick="btnAnalysisClick"
+        android:text="Analysis" />
 
     <Button
-        android:id="@+id/btnAnalysis"
+        android:id="@+id/btnTheory"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btnAbout"
-        android:layout_alignStart="@+id/rateYourselfButton"
+        android:layout_above="@+id/btnALovelyThinking"
+        android:layout_alignStart="@+id/btnAnalysis"
         android:layout_marginBottom="51dp"
         android:background="#ffffff"
-        android:onClick="btnAnalysisClick"
-        android:text="Self-Analysis" />
+        android:onClick="btnTheoryClick"
+        android:text="Theory" />
 
     <Button
-        android:id="@+id/btnAbout"
+        android:id="@+id/btnALovelyThinking"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/btnAnalysis"
+        android:layout_alignStart="@+id/btnTheory"
         android:layout_marginBottom="88dp"
         android:background="#ffffff"
-        android:onClick="btnAboutClick"
-        android:text="About" />
+        android:onClick="btnLovelyThinkingClick"
+        android:text="Lovely Thinking" />
+
+    <Button
+        android:id="@+id/btnDonate"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/btnTheory"
+        android:layout_marginBottom="4dp"
+        android:background="#ffffff"
+        android:text="Make a Wish .org"
+        android:onClick="btnDonateClick" />
 
 </RelativeLayout>
