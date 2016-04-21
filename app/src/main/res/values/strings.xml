@@ -40,5 +40,13 @@
         <item>Curiosity</item>
     </string-array>
     <string name="title_activity_lovely_thinking">Lovely Thinking</string>
-    <string name="lovelyThinkingText"> This app was created by Robert Willey with Jessica Stanford, Cory Dewitt, Alex Roark, and Tyler Green at Ball State University. \n\n <h3>Check out our other apps at <a href = "http://www.lovelythinking.com/apps/"> Lovely Thinking. </a></h3></string>
+   <string name="theoryText">This app combines ideas from research by<a href="http://angeladuckworth.com"> Angela Duckworth</a> and <a href="http://www.woopmylife.org"> Gabrielle Oettingen</a>\n\n.
+
+Duckworth says that grit and self-control are more important predictors of success than IQ scores and achievement tests. This app was created to help develop these two character strengths, and the five others from the<a href="https://en.wikipedia.org/wiki/Positive_psychology"> Positive Psychology movement</a> she recommended for the program at KIPP schools\n\n.
+
+Oettingen says that just thinking about your goals actually makes you less likely to achieve them. You have to go beyond just imagining them and do the two added steps of figuring out what could keep you from reaching them, and making a get around anything that gets in the way\n\n.
+
+<a href="http://rkwilley.com/character">Visit our website</a> for more information about what we mean by communication skills and character strengths, and how we are putting them into practice in the Music Media Production and Industry program at Ball State University.
+</string>
+    <string name="lovelyThinkingText"> This app was created by Robert Willey with Jessica Stanford, Cory Dewitt, Alex Roark, and Tyler Green at Ball State University. \n\n <h3>Check out our other apps at <a href="http://www.lovelythinking.com/apps/"> Lovely Thinking. </a></h3></string>
 </resources>
