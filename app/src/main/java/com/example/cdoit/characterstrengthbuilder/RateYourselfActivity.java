@@ -217,7 +217,7 @@ public class RateYourselfActivity extends AppCompatActivity {
                     int seekBarGritScoreAsInt = (int) seekBarGritScore;
                     gritSeekBar.setProgress(seekBarGritScoreAsInt);
 
-                    gritScoreTextView.setText(scores[i].toString());
+                    gritScoreTextView.setText(String.valueOf(seekBarGritScoreAsInt));
                 } else if (i == 1) {
                     SeekBar selfControlSeekBar = (SeekBar) this.findViewById(scoreSeekBarIds[i]);
                     TextView selfControlScoreTextView = (TextView) this.findViewById(scoreTextViewIds[i]);
@@ -226,7 +226,7 @@ public class RateYourselfActivity extends AppCompatActivity {
                     int seekBarSelfControlScoreAsInt = (int) seekBarSelfControlScore;
                     selfControlSeekBar.setProgress(seekBarSelfControlScoreAsInt);
 
-                    selfControlScoreTextView.setText(scores[i].toString());
+                    selfControlScoreTextView.setText(String.valueOf(seekBarSelfControlScoreAsInt));
                 } else if (i == 2) {
                     SeekBar communicationSkillsSeekBar = (SeekBar) this.findViewById(scoreSeekBarIds[i]);
                     TextView communicationSkillsScoreTextView = (TextView) this.findViewById(scoreTextViewIds[i]);
@@ -235,7 +235,7 @@ public class RateYourselfActivity extends AppCompatActivity {
                     int seekBarCommunicationSkillsScoreAsInt = (int) seekBarCommunicationSkillsScore;
                     communicationSkillsSeekBar.setProgress(seekBarCommunicationSkillsScoreAsInt);
 
-                    communicationSkillsScoreTextView.setText(scores[i].toString());
+                    communicationSkillsScoreTextView.setText(String.valueOf(seekBarCommunicationSkillsScoreAsInt));
                 } else if (i == 3) {
                     SeekBar zestSeekBar = (SeekBar) this.findViewById(scoreSeekBarIds[i]);
                     TextView zestScoreTextView = (TextView) this.findViewById(scoreTextViewIds[i]);
@@ -244,7 +244,7 @@ public class RateYourselfActivity extends AppCompatActivity {
                     int seekBarZestScoreAsInt = (int) seekBarZestScore;
                     zestSeekBar.setProgress(seekBarZestScoreAsInt);
 
-                    zestScoreTextView.setText(scores[i].toString());
+                    zestScoreTextView.setText(String.valueOf(seekBarZestScoreAsInt));
                 } else if (i == 4) {
                     SeekBar gratitudeSeekBar = (SeekBar) this.findViewById(scoreSeekBarIds[i]);
                     TextView gratitudeScoreTextView = (TextView) this.findViewById(scoreTextViewIds[i]);
@@ -253,7 +253,7 @@ public class RateYourselfActivity extends AppCompatActivity {
                     int seekBarGratitudeScoreAsInt = (int) seekBarGratitudeScore;
                     gratitudeSeekBar.setProgress(seekBarGratitudeScoreAsInt);
 
-                    gratitudeScoreTextView.setText(scores[i].toString());
+                    gratitudeScoreTextView.setText(String.valueOf(seekBarGratitudeScoreAsInt));
                 } else if (i == 5) {
                     SeekBar optimismSeekBar = (SeekBar) this.findViewById(scoreSeekBarIds[i]);
                     TextView optimismScoreTextView = (TextView) this.findViewById(scoreTextViewIds[i]);
@@ -262,7 +262,7 @@ public class RateYourselfActivity extends AppCompatActivity {
                     int seekBarOptimismScoreAsInt = (int) seekBarOptimismScore;
                     optimismSeekBar.setProgress(seekBarOptimismScoreAsInt);
 
-                    optimismScoreTextView.setText(scores[i].toString());
+                    optimismScoreTextView.setText(String.valueOf(seekBarOptimismScoreAsInt));
                 } else if (i == 6) {
                     SeekBar curiositySeekBar = (SeekBar) this.findViewById(scoreSeekBarIds[i]);
                     TextView curiosityScoreTextView = (TextView) this.findViewById(scoreTextViewIds[i]);
@@ -271,7 +271,7 @@ public class RateYourselfActivity extends AppCompatActivity {
                     int seekBarCuriosityScoreAsInt = (int) seekBarCuriosityScore;
                     curiositySeekBar.setProgress(seekBarCuriosityScoreAsInt);
 
-                    curiosityScoreTextView.setText(scores[i].toString());
+                    curiosityScoreTextView.setText(String.valueOf(seekBarCuriosityScoreAsInt));
                 }
             }
         }

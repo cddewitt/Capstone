@@ -167,7 +167,12 @@
         <activity
             android:name=".RateYourselfActivity"
             android:label="@string/title_activity_rate_yourself"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:parentActivityName=".MainActivity"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity
             android:name=".CharacteristicSelectionActivity"
             android:parentActivityName=".GoalsActivity" />

@@ -15,28 +15,29 @@
             android:layout_height="fill_parent"
             android:background="#fff4e6">
 
+            <Button
+                android:id="@+id/takeGritTestButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Take Grit Test Here"
+                android:textSize="25sp"
+                android:onClick="takeGritTestButtonClick"
+                android:clickable="true"
+                android:padding="10dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:background="#fff4e6" />
+
             <TextView
                 android:id="@+id/gritTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
+                android:layout_below="@+id/takeGritTestButton"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:text="Grit"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <Button
-                android:id="@+id/takeGritTestButton"
-                android:layout_width="120dp"
-                android:layout_height="35dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="8dp"
-                android:layout_toRightOf="@+id/gritTextView"
-                android:background="#ffffff"
-                android:onClick="takeGritTestButtonClick"
-                android:text="Take Grit Test" />
 
             <SeekBar
                 android:id="@+id/gritSeekBar"
@@ -66,10 +67,9 @@
                 android:id="@+id/selfControlTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
+                android:layout_below="@+id/gritSeekBar"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="120dp"
+                android:layout_marginTop="25dp"
                 android:text="Self-Control"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -101,10 +101,9 @@
                 android:id="@+id/communicationSkillsTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
+                android:layout_below="@+id/selfControlSeekBar"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="220dp"
+                android:layout_marginTop="25dp"
                 android:text="Communication Skills"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -136,10 +135,9 @@
                 android:id="@+id/zestTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
+                android:layout_below="@+id/communicationSkillsSeekBar"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="320dp"
+                android:layout_marginTop="25dp"
                 android:text="Zest"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -171,10 +169,9 @@
                 android:id="@+id/gratitudeTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
+                android:layout_below="@+id/zestSeekBar"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="420dp"
+                android:layout_marginTop="25dp"
                 android:text="Gratitude"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -206,10 +203,9 @@
                 android:id="@+id/optimismTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
+                android:layout_below="@+id/gratitudeSeekBar"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="520dp"
+                android:layout_marginTop="25dp"
                 android:text="Optimism"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -241,10 +237,9 @@
                 android:id="@+id/curiosityTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
+                android:layout_below="@+id/optimismSeekBar"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="620dp"
+                android:layout_marginTop="25dp"
                 android:text="Curiosity"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
