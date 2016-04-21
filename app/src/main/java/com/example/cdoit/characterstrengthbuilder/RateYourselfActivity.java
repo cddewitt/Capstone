@@ -217,7 +217,7 @@ public class RateYourselfActivity extends AppCompatActivity {
                     int seekBarGritScoreAsInt = (int) seekBarGritScore;
                     gritSeekBar.setProgress(seekBarGritScoreAsInt);
 
-                    gritScoreTextView.setText(String.valueOf(seekBarGritScoreAsInt));
+                    gritScoreTextView.setText(scores[i].toString());
                 } else if (i == 1) {
                     SeekBar selfControlSeekBar = (SeekBar) this.findViewById(scoreSeekBarIds[i]);
                     TextView selfControlScoreTextView = (TextView) this.findViewById(scoreTextViewIds[i]);
