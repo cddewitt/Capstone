@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#fff4e6"
-    android:orientation="vertical"
-    android:paddingTop="@dimen/activity_vertical_margin">
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:background="#fff4e6"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <View
         android:layout_width="match_parent"
@@ -17,10 +20,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Grit"
-        android:textSize="35sp"
+        android:textSize="30dp"
         android:onClick="btnGritClick"
         android:clickable="true"
-        android:padding="10dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:background="#fff4e6" />
@@ -36,12 +40,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Self-Analysis"
-        android:textSize="35sp"
+        android:textSize="30dp"
         android:onClick="btnGritClick"
         android:layout_below="@+id/btnGrit"
         android:layout_centerHorizontal="true"
         android:clickable="true"
-        android:padding="10dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:background="#fff4e6"/>
@@ -56,13 +61,14 @@
         android:id="@+id/btnCommunicationSkills"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Communication Skills"
-        android:textSize="35sp"
+        android:text="Communication"
+        android:textSize="30dp"
         android:onClick="btnGritClick"
         android:layout_below="@+id/btnSelfAnalysis"
         android:layout_centerHorizontal="true"
         android:clickable="true"
-        android:padding="10dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:background="#fff4e6"/>
@@ -78,12 +84,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Zest"
-        android:textSize="35sp"
+        android:textSize="30dp"
         android:onClick="btnGritClick"
         android:layout_below="@+id/btnCommunicationSkills"
         android:layout_centerHorizontal="true"
         android:clickable="true"
-        android:padding="10dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:background="#fff4e6"/>
@@ -99,12 +106,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Grattitude"
-        android:textSize="35sp"
+        android:textSize="30dp"
         android:onClick="btnGritClick"
         android:layout_below="@+id/btnZest"
         android:layout_centerHorizontal="true"
         android:clickable="true"
-        android:padding="10dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:background="#fff4e6"/>
@@ -120,12 +128,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Optimism"
-        android:textSize="35sp"
+        android:textSize="30dp"
         android:onClick="btnGritClick"
         android:layout_below="@+id/btnGratitude"
         android:layout_centerHorizontal="true"
         android:clickable="true"
-        android:padding="10dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:background="#fff4e6"/>
@@ -141,12 +150,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Curiosity"
-        android:textSize="35sp"
+        android:textSize="30dp"
         android:onClick="btnGritClick"
         android:layout_below="@+id/btnOptimism"
         android:layout_centerHorizontal="true"
         android:clickable="true"
-        android:padding="10dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:background="#fff4e6"/>
@@ -157,5 +167,5 @@
         android:layout_below="@+id/btnCuriosity"
         android:background="@android:color/darker_gray"/>
 
-
 </RelativeLayout>
+</ScrollView>

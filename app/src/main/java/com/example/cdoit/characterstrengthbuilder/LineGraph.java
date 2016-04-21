@@ -16,6 +16,7 @@ import android.widget.Toast;
 public class LineGraph extends AppCompatActivity {
     private String graphString = "";
     private TextView graphName;
+    private String graphNameString = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,13 +26,14 @@ public class LineGraph extends AppCompatActivity {
         Bundle i = getIntent().getExtras();
         graphString = i.getString("Analysis");
 
-        graphName = (TextView) findViewById(R.id.linetext);
-        graphName.setText(graphString.toUpperCase());
+
 
         GraphView line = (GraphView) this.findViewById(R.id.graph);
         LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(populateDataPoints());
         line.addSeries(series);
 
+        graphName = (TextView) findViewById(R.id.linetext);
+        graphName.setText(graphNameString);
 
     }
 
@@ -58,6 +60,9 @@ public class LineGraph extends AppCompatActivity {
                     numItemsInDB++;
                 }
             }
+            else {
+                numItemsInDB = 1;
+            }
         } finally {
             cursor.close();
         }
@@ -66,16 +71,6 @@ public class LineGraph extends AppCompatActivity {
     }
 
     private Double[] getDatabaseValues() {
-
-        if(graphString.equals("grit")){
-            Toast toast = Toast.makeText(getApplicationContext(),"worked",Toast.LENGTH_LONG);
-            toast.show();
-        }
-        else {
-            Toast toast = Toast.makeText(getApplicationContext(),graphString,Toast.LENGTH_LONG);
-            toast.show();
-        }
-
 
         Double[] scores = new Double[numValues()];
         DatabaseHelper helper = new DatabaseHelper(getApplicationContext());
@@ -88,14 +83,14 @@ public class LineGraph extends AppCompatActivity {
                     scores[i] = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_GRIT));
                     i++;
                 }
-
+                graphNameString = "Grit";
             }
             if(graphString.trim().equals("selfAnalysis")) {
                 while (cursor.moveToNext()) {
                     scores[i] = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_SELF_CONTROL));
                     i++;
                 }
-
+                graphNameString = "Self Analysis";
             }
 
             if(graphString.trim().equals("communicationSkills")) {
@@ -110,7 +105,7 @@ public class LineGraph extends AppCompatActivity {
                     scores[i] = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_ZEST));
                     i++;
                 }
-
+                graphNameString = "Zest";
             }
             if(graphString.trim().equals("gratitude")) {
                 while (cursor.moveToNext()) {
@@ -124,14 +119,14 @@ public class LineGraph extends AppCompatActivity {
                     scores[i] = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_OPTIMISM));
                     i++;
                 }
-
+                graphNameString = "Optimism";
             }
             if(graphString.trim().equals("curiosity")) {
                 while (cursor.moveToNext()) {
                     scores[i] = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_CURIOSITY));
                     i++;
                 }
-
+                graphNameString = "Curiosity";
             }
             else {
                 while (cursor.moveToNext()) {
@@ -142,7 +137,7 @@ public class LineGraph extends AppCompatActivity {
         }
         else
         {
-            scores = new Double[0];
+            scores[0] = 0.0;
         }
         db.close();
         return scores;
