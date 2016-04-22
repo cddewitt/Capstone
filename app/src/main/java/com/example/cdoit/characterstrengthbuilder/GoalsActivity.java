@@ -78,32 +78,14 @@ public class GoalsActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.add_goal) {
-            Intent intent = new Intent(this, CharacteristicSelectionActivity.class);
-            startActivity(intent);
-            return true;
-        }
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
     public void btnHistoryClick(View v) {
         Intent intent = new Intent(this, HistoryActivity.class);
         startActivity(intent);
     }
 
-    public void btnGraphClick(View v) {
-        Intent intent = new Intent(this, HistoryActivityGraph.class);
+    public void btnCharacteristicClick(View v) {
+        Intent intent = new Intent(this, CharacteristicSelectionActivity.class);
         startActivity(intent);
     }
 

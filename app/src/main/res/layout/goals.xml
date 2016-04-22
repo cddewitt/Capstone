@@ -2,37 +2,65 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#010101"
+    android:background="#fff4e6"
     android:orientation="vertical"
     android:weightSum="1">
 
     <ListView
         android:id="@+id/listViewGoals"
         android:layout_width="wrap_content"
-        android:layout_height="425dp"
-        android:layout_above="@+id/btnHistory"
-        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnHistory"
         android:layout_centerHorizontal="true"
         android:background="#fff4e6" />
+
+
+    <Button
+        android:id="@+id/btnCharacteristic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="History"
+        android:textSize="25dp"
+        android:onClick="btnHistoryClick"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:background="#fff4e6"
+        android:textColor="#3c2f2f" />
+
+    <TextView
+        android:id="@+id/descriptionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:layout_below="@id/btnCharacteristic"
+        android:layout_centerHorizontal="true"
+        android:textSize="16dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/btnCharacteristic"
+        android:background="@android:color/darker_gray"/>
 
     <Button
         android:id="@+id/btnHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="62dp"
-        android:layout_toStartOf="@+id/btnMakeGraph"
-        android:onClick="btnHistoryClick"
-        android:text="History" />
-
-    <Button
-        android:id="@+id/btnMakeGraph"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:text="New GRIP"
+        android:textSize="25dp"
+        android:onClick="btnCharacteristicClick"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="73dp"
-        android:onClick="btnGraphClick"
-        android:text="Graph" />
+        android:background="#fff4e6"
+        android:textColor="#3c2f2f" />
 
 </RelativeLayout>

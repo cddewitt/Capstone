@@ -9,6 +9,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/dateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click a button to see your progress"
+            android:layout_centerHorizontal="true"
+            android:textSize="16dp"/>
+
+        <View
+            android:id="@+id/startLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/dateText"
+            android:background="@android:color/darker_gray"/>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -25,9 +40,11 @@
         android:clickable="true"
         android:paddingTop="20dp"
         android:paddingBottom="20dp"
+        android:layout_below="@id/startLine"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:background="#fff4e6" />
+        android:background="#fff4e6"
+        android:textColor="#3c2f2f" />
 
     <View
         android:layout_width="match_parent"
@@ -49,7 +66,8 @@
         android:paddingBottom="20dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:background="#fff4e6"/>
+        android:background="#fff4e6"
+        android:textColor="#3c2f2f" />
 
     <View
         android:layout_width="match_parent"
@@ -71,7 +89,8 @@
         android:paddingBottom="20dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:background="#fff4e6"/>
+        android:background="#fff4e6"
+        android:textColor="#3c2f2f" />
 
     <View
         android:layout_width="match_parent"
@@ -93,7 +112,8 @@
         android:paddingBottom="20dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:background="#fff4e6"/>
+        android:background="#fff4e6"
+        android:textColor="#3c2f2f"/>
 
     <View
         android:layout_width="match_parent"
@@ -115,7 +135,8 @@
         android:paddingBottom="20dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:background="#fff4e6"/>
+        android:background="#fff4e6"
+        android:textColor="#3c2f2f" />
 
     <View
         android:layout_width="match_parent"
@@ -137,7 +158,8 @@
         android:paddingBottom="20dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:background="#fff4e6"/>
+        android:background="#fff4e6"
+        android:textColor="#3c2f2f" />
 
     <View
         android:layout_width="match_parent"
@@ -159,7 +181,8 @@
         android:paddingBottom="20dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:background="#fff4e6"/>
+        android:background="#fff4e6"
+        android:textColor="#3c2f2f" />
 
     <View
         android:layout_width="match_parent"
