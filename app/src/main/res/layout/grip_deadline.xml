@@ -56,7 +56,8 @@
         android:text="Set your deadline below:"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#000000"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:layout_alignEnd="@+id/separator" />
 
     <View
         android:id="@+id/separator"
@@ -74,26 +75,22 @@
         android:id="@+id/tbxDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/reviewYourGripButton"
-        android:layout_alignStart="@+id/setDeadlineTextView"
-        android:layout_marginBottom="40dp"
         android:text="Selected Date: "
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000"
-        android:textSize="30dp" />
+        android:textSize="25sp"
+        android:layout_below="@+id/setDeadlineTextView"
+        android:layout_toStartOf="@+id/reviewYourGripButton" />
 
     <Button
         android:id="@+id/btnSetDate"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"
         android:background="#ffffff"
         android:onClick="setDateButtonClick"
-        android:text="Select A Date" />
+        android:text="Select A Date"
+        android:layout_alignTop="@+id/reviewYourGripButton"
+        android:layout_alignStart="@+id/tbxDate" />
 
 </RelativeLayout>

@@ -16,7 +16,8 @@
         android:layout_marginRight="10dp"
         android:background="#ffffff"
         android:onClick="continueToOutcomeButtonClick"
-        android:text="Continue To Result" />
+        android:text="Continue To Result"
+        android:layout_alignStart="@+id/goalEditText" />
 
     <EditText
         android:id="@+id/goalEditText"
@@ -30,8 +31,9 @@
         android:layout_marginBottom="70dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="#be9b7b"
+        android:background="#ffffff"
         android:editable="true"
+        android:textSize="25sp"
         android:hint="Enter your goal here..."
         android:textColor="#000000" />
 

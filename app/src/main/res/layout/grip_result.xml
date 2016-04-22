@@ -55,7 +55,8 @@
         android:layout_marginBottom="70dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="#be9b7b"
+        android:textSize="25sp"
+        android:background="#ffffff"
         android:editable="true"
         android:hint="Enter the desired result here..."
         android:textColor="#000000" />
