@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnTheoryClick(View v) {
-        Intent intent = new Intent(this, thoeryActivity.class);
+        Intent intent = new Intent(this, theoryActivity.class);
         startActivity(intent);
     }
 

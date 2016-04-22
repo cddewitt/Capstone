@@ -177,7 +177,7 @@
             android:name=".LovelyThinkingActivity"
             android:label="@string/title_activity_lovely_thinking"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".thoeryActivity"
+        <activity android:name=".theoryActivity"
             android:parentActivityName=".MainActivity">
         </activity>
     </application>

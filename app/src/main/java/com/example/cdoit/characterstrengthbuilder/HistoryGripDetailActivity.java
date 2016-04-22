@@ -1,5 +1,6 @@
 package com.example.cdoit.characterstrengthbuilder;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ public class HistoryGripDetailActivity extends AppCompatActivity {
     private List<String> plans;
     private SQLiteDatabase db;
     private int rowID;
+    private String goalName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +39,8 @@ public class HistoryGripDetailActivity extends AppCompatActivity {
         db = helper.getWritableDatabase();
         Cursor cursor = db.query(DatabaseContract.CompleteGoals.TABLENAME, null, DatabaseContract.CompleteGoals.COLUMN_ID + "=" + rowID, null, null, null, null);
         if (cursor.moveToFirst()) {
-            tbxGoal.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_GOAL)));
+            goalName = cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_GOAL));
+            tbxGoal.setText(goalName);
             tbxResult.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_RESULT)));
             String inteferencesAsString = cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_INTERFERENCES));
             String plansAsString = cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_PLAN));
@@ -75,7 +78,7 @@ public class HistoryGripDetailActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_history_grip_detail, menu);
         return true;
     }
 
@@ -91,6 +94,13 @@ public class HistoryGripDetailActivity extends AppCompatActivity {
             return true;
         }
 
+        if (id == R.id.share_goal) {
+            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+            shareIntent.setType("text/plain");
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "I just completed my goal of " + goalName + " thanks to the Character Strength Builder app! www.lovelythinking.com/apps/");
+            startActivity(Intent.createChooser(shareIntent, "Share"));
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 }
