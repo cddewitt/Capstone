@@ -17,6 +17,9 @@ public class LineGraph extends AppCompatActivity {
     private String graphString = "";
     private TextView graphName;
     private String graphNameString = "";
+    private TextView numTimesTaken;
+    private TextView completedGRIPs;
+    private TextView incompleteGRIPs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +29,6 @@ public class LineGraph extends AppCompatActivity {
         Bundle i = getIntent().getExtras();
         graphString = i.getString("Analysis");
 
-
-
         GraphView line = (GraphView) this.findViewById(R.id.graph);
         LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(populateDataPoints());
         line.addSeries(series);
@@ -35,6 +36,14 @@ public class LineGraph extends AppCompatActivity {
         graphName = (TextView) findViewById(R.id.linetext);
         graphName.setText(graphNameString);
 
+        numTimesTaken = (TextView) findViewById(R.id.numTimesTaken);
+        numTimesTaken.setText("You have taken the test " + numValues() + " times");
+
+        completedGRIPs = (TextView) findViewById(R.id.completedGRIPs);
+        completedGRIPs.setText("Completed GRIPs in " + graphNameString + " :");
+
+        incompleteGRIPs = (TextView) findViewById(R.id.incompleteGRIPS);
+        incompleteGRIPs.setText("Completed GRIPs in " + graphNameString + " :");
     }
 
     private DataPoint[] populateDataPoints() {

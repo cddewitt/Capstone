@@ -22,19 +22,6 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
     private TextView currentDate;
-    private TextView completedGRIP;
-    private TextView incompleteGRIP;
-    private DataPoint[] generateDataPoints() {
-        int count = getCompletedGoals();
-        DataPoint[] values = new DataPoint[count];
-        long[] dateInMillis = getDatabaseValues();
-        for(int i = 0; i < count; i++) {
-            Date d = new Date(dateInMillis[i]);
-            DataPoint v = new DataPoint(i, i*i);
-            values[i] = v;
-        }
-        return values;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,76 +32,9 @@ public class MainActivity extends AppCompatActivity {
         SimpleDateFormat mdformat = new SimpleDateFormat("MMM dd");
         String strDate = "Today, " + mdformat.format(calendar.getTime());
 
-        GraphView line = (GraphView) this.findViewById(R.id.mainGraph);
-
-        Calendar cal = Calendar.getInstance();
-        long[] dateInMillis = getDatabaseValues();
-        cal.setTimeInMillis(dateInMillis[0]);
-        Date d = new Date(dateInMillis[0]);
         currentDate = (TextView) findViewById(R.id.dateText);
         currentDate.setText(strDate);
 
-        completedGRIP = (TextView) findViewById(R.id.numComplete);
-        completedGRIP.setText("Number of completed GRIPs: " + getCompletedGoals());
-        incompleteGRIP = (TextView) findViewById(R.id.numIncomplete);
-        incompleteGRIP.setText("Number of incompleted GRIPs: " + getIncompleteGoals());
-
-        BarGraphSeries<DataPoint> series2 = new BarGraphSeries<>(generateDataPoints());
-        series2.setSpacing(50);
-        line.addSeries(series2);
-        line.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(MainActivity.this));
-    }
-
-    private int getCompletedGoals() {
-        int completedGoals = 0;
-        DatabaseHelper helper = new DatabaseHelper(getApplicationContext());
-        SQLiteDatabase db = helper.getReadableDatabase();
-        Cursor cursor = db.query(DatabaseContract.CompleteGoals.TABLENAME, null, null, null, null, null, null);
-        try {
-            if (cursor != null)//check to see if we got any result back
-            {
-                while (cursor.moveToNext()) {
-                    completedGoals++;
-                }
-            }
-        } finally {
-            cursor.close();
-        }
-        return completedGoals;
-    }
-
-    private int getIncompleteGoals() {
-        int incompleteGoals = 0;
-        DatabaseHelper helper = new DatabaseHelper(getApplicationContext());
-        SQLiteDatabase db = helper.getReadableDatabase();
-        Cursor cursor = db.query(DatabaseContract.IncompleteGoals.TABLENAME, null, null, null, null, null, null);
-        try {
-            if (cursor != null)//check to see if we got any result back
-            {
-                while (cursor.moveToNext()) {
-                    incompleteGoals++;
-                }
-            }
-        } finally {
-            cursor.close();
-        }
-        return incompleteGoals;
-    }
-
-    private long[] getDatabaseValues() {
-
-        long[] dateCreated = new long[getIncompleteGoals()];
-        DatabaseHelper helper = new DatabaseHelper(getApplicationContext());
-        SQLiteDatabase db = helper.getWritableDatabase();
-        Cursor cursor = db.query(DatabaseContract.IncompleteGoals.TABLENAME, null, null, null, null, null, null);
-        if (cursor != null) {
-            int i = 0;
-            while (cursor.moveToNext()) {
-                dateCreated[i] = cursor.getLong(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_DATE_CREATED));
-                i++;
-            }
-        }
-        return dateCreated;
     }
 
 

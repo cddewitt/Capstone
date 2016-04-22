@@ -23,4 +23,35 @@
         android:layout_height="200dip"
         android:layout_below="@+id/linetext"
         android:title="TITLE" />
+
+    <TextView
+        android:id="@+id/numTimesTaken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/graph"
+        android:paddingTop="20dp"
+        android:text="You have taken the test 0 times"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="16dp"/>
+
+    <TextView
+        android:id="@+id/completedGRIPs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/numTimesTaken"
+        android:paddingTop="20dp"
+        android:text="Completed GRIPs in category: "
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="16dp"/>
+
+    <TextView
+        android:id="@+id/incompleteGRIPS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/completedGRIPs"
+        android:paddingTop="20dp"
+        android:text="Incompete GRIPs in category:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="16dp"/>
+
 </RelativeLayout>

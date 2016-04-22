@@ -37,4 +37,24 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
 
+    <TextView
+        android:id="@+id/numComplete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number of completed GRIPs: "
+        android:padding="10dp"
+        android:layout_below="@id/btnGraph"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/numIncomplete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/numComplete"
+        android:padding="10dp"
+        android:text="Number of incomplete GRIPs: "
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="16dp" />
+
 </RelativeLayout>
