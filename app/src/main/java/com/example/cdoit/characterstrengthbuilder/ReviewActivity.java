@@ -139,7 +139,7 @@ public class ReviewActivity extends AppCompatActivity {
         DatabaseHelper helper = new DatabaseHelper(getApplicationContext());
         SQLiteDatabase db = helper.getReadableDatabase();
         ContentValues values = new ContentValues();
-
+        values.put(DatabaseContract.IncompleteGoals.COLUMN_CHARACTERSTRNGH,characteristic);
         values.put(DatabaseContract.IncompleteGoals.COLUMN_GOAL, goal);
         values.put(DatabaseContract.IncompleteGoals.COLUMN_RESULT, result);
         values.put(DatabaseContract.IncompleteGoals.COLUMN_INTERFERENCE, inteference);

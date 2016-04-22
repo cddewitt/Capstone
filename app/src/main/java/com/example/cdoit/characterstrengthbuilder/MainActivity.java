@@ -24,17 +24,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView currentDate;
     private TextView completedGRIP;
     private TextView incompleteGRIP;
-    private DataPoint[] generateDataPoints() {
-        int count = getCompletedGoals();
-        DataPoint[] values = new DataPoint[count];
-        long[] dateInMillis = getDatabaseValues();
-        for(int i = 0; i < count; i++) {
-            Date d = new Date(dateInMillis[i]);
-            DataPoint v = new DataPoint(i, i*i);
-            values[i] = v;
-        }
-        return values;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +34,6 @@ public class MainActivity extends AppCompatActivity {
         SimpleDateFormat mdformat = new SimpleDateFormat("MMM dd");
         String strDate = "Today, " + mdformat.format(calendar.getTime());
 
-        GraphView line = (GraphView) this.findViewById(R.id.mainGraph);
-
-        Calendar cal = Calendar.getInstance();
-        long[] dateInMillis = getDatabaseValues();
-        cal.setTimeInMillis(dateInMillis[0]);
-        Date d = new Date(dateInMillis[0]);
         currentDate = (TextView) findViewById(R.id.dateText);
         currentDate.setText(strDate);
 
@@ -59,10 +42,6 @@ public class MainActivity extends AppCompatActivity {
         incompleteGRIP = (TextView) findViewById(R.id.numIncomplete);
         incompleteGRIP.setText("Number of incompleted GRIPs: " + getIncompleteGoals());
 
-        BarGraphSeries<DataPoint> series2 = new BarGraphSeries<>(generateDataPoints());
-        series2.setSpacing(50);
-        line.addSeries(series2);
-        line.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(MainActivity.this));
     }
 
     private int getCompletedGoals() {
