@@ -36,6 +36,7 @@ public class GoalDetailActivity extends AppCompatActivity {
     private static final String TWITTER_SECRET = "ktK85XZzR7fYK57380FO94euosu8zsc4uxOljqRnLprd2ZhTaa";
     private String interferencesAsString;
     private String plansAsString;
+    private String characteristic;
     private TextView tbxGoal;
     private TextView tbxResult;
     private TextView tbxInterferencesAndPlan;
@@ -66,6 +67,7 @@ public class GoalDetailActivity extends AppCompatActivity {
         db = helper.getWritableDatabase();
         Cursor cursor = db.query(DatabaseContract.IncompleteGoals.TABLENAME, null, DatabaseContract.IncompleteGoals.COLUMN_ID + "=" + rowID, null, null, null, null);
         if (cursor.moveToFirst()) {
+            characteristic=cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_CHARACTERSTRNGH));
             goalName = cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_GOAL));
             tbxGoal.setText(goalName);
             tbxResult.setText(cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_RESULT)));
@@ -145,6 +147,7 @@ public class GoalDetailActivity extends AppCompatActivity {
 
     public void btnMarkAsCompletedClick(View v) {
         ContentValues values = new ContentValues();
+        values.put(DatabaseContract.CompleteGoals.COLUMN_CHARACTERSTRNGH,characteristic);
         values.put(DatabaseContract.CompleteGoals.COLUMN_GOAL, tbxGoal.getText().toString());
         values.put(DatabaseContract.CompleteGoals.COLUMN_RESULT, tbxResult.getText().toString());
         values.put(DatabaseContract.CompleteGoals.COLUMN_INTERFERENCES, interferencesAsString);

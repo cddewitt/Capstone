@@ -13,7 +13,7 @@ import org.joda.time.DateTime;
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final int version = 10;
+    private static final int version = 11;
     TimeCalculator calculator = new TimeCalculator();
 
     public DatabaseHelper(Context context) {
@@ -29,7 +29,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 DatabaseContract.IncompleteGoals.COLUMN_RESULT + " TEXT NOT NULL, " +
                 DatabaseContract.IncompleteGoals.COLUMN_INTERFERENCE + " TEXT NOT NULL, " +
                 DatabaseContract.IncompleteGoals.COLUMN_PLAN + " TEXT NOT NULL, " +
-                DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_DATE + " TEXT NOT NULL " +
+                DatabaseContract.IncompleteGoals.COLUMN_DEADLINE_DATE + " TEXT NOT NULL, " +
+                DatabaseContract.IncompleteGoals.COLUMN_CHARACTERSTRNGH+ " TEXT NOT NULL" +
                 " );";
 
         final String SQL_CREATE_COMPLETE_GOALS_TABLE = "CREATE TABLE " + DatabaseContract.CompleteGoals.TABLENAME + " (" +
@@ -40,7 +41,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 DatabaseContract.CompleteGoals.COLUMN_RESULT + " TEXT NOT NULL, " +
                 DatabaseContract.CompleteGoals.COLUMN_INTERFERENCES + " TEXT NOT NULL, " +
                 DatabaseContract.CompleteGoals.COLUMN_PLAN + " TEXT NOT NULL, " +
-                DatabaseContract.CompleteGoals.COLUMN_DEADLINE_DATE + " TEXT NOT NULL " +
+                DatabaseContract.CompleteGoals.COLUMN_DEADLINE_DATE + " TEXT NOT NULL, " +
+                DatabaseContract.CompleteGoals.COLUMN_CHARACTERSTRNGH+ " TEXT NOT NULL" +
                 " );";
 
         final String SQL_CREATE_GRIT_SCORES_TABLE = "CREATE TABLE " + DatabaseContract.GritScores.TABLENAME + " (" +
