@@ -114,13 +114,7 @@ public class GoalDetailActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-        if (id == R.id.share_goal) {
-            Intent shareIntent = new Intent(Intent.ACTION_SEND);
-            shareIntent.setType("text/plain");
-            shareIntent.putExtra(Intent.EXTRA_TEXT, "I am going " + goalName + " thanks to the Character Strength Builder!");
-            startActivity(Intent.createChooser(shareIntent, "Share"));
-            return true;
-        }
+
         return super.onOptionsItemSelected(item);
     }
 
