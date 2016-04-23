@@ -27,21 +27,43 @@
         android:text="Think of how much time it should take you to fulfill your wish with a motivated attitude. Set a date by which you plan to have fulfilled your wish."
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000"
-        android:textSize="28dp" />
+        android:textSize="20dp" />
 
     <Button
         android:id="@+id/reviewYourGripButton"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="10dp"
-        android:background="#ffffff"
+        android:background="#fff4e6"
         android:onClick="reviewYourGripButtonClick"
-        android:text="Review Your GRIP" />
+        android:text="Review Your GRIP"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+    <View
+        android:id="@+id/seperator2"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/deadlineDescriptionTextView"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:background="#c8c8ff" />
+
+    <View
+        android:id="@+id/buttonSeperator"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/reviewYourGripButton"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:background="#c8c8ff" />
 
     <TextView
         android:id="@+id/setDeadlineTextView"
@@ -52,8 +74,9 @@
         android:layout_below="@+id/separator"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:clickable="false"
-        android:text="Set your deadline below:"
+        android:text="Set your deadline:"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#000000"
         android:textSize="20dp"
@@ -78,19 +101,20 @@
         android:text="Selected Date: "
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000"
-        android:textSize="25sp"
-        android:layout_below="@+id/setDeadlineTextView"
-        android:layout_toStartOf="@+id/reviewYourGripButton" />
+        android:textSize="20sp"
+        android:layout_marginTop="33dp"
+        android:layout_below="@+id/btnSetDate"
+        android:layout_alignStart="@+id/buttonSeperator" />
 
     <Button
         android:id="@+id/btnSetDate"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
         android:background="#ffffff"
         android:onClick="setDateButtonClick"
         android:text="Select A Date"
-        android:layout_alignTop="@+id/reviewYourGripButton"
-        android:layout_alignStart="@+id/tbxDate" />
+        android:layout_below="@+id/setDeadlineTextView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

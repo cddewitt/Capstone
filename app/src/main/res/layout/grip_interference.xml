@@ -20,86 +20,98 @@
         android:id="@+id/interferenceDescriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/view"
         android:layout_below="@+id/interferenceTextView"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:text="Think of one or more things that might stand in the way of fulfilling your goal. What is/are the interference(s) that could hold you back from seeing your goal through?"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000"
-        android:textSize="28dp" />
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/continueToPlanButton"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="10dp"
-        android:background="#ffffff"
+        android:background="#fff4e6"
         android:onClick="continueToPlanButtonClick"
-        android:text="Continue To Plan" />
+        android:text="Continue To Plan"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:id="@+id/addInterference"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
-        android:background="#ffffff"
+        android:background="#fff4e6"
         android:onClick="addInterferenceButtonClick"
-        android:text="Add INTERFERENCE" />
+        android:text="Add Another INTERFERENCE"
+        android:layout_above="@+id/continueToPlanButton"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:id="@+id/interferenceEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/continueToPlanButton"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="25dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+
         android:textSize="25sp"
         android:background="#ffffff"
         android:editable="true"
         android:hint="Enter interference here..."
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:layout_below="@+id/whatIsTheMainInterferenceTextView"
+        android:layout_alignStart="@+id/whatIsTheMainInterferenceTextView" />
 
     <TextView
         android:id="@+id/whatIsTheMainInterferenceTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/interferenceEditText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="20dp"
-        android:text="What is one inteference?\n(Click ADD INTERFERENCE to add another)"
+        android:layout_marginLeft="10dp"
+        android:text="What is one inteference?"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#000000"
-        android:textSize="20dp" />
+        android:textSize="20sp"
+        android:layout_below="@+id/view4"
+        android:layout_alignStart="@+id/view4" />
+
+
 
     <View
-        android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:layout_above="@+id/whatIsTheMainInterferenceTextView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp"
+        android:layout_below="@+id/interferenceDescriptionTextView"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#c8c8ff"
+        android:id="@+id/view4" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/interferenceDescriptionTextView"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
         android:background="#c8c8ff" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#c8c8ff"
+        android:id="@+id/view5"
+        android:layout_above="@+id/addInterference"
+        android:layout_alignStart="@+id/view4" />
 </RelativeLayout>

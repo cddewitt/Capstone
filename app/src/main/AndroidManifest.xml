@@ -58,10 +58,10 @@
         <activity
             android:name=".LineGraph"
             android:label="@string/app_name"
-            android:parentActivityName=".AnalysisActivity">
+            android:parentActivityName=".AnalysisLinkActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".AnalysisActivity" />
+                android:value=".AnalysisLinkActivity" />
         </activity>
         <activity
             android:name=".ProgressActivity"
@@ -106,10 +106,10 @@
         <activity
             android:name=".ReviewActivity"
             android:label="@string/title_activity_review"
-            android:parentActivityName=".DeadlineActivity">
+            android:parentActivityName=".PlanActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.cdoit.characterstrengthbuilder.DeadlineActivity" />
+                android:value=".PlanActivity" />
         </activity>
         <activity android:name=".AnalysisLinkActivity"
             android:label="@string/app_name"
@@ -118,6 +118,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+
+        <activity
+            android:name=".DeadlineActivity"
+            android:label="@string/title_activity_deadline"
+            android:parentActivityName=".PlanActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PlanActivity" />
+        </activity>
         <!--
              ATTENTION: This was auto-generated to add Google Play services to your project for
              App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -125,11 +134,6 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-
-        <activity
-            android:name=".DeadlineActivity"
-            android:label="@string/title_activity_deadline"
-            android:parentActivityName=".PlanActivity" />
         <activity
             android:name=".SaveActivity"
             android:label="@string/title_activity_save"
@@ -164,10 +168,10 @@
         <activity
             android:name=".RateYourselfActivity"
             android:label="@string/title_activity_rate_yourself"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".AnalysisLinkActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".AnalysisLinkActivity" />
         </activity>
         <activity
             android:name=".CharacteristicSelectionActivity"

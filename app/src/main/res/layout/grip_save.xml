@@ -19,6 +19,17 @@
         android:textColor="#3c2f2f"
         android:textSize="48dp" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/gripSavedTextView"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:background="#c8c8ff" />
+
     <TextView
         android:id="@+id/goodLuckTextView"
         android:layout_width="wrap_content"
@@ -33,16 +44,26 @@
         android:textColor="#000000"
         android:textSize="48dp" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/returnToHomeButton"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:background="#c8c8ff" />
+
     <Button
         android:id="@+id/returnToHomeButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="50dp"
-        android:background="#ffffff"
+        android:background="#fff4e6"
         android:onClick="returnToHomeButtonClick"
-        android:text="Return To Home" />
+        android:text="Return To Home"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

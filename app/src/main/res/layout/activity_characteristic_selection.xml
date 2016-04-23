@@ -27,7 +27,19 @@
         android:layout_alignParentRight="true"
         android:background="#ffffff"
         android:onClick="btnCharacteristicToWishClick"
-        android:text="Continue To Goal" />
+        android:text="Continue To Goal"
+        android:layout_alignParentStart="true" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/btnCharacteristicSelectionToWish"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:background="#c8c8ff" />
 
     <RadioGroup
         android:layout_width="match_parent"

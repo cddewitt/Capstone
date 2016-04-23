@@ -8,59 +8,73 @@
         android:id="@+id/continueToOutcomeButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="10dp"
-        android:background="#ffffff"
+        android:background="#fff4e6"
         android:onClick="continueToOutcomeButtonClick"
         android:text="Continue To Result"
-        android:layout_alignStart="@+id/goalEditText" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/continueToOutcomeButton"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:background="#c8c8ff" />
 
     <EditText
         android:id="@+id/goalEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/continueToOutcomeButton"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="70dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="#ffffff"
         android:editable="true"
         android:textSize="25sp"
         android:hint="Enter your goal here..."
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:layout_marginTop="35dp"
+        android:layout_below="@+id/whatIsYourGoalTextView"
+        android:layout_alignStart="@+id/whatIsYourGoalTextView" />
 
     <TextView
         android:id="@+id/whatIsYourGoalTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/goalEditText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp"
         android:layout_marginLeft="20dp"
         android:text="What is your goal?"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#000000"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/view3" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:layout_above="@+id/whatIsYourGoalTextView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:background="#c8c8ff" />
+        android:background="#c8c8ff"
+        android:layout_below="@+id/goalDescriptionTextView"
+        android:layout_alignStart="@+id/view2"
+        android:layout_marginTop="40dp"
+        android:id="@+id/view3" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/goalDescriptionTextView"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:background="#c8c8ff"
+        android:id="@+id/view2" />
 
     <TextView
         android:id="@+id/goalDescriptionTextView"
@@ -74,7 +88,7 @@
         android:text="Think of something you want to accomplish in the near future. What is the most prominent goal or desire that comes to your mind?"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000"
-        android:textSize="28dp" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/goalTextView"

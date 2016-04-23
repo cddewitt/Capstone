@@ -19,30 +19,39 @@
         android:id="@+id/planDescriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/whatIsYourPlanTextView"
-        android:layout_centerHorizontal="true"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="30dp"
         android:text="Think of something you can do to combat the interference standing in between you and fulfilling your goal. What can you do to overcome your interference?"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000"
-        android:textSize="28dp" />
+        android:textSize="20sp"
+        android:layout_below="@+id/planTextView"
+        android:layout_alignEnd="@+id/planEditText"
+        android:layout_marginTop="39dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/SetPlanButton"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:background="#c8c8ff"
+        android:id="@+id/view7" />
 
     <Button
         android:id="@+id/setADeadlineButton"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="10dp"
-        android:background="#ffffff"
+        android:background="#fff4e6"
         android:onClick="setADeadlineButtonClick"
-        android:text="Set A Deadline" />
+        android:text="Set A Deadline"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:id="@+id/planEditText"
@@ -80,24 +89,32 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:layout_above="@+id/whatIsYourPlanTextView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:background="#c8c8ff"
+        android:layout_centerVertical="true"
+        android:layout_alignEnd="@+id/setADeadlineButton" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/planDescriptionTextView"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
         android:background="#c8c8ff" />
 
     <Button
         android:id="@+id/SetPlanButton"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="10dp"
-        android:background="#ffffff"
+        android:background="#fff4e6"
         android:onClick="nextPlanClick"
-        android:text="Next Interference" />
+        android:text="Next Interference"
+        android:layout_above="@+id/setADeadlineButton"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

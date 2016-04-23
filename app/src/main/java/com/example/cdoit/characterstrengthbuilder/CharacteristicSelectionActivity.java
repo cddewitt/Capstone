@@ -35,5 +35,5 @@ public class CharacteristicSelectionActivity extends AppCompatActivity {
             intent.putExtra("Characteristic", rb.getText());
             startActivity(intent);
         }
-        }
+    }
 }

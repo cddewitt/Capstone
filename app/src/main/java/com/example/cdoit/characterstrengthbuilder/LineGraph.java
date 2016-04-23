@@ -40,10 +40,10 @@ public class LineGraph extends AppCompatActivity {
         numTimesTaken.setText("You have taken the test " + numValues() + " times");
 
         completedGRIPs = (TextView) findViewById(R.id.completedGRIPs);
-        completedGRIPs.setText("Completed GRIPs in " + graphNameString + " :");
+        completedGRIPs.setText("Completed GRIPs in " + graphNameString + ": " + getCompleteGoals());
 
         incompleteGRIPs = (TextView) findViewById(R.id.incompleteGRIPS);
-        incompleteGRIPs.setText("Completed GRIPs in " + graphNameString + " :");
+        incompleteGRIPs.setText("Incomplete GRIPs in " + graphNameString + ": " + getIncompleteGoals());
     }
 
     private DataPoint[] populateDataPoints() {
@@ -107,7 +107,7 @@ public class LineGraph extends AppCompatActivity {
                     scores[i] = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_COMMUNICATION_SKILLS));
                     i++;
                 }
-
+                graphNameString = "Communication Skills";
             }
             if(graphString.trim().equals("zest")) {
                 while (cursor.moveToNext()) {
@@ -121,7 +121,7 @@ public class LineGraph extends AppCompatActivity {
                     scores[i] = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_GRATITUDE));
                     i++;
                 }
-
+                graphNameString = "Gratitude";
             }
             if(graphString.trim().equals("optimism")) {
                 while (cursor.moveToNext()) {
@@ -139,7 +139,7 @@ public class LineGraph extends AppCompatActivity {
             }
             else {
                 while (cursor.moveToNext()) {
-                    scores[i] = cursor.getDouble(cursor.getColumnIndex(DatabaseContract.GritScores.COLUMN_SELF_CONTROL));
+                    scores[i] = 0.0;
                     i++;
                 }
             }
@@ -150,5 +150,155 @@ public class LineGraph extends AppCompatActivity {
         }
         db.close();
         return scores;
+    }
+
+    private int getCompleteGoals() {
+        String strengthName = "";
+        int count = 0;
+        DatabaseHelper helper = new DatabaseHelper(getApplicationContext());
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor cursor = db.query(DatabaseContract.CompleteGoals.TABLENAME, null, null, null, null, null, null);
+        try {
+            if (cursor != null)
+            {
+                if(graphString.trim().equals("grit")) {
+                    while (cursor.moveToNext()) {
+                        strengthName = cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_CHARACTERSTRNGH));
+                        if(strengthName.trim().equals("Grit")) {
+                            count++;
+                        }
+                    }
+                }
+                if(graphString.trim().equals("selfAnalysis")) {
+                    while (cursor.moveToNext()) {
+                        strengthName = cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_CHARACTERSTRNGH));
+                        if(strengthName.trim().equals("Self-Control")) {
+                            count++;
+                        }
+                    }
+                }
+
+                if(graphString.trim().equals("communicationSkills")) {
+                    while (cursor.moveToNext()) {
+                        strengthName = cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_CHARACTERSTRNGH));
+                        if(strengthName.trim().equals("Communication Skills")) {
+                            count++;
+                        }
+                    }
+
+                }
+                if(graphString.trim().equals("zest")) {
+                    while (cursor.moveToNext()) {
+                        strengthName = cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_CHARACTERSTRNGH));
+                        if(strengthName.trim().equals("Zest")) {
+                            count++;
+                        }
+                    }
+                }
+                if(graphString.trim().equals("gratitude")) {
+                    while (cursor.moveToNext()) {
+                        strengthName = cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_CHARACTERSTRNGH));
+                        if(strengthName.trim().equals("Gratitude")) {
+                            count++;
+                        }
+                    }
+
+                }
+                if(graphString.trim().equals("optimism")) {
+                    while (cursor.moveToNext()) {
+                        strengthName = cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_CHARACTERSTRNGH));
+                        if(strengthName.trim().equals("Optimism")) {
+                            count++;
+                        }
+                    }
+                }
+                if(graphString.trim().equals("curiosity")) {
+                    while (cursor.moveToNext()) {
+                        strengthName = cursor.getString(cursor.getColumnIndex(DatabaseContract.CompleteGoals.COLUMN_CHARACTERSTRNGH));
+                        if(strengthName.trim().equals("Curiosity")) {
+                            count++;
+                        }
+                    }
+                }
+            }
+        } finally {
+            cursor.close();
+        }
+        return count;
+    }
+
+    private int getIncompleteGoals() {
+        String strengthName = "";
+        int count = 0;
+        DatabaseHelper helper = new DatabaseHelper(getApplicationContext());
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor cursor = db.query(DatabaseContract.IncompleteGoals.TABLENAME, null, null, null, null, null, null);
+        try {
+            if (cursor != null)
+            {
+                if(graphString.trim().equals("grit")) {
+                    while (cursor.moveToNext()) {
+                        strengthName = cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_CHARACTERSTRNGH));
+                        if(strengthName.trim().equals("Grit")) {
+                            count++;
+                        }
+                    }
+                }
+                if(graphString.trim().equals("selfAnalysis")) {
+                    while (cursor.moveToNext()) {
+                        strengthName = cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_CHARACTERSTRNGH));
+                        if(strengthName.trim().equals("Self-Control")) {
+                            count++;
+                        }
+                    }
+                }
+
+                if(graphString.trim().equals("communicationSkills")) {
+                    while (cursor.moveToNext()) {
+                        strengthName = cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_CHARACTERSTRNGH));
+                        if(strengthName.trim().equals("Communication Skills")) {
+                            count++;
+                        }
+                    }
+
+                }
+                if(graphString.trim().equals("zest")) {
+                    while (cursor.moveToNext()) {
+                        strengthName = cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_CHARACTERSTRNGH));
+                        if(strengthName.trim().equals("Zest")) {
+                            count++;
+                        }
+                    }
+                }
+                if(graphString.trim().equals("gratitude")) {
+                    while (cursor.moveToNext()) {
+                        strengthName = cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_CHARACTERSTRNGH));
+                        if(strengthName.trim().equals("Gratitude")) {
+                            count++;
+                        }
+                    }
+
+                }
+                if(graphString.trim().equals("optimism")) {
+                    while (cursor.moveToNext()) {
+                        strengthName = cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_CHARACTERSTRNGH));
+                        if(strengthName.trim().equals("Optimism")) {
+                            count++;
+                        }
+                    }
+                }
+                if(graphString.trim().equals("curiosity")) {
+                    while (cursor.moveToNext()) {
+                        strengthName = cursor.getString(cursor.getColumnIndex(DatabaseContract.IncompleteGoals.COLUMN_CHARACTERSTRNGH));
+                        if(strengthName.trim().equals("Curiosity")) {
+                            count++;
+                        }
+                    }
+                }
+            }
+        } finally {
+            cursor.close();
+        }
+        return count;
     }
 }

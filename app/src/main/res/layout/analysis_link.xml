@@ -6,34 +6,58 @@
     tools:context="com.example.cdoit.characterstrengthbuilder.AnalysisLinkActivity"
     android:background="#fff4e6">
 
+    <TextView
+        android:id="@+id/dateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rate your progress"
+        android:padding="10dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="16dp"/>
+
+    <View
+        android:id="@+id/startLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/dateText"
+        android:background="@android:color/darker_gray"/>
+
     <Button
         android:id="@+id/btnAnalysis"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="30dp"
         android:background="#fff4e6"
         android:onClick="btnAnalysisClick"
         android:text="Take Test"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/startLine"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
 
         android:layout_below="@id/btnAnalysis"
-        android:background="@android:color/darker_gray"/>
+        android:background="@android:color/darker_gray"
+        android:id="@+id/view8" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#c8c8ff"
+        android:layout_below="@+id/btnGraph"
+        android:id="@+id/view3" />
 
     <Button
         android:id="@+id/btnGraph"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="120dp"
         android:background="#fff4e6"
         android:onClick="btnGraphClick"
         android:text="See Progress"
+        android:layout_alignTop="@+id/view8"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
 
@@ -43,7 +67,7 @@
         android:layout_height="wrap_content"
         android:text="Number of completed GRIPs: "
         android:padding="10dp"
-        android:layout_below="@id/btnGraph"
+        android:layout_below="@id/view3"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="16dp" />
 

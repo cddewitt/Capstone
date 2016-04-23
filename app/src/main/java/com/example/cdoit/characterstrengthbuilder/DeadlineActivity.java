@@ -6,13 +6,14 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
 import java.util.Calendar;
 
-public class DeadlineActivity extends Activity {
+public class DeadlineActivity extends AppCompatActivity {
 
     private static TextView tbxDate;
     private String characteristic = "";
@@ -26,6 +27,7 @@ public class DeadlineActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Character Strength Builder");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.grip_deadline);
         final Calendar cal = Calendar.getInstance();
         tbxDate = (TextView) findViewById(R.id.tbxDate);
