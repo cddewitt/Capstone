@@ -3,6 +3,7 @@ package com.example.cdoit.characterstrengthbuilder;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -72,8 +73,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnTheoryClick(View v) {
-       // Intent intent = new Intent(this, RateYourselfActivity.class);
-       // startActivity(intent);
+        Intent intent = new Intent(this, theoryActivity.class);
+        startActivity(intent);
     }
 
     public void btnLovelyThinkingClick(View v) {
@@ -81,7 +82,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void btnDonateClick(View v) {
-        //    Intent intent = new Intent(this, LearnMore.class);
-        //    startActivity(intent);
+        Intent implicit = new Intent(Intent.ACTION_VIEW, Uri.parse("http://oki.wish.org/"));
+        startActivity(implicit);
+
     }
 }

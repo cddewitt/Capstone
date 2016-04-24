@@ -16,5 +16,6 @@
         android:id="@+id/tbxTheory"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textSize="16dp" />
+        android:textSize="16dp"
+        android:text="@string/THeoryText" />
 </RelativeLayout>
