@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.cdoit.characterstrengthbuilder.AnalysisLinkActivity"
+    tools:context="bsu.edu.cdoit.characterstrengthbuilder.AnalysisLinkActivity"
     android:background="#fff4e6">
 
     <TextView

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.cdoit.characterstrengthbuilder">
+    package="bsu.edu.cdoit.characterstrengthbuilder">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -10,15 +10,15 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/CustomActionBarTheme">
-        <receiver android:name=".FiveDaysAlarmReceiver" />
-        <receiver android:name=".DeadlinePassedAlarmReceiver" />
+        <receiver android:name="bsu.edu.cdoit.characterstrengthbuilder.FiveDaysAlarmReceiver" />
+        <receiver android:name="bsu.edu.cdoit.characterstrengthbuilder.DeadlinePassedAlarmReceiver" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
         <activity
-            android:name=".MainActivity"
+            android:name="bsu.edu.cdoit.characterstrengthbuilder.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,100 +32,100 @@
             android:value="2ce3af2826de831745d07dfced742416ac228df0" />
 
         <activity
-            android:name=".GoalsActivity"
+            android:name="bsu.edu.cdoit.characterstrengthbuilder.GoalsActivity"
             android:label="@string/app_name"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName="bsu.edu.cdoit.characterstrengthbuilder.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="bsu.edu.cdoit.characterstrengthbuilder.MainActivity" />
         </activity>
         <activity
-            android:name=".HistoryActivity"
+            android:name="bsu.edu.cdoit.characterstrengthbuilder.HistoryActivity"
             android:label="@string/app_name"
-            android:parentActivityName=".GoalsActivity">
+            android:parentActivityName="bsu.edu.cdoit.characterstrengthbuilder.GoalsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".GoalsActivity" />
+                android:value="bsu.edu.cdoit.characterstrengthbuilder.GoalsActivity" />
         </activity>
         <activity
-            android:name=".AnalysisActivity"
+            android:name="bsu.edu.cdoit.characterstrengthbuilder.AnalysisActivity"
             android:label="@string/app_name"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName="bsu.edu.cdoit.characterstrengthbuilder.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="bsu.edu.cdoit.characterstrengthbuilder.MainActivity" />
         </activity>
         <activity
-            android:name=".LineGraph"
+            android:name="bsu.edu.cdoit.characterstrengthbuilder.LineGraph"
             android:label="@string/app_name"
-            android:parentActivityName=".AnalysisLinkActivity">
+            android:parentActivityName="bsu.edu.cdoit.characterstrengthbuilder.AnalysisLinkActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".AnalysisLinkActivity" />
+                android:value="bsu.edu.cdoit.characterstrengthbuilder.AnalysisLinkActivity" />
         </activity>
         <activity
-            android:name=".ProgressActivity"
+            android:name="bsu.edu.cdoit.characterstrengthbuilder.ProgressActivity"
             android:label="@string/app_name"
-            android:parentActivityName=".AnalysisActivity">
+            android:parentActivityName="bsu.edu.cdoit.characterstrengthbuilder.AnalysisActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".AnalysisActivity" />
+                android:value="bsu.edu.cdoit.characterstrengthbuilder.AnalysisActivity" />
         </activity>
         <activity
-            android:name=".GoalActivity"
+            android:name="bsu.edu.cdoit.characterstrengthbuilder.GoalActivity"
             android:label="@string/app_name"
-            android:parentActivityName=".CharacteristicSelectionActivity">
+            android:parentActivityName="bsu.edu.cdoit.characterstrengthbuilder.CharacteristicSelectionActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".GoalsActivity" />
+                android:value="bsu.edu.cdoit.characterstrengthbuilder.GoalsActivity" />
         </activity>
         <activity
-            android:name=".ResultActivity"
+            android:name="bsu.edu.cdoit.characterstrengthbuilder.ResultActivity"
             android:label="@string/title_activity_outcome"
-            android:parentActivityName=".GoalActivity">
+            android:parentActivityName="bsu.edu.cdoit.characterstrengthbuilder.GoalActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".GoalActivity" />
+                android:value="bsu.edu.cdoit.characterstrengthbuilder.GoalActivity" />
         </activity>
         <activity
-            android:name=".InteferenceActivity"
+            android:name="bsu.edu.cdoit.characterstrengthbuilder.InteferenceActivity"
             android:label="@string/title_activity_obstacles"
-            android:parentActivityName=".ResultActivity">
+            android:parentActivityName="bsu.edu.cdoit.characterstrengthbuilder.ResultActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ResultActivity" />
+                android:value="bsu.edu.cdoit.characterstrengthbuilder.ResultActivity" />
         </activity>
         <activity
-            android:name=".PlanActivity"
+            android:name="bsu.edu.cdoit.characterstrengthbuilder.PlanActivity"
             android:label="@string/title_activity_plan"
-            android:parentActivityName=".InteferenceActivity">
+            android:parentActivityName="bsu.edu.cdoit.characterstrengthbuilder.InteferenceActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".InteferenceActivity" />
+                android:value="bsu.edu.cdoit.characterstrengthbuilder.InteferenceActivity" />
         </activity>
         <activity
-            android:name=".ReviewActivity"
+            android:name="bsu.edu.cdoit.characterstrengthbuilder.ReviewActivity"
             android:label="@string/title_activity_review"
-            android:parentActivityName=".PlanActivity">
+            android:parentActivityName="bsu.edu.cdoit.characterstrengthbuilder.PlanActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".PlanActivity" />
+                android:value="bsu.edu.cdoit.characterstrengthbuilder.PlanActivity" />
         </activity>
-        <activity android:name=".AnalysisLinkActivity"
+        <activity android:name="bsu.edu.cdoit.characterstrengthbuilder.AnalysisLinkActivity"
             android:label="@string/app_name"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName="bsu.edu.cdoit.characterstrengthbuilder.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="bsu.edu.cdoit.characterstrengthbuilder.MainActivity" />
         </activity>
 
         <activity
-            android:name=".DeadlineActivity"
+            android:name="bsu.edu.cdoit.characterstrengthbuilder.DeadlineActivity"
             android:label="@string/title_activity_deadline"
-            android:parentActivityName=".PlanActivity">
+            android:parentActivityName="bsu.edu.cdoit.characterstrengthbuilder.PlanActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".PlanActivity" />
+                android:value="bsu.edu.cdoit.characterstrengthbuilder.PlanActivity" />
         </activity>
         <!--
              ATTENTION: This was auto-generated to add Google Play services to your project for
@@ -135,54 +135,54 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
         <activity
-            android:name=".SaveActivity"
+            android:name="bsu.edu.cdoit.characterstrengthbuilder.SaveActivity"
             android:label="@string/title_activity_save"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".LearnMore"
+            android:name="bsu.edu.cdoit.characterstrengthbuilder.LearnMore"
             android:label="@string/title_activity_learn_more"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="bsu.edu.cdoit.characterstrengthbuilder.MainActivity" />
         <activity
-            android:name=".GritTestActivity"
+            android:name="bsu.edu.cdoit.characterstrengthbuilder.GritTestActivity"
             android:label="@string/title_activity_grit_test"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".GoalDetailActivity"
+            android:name="bsu.edu.cdoit.characterstrengthbuilder.GoalDetailActivity"
             android:label="GoalDetailActivity"
-            android:parentActivityName=".GoalsActivity" />
+            android:parentActivityName="bsu.edu.cdoit.characterstrengthbuilder.GoalsActivity" />
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value=".GoalsActivity" />
+            android:value="bsu.edu.cdoit.characterstrengthbuilder.GoalsActivity" />
 
         <activity
-            android:name=".HistoryGripDetailActivity"
+            android:name="bsu.edu.cdoit.characterstrengthbuilder.HistoryGripDetailActivity"
             android:label="HistoryWoopDetailActivity"
-            android:parentActivityName=".HistoryActivity" />
+            android:parentActivityName="bsu.edu.cdoit.characterstrengthbuilder.HistoryActivity" />
         <activity
-            android:name=".FacebookActivity"
+            android:name="bsu.edu.cdoit.characterstrengthbuilder.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/title_activity_facebook"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         android:parentActivityName=".HistoryActivity" />
         <activity
-            android:name=".RateYourselfActivity"
+            android:name="bsu.edu.cdoit.characterstrengthbuilder.RateYourselfActivity"
             android:label="@string/title_activity_rate_yourself"
-            android:parentActivityName=".AnalysisLinkActivity">
+            android:parentActivityName="bsu.edu.cdoit.characterstrengthbuilder.AnalysisLinkActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".AnalysisLinkActivity" />
+                android:value="bsu.edu.cdoit.characterstrengthbuilder.AnalysisLinkActivity" />
         </activity>
         <activity
-            android:name=".CharacteristicSelectionActivity"
-            android:parentActivityName=".GoalsActivity" />
+            android:name="bsu.edu.cdoit.characterstrengthbuilder.CharacteristicSelectionActivity"
+            android:parentActivityName="bsu.edu.cdoit.characterstrengthbuilder.GoalsActivity" />
         <activity
-            android:name=".LovelyThinkingActivity"
+            android:name="bsu.edu.cdoit.characterstrengthbuilder.LovelyThinkingActivity"
             android:label="@string/title_activity_lovely_thinking"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="bsu.edu.cdoit.characterstrengthbuilder.MainActivity" />
         <activity
-            android:name=".theoryActivity"
-            android:parentActivityName=".theoryActivity" />
+            android:name="bsu.edu.cdoit.characterstrengthbuilder.theoryActivity"
+            android:parentActivityName="bsu.edu.cdoit.characterstrengthbuilder.theoryActivity" />
     </application>
 
 </manifest>

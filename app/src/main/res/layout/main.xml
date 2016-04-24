@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="#be9b7b"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity">
+    tools:context="bsu.edu.cdoit.characterstrengthbuilder.MainActivity">
 
     <TextView
         android:id="@+id/dateText"

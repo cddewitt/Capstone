@@ -6,7 +6,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.example.cdoit.characterstrengthbuilder"
+        applicationId "bsu.edu.cdoit.characterstrengthbuilder"
         minSdkVersion 17
         targetSdkVersion 23
         versionCode 1
