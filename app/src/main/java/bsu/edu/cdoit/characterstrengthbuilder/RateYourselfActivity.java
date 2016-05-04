@@ -226,16 +226,16 @@ public class RateYourselfActivity extends AppCompatActivity {
                     int seekBarSelfControlScoreAsInt = (int) seekBarSelfControlScore;
                     selfControlSeekBar.setProgress(seekBarSelfControlScoreAsInt);
 
-                    selfControlScoreTextView.setText(String.valueOf(seekBarSelfControlScoreAsInt));
+                    selfControlScoreTextView.setText(String.valueOf(seekBarSelfControlScoreAsInt+1));
                 } else if (i == 2) {
                     SeekBar communicationSkillsSeekBar = (SeekBar) this.findViewById(scoreSeekBarIds[i]);
                     TextView communicationSkillsScoreTextView = (TextView) this.findViewById(scoreTextViewIds[i]);
 
                     double seekBarCommunicationSkillsScore = scores[i] - 1;
                     int seekBarCommunicationSkillsScoreAsInt = (int) seekBarCommunicationSkillsScore;
-                    communicationSkillsSeekBar.setProgress(seekBarCommunicationSkillsScoreAsInt);
+                    communicationSkillsSeekBar.setProgress(seekBarCommunicationSkillsScoreAsInt+1);
 
-                    communicationSkillsScoreTextView.setText(String.valueOf(seekBarCommunicationSkillsScoreAsInt));
+                    communicationSkillsScoreTextView.setText(String.valueOf(seekBarCommunicationSkillsScoreAsInt+1));
                 } else if (i == 3) {
                     SeekBar zestSeekBar = (SeekBar) this.findViewById(scoreSeekBarIds[i]);
                     TextView zestScoreTextView = (TextView) this.findViewById(scoreTextViewIds[i]);
@@ -244,7 +244,7 @@ public class RateYourselfActivity extends AppCompatActivity {
                     int seekBarZestScoreAsInt = (int) seekBarZestScore;
                     zestSeekBar.setProgress(seekBarZestScoreAsInt);
 
-                    zestScoreTextView.setText(String.valueOf(seekBarZestScoreAsInt));
+                    zestScoreTextView.setText(String.valueOf(seekBarZestScoreAsInt+1));
                 } else if (i == 4) {
                     SeekBar gratitudeSeekBar = (SeekBar) this.findViewById(scoreSeekBarIds[i]);
                     TextView gratitudeScoreTextView = (TextView) this.findViewById(scoreTextViewIds[i]);
@@ -253,7 +253,7 @@ public class RateYourselfActivity extends AppCompatActivity {
                     int seekBarGratitudeScoreAsInt = (int) seekBarGratitudeScore;
                     gratitudeSeekBar.setProgress(seekBarGratitudeScoreAsInt);
 
-                    gratitudeScoreTextView.setText(String.valueOf(seekBarGratitudeScoreAsInt));
+                    gratitudeScoreTextView.setText(String.valueOf(seekBarGratitudeScoreAsInt+1));
                 } else if (i == 5) {
                     SeekBar optimismSeekBar = (SeekBar) this.findViewById(scoreSeekBarIds[i]);
                     TextView optimismScoreTextView = (TextView) this.findViewById(scoreTextViewIds[i]);
@@ -262,7 +262,7 @@ public class RateYourselfActivity extends AppCompatActivity {
                     int seekBarOptimismScoreAsInt = (int) seekBarOptimismScore;
                     optimismSeekBar.setProgress(seekBarOptimismScoreAsInt);
 
-                    optimismScoreTextView.setText(String.valueOf(seekBarOptimismScoreAsInt));
+                    optimismScoreTextView.setText(String.valueOf(seekBarOptimismScoreAsInt+1));
                 } else if (i == 6) {
                     SeekBar curiositySeekBar = (SeekBar) this.findViewById(scoreSeekBarIds[i]);
                     TextView curiosityScoreTextView = (TextView) this.findViewById(scoreTextViewIds[i]);
@@ -271,7 +271,7 @@ public class RateYourselfActivity extends AppCompatActivity {
                     int seekBarCuriosityScoreAsInt = (int) seekBarCuriosityScore;
                     curiositySeekBar.setProgress(seekBarCuriosityScoreAsInt);
 
-                    curiosityScoreTextView.setText(String.valueOf(seekBarCuriosityScoreAsInt));
+                    curiosityScoreTextView.setText(String.valueOf(seekBarCuriosityScoreAsInt+1));
                 }
             }
         }
@@ -318,7 +318,7 @@ public class RateYourselfActivity extends AppCompatActivity {
     public void submitSelfEvaluationButtonClick(View v) {
         long rows = submitScores();
         if (rows != -1) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Successful insert!", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(getApplicationContext(), "Test Scores Recorded!", Toast.LENGTH_LONG);
             toast.show();
         }
 

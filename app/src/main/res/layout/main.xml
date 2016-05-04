@@ -32,7 +32,9 @@
         android:text="GOALS"
         android:layout_above="@+id/btnAnalysis"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textSize="20dp"
+        android:layout_marginTop="40dp"/>
 
     <Button
         android:id="@+id/btnAnalysis"
@@ -43,7 +45,9 @@
         android:text="Analysis"
         android:layout_above="@+id/btnTheory"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/btnTheory" />
+        android:layout_alignEnd="@+id/btnTheory"
+        android:textSize="20dp"
+        android:layout_marginTop="40dp"/>
 
     <Button
         android:id="@+id/btnTheory"
@@ -54,7 +58,9 @@
         android:text="Theory"
         android:layout_above="@+id/btnALovelyThinking"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/btnALovelyThinking" />
+        android:layout_alignEnd="@+id/btnALovelyThinking"
+        android:textSize="20dp"
+        android:layout_marginTop="40dp"/>
 
     <Button
         android:id="@+id/btnALovelyThinking"
@@ -65,7 +71,9 @@
         android:text="Lovely Thinking"
         android:layout_above="@+id/btnDonate"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/btnDonate" />
+        android:layout_alignEnd="@+id/btnDonate"
+        android:textSize="20dp"
+        android:layout_marginTop="40dp"/>
 
     <Button
         android:id="@+id/btnDonate"
@@ -77,6 +85,8 @@
         android:text="Make a Wish .org"
         android:onClick="btnDonateClick"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textSize="20dp"
+        android:layout_marginTop="40dp"/>
 
 </RelativeLayout>
